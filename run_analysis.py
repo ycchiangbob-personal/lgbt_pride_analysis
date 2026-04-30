@@ -1154,6 +1154,364 @@ def inject(html_path, sections, panel_ids):
     html_path.write_text(html)
     return True
 
+# ── Analysis: Gap / Opportunities ─────────────────────────────────────────────
+
+def analyze_opportunities(dp, id_to_name, ext, loyalists_data, winback_data):
+    TARGET      = 9_500_000
+    ACTUAL_2025 = 8_274_000
+    GAP         = TARGET - ACTUAL_2025  # 1,226,000
+
+    # 2026 tier pricing (from 2026 guidebook)
+    PRICE_2026 = {
+        '白金級': 1_000_000, '黃金級': 700_000, '鈦金級': 450_000,
+        '銀級': 220_000, '銅級': 120_000,
+    }
+    TIER_NEXT = {
+        '銅級':  ('銀級',  220_000),
+        '銀級':  ('鈦金級', 450_000),
+        '鈦金級':('黃金級', 700_000),
+    }
+
+    id_to_lower = {did: name.lower() for did, name in id_to_name.items()}
+    loyalist_lower = {d['name'].lower() for d in loyalists_data}
+    in_2024_lower  = {id_to_lower.get(did, '') for did, v in dp.items()
+                      if '2024' in v and v['2024']}
+
+    # 2025 sponsor list
+    s25 = {}
+    for r in ext.get('2025', []):
+        n = r['name_canonical']
+        s25[n.lower()] = {'name': n, 'amount': r.get('amount') or 0,
+                          'tier': r.get('tier_orig', '')}
+
+    # Segment + renewal forecast
+    PROBS   = {'loyalist': 0.85, 'returning': 0.53, 'new_2025': 0.20}
+    SEG_LBL = {'loyalist': '忠實廠商（連續 3 年以上）',
+                'returning': '回頭廠商（2024 及 2025 皆有）',
+                'new_2025':  '新廠商（2025 年首次）'}
+    agg = {s: {'n': 0, 'total': 0.0, 'expected': 0.0} for s in PROBS}
+    for nl, info in s25.items():
+        seg = ('loyalist' if nl in loyalist_lower
+               else 'returning' if nl in in_2024_lower
+               else 'new_2025')
+        agg[seg]['n']        += 1
+        agg[seg]['total']    += info['amount']
+        agg[seg]['expected'] += info['amount'] * PROBS[seg]
+    for seg in agg:
+        agg[seg]['total']    = round(agg[seg]['total'])
+        agg[seg]['expected'] = round(agg[seg]['expected'])
+        agg[seg]['at_risk']  = agg[seg]['total'] - agg[seg]['expected']
+
+    total_expected = sum(v['expected'] for v in agg.values())
+    renewal_gap    = TARGET - total_expected
+
+    # B: top win-back (2024 lapsed, non-one-time, top 5)
+    top_wb = [r for r in winback_data.get('2024', []) if not r.get('one_time')][:5]
+    wb_potential = round(sum(r['amount_last'] for r in top_wb) * 0.35)
+
+    # C: upsell candidates (loyalist or returning, upgradeable tier)
+    upsell = []
+    for nl, info in s25.items():
+        is_stable = nl in loyalist_lower or nl in in_2024_lower
+        if not is_stable:
+            continue
+        t = info['tier']
+        if t in TIER_NEXT:
+            nt, np = TIER_NEXT[t]
+            gain = np - info['amount']
+            if gain > 0:
+                upsell.append({'name': info['name'], 'curr_tier': t,
+                               'next_tier': nt, 'curr_amount': info['amount'],
+                               'next_price': np, 'gain': gain})
+    upsell.sort(key=lambda x: -x['gain'])
+    top_upsell   = upsell[:6]
+    upsell_pot   = round(sum(u['gain'] for u in top_upsell) * 0.40)
+
+    # New 2026 items (from guidebook – completely new products)
+    new_items = [
+        {'name': '活動打卡牆（中型）', 'price': 220_000, 'qty': 2, 'note': '全新品項，2026 年首次推出'},
+        {'name': '活動打卡牆（小型）', 'price': 150_000, 'qty': 1, 'note': '全新品項，2026 年首次推出'},
+        {'name': '轉播螢幕看板',       'price': 200_000, 'qty': 1, 'note': '現場主螢幕旁平面廣告'},
+        {'name': '活動手冊 A6 版位',   'price':  25_000, 'qty': 6, 'note': '中英文各 2,500／1,500 本'},
+    ]
+    new_items_pot = sum(i['price'] * i['qty'] for i in new_items)
+
+    # D: new prospects (curated estimate)
+    new_prospects_pot = 2 * 220_000  # 2 新廠商 at 銀級
+
+    total_proj = total_expected + wb_potential + upsell_pot + new_items_pot + new_prospects_pot
+
+    return {
+        'target': TARGET, 'actual_2025': ACTUAL_2025, 'gap': GAP,
+        'agg': agg, 'seg_lbl': SEG_LBL, 'probs': PROBS,
+        'total_expected': total_expected, 'renewal_gap': renewal_gap,
+        'top_wb': top_wb, 'wb_potential': wb_potential,
+        'top_upsell': top_upsell, 'upsell_pot': upsell_pot,
+        'new_items': new_items, 'new_items_pot': new_items_pot,
+        'new_prospects_pot': new_prospects_pot,
+        'total_proj': total_proj,
+    }
+
+
+def section_opportunities(data):
+    T  = data['target']
+    A  = data['actual_2025']
+    G  = data['gap']
+    agg = data['agg']
+    sl  = data['seg_lbl']
+    pr  = data['probs']
+
+    te  = data['total_expected']
+    rg  = data['renewal_gap']
+    wb  = data['wb_potential']
+    up  = data['upsell_pot']
+    ni  = data['new_items_pot']
+    np_ = data['new_prospects_pot']
+    tp  = data['total_proj']
+    short = T - tp
+
+    # ── Segment table rows ──────────────────────────────────────────────────
+    seg_rows = ''
+    grand_tot = grand_exp = grand_risk = 0
+    for seg in ('loyalist', 'returning', 'new_2025'):
+        v = agg[seg]
+        pct = pr[seg] * 100
+        risk_pct = round(v['at_risk'] / v['total'] * 100) if v['total'] else 0
+        seg_rows += (
+            f'<tr><td>{sl[seg]}</td>'
+            f'<td class="right">{v["n"]}</td>'
+            f'<td class="right">NTD {fmt_ntd(v["total"])}</td>'
+            f'<td class="right">{pct:.0f}%</td>'
+            f'<td class="right" style="color:#1B7A3E;font-weight:700">NTD {fmt_ntd(v["expected"])}</td>'
+            f'<td class="right" style="color:#D93025">−NTD {fmt_ntd(v["at_risk"])}（{risk_pct}%）</td>'
+            f'</tr>'
+        )
+        grand_tot  += v['total']
+        grand_exp  += v['expected']
+        grand_risk += v['at_risk']
+    seg_rows += (
+        f'<tr style="font-weight:700;border-top:2px solid #ddd">'
+        f'<td>合計</td><td class="right">{sum(v["n"] for v in agg.values())}</td>'
+        f'<td class="right">NTD {fmt_ntd(grand_tot)}</td><td class="right">—</td>'
+        f'<td class="right" style="color:#1B7A3E">NTD {fmt_ntd(grand_exp)}</td>'
+        f'<td class="right" style="color:#D93025">−NTD {fmt_ntd(grand_risk)}</td>'
+        f'</tr>'
+    )
+
+    # ── Win-back table ──────────────────────────────────────────────────────
+    wb_rows = ''
+    for r in data['top_wb']:
+        td = TIER_NORM.get(r['tier_last'], r['tier_last'])
+        wb_rows += (
+            f'<tr><td><strong>{r["name"]}</strong></td>'
+            f'<td style="font-size:11px;color:var(--text-muted)">{r.get("industry","")}</td>'
+            f'<td>{tier_badge(td)}</td>'
+            f'<td class="right">NTD {r["amount_last"]:,}</td>'
+            f'<td class="right">{r["years_attended"]} 年</td></tr>'
+        )
+
+    # ── Upsell table ────────────────────────────────────────────────────────
+    up_rows = ''
+    for u in data['top_upsell']:
+        ct = TIER_NORM.get(u['curr_tier'], u['curr_tier'])
+        nt = TIER_NORM.get(u['next_tier'], u['next_tier'])
+        up_rows += (
+            f'<tr><td><strong>{u["name"]}</strong></td>'
+            f'<td>{tier_badge(ct)} → {tier_badge(nt)}</td>'
+            f'<td class="right">NTD {u["curr_amount"]:,}</td>'
+            f'<td class="right">NTD {u["next_price"]:,}</td>'
+            f'<td class="right" style="color:#1B7A3E;font-weight:700">+NTD {u["gain"]:,}</td></tr>'
+        )
+
+    # ── New items table ─────────────────────────────────────────────────────
+    ni_rows = ''
+    for item in data['new_items']:
+        ni_rows += (
+            f'<tr><td><strong>{item["name"]}</strong></td>'
+            f'<td class="right">NTD {item["price"]:,}</td>'
+            f'<td class="right">{item["qty"]}</td>'
+            f'<td class="right" style="color:#1B7A3E;font-weight:700">NTD {item["price"]*item["qty"]:,}</td>'
+            f'<td style="font-size:11px;color:var(--text-muted)">{item["note"]}</td></tr>'
+        )
+
+    # ── Gap fill waterfall ──────────────────────────────────────────────────
+    bar_max = T
+    def pct_w(v): return round(v / bar_max * 100, 1)
+
+    short_note = (f'距目標仍差 NTD {fmt_ntd(short)}，須透過更多新廠商或更積極的挽回補足。'
+                  if short > 0 else f'已超過目標 NTD {fmt_ntd(-short)}。')
+
+    html = f"""
+  <!-- Section: Opportunities -->
+  <div class="section-title">機會識別與缺口分析</div>
+  <div class="chart-card">
+
+    <!-- Summary header -->
+    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:24px;">
+      <div style="flex:1;min-width:140px;padding:16px;background:#f8f5f0;border-radius:10px;text-align:center">
+        <div style="font-size:11px;color:var(--text-muted);margin-bottom:4px">2025 年實際收入</div>
+        <div style="font-size:22px;font-weight:800">NTD {fmt_ntd(A)}</div>
+      </div>
+      <div style="flex:1;min-width:140px;padding:16px;background:#e8f5e9;border-radius:10px;text-align:center">
+        <div style="font-size:11px;color:var(--text-muted);margin-bottom:4px">2026 年目標</div>
+        <div style="font-size:22px;font-weight:800;color:#1B7A3E">NTD {fmt_ntd(T)}</div>
+      </div>
+      <div style="flex:1;min-width:140px;padding:16px;background:#fdecea;border-radius:10px;text-align:center">
+        <div style="font-size:11px;color:var(--text-muted);margin-bottom:4px">需新增收入</div>
+        <div style="font-size:22px;font-weight:800;color:#D93025">+NTD {fmt_ntd(G)}</div>
+      </div>
+      <div style="flex:1;min-width:140px;padding:16px;background:#fff8e1;border-radius:10px;text-align:center">
+        <div style="font-size:11px;color:var(--text-muted);margin-bottom:4px">預期續約基準</div>
+        <div style="font-size:22px;font-weight:800;color:#B8860B">NTD {fmt_ntd(te)}</div>
+      </div>
+    </div>
+
+    <!-- A: Renewal forecast -->
+    <h3 style="margin-top:0">A．現有廠商續約預測</h3>
+    <p class="plain-desc">
+      依歷史資料，將 2025 年的 {sum(v['n'] for v in agg.values())} 家廠商分為三類，
+      各類適用不同的續約機率，估算 2026 年可保住的基本收入。
+    </p>
+    <div style="overflow-x:auto;">
+      <table class="data-table">
+        <thead><tr>
+          <th>廠商類型</th><th class="right">家數</th><th class="right">2025 金額</th>
+          <th class="right">續約機率</th><th class="right">預期保住</th><th class="right">風險流失</th>
+        </tr></thead>
+        <tbody>{seg_rows}</tbody>
+      </table>
+    </div>
+    <div class="note" style="margin:12px 0 24px">
+      ▸ 機率來源：忠實廠商參考歷史忠誠度估算（85%）；回頭廠商依 2023→2024 留存率（53%）；
+      新廠商依首年存活率歷史平均（20%）。
+      <br>▸ 預期續約基準 NTD {fmt_ntd(te)}，離 9.5M 目標還差 <strong>NTD {fmt_ntd(rg)}</strong>，
+      需要 B／C／D 三個方向補足。
+    </div>
+
+    <!-- B: Win-back -->
+    <h3>B．流失廠商挽回（2024 年流失，排除市集／飯店）</h3>
+    <p class="plain-desc">
+      以下為挽回清單優先分最高的 5 家廠商（排除僅參與一次者）。
+      假設積極主動聯繫有 35% 的挽回成功率，預計可回收 <strong>NTD {fmt_ntd(wb)}</strong>。
+    </p>
+    <div style="overflow-x:auto;">
+      <table class="data-table">
+        <thead><tr><th>廠商名稱</th><th>產業</th><th>最後類型</th>
+          <th class="right">最後金額</th><th class="right">歷年參與</th></tr></thead>
+        <tbody>{wb_rows}</tbody>
+      </table>
+    </div>
+    <p class="plain-desc" style="margin-top:8px">
+      ▸ 完整挽回清單請至「挽回清單」頁籤查看，共追蹤 57 家廠商。
+    </p>
+
+    <!-- C: Upsell -->
+    <h3 style="margin-top:24px">C．現有廠商升級潛力（Upsell）</h3>
+    <p class="plain-desc">
+      2026 手冊升級價格：白金 100萬 ／ 黃金 70萬 ／ 鈦金 45萬 ／ 銀 22萬 ／ 銅 12萬。
+      以下為忠實或回頭廠商中，升一個級別後潛在增加金額最大的名單。
+      假設 40% 升級成功率，預計可增加 <strong>NTD {fmt_ntd(up)}</strong>。
+    </p>
+    <div style="overflow-x:auto;">
+      <table class="data-table">
+        <thead><tr><th>廠商名稱</th><th>升級路徑</th>
+          <th class="right">現行金額</th><th class="right">升級後定價</th>
+          <th class="right">可增加</th></tr></thead>
+        <tbody>{up_rows}</tbody>
+      </table>
+    </div>
+
+    <!-- 2026 new items -->
+    <h3 style="margin-top:24px">C+．2026 年全新品項（額外收入機會）</h3>
+    <p class="plain-desc">
+      2026 年企業參與手冊新增以下品項，可向現有及新廠商銷售。若全數售出，預計增加
+      <strong>NTD {fmt_ntd(ni)}</strong>。
+    </p>
+    <div style="overflow-x:auto;">
+      <table class="data-table">
+        <thead><tr><th>品項</th><th class="right">單價</th>
+          <th class="right">目標數量</th><th class="right">小計</th><th>說明</th></tr></thead>
+        <tbody>{ni_rows}</tbody>
+      </table>
+    </div>
+
+    <!-- D: New prospects -->
+    <h3 style="margin-top:24px">D．新廠商引入機會</h3>
+    <p class="plain-desc">
+      以下廠商目前未在我們的贊助名單中，但其母集團已在其他國家參與 Pride 相關贊助，
+      具有較高的接洽成功率。另包含曾有贊助紀錄但已流失、且集團政策支持 DEI 的廠商。
+    </p>
+
+    <!-- Lapsed with global backing -->
+    <p style="font-weight:700;margin-top:16px;margin-bottom:6px">▸ 曾有合作紀錄、集團支持 DEI（優先重啟）</p>
+    <div style="overflow-x:auto;">
+      <table class="data-table">
+        <thead><tr><th>廠商</th><th>最後參與</th><th>集團/母公司</th><th>集團 Pride 參與證據</th><th>建議切入點</th></tr></thead>
+        <tbody>
+          <tr><td><strong>諾和諾德</strong></td><td>2024</td><td>Novo Nordisk（丹麥）</td><td>贊助哥本哈根、紐約、倫敦 Pride；年報揭露 LGBTQ+ ERG</td><td>引用全球集團政策，以永續報告框架切入</td></tr>
+          <tr><td><strong>羅氏</strong></td><td>2024</td><td>Roche（瑞士）</td><td>贊助舊金山、蘇黎世 Pride；PRIDE Network 員工群組</td><td>聯繫台灣 HR 或 DEI 負責人，以員工活動角度提案</td></tr>
+          <tr><td><strong>GU</strong></td><td>2022</td><td>Fast Retailing（日本）</td><td>UT 系列聯名 ILGA；東京 Rainbow Pride 多年贊助</td><td>強調台灣遊行是東亞規模最大，對標東京 Pride</td></tr>
+          <tr><td><strong>Diageo 台灣</strong></td><td>2023</td><td>Diageo（英國）</td><td>Johnnie Walker 彩虹版；贊助全球 30+ Pride 城市</td><td>Johnnie Walker 已在台參與，可提案擴大集團層級</td></tr>
+          <tr><td><strong>雅詩蘭黛</strong></td><td>2023</td><td>Estée Lauder（美國）</td><td>MAC Viva Glam 捐款；LGBTQ+ 公益專案多年</td><td>強調台灣是亞洲 Pride 最受國際關注的場域</td></tr>
+          <tr><td><strong>渣打銀行</strong></td><td>2022</td><td>Standard Chartered（英國）</td><td>贊助新加坡 Pink Dot；全球 Pride Month 活動</td><td>以金融業 ESG 評分框架切入，強調社會面揭露</td></tr>
+          <tr><td><strong>必勝客</strong></td><td>2025 銀</td><td>Yum! Brands（美國）</td><td>Taco Bell 多年 Pride 合作；Yum! 全球 DEI 承諾</td><td>2025 已是銀級，洽談升鈦金或加購打卡牆</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- New prospects never participated -->
+    <p style="font-weight:700;margin-top:20px;margin-bottom:6px">▸ 從未合作、集團已在海外贊助 Pride（潛在新客）</p>
+    <div style="overflow-x:auto;">
+      <table class="data-table">
+        <thead><tr><th>廠商</th><th>產業</th><th>集團 Pride 參與</th><th>建議切入</th><th>優先級</th></tr></thead>
+        <tbody>
+          <tr><td><strong>微軟台灣</strong></td><td>科技</td><td>全球 Pride 活動、彩虹 LGBTQ+ ERG、官方聲明</td><td>強調 ESG S 指標、人才吸引</td><td><span style="color:#D93025;font-weight:700">最高</span></td></tr>
+          <tr><td><strong>蘋果台灣</strong></td><td>科技</td><td>舊金山 Pride 遊行領頭企業；全球員工 Pride 活動</td><td>台灣是蘋果亞太重點市場</td><td><span style="color:#D93025;font-weight:700">最高</span></td></tr>
+          <tr><td><strong>IKEA 台灣</strong></td><td>零售</td><td>IKEA 全球每年推出彩虹聯名商品；贊助歐洲 Pride</td><td>聯名商品授權合作切入</td><td><span style="color:#D93025;font-weight:700">最高</span></td></tr>
+          <tr><td><strong>萬事達卡</strong></td><td>金融</td><td>全球 Pride 主要贊助商；彩虹卡設計</td><td>以品牌曝光與 ESG 評分雙角度提案</td><td><span style="color:#F6B93B;font-weight:700">高</span></td></tr>
+          <tr><td><strong>Gap 台灣</strong></td><td>服飾</td><td>Gap Inc. 全球 Pride 系列；舊金山 Pride 長期贊助商</td><td>GAP 品牌曾以花車參與，可提案升級至銀級</td><td><span style="color:#F6B93B;font-weight:700">高</span></td></tr>
+          <tr><td><strong>漢堡王台灣</strong></td><td>餐飲</td><td>Burger King 美國 Pride Whopper；RBI 全球 DEI 承諾</td><td>餐飲品牌現場行銷角度切入</td><td><span style="color:#888">中</span></td></tr>
+          <tr><td><strong>H&M 台灣</strong></td><td>服飾</td><td>H&M 全球彩虹系列；贊助斯德哥爾摩 Pride</td><td>聯名商品 + 現場品牌曝光</td><td><span style="color:#888">中</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Gap fill summary -->
+    <h3 style="margin-top:28px">缺口填補總覽</h3>
+    <div style="overflow-x:auto;margin-bottom:12px;">
+      <table class="data-table">
+        <thead><tr><th>來源</th><th class="right">預估可增加</th><th>說明</th></tr></thead>
+        <tbody>
+          <tr><td>A. 續約基準</td><td class="right" style="color:#1B7A3E;font-weight:700">NTD {fmt_ntd(te)}</td><td>歷史留存率估算</td></tr>
+          <tr><td>B. 流失廠商挽回（前 5 名 × 35%）</td><td class="right" style="color:#1B7A3E;font-weight:700">+NTD {fmt_ntd(wb)}</td><td>主動外展，可調整挽回家數</td></tr>
+          <tr><td>C. 現有廠商升級（前 6 名 × 40%）</td><td class="right" style="color:#1B7A3E;font-weight:700">+NTD {fmt_ntd(up)}</td><td>提案升一個級別</td></tr>
+          <tr><td>C+. 新品項銷售</td><td class="right" style="color:#1B7A3E;font-weight:700">+NTD {fmt_ntd(ni)}</td><td>打卡牆、看板、手冊等新品項</td></tr>
+          <tr><td>D. 新廠商引入（2 家 銀級估算）</td><td class="right" style="color:#1B7A3E;font-weight:700">+NTD {fmt_ntd(np_)}</td><td>全新合作廠商</td></tr>
+          <tr style="font-weight:700;border-top:2px solid #ddd">
+            <td>合計預測</td>
+            <td class="right" style="color:{'#1B7A3E' if tp >= T else '#D93025'};font-weight:800">NTD {fmt_ntd(tp)}</td>
+            <td>{'已達標 ✓' if tp >= T else f'距目標 {fmt_ntd(short)}'}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="plain-desc">{short_note}</p>
+
+    <div class="action-box">
+      <span class="act-icon">🎯</span>
+      <div><strong>行動建議：</strong>
+      優先確保 21 家忠實廠商全數續約（保住 3.2M 基礎），
+      再集中火力聯繫前 5 名流失廠商（預計回收 {fmt_ntd(wb)}）；
+      同步向有升級空間的廠商提出鈦金／銀級方案，
+      並積極行銷打卡牆等 2026 新品項。
+      若全部達成，加上引入 2 家新廠商，可達到 <strong>NTD {fmt_ntd(tp)}</strong>。
+      </div>
+    </div>
+  </div>
+"""
+    return html, ''
+
+
 # ── Main ───────────────────────────────────────────────────────────────────────
 
 def main():
@@ -1174,6 +1532,8 @@ def main():
     rE = analyze_E(dp, id_to_name, ext)
     print("F — Concentration Risk...")
     rF = analyze_F(dp, id_to_name, ext, cys, d)
+    print("Gap / Opportunities...")
+    rO = analyze_opportunities(dp, id_to_name, ext, rD, rB)
 
     print("\n=== VERIFICATION ===")
     print(f"[D] Loyalists: {len(rD)}")
@@ -1192,6 +1552,8 @@ def main():
     for t in rE[1]:
         print(f"[E] tier {t['tier']}: {t['new']} new, {t['survived']} survived, {t['rate']}%")
 
+    print(f"[O] Projected 2026: NTD {rO['total_proj']:,}  (gap={rO['renewal_gap']:,} after renewals)")
+
     print("\nGenerating HTML sections...")
     sections = [
         section_D(rD),
@@ -1200,12 +1562,13 @@ def main():
         section_C(rC),
         section_E(rE),
         section_F(rF),
+        section_opportunities(rO),
     ]
-    panel_ids = ['analysis-d','analysis-a','analysis-b','analysis-c','analysis-e','analysis-f']
+    panel_ids = ['analysis-d','analysis-a','analysis-b','analysis-c','analysis-e','analysis-f','opportunities']
 
     ok = inject(BASE / 'index.html', sections, panel_ids)
     if ok:
-        print("index.html updated — 6 sections injected.")
+        print("index.html updated — 7 sections injected.")
     else:
         print("No changes made.")
 
