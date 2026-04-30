@@ -130,6 +130,7 @@ def analyze_D(dp, id_to_name, ext):
             'id': did, 'name': name, 'industry': industry,
             'max_run': max_run, 'total_years': total_years,
             'avg_amount': round(avg_amt),
+            'total_amount': round(sum(amounts.values())),
             'ext_amounts': ext_amounts,
             'tier_hist': tier_hist,
             'score': round(max_run * avg_amt),
@@ -336,24 +337,25 @@ def analyze_F(dp, id_to_name, ext, cys):
 # ── Section D ─────────────────────────────────────────────────────────────────
 
 def section_D(data):
-    names_j   = jd([d['name']        for d in data])
-    amounts_j = jd([d['avg_amount']  for d in data])
+    names_j   = jd([d['name']          for d in data])
+    amounts_j = jd([d['total_amount']  for d in data])
 
     loyalists_js = jd([{
-        'name':       d['name'],
-        'industry':   d['industry'],
-        'maxRun':     d['max_run'],
-        'totalYears': d['total_years'],
-        'tiers':      d['tier_hist'],
-        'amounts':    d['ext_amounts'],
-        'avgAmount':  d['avg_amount'],
+        'name':        d['name'],
+        'industry':    d['industry'],
+        'maxRun':      d['max_run'],
+        'totalYears':  d['total_years'],
+        'tiers':       d['tier_hist'],
+        'amounts':     d['ext_amounts'],
+        'avgAmount':   d['avg_amount'],
+        'totalAmount': d['total_amount'],
     } for d in data])
 
     h = min(len(data) * 30 + 60, 700)
 
     html = f"""
   <!-- Section: Analysis D -->
-  <div class="section-title">分析 D：忠實贊助商輪廓</div>
+  <div class="section-title">忠實贊助商輪廓</div>
   <div class="chart-card">
     <h3>2022–2025 年連續贊助 3 年以上的廠商（共 {len(data)} 家）</h3>
     <p class="plain-desc">
@@ -371,7 +373,7 @@ def section_D(data):
       <table class="data-table">
         <thead><tr>
           <th>廠商名稱</th><th style="text-align:center">產業</th>
-          <th style="text-align:center">連續</th>
+          <th style="text-align:center">連續/參與</th>
           <th style="text-align:center">2022</th><th style="text-align:center">2023</th>
           <th style="text-align:center">2024</th><th style="text-align:center">2025</th>
           <th class="right">年均金額</th>
@@ -420,7 +422,8 @@ def section_D(data):
           }}
         }}).join('');
         const indCell = `<td style="text-align:center;font-size:11px;color:var(--text-muted)">${{d.industry||''}}</td>`;
-        return `<tr><td><strong>${{d.name}}</strong></td>${{indCell}}<td style="text-align:center">${{d.maxRun}}年</td>${{cells}}<td class="right">NTD ${{fmtA(d.avgAmount)}}</td></tr>`;
+        const runCell = `<td style="text-align:center;white-space:nowrap"><span style="font-weight:700">${{d.maxRun}}連</span><br><span style="font-size:10px;color:#888">共${{d.totalYears}}年</span></td>`;
+        return `<tr><td><strong>${{d.name}}</strong></td>${{indCell}}${{runCell}}${{cells}}<td class="right">NTD ${{fmtA(d.avgAmount)}}</td></tr>`;
       }}).join('');
     }}
 
@@ -450,7 +453,7 @@ def section_D(data):
 
     new Chart(document.getElementById('loyalistChart'), {{
       type: 'bar',
-      data: {{ labels: {names_j}, datasets: [{{ label:'年平均贊助金額', data:{amounts_j}, backgroundColor:'#B8860B', borderRadius:4 }}] }},
+      data: {{ labels: {names_j}, datasets: [{{ label:'贊助總金額（2022–2025）', data:{amounts_j}, backgroundColor:'#B8860B', borderRadius:4 }}] }},
       plugins: [loyalistLabelPlugin],
       options: {{
         indexAxis:'y', responsive:true, maintainAspectRatio:false,
@@ -506,7 +509,7 @@ def section_A(data):
 
     html = f"""
   <!-- Section: Analysis A -->
-  <div class="section-title">分析 A：年度留存率趨勢</div>
+  <div class="section-title">年度留存率趨勢</div>
   <div class="chart-card">
     <h3>每年有多少去年的廠商今年繼續贊助？（2019–2025）</h3>
     <p class="plain-desc">
@@ -679,7 +682,7 @@ def section_B(by_year):
 
     html = f"""
   <!-- Section: Analysis B -->
-  <div class="section-title">分析 B：流失廠商挽回優先清單</div>
+  <div class="section-title">流失廠商挽回優先清單</div>
   <div class="chart-card">
     <h3>2022–2024 年曾贊助、但 2025 年未出現的廠商（市集／飯店類已排除）</h3>
     <p class="plain-desc">
@@ -733,7 +736,7 @@ def section_C(data):
 
     html = f"""
   <!-- Section: Analysis C -->
-  <div class="section-title">分析 C：級別異動 2024 → 2025</div>
+  <div class="section-title">級別異動 2024 → 2025</div>
   <div class="chart-card">
     <h3>在 2024 和 2025 年都有簽級別合約的廠商，級別有什麼變化？</h3>
     <p class="plain-desc">
@@ -744,7 +747,7 @@ def section_C(data):
     <details><summary>▸ 升級廠商（{s['upgraded']} 家）</summary>{detail_tbl(data['upgraded'])}</details>
     <details><summary>▸ 降級廠商（{s['downgraded']} 家）</summary>{detail_tbl(data['downgraded'])}</details>
     <details><summary>▸ 維持廠商（{s['stayed']} 家）</summary>{detail_tbl(data['stayed'])}</details>
-    <details><summary>▸ 離開廠商（{s['dropped']} 家，已列入分析 B 挽回清單）</summary>{detail_tbl(data['dropped'])}</details>
+    <details><summary>▸ 離開廠商（{s['dropped']} 家，已列入挽回清單）</summary>{detail_tbl(data['dropped'])}</details>
     <details><summary>▸ 2025 年新加入廠商（{s['new']} 家）</summary>{detail_tbl(data['new'])}</details>
     <div class="action-box">
       <span class="act-icon">📊</span>
@@ -778,7 +781,7 @@ def section_E(data):
 
     html = f"""
   <!-- Section: Analysis E -->
-  <div class="section-title">分析 E：新廠商隔年存活率</div>
+  <div class="section-title">新廠商隔年存活率</div>
   <div class="chart-card">
     <h3>第一次合作的廠商，隔年還會繼續嗎？（2022–2024 年新客）</h3>
     <p class="plain-desc">
@@ -868,7 +871,7 @@ def section_F(data):
 
     html = f"""
   <!-- Section: Analysis F -->
-  <div class="section-title">分析 F：贊助收入集中度風險</div>
+  <div class="section-title">贊助收入集中度風險</div>
   <div class="chart-card">
     <h3>前幾大廠商佔了多少收入？萬一他們不來了呢？（2022–2025）</h3>
     <p class="plain-desc">
