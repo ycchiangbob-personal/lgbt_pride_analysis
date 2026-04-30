@@ -229,12 +229,14 @@ def analyze_B(dp, id_to_name, ext):
         yrs_active = len([v for v in ydata.values() if v])
         tw = WEIGHT.get(tier_last, 0.4)
         lb = 1.0 + min(yrs_active - 1, 5) * 0.1
-        score = (amt_last / 10000) * lb * tw
+        one_time = yrs_active == 1
+        score = (amt_last / 10000) * lb * tw * (0.5 if one_time else 1.0)
 
         by_year[last_active].append({
             'name': name, 'industry': ind_lookup.get(nl, ''),
             'amount_last': amt_last, 'tier_last': tier_last,
             'last_active': last_active, 'years_attended': yrs_active,
+            'one_time': one_time,
             'score': round(score, 1),
         })
 
@@ -639,14 +641,20 @@ def section_B(by_year):
         for d in grp:
             tier_disp = TIER_NORM.get(d['tier_last'], d['tier_last'] or '其他')
             ind_cell = f'<td style="font-size:11px;color:var(--text-muted)">{d["industry"]}</td>' if d.get('industry') else '<td></td>'
+            row_style = ' style="opacity:0.65"' if d.get('one_time') else ''
+            yrs_cell = (
+                f'<td class="right"><span style="color:#aaa;font-size:10px">僅1次 ↓</span></td>'
+                if d.get('one_time') else
+                f'<td class="right">{d["years_attended"]} 年</td>'
+            )
             rows.append(
-                f'<tr>'
+                f'<tr{row_style}>'
                 f'<td style="text-align:center;color:var(--text-muted);font-size:12px">{d["rank"]}</td>'
                 f'<td><strong>{d["name"]}</strong></td>'
                 f'{ind_cell}'
                 f'<td>{tier_badge(tier_disp)}</td>'
                 f'<td class="right">NTD {d["amount_last"]:,}</td>'
-                f'<td class="right">{d["years_attended"]} 年</td>'
+                f'{yrs_cell}'
                 f'<td class="right"><strong>{d["score"]:.1f}</strong></td>'
                 f'</tr>'
             )
@@ -691,7 +699,7 @@ def section_B(by_year):
       優先分數 = （金額 ÷ 10,000）×（出席加成）×（類型權重），數字越高越值得優先聯繫。
     </p>
     <div class="note" style="margin-bottom:16px;">
-      <strong>優先分數：</strong> 類型權重：鈦金=1.5、銀=1.2、銅=1.0、花車/單買=0.8；出席加成每年+10%，最高+50%
+      <strong>優先分數：</strong> 類型權重：鈦金=1.5、銀=1.2、銅=1.0、花車/單買=0.8；出席加成每年+10%，最高+50%；僅參與過一次者分數折半（×0.5），列表中以灰色標示
     </div>
     {year_block('2024', grp24, total24, 'open')}
     {year_block('2023', grp23, total23)}
