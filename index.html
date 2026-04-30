@@ -266,6 +266,106 @@
   .cat-pill .cat-val { font-weight: 600; font-size: 13px; color: var(--text-primary); }
   .cat-pill .cat-count { font-size: 10px; color: var(--text-muted); }
 
+  /* Challenge bar in header */
+  .challenge-bar {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-top: 28px;
+  }
+  .challenge-bar .challenge-title {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 12px;
+  }
+  .challenge-row {
+    display: flex;
+    gap: 0;
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+  .challenge-item {
+    flex: 1;
+    min-width: 120px;
+    padding-right: 24px;
+    margin-right: 24px;
+  }
+  .challenge-item:not(:last-child) {
+    border-right: 1px solid rgba(255,255,255,0.1);
+  }
+  .challenge-item:last-child { padding-right: 0; margin-right: 0; }
+  .challenge-label {
+    font-size: 11px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.06em;
+    margin-bottom: 4px;
+  }
+  .challenge-value {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .challenge-value.target { color: #7dd4a8; }
+  .challenge-value.actual { color: rgba(255,255,255,0.85); }
+  .challenge-value.gap { color: #ff8096; }
+  .challenge-note { font-size: 11px; color: rgba(255,255,255,0.35); margin-top: 3px; }
+
+  /* AI warning banner */
+  .warning-banner {
+    background: #fff8e6;
+    border: 1px solid #f0c050;
+    border-left: 4px solid #e8a000;
+    border-radius: var(--radius);
+    padding: 14px 18px;
+    margin-bottom: 20px;
+    font-size: 13px;
+    color: #6b4e00;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    line-height: 1.65;
+  }
+  .warning-banner .warn-icon { font-size: 17px; flex-shrink: 0; margin-top: 1px; }
+
+  /* Methodology section */
+  .method-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .method-table th {
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 8px 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .method-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #f2f1ee;
+    vertical-align: top;
+    line-height: 1.65;
+  }
+  .method-table td:first-child {
+    font-weight: 600;
+    white-space: nowrap;
+    color: var(--text-secondary);
+    width: 140px;
+  }
+  .method-table tr:last-child td { border-bottom: none; }
+  .diff-note {
+    background: #f5f4f0;
+    border-radius: 6px;
+    padding: 12px 16px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-top: 16px;
+    line-height: 1.7;
+  }
+  .diff-note strong { color: var(--text-primary); }
+
   /* Footer */
   footer {
     border-top: 1px solid var(--border);
@@ -307,16 +407,48 @@
     </div>
     <div class="meta-item">
       <span class="meta-label">資料年度</span>
-      <span class="meta-value">9 年</span>
+      <span class="meta-value">10 年</span>
     </div>
     <div class="meta-item">
       <span class="meta-label">金額單位</span>
       <span class="meta-value">NTD（新台幣）</span>
     </div>
   </div>
+
+  <div class="challenge-bar">
+    <div class="challenge-title">2026 第 24 屆 · 核心挑戰</div>
+    <div class="challenge-row">
+      <div class="challenge-item">
+        <div class="challenge-label">今年募款目標</div>
+        <div class="challenge-value target">9.5M</div>
+        <div class="challenge-note">NTD 9,500,000</div>
+      </div>
+      <div class="challenge-item">
+        <div class="challenge-label">2025 年實績</div>
+        <div class="challenge-value actual">8.27M</div>
+        <div class="challenge-note">NTD 8,274,000</div>
+      </div>
+      <div class="challenge-item">
+        <div class="challenge-label">與目標差距</div>
+        <div class="challenge-value gap">−1.23M</div>
+        <div class="challenge-note">本分析目的：找出填補缺口的策略</div>
+      </div>
+    </div>
+  </div>
 </header>
 
 <main>
+
+  <div class="warning-banner">
+    <span class="warn-icon">⚠️</span>
+    <div>
+      <strong>資料品質聲明：本報告數據由 AI 輔助彙整。</strong>
+      受限於原始資料結構（各年度格式不一、部分欄位缺漏、金額認定邊界模糊），
+      部分數字無法達到 100% 精確。本表呈現的是<strong>依統一口徑換算後的最佳近似值</strong>，
+      而非逐筆核對後的會計數字。
+      如您的統計與本表有出入，請參閱頁面底部「統計口徑說明」，了解可能的差異來源。
+    </div>
+  </div>
 
   <div class="note">
     金額採合約報價，未付款但未取消者視同已付款計入。政府補助排除（如台北市政府）。2021 年因 COVID-19 縮小規模辦理，金額為確認最低值（部分廠商金額不明）。市集欄含攤位費聚合（2019+），市集廠商不重複計入級別贊助。
@@ -402,6 +534,58 @@
         </tr>
       </tbody>
     </table>
+  </div>
+
+  <!-- Section: Methodology -->
+  <div class="section-title">統計口徑說明</div>
+
+  <div class="chart-card">
+    <table class="method-table">
+      <thead>
+        <tr>
+          <th>項目</th>
+          <th>本表採用的規則</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>金額認定</td>
+          <td>採<strong>合約報價／牌價</strong>，非實收金額。未付款但未正式取消者視同已計入；明確取消者剔除。</td>
+        </tr>
+        <tr>
+          <td>排除項目</td>
+          <td>政府補助款（如台北市政府）全數排除。NGO 棚位不計入市集收入。協辦單位不計入廠商數。</td>
+        </tr>
+        <tr>
+          <td>市集金額</td>
+          <td>以牌價換算：獨立棚 NTD 20,000/頂、合併棚 NTD 10,000/頂（2024/2025 牌價）。早年牌價若有差異則依當年資料。</td>
+        </tr>
+        <tr>
+          <td>重複計算</td>
+          <td>已簽級別方案的廠商，其方案內含市集攤位者，<strong>不再重複計算市集費用</strong>。同一廠商只計入最高層級分類。</td>
+        </tr>
+        <tr>
+          <td>友善飯店</td>
+          <td>歸類為「其他」，<strong>不</strong>歸入「單購」。</td>
+        </tr>
+        <tr>
+          <td>2021 年數據</td>
+          <td>因 COVID-19 縮小規模辦理。29 家廠商中 20 家金額不明，總金額以「≥」標示，為可確認之最低值。</td>
+        </tr>
+        <tr>
+          <td>級別代稱</td>
+          <td>本表統一使用 T1–T5，對應關係：T1 白金（≥800k）、T2 黃金（500–799k）、T3 白銀/鈦金（300–499k）、T4 銀（150–299k）、T5 銅（40–149k）。歷年實際名稱有所調整，以 T1–T5 為準。</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="diff-note">
+      <strong>若您的數字與本表不同，最常見的差異來源：</strong><br>
+      ① 金額採報價非實收 — 有些廠商最終未足額付款，實收會較低。<br>
+      ② 市集廠商不重複計入 — 若您的統計將市集單獨加總，可能出現重複。<br>
+      ③ 政府補助已剔除 — 若原始資料含政府項目，加回後數字會較高。<br>
+      ④ 2021 金額為最低確認值 — 實際總額可能更高，20 家金額不明。<br>
+      如需核對，請對照各年度業務暨財務總表原始資料，搭配上述口徑逐一比對。
+    </div>
   </div>
 
 </main>
