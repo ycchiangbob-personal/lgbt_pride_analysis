@@ -1406,7 +1406,7 @@ def section_opportunities(data):
     </p>
 
     <!-- C: Upsell -->
-    <h3 style="margin-top:24px">C．現有廠商升級潛力（Upsell）</h3>
+    <h3 style="margin-top:24px">C．現有廠商升級潛力</h3>
     <p class="plain-desc">
       2026 手冊升級價格：白金 100萬 ／ 黃金 70萬 ／ 鈦金 45萬 ／ 銀 22萬 ／ 銅 12萬。
       以下為忠實或回頭廠商中，升一個級別後潛在增加金額最大的名單。
@@ -1448,12 +1448,12 @@ def section_opportunities(data):
       <table class="data-table">
         <thead><tr><th>廠商</th><th>最後參與</th><th>集團/母公司</th><th>集團 Pride 參與證據</th><th>建議切入點</th></tr></thead>
         <tbody>
-          <tr><td><strong>諾和諾德</strong></td><td>2024</td><td>Novo Nordisk（丹麥）</td><td>贊助哥本哈根、紐約、倫敦 Pride；年報揭露 LGBTQ+ ERG</td><td>引用全球集團政策，以永續報告框架切入</td></tr>
-          <tr><td><strong>羅氏</strong></td><td>2024</td><td>Roche（瑞士）</td><td>贊助舊金山、蘇黎世 Pride；PRIDE Network 員工群組</td><td>聯繫台灣 HR 或 DEI 負責人，以員工活動角度提案</td></tr>
-          <tr><td><strong>GU</strong></td><td>2022</td><td>Fast Retailing（日本）</td><td>UT 系列聯名 ILGA；東京 Rainbow Pride 多年贊助</td><td>強調台灣遊行是東亞規模最大，對標東京 Pride</td></tr>
+          <tr><td><strong>諾和諾德</strong></td><td>2024</td><td>Novo Nordisk（丹麥）</td><td>贊助哥本哈根、紐約、倫敦同志遊行；年報揭露 LGBT+ 員工資源群組</td><td>引用全球集團政策，以永續報告框架切入</td></tr>
+          <tr><td><strong>羅氏</strong></td><td>2024</td><td>Roche（瑞士）</td><td>贊助舊金山、蘇黎世同志遊行；設有彩虹員工網絡</td><td>聯繫台灣人資或多元共融負責人，以員工活動角度提案</td></tr>
+          <tr><td><strong>GU</strong></td><td>2022</td><td>迅銷集團（日本）</td><td>UT 系列聯名國際 LGBT+ 聯盟；多年贊助東京同志遊行</td><td>強調台灣遊行是東亞規模最大，對標東京同志遊行</td></tr>
           <tr><td><strong>Diageo 台灣</strong></td><td>2023</td><td>Diageo（英國）</td><td>Johnnie Walker 彩虹版；贊助全球 30+ Pride 城市</td><td>Johnnie Walker 已在台參與，可提案擴大集團層級</td></tr>
-          <tr><td><strong>雅詩蘭黛</strong></td><td>2023</td><td>Estée Lauder（美國）</td><td>MAC Viva Glam 捐款；LGBTQ+ 公益專案多年</td><td>強調台灣是亞洲 Pride 最受國際關注的場域</td></tr>
-          <tr><td><strong>渣打銀行</strong></td><td>2022</td><td>Standard Chartered（英國）</td><td>贊助新加坡 Pink Dot；全球 Pride Month 活動</td><td>以金融業 ESG 評分框架切入，強調社會面揭露</td></tr>
+          <tr><td><strong>雅詩蘭黛</strong></td><td>2023</td><td>Estée Lauder（美國）</td><td>MAC Viva Glam 公益捐款；多年 LGBT+ 平權專案</td><td>強調台灣是亞洲同志遊行最受國際關注的場域</td></tr>
+          <tr><td><strong>渣打銀行</strong></td><td>2022</td><td>Standard Chartered（英國）</td><td>贊助新加坡粉點（Pink Dot）；全球驕傲月品牌活動</td><td>以金融業永續評分框架切入，強調社會面揭露</td></tr>
           <tr><td><strong>必勝客</strong></td><td>2025 銀</td><td>Yum! Brands（美國）</td><td>Taco Bell 多年 Pride 合作；Yum! 全球 DEI 承諾</td><td>2025 已是銀級，洽談升鈦金或加購打卡牆</td></tr>
         </tbody>
       </table>
@@ -1465,12 +1465,12 @@ def section_opportunities(data):
       <table class="data-table">
         <thead><tr><th>廠商</th><th>產業</th><th>集團 Pride 參與</th><th>建議切入</th><th>優先級</th></tr></thead>
         <tbody>
-          <tr><td><strong>微軟台灣</strong></td><td>科技</td><td>全球 Pride 活動、彩虹 LGBTQ+ ERG、官方聲明</td><td>強調 ESG S 指標、人才吸引</td><td><span style="color:#D93025;font-weight:700">最高</span></td></tr>
+          <tr><td><strong>微軟台灣</strong></td><td>科技</td><td>全球同志遊行活動、LGBT+ 員工資源群組、官方聲明</td><td>強調 ESG S 指標、人才吸引</td><td><span style="color:#D93025;font-weight:700">最高</span></td></tr>
           <tr><td><strong>蘋果台灣</strong></td><td>科技</td><td>舊金山 Pride 遊行領頭企業；全球員工 Pride 活動</td><td>台灣是蘋果亞太重點市場</td><td><span style="color:#D93025;font-weight:700">最高</span></td></tr>
           <tr><td><strong>IKEA 台灣</strong></td><td>零售</td><td>IKEA 全球每年推出彩虹聯名商品；贊助歐洲 Pride</td><td>聯名商品授權合作切入</td><td><span style="color:#D93025;font-weight:700">最高</span></td></tr>
           <tr><td><strong>萬事達卡</strong></td><td>金融</td><td>全球 Pride 主要贊助商；彩虹卡設計</td><td>以品牌曝光與 ESG 評分雙角度提案</td><td><span style="color:#F6B93B;font-weight:700">高</span></td></tr>
           <tr><td><strong>Gap 台灣</strong></td><td>服飾</td><td>Gap Inc. 全球 Pride 系列；舊金山 Pride 長期贊助商</td><td>GAP 品牌曾以花車參與，可提案升級至銀級</td><td><span style="color:#F6B93B;font-weight:700">高</span></td></tr>
-          <tr><td><strong>漢堡王台灣</strong></td><td>餐飲</td><td>Burger King 美國 Pride Whopper；RBI 全球 DEI 承諾</td><td>餐飲品牌現場行銷角度切入</td><td><span style="color:#888">中</span></td></tr>
+          <tr><td><strong>漢堡王台灣</strong></td><td>餐飲</td><td>漢堡王彩虹堡活動；百勝餐飲全球多元共融承諾</td><td>餐飲品牌現場行銷角度切入</td><td><span style="color:#888">中</span></td></tr>
           <tr><td><strong>H&M 台灣</strong></td><td>服飾</td><td>H&M 全球彩虹系列；贊助斯德哥爾摩 Pride</td><td>聯名商品 + 現場品牌曝光</td><td><span style="color:#888">中</span></td></tr>
         </tbody>
       </table>
