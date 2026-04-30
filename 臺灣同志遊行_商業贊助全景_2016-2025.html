@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>臺灣同志遊行 2016–2025 商業贊助全景</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+  :root {
+    --bg: #f8f7f4;
+    --surface: #ffffff;
+    --border: #e5e3dd;
+    --text-primary: #1a1917;
+    --text-secondary: #6b6860;
+    --text-muted: #9e9b94;
+    --accent: #e8445a;
+    --accent-light: #fdf0f2;
+    --tier: #B8860B;
+    --single: #4472C4;
+    --market: #5BC0EB;
+    --other: #aaa;
+    --t1: #B8860B;
+    --t2: #E8A600;
+    --t3: #4472C4;
+    --t4: #70AD47;
+    --t5: #ED7D31;
+    --radius: 10px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* Header */
+  header {
+    background: var(--text-primary);
+    color: #fff;
+    padding: 48px 40px 36px;
+  }
+  header .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 12px;
+  }
+  header h1 {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+  header .subtitle {
+    font-size: 14px;
+    color: rgba(255,255,255,0.55);
+  }
+  header .meta-bar {
+    display: flex;
+    gap: 24px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+  header .meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  header .meta-label {
+    font-size: 11px;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  header .meta-value {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+  header .meta-value.accent { color: #ff8096; }
+
+  /* Main layout */
+  main { max-width: 1100px; margin: 0 auto; padding: 40px 24px; }
+
+  /* Section titles */
+  .section-title {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    margin-top: 48px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .section-title:first-child { margin-top: 0; }
+
+  /* Note */
+  .note {
+    font-size: 12px;
+    color: var(--text-muted);
+    background: #f3f2ef;
+    border-left: 3px solid var(--border);
+    padding: 10px 14px;
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+
+  /* Legend */
+  .legend {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+  .legend-dot {
+    width: 10px; height: 10px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  /* Chart containers */
+  .chart-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin-bottom: 20px;
+  }
+  .chart-card h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+  }
+  .chart-card .chart-desc {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+  }
+
+  /* Toggle buttons */
+  .toggle-group {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .toggle-btn {
+    font-size: 12px;
+    padding: 5px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: inherit;
+  }
+  .toggle-btn.active {
+    background: var(--text-primary);
+    color: #fff;
+    border-color: var(--text-primary);
+  }
+
+  /* Main data table */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .data-table th {
+    text-align: left;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+  }
+  .data-table th.right { text-align: right; }
+  .data-table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #f2f1ee;
+    vertical-align: middle;
+  }
+  .data-table td.right { text-align: right; font-variant-numeric: tabular-nums; }
+  .data-table tbody tr:hover { background: #fafaf8; }
+  .data-table tbody tr.covid td {
+    color: var(--text-muted);
+    font-style: italic;
+    background: #f8f8f6;
+  }
+
+  .year-badge {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--text-primary);
+    min-width: 40px;
+  }
+  .theme-text {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+  .edition-badge {
+    display: inline-block;
+    font-size: 11px;
+    background: #f0ede8;
+    color: var(--text-secondary);
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+
+  .amount-cell { font-variant-numeric: tabular-nums; font-weight: 500; }
+  .total-amount { font-weight: 700; font-size: 14px; }
+
+  /* Mini bar in table */
+  .mini-bar-wrap { display: flex; align-items: center; gap: 8px; }
+  .mini-bar { height: 6px; border-radius: 3px; min-width: 2px; }
+  .mini-bar-container { display: flex; height: 6px; border-radius: 3px; overflow: hidden; width: 120px; flex-shrink: 0; }
+
+  /* Category pills */
+  .cat-row { display: flex; gap: 6px; flex-wrap: wrap; }
+  .cat-pill {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: #f5f4f0;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 11px;
+    min-width: 70px;
+  }
+  .cat-pill .cat-name { color: var(--text-muted); margin-bottom: 2px; }
+  .cat-pill .cat-val { font-weight: 600; font-size: 13px; color: var(--text-primary); }
+  .cat-pill .cat-count { font-size: 10px; color: var(--text-muted); }
+
+  /* Footer */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 24px;
+    margin-top: 48px;
+    font-size: 12px;
+    color: var(--text-muted);
+    text-align: center;
+    line-height: 1.8;
+  }
+
+  /* Responsive */
+  @media (max-width: 700px) {
+    header { padding: 32px 20px 24px; }
+    header h1 { font-size: 22px; }
+    main { padding: 24px 16px; }
+    .chart-card { padding: 16px 16px; }
+    .data-table th, .data-table td { padding: 10px 8px; }
+    .mini-bar-container { display: none; }
+    .cat-row { gap: 4px; }
+    .cat-pill { min-width: 60px; padding: 5px 8px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">商業贊助分析報告 · 2016–2025</div>
+  <h1>臺灣同志遊行 商業贊助結構全景</h1>
+  <p class="subtitle">由 2016 年第 14 屆至 2025 年第 23 屆，共 9 個有資料年度（2021 停辦）</p>
+  <div class="meta-bar">
+    <div class="meta-item">
+      <span class="meta-label">金額高峰</span>
+      <span class="meta-value accent">2024 · 10.8M</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">首次級別制度</span>
+      <span class="meta-value">2019 第 17 屆</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">資料年度</span>
+      <span class="meta-value">9 年</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">金額單位</span>
+      <span class="meta-value">NTD（新台幣）</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <div class="note">
+    金額採合約報價，未付款但未取消者視同已付款計入。政府補助排除（如台北市政府）。2021 年因 COVID-19 疫情停辦無資料。市集欄含攤位費聚合（2019+），市集廠商不重複計入級別贊助。
+  </div>
+
+  <!-- Section: Charts -->
+  <div class="section-title">趨勢圖表</div>
+
+  <div class="chart-card">
+    <h3>各分類贊助金額（2016–2025）</h3>
+    <p class="chart-desc">點選圖例項目可顯示/隱藏對應分類</p>
+    <div class="toggle-group">
+      <button class="toggle-btn active" onclick="switchChart('amount', this)">贊助金額</button>
+      <button class="toggle-btn" onclick="switchChart('pct', this)">金額比例</button>
+      <button class="toggle-btn" onclick="switchChart('count', this)">廠商數</button>
+    </div>
+    <div id="main-legend" class="legend"></div>
+    <div style="position:relative; width:100%; height:320px;">
+      <canvas id="mainChart" role="img" aria-label="2016至2025年各分類贊助金額堆疊長條圖"></canvas>
+    </div>
+  </div>
+
+  <div class="chart-card">
+    <h3>總贊助金額趨勢（折線）</h3>
+    <p class="chart-desc">含各分類拆解</p>
+    <div id="line-legend" class="legend"></div>
+    <div style="position:relative; width:100%; height:260px;">
+      <canvas id="lineChart" role="img" aria-label="2016至2025年總贊助金額折線圖"></canvas>
+    </div>
+  </div>
+
+  <!-- Section: Table -->
+  <div class="section-title">逐年明細</div>
+
+  <div class="chart-card" style="padding:0; overflow-x:auto;">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>年度</th>
+          <th>屆</th>
+          <th>廠商數</th>
+          <th class="right">總贊助金額</th>
+          <th>分類結構</th>
+          <th>金額比例</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </div>
+
+  <!-- Section: Category detail -->
+  <div class="section-title">分類定義</div>
+
+  <div class="chart-card">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>分類</th>
+          <th>涵蓋級別</th>
+          <th>說明</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span style="display:inline-flex;align-items:center;gap:8px;"><span style="width:10px;height:10px;border-radius:2px;background:var(--t1);"></span><strong>級別贊助</strong></span></td>
+          <td>白金（≥800k）、黃金（500–799k）、白銀/鈦金（300–499k）、銀（150–299k）、銅（40–149k）</td>
+          <td>依固定牌價購買整套贊助方案。2019 年起正式設立，2024 起新增「銅級」，「白銀」更名為「鈦金」。</td>
+        </tr>
+        <tr>
+          <td><span style="display:inline-flex;align-items:center;gap:8px;"><span style="width:10px;height:10px;border-radius:2px;background:var(--single);"></span><strong>單購</strong></span></td>
+          <td>單買、花車路權、友善飯店</td>
+          <td>個別選購特定品項，不進入整套級別方案。2020 起有商業車分項，2023 起有友善飯店方案。</td>
+        </tr>
+        <tr>
+          <td><span style="display:inline-flex;align-items:center;gap:8px;"><span style="width:10px;height:10px;border-radius:2px;background:var(--market);"></span><strong>市集</strong></span></td>
+          <td>彩虹市集獨立棚（20k/頂）、合併棚（10k/頂）</td>
+          <td>純市集攤位。NGO 棚不計入收入。若已為級別贊助商，不重複收市集費。</td>
+        </tr>
+        <tr>
+          <td><span style="display:inline-flex;align-items:center;gap:8px;"><span style="width:10px;height:10px;border-radius:2px;background:var(--other);"></span><strong>其他</strong></span></td>
+          <td>未分級合作、跨界合作、聯盟/協會型贊助</td>
+          <td>2016–2018 因無級別制度，所有廠商歸此類。2019 後為客製化或非標準方案。</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</main>
+
+<footer>
+  臺灣同志遊行 商業合作組 · 資料來源：各年度業務暨財務總表 · 本文件採用報價金額，不考慮實收差異<br>
+  2021 年第 19 屆「友善日常」因 COVID-19 疫情停辦，無贊助資料
+</footer>
+
+<script>
+const DATA = [
+  { year:2016, 屆:"14", 主題:"一起FUN出來—打破假友善，你我撐自在", total_count:15, total:808000, tier_count:0, tier:0, single_count:0, single:0, market_count:2, market:23000, other_count:13, other:785000 },
+  { year:2017, 屆:"15", 主題:"我們都一樣", total_count:20, total:1494500, tier_count:0, tier:0, single_count:0, single:0, market_count:1, market:20000, other_count:19, other:1474500 },
+  { year:2018, 屆:"16", 主題:"性平攻略由你說，人人18投彩虹", total_count:18, total:1565000, tier_count:0, tier:0, single_count:0, single:0, market_count:0, market:0, other_count:18, other:1565000 },
+  { year:2019, 屆:"17", 主題:"同志好厝邊", total_count:103, total:3948642, tier_count:10, tier:1875000, single_count:5, single:100000, market_count:71, market:528000, other_count:17, other:1445642 },
+  { year:2020, 屆:"18", 主題:"成人之美", total_count:134, total:4270000, tier_count:12, tier:2355000, single_count:19, single:773000, market_count:88, market:549500, other_count:15, other:592500 },
+  { year:2021, 屆:"19", 主題:"友善日常（COVID-19 疫情停辦）", total_count:0, total:0, tier_count:0, tier:0, single_count:0, single:0, market_count:0, market:0, other_count:0, other:0, covid:true },
+  { year:2022, 屆:"20", 主題:"無限性", total_count:90, total:9060650, tier_count:23, tier:6779000, single_count:20, single:1651500, market_count:41, market:239150, other_count:6, other:391000 },
+  { year:2023, 屆:"21", 主題:"與多元同行 STAND WITH DIVERSITY", total_count:98, total:9100990, tier_count:32, tier:6958000, single_count:24, single:1250000, market_count:40, market:892990, other_count:2, other:0 },
+  { year:2024, 屆:"22", 主題:"邁向共榮 交織共生", total_count:125, total:10803504, tier_count:32, tier:6486219, single_count:44, single:3280785, market_count:48, market:930000, other_count:1, other:106500 },
+  { year:2025, 屆:"23", 主題:"超·連結", total_count:107, total:8274000, tier_count:22, tier:4915000, single_count:31, single:2119000, market_count:49, market:1000000, other_count:5, other:240000 }
+];
+
+const COLORS = { tier:'#B8860B', single:'#4472C4', market:'#5BC0EB', other:'#b0ae a8' };
+const COLORS_FIXED = { tier:'#B8860B', single:'#4472C4', market:'#5BC0EB', other:'#aaaaaa' };
+const LABELS = { tier:'級別贊助', single:'單購/花車', market:'市集', other:'其他' };
+const YEARS_NO_COVID = DATA.filter(d => !d.covid);
+const YEAR_LABELS = YEARS_NO_COVID.map(d => String(d.year));
+
+function fmt(n) { return Math.round(n).toLocaleString('zh-TW'); }
+function fmtM(n) { return n >= 1000000 ? (n/1000000).toFixed(2) + 'M' : n >= 1000 ? (n/1000).toFixed(0) + 'k' : fmt(n); }
+
+// ---- Table ----
+function buildTable() {
+  const tbody = document.getElementById('tableBody');
+  const maxTotal = Math.max(...DATA.filter(d => !d.covid).map(d => d.total));
+
+  DATA.forEach(d => {
+    const tr = document.createElement('tr');
+    if (d.covid) {
+      tr.className = 'covid';
+      tr.innerHTML = `
+        <td><span class="year-badge">${d.year}</span></td>
+        <td><span class="edition-badge">第${d.屆}屆</span></td>
+        <td colspan="4" style="color:var(--text-muted);font-style:italic;">${d.主題}</td>`;
+      tbody.appendChild(tr); return;
+    }
+
+    const pTier = d.total ? (d.tier/d.total*100).toFixed(0) : 0;
+    const pSingle = d.total ? (d.single/d.total*100).toFixed(0) : 0;
+    const pMarket = d.total ? (d.market/d.total*100).toFixed(0) : 0;
+    const pOther = d.total ? (d.other/d.total*100).toFixed(0) : 0;
+    const barW = Math.round(d.total / maxTotal * 120);
+
+    tr.innerHTML = `
+      <td>
+        <span class="year-badge">${d.year}</span>
+        <div class="theme-text">${d.主題}</div>
+      </td>
+      <td><span class="edition-badge">第${d.屆}屆</span></td>
+      <td class="right">${d.total_count}</td>
+      <td class="right">
+        <div class="amount-cell total-amount">NTD ${fmt(d.total)}</div>
+      </td>
+      <td>
+        <div class="cat-row">
+          ${d.tier > 0 ? `<div class="cat-pill"><span class="cat-name" style="color:#B8860B;">級別</span><span class="cat-val">${fmtM(d.tier)}</span><span class="cat-count">${d.tier_count}家</span></div>` : ''}
+          ${d.single > 0 ? `<div class="cat-pill"><span class="cat-name" style="color:#4472C4;">單購</span><span class="cat-val">${fmtM(d.single)}</span><span class="cat-count">${d.single_count}家</span></div>` : ''}
+          ${d.market > 0 ? `<div class="cat-pill"><span class="cat-name" style="color:#5BC0EB;">市集</span><span class="cat-val">${fmtM(d.market)}</span><span class="cat-count">${d.market_count}攤</span></div>` : ''}
+          ${d.other > 0 ? `<div class="cat-pill"><span class="cat-name" style="color:#888;">其他</span><span class="cat-val">${fmtM(d.other)}</span><span class="cat-count">${d.other_count}家</span></div>` : ''}
+        </div>
+      </td>
+      <td>
+        <div class="mini-bar-container" style="width:${barW}px;">
+          ${d.total > 0 ? `<div class="mini-bar" style="width:${pTier}%;background:#B8860B;"></div>` : ''}
+          ${d.total > 0 ? `<div class="mini-bar" style="width:${pSingle}%;background:#4472C4;"></div>` : ''}
+          ${d.total > 0 ? `<div class="mini-bar" style="width:${pMarket}%;background:#5BC0EB;"></div>` : ''}
+          ${d.total > 0 ? `<div class="mini-bar" style="width:${pOther}%;background:#aaa;"></div>` : ''}
+        </div>
+        <div style="font-size:11px;color:var(--text-muted);margin-top:4px;">${pTier}% / ${pSingle}% / ${pMarket}% / ${pOther}%</div>
+      </td>`;
+    tbody.appendChild(tr);
+  });
+}
+
+// ---- Charts ----
+let mainChart = null;
+let currentView = 'amount';
+
+const CATS = ['tier','single','market','other'];
+
+function getDatasets(view) {
+  return CATS.map(cat => {
+    let data;
+    if (view === 'amount') data = YEARS_NO_COVID.map(d => Math.round(d[cat]/1000));
+    else if (view === 'pct') data = YEARS_NO_COVID.map(d => d.total ? +(d[cat]/d.total*100).toFixed(1) : 0);
+    else data = YEARS_NO_COVID.map(d => d[cat+'_count']);
+    return {
+      label: LABELS[cat],
+      data,
+      backgroundColor: COLORS_FIXED[cat],
+      borderColor: COLORS_FIXED[cat],
+      borderWidth: 0,
+      stack: 'stack'
+    };
+  }).filter(ds => ds.data.some(v => v > 0));
+}
+
+function buildLegend(datasets, elId) {
+  document.getElementById(elId).innerHTML = datasets.map(d =>
+    `<span class="legend-item">
+      <span class="legend-dot" style="background:${d.backgroundColor};"></span>
+      ${d.label}
+    </span>`).join('');
+}
+
+function switchChart(view, btn) {
+  currentView = view;
+  document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  const datasets = getDatasets(view);
+  buildLegend(datasets, 'main-legend');
+
+  const yLabel = view === 'amount' ? '金額（千元）' : view === 'pct' ? '比例（%）' : '廠商/攤商數';
+  const yMax = view === 'pct' ? 100 : undefined;
+  const yCb = v => view === 'amount' ? (v>=1000?(v/1000).toFixed(0)+'M':v+'k') : view==='pct' ? v+'%' : v;
+  const ttCb = ctx => {
+    const v = ctx.raw;
+    if (view === 'amount') return ` ${ctx.dataset.label}: NTD ${fmt(v*1000)}`;
+    if (view === 'pct') return ` ${ctx.dataset.label}: ${v}%`;
+    return ` ${ctx.dataset.label}: ${v}`;
+  };
+
+  if (mainChart) mainChart.destroy();
+  mainChart = new Chart(document.getElementById('mainChart'), {
+    type: 'bar',
+    data: { labels: YEAR_LABELS, datasets },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: ttCb } }
+      },
+      scales: {
+        x: { stacked: true, grid: { display: false }, ticks: { font: { size: 12 }, color: '#888' } },
+        y: {
+          stacked: true, max: yMax,
+          grid: { color: 'rgba(0,0,0,0.06)' },
+          ticks: { font: { size: 11 }, color: '#888', callback: yCb },
+          title: { display: true, text: yLabel, font: { size: 11 }, color: '#888' }
+        }
+      }
+    }
+  });
+}
+
+function buildLineChart() {
+  const cats = [
+    { key: 'tier', label: '級別贊助', color: '#B8860B', dash: [] },
+    { key: 'single', label: '單購/花車', color: '#4472C4', dash: [5,3] },
+    { key: 'market', label: '市集', color: '#5BC0EB', dash: [3,3] },
+    { key: 'other', label: '其他', color: '#aaa', dash: [8,4] },
+    { key: 'total', label: '合計', color: '#1a1917', dash: [] },
+  ];
+
+  const datasets = cats.map(c => ({
+    label: c.label,
+    data: YEARS_NO_COVID.map(d => Math.round((d[c.key] || 0) / 10000) / 100),
+    borderColor: c.color,
+    backgroundColor: c.color + '18',
+    pointBackgroundColor: c.color,
+    pointRadius: 4,
+    borderWidth: c.key === 'total' ? 2.5 : 1.5,
+    borderDash: c.dash,
+    tension: 0.35,
+    fill: false
+  })).filter(d => d.data.some(v => v > 0));
+
+  buildLegend(datasets, 'line-legend');
+
+  new Chart(document.getElementById('lineChart'), {
+    type: 'line',
+    data: { labels: YEAR_LABELS, datasets },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: ctx => ` ${ctx.dataset.label}: NTD ${(ctx.raw*1000000/1000000*1000).toLocaleString('zh-TW')}M` } }
+      },
+      scales: {
+        x: { grid: { display: false }, ticks: { font: { size: 12 }, color: '#888' } },
+        y: {
+          grid: { color: 'rgba(0,0,0,0.06)' },
+          ticks: { font: { size: 11 }, color: '#888', callback: v => v + 'M' },
+          title: { display: true, text: '金額（百萬 NTD）', font: { size: 11 }, color: '#888' }
+        }
+      }
+    }
+  });
+}
+
+// Init
+buildTable();
+switchChart('amount', document.querySelector('.toggle-btn'));
+buildLineChart();
+</script>
+</body>
+</html>
