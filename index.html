@@ -1348,6 +1348,7 @@ function buildLineChart() {
     plugins: [lineLabelPlugin],
     options: {
       responsive: true, maintainAspectRatio: false,
+      layout: { padding: { top: 28 } },
       plugins: {
         legend: { display: false },
         tooltip: { callbacks: { label: ctx => ` ${ctx.dataset.label}: NTD ${(ctx.raw * 1000000).toLocaleString('zh-TW')}` } }
