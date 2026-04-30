@@ -60,6 +60,7 @@ If a tier sponsor also has a market booth (included in tier package), do NOT dou
 | 2023 | 21 | 與多元同行 STAND WITH DIVERSITY |
 | 2024 | 22 | 邁向共榮 交織共生 |
 | 2025 | 23 | 超·連結 |
+| 2027 | 25 | 澀澀性平打開開，多元教慾跟上來 |
 
 ## Cross-Year Summary (final numbers)
 | Year | Total | 級別贊助 | 單購 | 市集 | 其他 |

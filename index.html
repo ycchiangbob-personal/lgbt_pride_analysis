@@ -214,6 +214,11 @@
     font-style: italic;
     background: #f8f8f6;
   }
+  .data-table tbody tr.future td {
+    color: var(--text-muted);
+    font-style: italic;
+    background: #f0f4ff;
+  }
 
   .year-badge {
     display: inline-block;
@@ -417,7 +422,8 @@ const DATA = [
   { year:2022, 屆:"20", 主題:"無限性", total_count:90, total:9060650, tier_count:23, tier:6779000, single_count:20, single:1651500, market_count:41, market:239150, other_count:6, other:391000 },
   { year:2023, 屆:"21", 主題:"與多元同行 STAND WITH DIVERSITY", total_count:98, total:9100990, tier_count:32, tier:6958000, single_count:24, single:1250000, market_count:40, market:892990, other_count:2, other:0 },
   { year:2024, 屆:"22", 主題:"邁向共榮 交織共生", total_count:125, total:10803504, tier_count:32, tier:6486219, single_count:44, single:3280785, market_count:48, market:930000, other_count:1, other:106500 },
-  { year:2025, 屆:"23", 主題:"超·連結", total_count:107, total:8274000, tier_count:22, tier:4915000, single_count:31, single:2119000, market_count:49, market:1000000, other_count:5, other:240000 }
+  { year:2025, 屆:"23", 主題:"超·連結", total_count:107, total:8274000, tier_count:22, tier:4915000, single_count:31, single:2119000, market_count:49, market:1000000, other_count:5, other:240000 },
+  { year:2027, 屆:"25", 主題:"澀澀性平打開開，多元教慾跟上來", total_count:0, total:0, tier_count:0, tier:0, single_count:0, single:0, market_count:0, market:0, other_count:0, other:0, future:true }
 ];
 
 const COLORS = { tier:'#B8860B', single:'#4472C4', market:'#5BC0EB', other:'#b0ae a8' };
@@ -442,6 +448,14 @@ function buildTable() {
         <td><span class="year-badge">${d.year}</span></td>
         <td><span class="edition-badge">第${d.屆}屆</span></td>
         <td colspan="4" style="color:var(--text-muted);font-style:italic;">${d.主題}</td>`;
+      tbody.appendChild(tr); return;
+    }
+    if (d.future) {
+      tr.className = 'future';
+      tr.innerHTML = `
+        <td><span class="year-badge">${d.year}</span></td>
+        <td><span class="edition-badge">第${d.屆}屆</span></td>
+        <td colspan="4" style="color:var(--text-muted);font-style:italic;">${d.主題}（籌備中）</td>`;
       tbody.appendChild(tr); return;
     }
 
