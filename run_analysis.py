@@ -2,9 +2,11 @@
 """
 run_analysis.py — 2016–2025 Taiwan LGBT Pride Sponsorship Analyses
 Runs 6 analyses (D/A/B/C/E/F) and injects results into index.html.
+Re-runnable: strips previous sections before re-injecting.
 """
 import json, math
 from pathlib import Path
+from collections import defaultdict
 
 BASE = Path(__file__).parent
 
@@ -38,24 +40,46 @@ def build_name_to_id(ids):
 TIER_NORM = {
     '白金級': 'T1', '黃金級': 'T2', '白銀級': 'T3', '鈦金級': 'T3',
     '銀級': 'T4', '銅級': 'T5',
-    '花車': '單購', '單買': '單購',
+    '花車': '花車', '單買': '單買',
     '友善飯店': '其他', '其他': '其他', '市集': '市集',
 }
+
+MARKET_HOTEL_TIERS = {'市集', '友善飯店', '其他'}
 
 def fmt_ntd(n):
     if n >= 1_000_000: return f'{n/1_000_000:.2f}M'
     if n >= 1_000:     return f'{n/1_000:.0f}k'
     return str(int(n))
 
+def jd(obj):
+    return json.dumps(obj, ensure_ascii=False)
+
+def tier_badge(tier):
+    colors = {
+        'T1':'#B8860B','T2':'#E8A600','T3':'#4472C4','T4':'#70AD47','T5':'#ED7D31',
+        '單購':'#5BC0EB','花車':'#5BC0EB','單買':'#5BC0EB',
+        '其他':'#aaa','市集':'#aaa','—':'#ddd','?':'#ccc'
+    }
+    c = colors.get(tier, '#ddd')
+    return f'<span class="tier-chip" style="background:{c}20;color:{c}">{tier}</span>'
+
 # ── Analysis D: Loyalists ─────────────────────────────────────────────────────
 
 def analyze_D(dp, id_to_name, ext):
     window = ['2022', '2023', '2024', '2025']
-    tier_lookup = {}
+
+    # Build per-name lookup from ext: {name_lower: {year: {tier, amount, industry}}}
+    name_ext = {}
     for yr in window:
         for r in ext.get(yr, []):
             n = r['name_canonical'].lower()
-            tier_lookup.setdefault(n, {})[yr] = r.get('tier_orig', '')
+            name_ext.setdefault(n, {})[yr] = {
+                'tier':     r.get('tier_orig', ''),
+                'amount':   r.get('amount', 0) or 0,
+                'industry': r.get('industry', '') or '',
+            }
+
+    JUNK_INDUSTRIES = {'A','B','C','Ｖ','個別廠商業務統計',''}
 
     results = []
     for did, ydata in dp.items():
@@ -68,19 +92,45 @@ def analyze_D(dp, id_to_name, ext):
             continue
 
         name = id_to_name.get(did, did)
+        nl   = name.lower()
         amounts = {yr: ydata[yr] for yr in window if yr in ydata and ydata[yr]}
         avg_amt = sum(amounts.values()) / len(amounts) if amounts else 0
         total_years = len([v for v in ydata.values() if v])
 
-        nl = name.lower()
-        tier_hist = {yr: TIER_NORM.get(tier_lookup.get(nl, {}).get(yr, ''), '—') or '—'
-                     for yr in window}
+        # Tier hist: preserve 花車/單買 distinction
+        tier_hist = {}
+        for yr in window:
+            ei = name_ext.get(nl, {}).get(yr)
+            if ei:
+                raw = ei['tier']
+                tier_hist[yr] = TIER_NORM.get(raw, '—') or '—'
+            elif yr in ydata and ydata[yr]:
+                tier_hist[yr] = '?'
+            else:
+                tier_hist[yr] = '—'
+
+        # Per-year amounts from ext (preferred) then dp
+        ext_amounts = {}
+        for yr in window:
+            ei = name_ext.get(nl, {}).get(yr)
+            if ei and ei['amount']:
+                ext_amounts[yr] = round(ei['amount'])
+            elif yr in ydata and ydata[yr]:
+                ext_amounts[yr] = round(ydata[yr])
+
+        # Industry: prefer latest year
+        industry = ''
+        for yr in reversed(window):
+            ei = name_ext.get(nl, {}).get(yr)
+            if ei and ei['industry'] not in JUNK_INDUSTRIES:
+                industry = ei['industry']
+                break
 
         results.append({
-            'id': did, 'name': name,
+            'id': did, 'name': name, 'industry': industry,
             'max_run': max_run, 'total_years': total_years,
             'avg_amount': round(avg_amt),
-            'amounts': {yr: round(v) for yr, v in amounts.items()},
+            'ext_amounts': ext_amounts,
             'tier_hist': tier_hist,
             'score': round(max_run * avg_amt),
         })
@@ -88,7 +138,7 @@ def analyze_D(dp, id_to_name, ext):
     results.sort(key=lambda x: -x['score'])
     return results
 
-# ── Analysis A: Retention ─────────────────────────────────────────────────────
+# ── Analysis A: Retention + Churn Amount ──────────────────────────────────────
 
 def analyze_A(dp):
     pairs = [('2019','2020'),('2020','2021'),('2021','2022'),
@@ -97,59 +147,111 @@ def analyze_A(dp):
     for y1, y2 in pairs:
         s1 = {d for d, v in dp.items() if y1 in v and v[y1]}
         s2 = {d for d, v in dp.items() if y2 in v and v[y2]}
-        ret = s1 & s2
-        rate = len(ret) / len(s1) if s1 else 0
+        ret     = s1 & s2
+        churned = s1 - s2
+        rate    = len(ret) / len(s1) if s1 else 0
+
+        # Amount analysis only for reliable years
+        if y1 >= '2022':
+            c_amts = [dp[d].get(y1, 0) or 0 for d in churned]
+            r_amts = [dp[d].get(y1, 0) or 0 for d in ret]
+            churned_total = round(sum(c_amts))
+            retained_total = round(sum(r_amts))
+            churned_avg  = round(churned_total / len(churned)) if churned else 0
+            retained_avg = round(retained_total / len(ret))   if ret     else 0
+        else:
+            churned_total = retained_total = churned_avg = retained_avg = None
+
         results.append({
             'label': f'{y1}→{y2}', 'y1': y1, 'y2': y2,
-            'y1_count': len(s1), 'retained': len(ret),
+            'y1_count': len(s1), 'retained': len(ret), 'churned': len(churned),
             'rate': round(rate * 100, 1),
             'reliable': y1 >= '2022',
+            'churned_total':  churned_total,
+            'retained_total': retained_total,
+            'churned_avg':    churned_avg,
+            'retained_avg':   retained_avg,
         })
     return results
 
-# ── Analysis B: Win-back ──────────────────────────────────────────────────────
+# ── Analysis B: Win-back (filtered + multi-year) ──────────────────────────────
 
 def analyze_B(dp, id_to_name, ext):
-    in24 = {d for d, v in dp.items() if '2024' in v and v['2024']}
     in25 = {d for d, v in dp.items() if '2025' in v and v['2025']}
-    winback = in24 - in25
+    LOOKBACK = ['2024', '2023', '2022']
 
-    tier24 = {r['name_canonical'].lower(): r.get('tier_orig', '其他')
-              for r in ext.get('2024', [])}
+    # Build per-year tier and industry from ext
+    tier_by_yr  = {}   # {yr: {name_lower: tier_orig}}
+    ind_lookup  = {}   # {name_lower: industry}
+    JUNK = {'A','B','C','Ｖ','個別廠商業務統計',''}
+    for yr in LOOKBACK:
+        tier_by_yr[yr] = {}
+        for r in ext.get(yr, []):
+            n = r['name_canonical'].lower()
+            tier_by_yr[yr][n] = r.get('tier_orig', '其他') or '其他'
+            ind = r.get('industry', '') or ''
+            if ind not in JUNK:
+                ind_lookup[n] = ind
 
     WEIGHT = {
         '鈦金級': 1.5, '白金級': 1.5, '黃金級': 1.5,
         '銀級': 1.2, '白銀級': 1.2,
         '銅級': 1.0,
         '花車': 0.8, '單買': 0.8,
-        '友善飯店': 0.6, '其他': 0.6, '市集': 0.6,
+        '友善飯店': 0.4, '其他': 0.4, '市集': 0.4,
     }
 
-    results = []
-    for did in winback:
+    by_year = defaultdict(list)
+
+    for did, ydata in dp.items():
+        if did in in25:
+            continue
+
+        # Find last active year within lookback window
+        last_active = None
+        for yr in LOOKBACK:
+            if yr in ydata and ydata[yr]:
+                last_active = yr
+                break
+        if not last_active:
+            continue
+
         name = id_to_name.get(did, did)
-        amt = dp[did].get('2024') or 0
-        yrs = len([v for v in dp[did].values() if v])
-        tier = tier24.get(name.lower(), '其他')
-        tw = WEIGHT.get(tier, 0.6)
-        lb = 1.0 + min(yrs - 1, 5) * 0.1
-        score = (amt / 10000) * lb * tw
-        results.append({
-            'id': did, 'name': name, 'amount_2024': round(amt),
-            'tier_orig': tier, 'years_attended': yrs,
-            'tier_weight': tw, 'loyalty_bonus': round(lb, 2),
+        nl   = name.lower()
+        tier_last = tier_by_yr.get(last_active, {}).get(nl, '其他')
+
+        # Skip donors whose last-year tier is market/hotel category
+        if tier_last in MARKET_HOTEL_TIERS:
+            continue
+
+        amt_last   = round(dp[did].get(last_active, 0) or 0)
+        yrs_active = len([v for v in ydata.values() if v])
+        tw = WEIGHT.get(tier_last, 0.4)
+        lb = 1.0 + min(yrs_active - 1, 5) * 0.1
+        score = (amt_last / 10000) * lb * tw
+
+        by_year[last_active].append({
+            'name': name, 'industry': ind_lookup.get(nl, ''),
+            'amount_last': amt_last, 'tier_last': tier_last,
+            'last_active': last_active, 'years_attended': yrs_active,
             'score': round(score, 1),
         })
 
-    results.sort(key=lambda x: -x['score'])
-    for i, r in enumerate(results): r['rank'] = i + 1
-    return results
+    # Sort each group by score desc, assign ranks
+    result = {}
+    for yr in LOOKBACK:
+        grp = by_year.get(yr, [])
+        grp.sort(key=lambda x: -x['score'])
+        for i, r in enumerate(grp):
+            r['rank'] = i + 1
+        result[yr] = grp
+    return result
 
 # ── Analysis C: Tier Movement ─────────────────────────────────────────────────
 
 def analyze_C(ext):
     CATS = {'鈦金級', '銀級', '銅級'}
-    RANK = {'鈦金級': 3, '銀級': 2, '銅級': 1}
+    RANK  = {'鈦金級': 3, '銀級': 2, '銅級': 1}
     LABEL = {'鈦金級': 'T3 鈦金', '銀級': 'T4 銀', '銅級': 'T5 銅'}
 
     t24 = {r['name_canonical']: r['tier_orig']
@@ -183,10 +285,10 @@ def analyze_E(dp):
     years = ['2016','2017','2018','2019','2020','2021','2022','2023','2024','2025']
     results = []
     for i, yr in enumerate(years[:-1]):
-        nxt = years[i + 1]
+        nxt  = years[i + 1]
         prior = years[:i]
-        new_set = {did for did, v in dp.items()
-                   if yr in v and v[yr] and not any(py in v and v[py] for py in prior)}
+        new_set  = {did for did, v in dp.items()
+                    if yr in v and v[yr] and not any(py in v and v[py] for py in prior)}
         survived = sum(1 for did in new_set if nxt in dp[did] and dp[did][nxt])
         rate = survived / len(new_set) * 100 if new_set else 0
         results.append({
@@ -218,95 +320,63 @@ def analyze_F(dp, id_to_name, ext, cys):
             'top5_pct': round(top5_amt / total * 100, 1) if total else 0,
             'hhi': hhi,
             'top3_names': [n for n, _ in top3],
-            'top3_amts': [round(a) for _, a in top3],
+            'top3_amts':  [round(a) for _, a in top3],
         })
     r25 = by_year[-1]
     top3_total = sum(r25['top3_amts'])
-    remaining = r25['total'] - top3_total
+    remaining  = r25['total'] - top3_total
     whatif = {
-        'top3_names': r25['top3_names'],
-        'top3_total': top3_total,
-        'remaining': remaining,
+        'top3_names':    r25['top3_names'],
+        'top3_total':    top3_total,
+        'remaining':     remaining,
         'remaining_pct': round(remaining / r25['total'] * 100, 1) if r25['total'] else 0,
     }
     return {'by_year': by_year, 'whatif_2025': whatif}
 
-# ── HTML / CSS helpers ─────────────────────────────────────────────────────────
-
-EXTRA_CSS = """
-  .action-box {
-    background: #edf7ed; border: 1px solid #81c784;
-    border-left: 4px solid #388e3c; border-radius: var(--radius);
-    padding: 14px 18px; margin-top: 16px; font-size: 13px;
-    color: #1b5e20; display: flex; gap: 12px;
-    align-items: flex-start; line-height: 1.7;
-  }
-  .action-box .act-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
-  .plain-desc { font-size: 13px; color: var(--text-secondary); padding: 6px 0 12px; line-height: 1.75; }
-  .badge-row { display: flex; gap: 12px; flex-wrap: wrap; margin: 16px 0; }
-  .badge-item { flex: 1; min-width: 80px; background: #f5f4f0; border-radius: 8px; padding: 12px 16px; text-align: center; }
-  .badge-item .badge-num { font-size: 26px; font-weight: 700; letter-spacing: -0.03em; }
-  .badge-item .badge-label { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
-  .badge-item.up .badge-num { color: #2e7d32; }
-  .badge-item.down .badge-num { color: #c62828; }
-  .badge-item.drop .badge-num { color: #e65100; }
-  .badge-item.new-badge .badge-num { color: #1565c0; }
-  .tier-chip { display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 12px; background: #f0ede8; color: var(--text-secondary); }
-  .unreliable { opacity: 0.55; }
-  .callout-box { background: #fff3e0; border: 1px solid #ffb74d; border-left: 4px solid #e65100; border-radius: var(--radius); padding: 14px 18px; margin-top: 16px; font-size: 13px; color: #bf360c; line-height: 1.7; }
-  details summary { cursor: pointer; font-size: 13px; font-weight: 600; color: var(--text-secondary); padding: 6px 0; user-select: none; }
-  details summary:hover { color: var(--text-primary); }
-"""
-
-def jd(obj):
-    return json.dumps(obj, ensure_ascii=False)
-
-def tier_badge(tier):
-    colors = {'T1':'#B8860B','T2':'#E8A600','T3':'#4472C4','T4':'#70AD47','T5':'#ED7D31','單購':'#5BC0EB','其他':'#aaa','市集':'#aaa','—':'#ddd'}
-    c = colors.get(tier, '#ddd')
-    return f'<span class="tier-chip" style="background:{c}20;color:{c}">{tier}</span>'
-
 # ── Section D ─────────────────────────────────────────────────────────────────
 
 def section_D(data):
-    names   = jd([d['name'] for d in data])
-    amounts = jd([d['avg_amount'] for d in data])
+    names_j   = jd([d['name']        for d in data])
+    amounts_j = jd([d['avg_amount']  for d in data])
 
-    rows = []
-    for d in data:
-        th = d['tier_hist']
-        tcells = ''.join(f'<td style="text-align:center">{tier_badge(th.get(yr,"—"))}</td>'
-                         for yr in ['2022','2023','2024','2025'])
-        rows.append(
-            f'<tr><td><strong>{d["name"]}</strong></td>'
-            f'<td style="text-align:center">{d["max_run"]} 年</td>'
-            f'<td style="text-align:center">{d["total_years"]} 年</td>'
-            f'{tcells}'
-            f'<td class="right">NTD {fmt_ntd(d["avg_amount"])}</td></tr>'
-        )
+    loyalists_js = jd([{
+        'name':       d['name'],
+        'industry':   d['industry'],
+        'maxRun':     d['max_run'],
+        'totalYears': d['total_years'],
+        'tiers':      d['tier_hist'],
+        'amounts':    d['ext_amounts'],
+        'avgAmount':  d['avg_amount'],
+    } for d in data])
 
-    h = min(len(data) * 30 + 60, 560)
+    h = min(len(data) * 30 + 60, 700)
+
     html = f"""
   <!-- Section: Analysis D -->
   <div class="section-title">分析 D：忠實贊助商輪廓</div>
   <div class="chart-card">
     <h3>2022–2025 年連續贊助 3 年以上的廠商（共 {len(data)} 家）</h3>
     <p class="plain-desc">
-      這 {len(data)} 家廠商是我們最穩定的收入來源，在 2022–2025 年間連續贊助了 3 年以上。
-      圖表依「年平均贊助金額 × 連續年數」排序，排越前面的廠商，對 2026 的價值越高。
+      這 {len(data)} 家廠商是最穩定的收入來源，連續贊助 3 年以上。
+      圖表依「年均金額 × 連續年數」排序；表格可切換顯示各年度贊助類別或實際金額。
     </p>
     <div style="position:relative;width:100%;height:{h}px;margin-bottom:20px;">
       <canvas id="loyalistChart"></canvas>
     </div>
+    <div class="toggle-group" style="margin-bottom:12px;">
+      <button class="toggle-btn active loyalist-toggle" onclick="toggleLoyalistView('tier',this)">各年贊助類別</button>
+      <button class="toggle-btn loyalist-toggle" onclick="toggleLoyalistView('amount',this)">各年贊助金額</button>
+    </div>
     <div style="overflow-x:auto;">
       <table class="data-table">
         <thead><tr>
-          <th>廠商名稱</th><th style="text-align:center">最長連續</th><th style="text-align:center">歷年出席</th>
+          <th>廠商名稱</th><th style="text-align:center">產業</th>
+          <th style="text-align:center">連續</th>
           <th style="text-align:center">2022</th><th style="text-align:center">2023</th>
           <th style="text-align:center">2024</th><th style="text-align:center">2025</th>
-          <th class="right">平均金額</th>
+          <th class="right">年均金額</th>
         </tr></thead>
-        <tbody>{''.join(rows)}</tbody>
+        <tbody id="loyalist-tbody"></tbody>
       </table>
     </div>
     <div class="action-box">
@@ -319,15 +389,76 @@ def section_D(data):
 """
     js = f"""
   (function() {{
+    const DATA_LOYALISTS = {loyalists_js};
+    let loyalistView = 'tier';
+    const TCOL = {{ T1:'#B8860B',T2:'#E8A600',T3:'#4472C4',T4:'#70AD47',T5:'#ED7D31',
+                    '花車':'#5BC0EB','單買':'#5BC0EB','單購':'#5BC0EB',
+                    '其他':'#aaa','市集':'#aaa','—':'#ddd','?':'#ccc' }};
+
+    function fmtA(v) {{
+      if (!v) return '—';
+      return v>=1000000?(v/1000000).toFixed(1)+'M':v>=1000?(v/1000).toFixed(0)+'k':String(v);
+    }}
+
+    function renderLoyalistTable() {{
+      const tbody = document.getElementById('loyalist-tbody');
+      if (!tbody) return;
+      const YRS = ['2022','2023','2024','2025'];
+      const maxAmt = Math.max(...DATA_LOYALISTS.map(d => d.avgAmount));
+      tbody.innerHTML = DATA_LOYALISTS.map(d => {{
+        const cells = YRS.map(yr => {{
+          if (loyalistView === 'tier') {{
+            const t = d.tiers[yr] || '—';
+            const c = TCOL[t] || '#ddd';
+            return `<td style="text-align:center"><span class="tier-chip" style="background:${{c}}20;color:${{c}}">${{t}}</span></td>`;
+          }} else {{
+            const amt = d.amounts[yr] || 0;
+            const barW = maxAmt > 0 ? Math.round(amt/maxAmt*48) : 0;
+            return `<td style="text-align:right;font-size:12px;white-space:nowrap;">
+              <span style="display:inline-block;width:${{barW}}px;height:7px;background:#B8860B40;border-radius:2px;margin-right:3px;vertical-align:middle;"></span>${{fmtA(amt)}}
+            </td>`;
+          }}
+        }}).join('');
+        const indCell = `<td style="text-align:center;font-size:11px;color:var(--text-muted)">${{d.industry||''}}</td>`;
+        return `<tr><td><strong>${{d.name}}</strong></td>${{indCell}}<td style="text-align:center">${{d.maxRun}}年</td>${{cells}}<td class="right">NTD ${{fmtA(d.avgAmount)}}</td></tr>`;
+      }}).join('');
+    }}
+
+    window.toggleLoyalistView = function(view, btn) {{
+      loyalistView = view;
+      renderLoyalistTable();
+      document.querySelectorAll('.loyalist-toggle').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+    }};
+
+    renderLoyalistTable();
+
+    const loyalistLabelPlugin = {{
+      id: 'loyalistLabel',
+      afterDatasetsDraw(chart) {{
+        const {{ ctx }} = chart;
+        const meta = chart.getDatasetMeta(0);
+        meta.data.forEach((bar, i) => {{
+          const v = chart.data.datasets[0].data[i];
+          if (!v) return;
+          const lbl = v>=1000000?(v/1000000).toFixed(1)+'M':v>=1000?(v/1000).toFixed(0)+'k':String(v);
+          ctx.save(); ctx.textAlign='left'; ctx.font='bold 9px sans-serif'; ctx.fillStyle='#555';
+          ctx.fillText(lbl, bar.x+4, bar.y+3.5); ctx.restore();
+        }});
+      }}
+    }};
+
     new Chart(document.getElementById('loyalistChart'), {{
       type: 'bar',
-      data: {{ labels: {names}, datasets: [{{ label: '年平均贊助金額', data: {amounts}, backgroundColor: '#B8860B', borderRadius: 4 }}] }},
+      data: {{ labels: {names_j}, datasets: [{{ label:'年平均贊助金額', data:{amounts_j}, backgroundColor:'#B8860B', borderRadius:4 }}] }},
+      plugins: [loyalistLabelPlugin],
       options: {{
-        indexAxis: 'y', responsive: true, maintainAspectRatio: false,
-        plugins: {{ legend: {{ display: false }}, tooltip: {{ callbacks: {{ label: ctx => ' NTD ' + ctx.raw.toLocaleString('zh-TW') }} }} }},
-        scales: {{
-          x: {{ ticks: {{ callback: v => v>=1000000?(v/1000000).toFixed(1)+'M':v>=1000?(v/1000).toFixed(0)+'k':String(v) }}, grid: {{ color: 'rgba(0,0,0,0.05)' }} }},
-          y: {{ ticks: {{ font: {{ size: 11 }} }}, grid: {{ display: false }} }}
+        indexAxis:'y', responsive:true, maintainAspectRatio:false,
+        layout:{{ padding:{{ right:60 }} }},
+        plugins:{{ legend:{{display:false}}, tooltip:{{callbacks:{{label: ctx=>' NTD '+ctx.raw.toLocaleString('zh-TW')}}}} }},
+        scales:{{
+          x:{{ ticks:{{callback: v=>v>=1000000?(v/1000000).toFixed(1)+'M':v>=1000?(v/1000).toFixed(0)+'k':String(v)}}, grid:{{color:'rgba(0,0,0,0.05)'}} }},
+          y:{{ ticks:{{font:{{size:11}}}}, grid:{{display:false}} }}
         }}
       }}
     }});
@@ -338,20 +469,40 @@ def section_D(data):
 # ── Section A ─────────────────────────────────────────────────────────────────
 
 def section_A(data):
-    labels  = jd([d['label'] for d in data])
-    rates   = jd([d['rate'] for d in data])
-    colors  = jd(['#cccccc' if not d['reliable'] else '#4472C4' for d in data])
+    reliable = [d for d in data if d['reliable']]
+    labels_j  = jd([d['label'] for d in data])
+    rates_j   = jd([d['rate']  for d in data])
+    colors_j  = jd(['#cccccc' if not d['reliable'] else '#4472C4' for d in data])
+
+    # Churn amount chart data (reliable only)
+    churn_labels_j  = jd([d['label']        for d in reliable])
+    churned_avg_j   = jd([d['churned_avg']   for d in reliable])
+    retained_avg_j  = jd([d['retained_avg']  for d in reliable])
 
     rows = []
     for d in data:
         note = '' if d['reliable'] else ' <span style="font-size:11px;color:var(--text-muted);font-style:italic">（參考）</span>'
         cls  = '' if d['reliable'] else ' class="unreliable"'
+        amt_cells = ''
+        if d['reliable'] and d['churned_avg'] is not None:
+            amt_cells = (
+                f'<td class="right" style="color:#c62828">NTD {fmt_ntd(d["churned_avg"])}</td>'
+                f'<td class="right" style="color:#2e7d32">NTD {fmt_ntd(d["retained_avg"])}</td>'
+            )
+        else:
+            amt_cells = '<td class="right" colspan="2" style="color:var(--text-muted);font-size:11px">資料不完整</td>'
         rows.append(
             f'<tr{cls}><td>{d["label"]}{note}</td>'
             f'<td class="right">{d["y1_count"]}</td>'
             f'<td class="right">{d["retained"]}</td>'
-            f'<td class="right"><strong>{d["rate"]}%</strong></td></tr>'
+            f'<td class="right">{d["churned"]}</td>'
+            f'<td class="right"><strong>{d["rate"]}%</strong></td>'
+            f'{amt_cells}</tr>'
         )
+
+    last_r = next((d for d in reversed(data) if d['reliable']), None)
+    last_label = last_r['label'] if last_r else '—'
+    last_rate  = last_r['rate']  if last_r else '—'
 
     html = f"""
   <!-- Section: Analysis A -->
@@ -361,15 +512,29 @@ def section_A(data):
     <p class="plain-desc">
       留存率 = 去年有贊助的廠商中，今年繼續合作的比例。
       灰色柱子（2019–2021）因原始資料不完整，數字僅供參考。
-      <strong>2024→2025 的留存率從 53% 掉到 41%，是近四年最低點——相當於每 10 家去年的廠商，有 6 家沒有回來。</strong>
+      <strong>{last_label} 的留存率為 {last_rate}%，是近四年最低點。</strong>
     </p>
-    <div style="position:relative;width:100%;height:240px;">
+    <div style="position:relative;width:100%;height:220px;">
       <canvas id="retentionChart"></canvas>
     </div>
+
+    <h3 style="margin-top:24px">流失廠商 vs 留存廠商——上一年平均贊助金額（2022–2025）</h3>
+    <p class="plain-desc">
+      若流失廠商的平均金額低於留存廠商，代表高價值廠商的黏著度較高；
+      若相近，則說明任何層級廠商都有流失風險，需全面加強關係維護。
+    </p>
+    <div style="position:relative;width:100%;height:200px;">
+      <canvas id="churnAmtChart"></canvas>
+    </div>
+
     <div style="overflow-x:auto;margin-top:16px;">
       <table class="data-table">
         <thead><tr>
-          <th>年度</th><th class="right">前一年廠商數</th><th class="right">續簽數</th><th class="right">留存率</th>
+          <th>年度</th><th class="right">前年廠商數</th>
+          <th class="right">續簽</th><th class="right">流失</th>
+          <th class="right">留存率</th>
+          <th class="right" style="color:#c62828">流失廠商均額</th>
+          <th class="right" style="color:#2e7d32">留存廠商均額</th>
         </tr></thead>
         <tbody>{''.join(rows)}</tbody>
       </table>
@@ -377,22 +542,82 @@ def section_A(data):
     <div class="action-box">
       <span class="act-icon">📉</span>
       <div><strong>行動建議：</strong>
-      留存率下滑是 2026 缺口的主要成因之一。建議在 2026 年合約到期前 3 個月主動啟動續簽溝通，
-      並針對 2024 年仍在、2025 年流失的廠商（見分析 B），排定電話或拜訪計畫。</div>
+      留存率下滑是 2026 缺口的主要成因之一。若流失廠商均額接近留存廠商，
+      代表需對所有級別加強早期續約溝通；若流失以小額廠商為主，則聚焦挽回大廠即可。
+      建議在合約到期前 3 個月主動啟動溝通。</div>
     </div>
   </div>
 """
     js = f"""
   (function() {{
+    const retPctPlugin = {{
+      id:'retPctLabel',
+      afterDatasetsDraw(chart) {{
+        const {{ctx}} = chart;
+        chart.data.datasets.forEach((ds,di) => {{
+          const meta = chart.getDatasetMeta(di);
+          meta.data.forEach((bar,i) => {{
+            const v = ds.data[i];
+            if (!v) return;
+            ctx.save(); ctx.textAlign='center'; ctx.font='bold 10px sans-serif';
+            ctx.fillStyle='#333'; ctx.fillText(v+'%', bar.x, bar.y-4); ctx.restore();
+          }});
+        }});
+      }}
+    }};
+
     new Chart(document.getElementById('retentionChart'), {{
-      type: 'bar',
-      data: {{ labels: {labels}, datasets: [{{ label: '留存率（%）', data: {rates}, backgroundColor: {colors}, borderRadius: 4 }}] }},
-      options: {{
-        responsive: true, maintainAspectRatio: false,
-        plugins: {{ legend: {{ display: false }}, tooltip: {{ callbacks: {{ label: ctx => ' 留存率：' + ctx.raw + '%' }} }} }},
-        scales: {{
-          y: {{ max: 100, ticks: {{ callback: v => v + '%' }}, grid: {{ color: 'rgba(0,0,0,0.05)' }} }},
-          x: {{ grid: {{ display: false }} }}
+      type:'bar',
+      data:{{ labels:{labels_j}, datasets:[{{ label:'留存率（%）', data:{rates_j}, backgroundColor:{colors_j}, borderRadius:4 }}] }},
+      plugins:[retPctPlugin],
+      options:{{
+        responsive:true, maintainAspectRatio:false,
+        layout:{{ padding:{{ top:20 }} }},
+        plugins:{{ legend:{{display:false}}, tooltip:{{callbacks:{{label: ctx=>' 留存率：'+ctx.raw+'%'}}}} }},
+        scales:{{
+          y:{{ max:100, ticks:{{callback: v=>v+'%'}}, grid:{{color:'rgba(0,0,0,0.05)'}} }},
+          x:{{ grid:{{display:false}} }}
+        }}
+      }}
+    }});
+
+    const amtLabelPlugin = {{
+      id:'amtLabel',
+      afterDatasetsDraw(chart) {{
+        const {{ctx}} = chart;
+        chart.data.datasets.forEach((ds,di) => {{
+          const meta = chart.getDatasetMeta(di);
+          meta.data.forEach((bar,i) => {{
+            const v = ds.data[i];
+            if (!v) return;
+            const lbl = v>=1000000?(v/1000000).toFixed(1)+'M':v>=1000?(v/1000).toFixed(0)+'k':String(v);
+            ctx.save(); ctx.textAlign='center'; ctx.font='bold 9px sans-serif';
+            ctx.fillStyle=ds.backgroundColor; ctx.fillText(lbl, bar.x, bar.y-4); ctx.restore();
+          }});
+        }});
+      }}
+    }};
+
+    new Chart(document.getElementById('churnAmtChart'), {{
+      type:'bar',
+      data:{{
+        labels:{churn_labels_j},
+        datasets:[
+          {{ label:'流失廠商（上一年均額）', data:{churned_avg_j}, backgroundColor:'#e8445a', borderRadius:4 }},
+          {{ label:'留存廠商（上一年均額）', data:{retained_avg_j}, backgroundColor:'#4472C4', borderRadius:4 }},
+        ]
+      }},
+      plugins:[amtLabelPlugin],
+      options:{{
+        responsive:true, maintainAspectRatio:false,
+        layout:{{ padding:{{ top:22 }} }},
+        plugins:{{
+          legend:{{ display:true, position:'top', labels:{{font:{{size:12}},usePointStyle:true}} }},
+          tooltip:{{callbacks:{{label: ctx=>' '+ctx.dataset.label+': NTD '+ctx.raw.toLocaleString('zh-TW')}}}}
+        }},
+        scales:{{
+          y:{{ ticks:{{callback: v=>v>=1000000?(v/1000000).toFixed(1)+'M':v>=1000?(v/1000).toFixed(0)+'k':String(v)}}, grid:{{color:'rgba(0,0,0,0.05)'}} }},
+          x:{{ grid:{{display:false}} }}
         }}
       }}
     }});
@@ -402,49 +627,77 @@ def section_A(data):
 
 # ── Section B ─────────────────────────────────────────────────────────────────
 
-def section_B(data):
-    total_pot = sum(d['amount_2024'] for d in data)
-    half      = total_pot // 2
+def section_B(by_year):
+    LOOKBACK = ['2024', '2023', '2022']
+    total_all = sum(sum(r['amount_last'] for r in by_year.get(yr, [])) for yr in LOOKBACK)
 
-    rows = []
-    for d in data:
-        rows.append(
-            f'<tr>'
-            f'<td style="text-align:center;color:var(--text-muted);font-size:12px">{d["rank"]}</td>'
-            f'<td><strong>{d["name"]}</strong></td>'
-            f'<td>{tier_badge(TIER_NORM.get(d["tier_orig"], d["tier_orig"] or "其他"))}</td>'
-            f'<td class="right">NTD {d["amount_2024"]:,}</td>'
-            f'<td class="right">{d["years_attended"]} 年</td>'
-            f'<td class="right"><strong>{d["score"]:.1f}</strong></td>'
-            f'</tr>'
-        )
+    def make_rows(grp):
+        rows = []
+        for d in grp:
+            tier_disp = TIER_NORM.get(d['tier_last'], d['tier_last'] or '其他')
+            ind_cell = f'<td style="font-size:11px;color:var(--text-muted)">{d["industry"]}</td>' if d.get('industry') else '<td></td>'
+            rows.append(
+                f'<tr>'
+                f'<td style="text-align:center;color:var(--text-muted);font-size:12px">{d["rank"]}</td>'
+                f'<td><strong>{d["name"]}</strong></td>'
+                f'{ind_cell}'
+                f'<td>{tier_badge(tier_disp)}</td>'
+                f'<td class="right">NTD {d["amount_last"]:,}</td>'
+                f'<td class="right">{d["years_attended"]} 年</td>'
+                f'<td class="right"><strong>{d["score"]:.1f}</strong></td>'
+                f'</tr>'
+            )
+        return ''.join(rows)
+
+    grp24 = by_year.get('2024', [])
+    grp23 = by_year.get('2023', [])
+    grp22 = by_year.get('2022', [])
+
+    total24 = sum(r['amount_last'] for r in grp24)
+    total23 = sum(r['amount_last'] for r in grp23)
+    total22 = sum(r['amount_last'] for r in grp22)
+
+    def year_block(yr, grp, total, open_tag=''):
+        if not grp:
+            return ''
+        label_map = {'2024': '2024 年流失（最高優先）',
+                     '2023': '2023 年流失（中期目標）',
+                     '2022': '2022 年流失（長期重啟）'}
+        return f"""
+    <details {open_tag}>
+      <summary>▸ {label_map.get(yr,yr+'年流失')}（{len(grp)} 家，上一年合計 NTD {fmt_ntd(total)}）</summary>
+      <div style="overflow-x:auto;margin-top:8px;">
+        <table class="data-table">
+          <thead><tr>
+            <th style="text-align:center">#</th><th>廠商名稱</th><th>產業</th><th>類型</th>
+            <th class="right">最後金額</th><th class="right">歷年</th><th class="right">優先分</th>
+          </tr></thead>
+          <tbody>{make_rows(grp)}</tbody>
+        </table>
+      </div>
+    </details>"""
 
     html = f"""
   <!-- Section: Analysis B -->
-  <div class="section-title">分析 B：2024 流失廠商挽回優先清單</div>
+  <div class="section-title">分析 B：流失廠商挽回優先清單</div>
   <div class="chart-card">
-    <h3>2024 年有贊助、但 2025 年沒有出現的廠商（共 {len(data)} 家）</h3>
+    <h3>2022–2024 年曾贊助、但 2025 年未出現的廠商（市集／飯店類已排除）</h3>
     <p class="plain-desc">
-      這 {len(data)} 家廠商在 2024 年合計貢獻了 NTD {fmt_ntd(total_pot)}。
-      優先分數越高，代表挽回後的潛在收益越大，請從第 1 名開始依序聯繫。
+      共追蹤 {sum(len(by_year.get(yr,[])) for yr in LOOKBACK)} 家廠商，上一年合計貢獻 NTD {fmt_ntd(total_all)}。
+      依最後活躍年度分組，優先聯繫 2024 年流失的廠商，再逐步往前追蹤。
+      優先分數 = （金額 ÷ 10,000）×（出席加成）×（類型權重），數字越高越值得優先聯繫。
     </p>
     <div class="note" style="margin-bottom:16px;">
-      <strong>優先分數計算方式：</strong>（2024 年金額 ÷ 10,000）×（出席年數加成，最高 +50%）×（類型權重：T3 鈦金=1.5、T4 銀=1.2、T5 銅=1.0、單購=0.8、其他/市集=0.6）
+      <strong>優先分數：</strong> 類型權重：鈦金=1.5、銀=1.2、銅=1.0、花車/單買=0.8；出席加成每年+10%，最高+50%
     </div>
-    <div style="overflow-x:auto;">
-      <table class="data-table">
-        <thead><tr>
-          <th style="text-align:center">#</th><th>廠商名稱</th><th>2024 年類型</th>
-          <th class="right">2024 年金額</th><th class="right">歷年出席</th><th class="right">優先分數</th>
-        </tr></thead>
-        <tbody>{''.join(rows)}</tbody>
-      </table>
-    </div>
+    {year_block('2024', grp24, total24, 'open')}
+    {year_block('2023', grp23, total23)}
+    {year_block('2022', grp22, total22)}
     <div class="action-box">
       <span class="act-icon">📞</span>
       <div><strong>行動建議：</strong>
-      挽回這 {len(data)} 家的一半，預計可補回約 NTD {fmt_ntd(half)} 的收入缺口，
-      直接有助於達成 2026 年 9.5M 的目標。建議業務組依排名分配拜訪任務，每人負責前幾名。</div>
+      先集中火力挽回 2024 年流失廠商（最近一年），再逐年往前聯繫 2023 及 2022 年流失廠商。
+      曾在多年前流失的廠商若重新接洽，建議以新合作形式（升級或特別方案）重新吸引。</div>
     </div>
   </div>
 """
@@ -460,11 +713,11 @@ def section_C(data):
                 f'<div class="badge-num">{count}</div>'
                 f'<div class="badge-label">{label}</div></div>')
 
-    badges = (badge_html(s['new'],       '新加入', 'new-badge') +
-              badge_html(s['upgraded'],  '升級',   'up') +
-              badge_html(s['stayed'],    '維持',   '') +
-              badge_html(s['downgraded'],'降級',   'down') +
-              badge_html(s['dropped'],   '離開',   'drop'))
+    badges = (badge_html(s['new'],        '新加入', 'new-badge') +
+              badge_html(s['upgraded'],   '升級',   'up')        +
+              badge_html(s['stayed'],     '維持',   '')           +
+              badge_html(s['downgraded'], '降級',   'down')       +
+              badge_html(s['dropped'],    '離開',   'drop'))
 
     def detail_tbl(items):
         if not items:
@@ -506,9 +759,9 @@ def section_C(data):
 # ── Section E ─────────────────────────────────────────────────────────────────
 
 def section_E(data):
-    labels = jd([d['cohort'] for d in data])
-    rates  = jd([d['rate'] for d in data])
-    colors = jd(['#cccccc' if not d['reliable'] else '#5BC0EB' for d in data])
+    labels_j = jd([d['cohort'] for d in data])
+    rates_j  = jd([d['rate']   for d in data])
+    colors_j = jd(['#cccccc' if not d['reliable'] else '#5BC0EB' for d in data])
 
     rate24 = next((d['rate'] for d in data if d['cohort'] == '2024'), '—')
 
@@ -556,15 +809,30 @@ def section_E(data):
 """
     js = f"""
   (function() {{
+    const survPctPlugin = {{
+      id:'survPctLabel',
+      afterDatasetsDraw(chart) {{
+        const {{ctx}} = chart;
+        const meta = chart.getDatasetMeta(0);
+        meta.data.forEach((bar,i) => {{
+          const v = chart.data.datasets[0].data[i];
+          if (!v) return;
+          ctx.save(); ctx.textAlign='center'; ctx.font='bold 10px sans-serif';
+          ctx.fillStyle='#333'; ctx.fillText(v+'%', bar.x, bar.y-4); ctx.restore();
+        }});
+      }}
+    }};
     new Chart(document.getElementById('survivalChart'), {{
-      type: 'bar',
-      data: {{ labels: {labels}, datasets: [{{ label: '新廠商隔年存活率（%）', data: {rates}, backgroundColor: {colors}, borderRadius: 4 }}] }},
-      options: {{
-        responsive: true, maintainAspectRatio: false,
-        plugins: {{ legend: {{ display: false }}, tooltip: {{ callbacks: {{ label: ctx => ' 存活率：' + ctx.raw + '%' }} }} }},
-        scales: {{
-          y: {{ max: 100, ticks: {{ callback: v => v + '%' }}, grid: {{ color: 'rgba(0,0,0,0.05)' }} }},
-          x: {{ grid: {{ display: false }} }}
+      type:'bar',
+      data:{{ labels:{labels_j}, datasets:[{{ label:'新廠商隔年存活率（%）', data:{rates_j}, backgroundColor:{colors_j}, borderRadius:4 }}] }},
+      plugins:[survPctPlugin],
+      options:{{
+        responsive:true, maintainAspectRatio:false,
+        layout:{{ padding:{{ top:20 }} }},
+        plugins:{{ legend:{{display:false}}, tooltip:{{callbacks:{{label: ctx=>' 存活率：'+ctx.raw+'%'}}}} }},
+        scales:{{
+          y:{{ max:100, ticks:{{callback: v=>v+'%'}}, grid:{{color:'rgba(0,0,0,0.05)'}} }},
+          x:{{ grid:{{display:false}} }}
         }}
       }}
     }});
@@ -636,27 +904,45 @@ def section_F(data):
 """
     js = f"""
   (function() {{
+    const concLabelPlugin = {{
+      id:'concLabel',
+      afterDatasetsDraw(chart) {{
+        const {{ctx}} = chart;
+        chart.data.datasets.forEach((ds,di) => {{
+          if (ds.type === 'line') return;
+          const meta = chart.getDatasetMeta(di);
+          meta.data.forEach((bar,i) => {{
+            const v = ds.data[i];
+            if (!v) return;
+            ctx.save(); ctx.textAlign='center'; ctx.font='bold 9px sans-serif';
+            ctx.fillStyle='#555'; ctx.fillText(v+'%', bar.x, bar.y-4); ctx.restore();
+          }});
+        }});
+      }}
+    }};
     new Chart(document.getElementById('concentrationChart'), {{
-      type: 'bar',
-      data: {{
-        labels: {years_j},
-        datasets: [
-          {{ type: 'bar',  label: '前 3 家佔比（%）', data: {top3_j}, backgroundColor: '#B8860B', borderRadius: 4, yAxisID: 'y' }},
-          {{ type: 'bar',  label: '前 5 家佔比（%）', data: {top5_j}, backgroundColor: '#E8A600', borderRadius: 4, yAxisID: 'y' }},
-          {{ type: 'line', label: 'HHI 集中度指數',   data: {hhi_j},  borderColor: '#e8445a', backgroundColor: 'transparent',
-             pointBackgroundColor: '#e8445a', borderWidth: 2.5, pointRadius: 5, yAxisID: 'y2' }},
+      type:'bar',
+      data:{{
+        labels:{years_j},
+        datasets:[
+          {{ type:'bar',  label:'前 3 家佔比（%）', data:{top3_j}, backgroundColor:'#B8860B', borderRadius:4, yAxisID:'y' }},
+          {{ type:'bar',  label:'前 5 家佔比（%）', data:{top5_j}, backgroundColor:'#E8A600', borderRadius:4, yAxisID:'y' }},
+          {{ type:'line', label:'HHI 集中度指數',   data:{hhi_j},  borderColor:'#e8445a', backgroundColor:'transparent',
+             pointBackgroundColor:'#e8445a', borderWidth:2.5, pointRadius:5, yAxisID:'y2' }},
         ]
       }},
-      options: {{
-        responsive: true, maintainAspectRatio: false,
-        plugins: {{
-          legend: {{ display: true, position: 'top', labels: {{ font: {{ size: 12 }}, usePointStyle: true }} }},
-          tooltip: {{ mode: 'index' }}
+      plugins:[concLabelPlugin],
+      options:{{
+        responsive:true, maintainAspectRatio:false,
+        layout:{{ padding:{{ top:20 }} }},
+        plugins:{{
+          legend:{{ display:true, position:'top', labels:{{font:{{size:12}},usePointStyle:true}} }},
+          tooltip:{{ mode:'index' }}
         }},
-        scales: {{
-          y:  {{ position: 'left',  max: 60, ticks: {{ callback: v => v + '%' }}, title: {{ display: true, text: '佔總收入比例（%）', font: {{ size: 11 }} }}, grid: {{ color: 'rgba(0,0,0,0.05)' }} }},
-          y2: {{ position: 'right', title: {{ display: true, text: 'HHI 指數', font: {{ size: 11 }} }}, grid: {{ display: false }} }},
-          x:  {{ grid: {{ display: false }} }}
+        scales:{{
+          y:  {{ position:'left',  max:60, ticks:{{callback: v=>v+'%'}}, title:{{display:true,text:'佔總收入比例（%）',font:{{size:11}}}}, grid:{{color:'rgba(0,0,0,0.05)'}} }},
+          y2: {{ position:'right', title:{{display:true,text:'HHI 指數',font:{{size:11}}}}, grid:{{display:false}} }},
+          x:  {{ grid:{{display:false}} }}
         }}
       }}
     }});
@@ -666,27 +952,44 @@ def section_F(data):
 
 # ── Inject into index.html ─────────────────────────────────────────────────────
 
-def inject(html_path, sections, css):
+def inject(html_path, sections, panel_ids):
     html = html_path.read_text()
 
-    if '<!-- Section: Analysis D -->' in html:
-        print("WARNING: Analysis sections already present. Remove them first to re-inject.")
+    # Strip existing analysis panel sections
+    START = '\n\n  <div class="tab-panel" id="panel-analysis-d">'
+    END   = '\n\n  <div class="tab-panel" id="panel-methodology">'
+    if START in html:
+        si = html.index(START)
+        ei = html.index(END) if END in html else -1
+        if ei > si:
+            html = html[:si] + '\n' + html[ei:]
+            print("Stripped existing analysis sections.")
+
+    # Strip existing analysis JS block
+    JS_START = '  /* ANALYSIS_JS_START */'
+    JS_END   = '  /* ANALYSIS_JS_END */'
+    if JS_START in html and JS_END in html:
+        jsi = html.index(JS_START)
+        jei = html.index(JS_END) + len(JS_END)
+        html = html[:jsi] + html[jei:]
+
+    # Build wrapped panel HTML + JS
+    all_html = ''
+    all_js   = ''
+    for (sec_html, sec_js), pid in zip(sections, panel_ids):
+        all_html += f'\n\n  <div class="tab-panel" id="panel-{pid}">\n{sec_html}\n  </div><!-- /panel-{pid} -->'
+        all_js   += sec_js
+
+    # Insert HTML before methodology panel
+    if END not in html:
+        print("ERROR: methodology panel marker not found in index.html")
         return False
-
-    # Add CSS
-    html = html.replace('</style>', css + '\n</style>', 1)
-
-    # Collect all HTML + JS
-    all_html = ''.join(s[0] for s in sections)
-    all_js   = ''.join(s[1] for s in sections)
-
-    # Insert HTML before methodology marker
-    marker = '  <!-- Section: Methodology -->'
-    html = html.replace(marker, all_html + '\n' + marker, 1)
+    html = html.replace(END, all_html + END, 1)
 
     # Insert JS before final </script>
+    js_block = f'\n  {JS_START}\n{all_js}\n  {JS_END}\n'
     last_script = html.rfind('</script>')
-    html = html[:last_script] + '\n' + all_js + '\n' + html[last_script:]
+    html = html[:last_script] + js_block + html[last_script:]
 
     html_path.write_text(html)
     return True
@@ -701,9 +1004,9 @@ def main():
 
     print("D — Loyalists...")
     rD = analyze_D(dp, id_to_name, ext)
-    print("A — Retention...")
+    print("A — Retention + Churn Amount...")
     rA = analyze_A(dp)
-    print("B — Win-back...")
+    print("B — Win-back (filtered, multi-year)...")
     rB = analyze_B(dp, id_to_name, ext)
     print("C — Tier Movement...")
     rC = analyze_C(ext)
@@ -713,18 +1016,19 @@ def main():
     rF = analyze_F(dp, id_to_name, ext, cys)
 
     print("\n=== VERIFICATION ===")
-    print(f"[D] Loyalists: {len(rD)}  (expect ~27)")
-    ad = {r['label']: r['rate'] for r in rA}
-    print(f"[A] 2022→2023: {ad.get('2022→2023')}%  (expect 46%)")
-    print(f"[A] 2023→2024: {ad.get('2023→2024')}%  (expect 53%)")
-    print(f"[A] 2024→2025: {ad.get('2024→2025')}%  (expect 41%)")
-    print(f"[B] Win-back count: {len(rB)}  (expect 47)")
+    print(f"[D] Loyalists: {len(rD)}")
+    ad = {r['label']: r for r in rA}
+    for lbl in ['2022→2023','2023→2024','2024→2025']:
+        r = ad.get(lbl)
+        if r:
+            print(f"[A] {lbl}: {r['rate']}% retained  |  churned_avg={r['churned_avg']}  retained_avg={r['retained_avg']}")
+    for yr in ['2024','2023','2022']:
+        grp = rB.get(yr, [])
+        print(f"[B] {yr} lapsed (excl. mkt/hotel): {len(grp)}")
     s = rC['summary']
     print(f"[C] upgraded={s['upgraded']} stayed={s['stayed']} downgraded={s['downgraded']} dropped={s['dropped']} new={s['new']}")
     ed = {r['cohort']: r['rate'] for r in rE}
-    print(f"[E] 2022→2023: {ed.get('2022')}%  (expect 27%)")
-    print(f"[E] 2023→2024: {ed.get('2023')}%  (expect 29%)")
-    print(f"[E] 2024→2025: {ed.get('2024')}%  (expect 14%)")
+    print(f"[E] 2022: {ed.get('2022')}%  2023: {ed.get('2023')}%  2024: {ed.get('2024')}%")
 
     print("\nGenerating HTML sections...")
     sections = [
@@ -735,10 +1039,11 @@ def main():
         section_E(rE),
         section_F(rF),
     ]
+    panel_ids = ['analysis-d','analysis-a','analysis-b','analysis-c','analysis-e','analysis-f']
 
-    ok = inject(BASE / 'index.html', sections, EXTRA_CSS)
+    ok = inject(BASE / 'index.html', sections, panel_ids)
     if ok:
-        print("index.html updated — 6 sections injected before 統計口徑說明.")
+        print("index.html updated — 6 sections injected.")
     else:
         print("No changes made.")
 

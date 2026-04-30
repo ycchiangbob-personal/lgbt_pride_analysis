@@ -576,27 +576,34 @@
 
   </div><!-- /panel-overview -->
 
+
   <div class="tab-panel" id="panel-analysis-d">
+
   <!-- Section: Analysis D -->
   <div class="section-title">分析 D：忠實贊助商輪廓</div>
   <div class="chart-card">
     <h3>2022–2025 年連續贊助 3 年以上的廠商（共 22 家）</h3>
     <p class="plain-desc">
-      這 22 家廠商是我們最穩定的收入來源，在 2022–2025 年間連續贊助了 3 年以上。
-      圖表依「年平均贊助金額 × 連續年數」排序，排越前面的廠商，對 2026 的價值越高。
+      這 22 家廠商是最穩定的收入來源，連續贊助 3 年以上。
+      圖表依「年均金額 × 連續年數」排序；表格可切換顯示各年度贊助類別或實際金額。
     </p>
-    <div style="position:relative;width:100%;height:560px;margin-bottom:20px;">
+    <div style="position:relative;width:100%;height:700px;margin-bottom:20px;">
       <canvas id="loyalistChart"></canvas>
+    </div>
+    <div class="toggle-group" style="margin-bottom:12px;">
+      <button class="toggle-btn active loyalist-toggle" onclick="toggleLoyalistView('tier',this)">各年贊助類別</button>
+      <button class="toggle-btn loyalist-toggle" onclick="toggleLoyalistView('amount',this)">各年贊助金額</button>
     </div>
     <div style="overflow-x:auto;">
       <table class="data-table">
         <thead><tr>
-          <th>廠商名稱</th><th style="text-align:center">最長連續</th><th style="text-align:center">歷年出席</th>
+          <th>廠商名稱</th><th style="text-align:center">產業</th>
+          <th style="text-align:center">連續</th>
           <th style="text-align:center">2022</th><th style="text-align:center">2023</th>
           <th style="text-align:center">2024</th><th style="text-align:center">2025</th>
-          <th class="right">平均金額</th>
+          <th class="right">年均金額</th>
         </tr></thead>
-        <tbody><tr><td><strong>GILEAD</strong></td><td style="text-align:center">4 年</td><td style="text-align:center">6 年</td><td style="text-align:center"><span class="tier-chip" style="background:#B8860B20;color:#B8860B">T1</span></td><td style="text-align:center"><span class="tier-chip" style="background:#E8A60020;color:#E8A600">T2</span></td><td style="text-align:center"><span class="tier-chip" style="background:#4472C420;color:#4472C4">T3</span></td><td style="text-align:center"><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td class="right">NTD 695k</td></tr><tr><td><strong>美光</strong></td><td style="text-align:center">4 年</td><td style="text-align:center">4 年</td><td style="text-align:center"><span class="tier-chip" style="background:#4472C420;color:#4472C4">T3</span></td><td style="text-align:center"><span class="tier-chip" style="background:#4472C420;color:#4472C4">T3</span></td><td style="text-align:center"><span class="tier-chip" style="background:#4472C420;color:#4472C4">T3</span></td><td style="text-align:center"><span class="tier-chip" style="background:#4472C420;color:#4472C4">T3</span></td><td class="right">NTD 378k</td></tr><tr><td><strong>波士頓</strong></td><td style="text-align:center">4 年</td><td style="text-align:center">4 年</td><td style="text-align:center"><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單購</span></td><td style="text-align:center"><span class="tier-chip" style="background:#4472C420;color:#4472C4">T3</span></td><td style="text-align:center"><span class="tier-chip" style="background:#4472C420;color:#4472C4">T3</span></td><td style="text-align:center"><span class="tier-chip" style="background:#4472C420;color:#4472C4">T3</span></td><td class="right">NTD 309k</td></tr><tr><td><strong>拉拉公園</strong></td><td style="text-align:center">4 年</td><td style="text-align:center">10 年</td><td style="text-align:center"><span class="tier-chip" style="background:#4472C420;color:#4472C4">T3</span></td><td style="text-align:center"><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td style="text-align:center"><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td style="text-align:center"><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td class="right">NTD 219k</td></tr><tr><td><strong>UBer</strong></td><td style="text-align:center">4 年</td><td style="text-align:center">7 年</td><td style="text-align:center"><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單購</span></td><td style="text-align:center"><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td style="text-align:center"><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單購</span></td><td style="text-align:center"><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單購</span></td><td class="right">NTD 218k</td></tr><tr><td><strong>VERVE</strong></td><td style="text-align:center">3 年</td><td style="text-align:center">3 年</td><td style="text-align:center"><span class="tier-chip" style="background:#ddd20;color:#ddd">—</span></td><td style="text-align:center"><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td style="text-align:center"><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td style="text-align:center"><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單購</span></td><td class="right">NTD 257k</td></tr><tr><td><strong>可口可樂</strong></td><td style="text-align:center">3 年</td><td style="text-align:center">3 年</td><td style="text-align:center"><span class="tier-chip" style="background:#aaa20;color:#aaa">其他</span></td><td style="text-align:center"><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單購</span></td><td style="text-align:center"><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單購</span></td><td style="text-align:center"><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單購</span></td><td class="right">NTD 250k</td></tr><tr><td><strong>Google</strong></td><td style="text-align:center">4 年</td><td style="text-align:center">5 年</td><td style="text-align:center"><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td style="text-align:center"><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td style="text-align:center"><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td style="text-align:center"><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td class="right">NTD 186k</td></tr><tr><td><strong>台虎</strong></td><td style="text-align:center">4 年</td><td style="text-align:center">6 年</td><td style="text-align:center"><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單購</span></td><td style="text-align:center"><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td style="text-align:center"><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td style="text-align:center"><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td class="right">NTD 186k</td></tr><tr><td><strong>AZ</strong></td><td style="text-align:center">4 年</td><td style="text-align:center">5 年</td><td style="text-align:center"><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td style="text-align:center"><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td style="text-align:center"><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td style="text-align:center"><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td class="right">NTD 183k</td></tr><tr><td><strong>GSK</strong></td><td style="text-align:center">4 年</td><td style="text-align:center">6 年</td><td style="text-align:center"><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td style="text-align:center"><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td style="text-align:center"><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td style="text-align:center"><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td class="right">NTD 182k</td></tr><tr><td><strong>G-Star</strong></td><td style="text-align:center">4 年</td><td style="text-align:center">4 年</td><td style="text-align:center"><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td style="text-align:center"><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td style="text-align:center"><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td style="text-align:center"><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td class="right">NTD 182k</td></tr><tr><td><strong>NIKE</strong></td><td style="text-align:center">4 年</td><td style="text-align:center">4 年</td><td style="text-align:center"><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單購</span></td><td style="text-align:center"><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td style="text-align:center"><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單購</span></td><td style="text-align:center"><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單購</span></td><td class="right">NTD 180k</td></tr><tr><td><strong>Unilever</strong></td><td style="text-align:center">4 年</td><td style="text-align:center">6 年</td><td style="text-align:center"><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td style="text-align:center"><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td style="text-align:center"><span class="tier-chip" style="background:#ED7D3120;color:#ED7D31">T5</span></td><td style="text-align:center"><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td class="right">NTD 160k</td></tr><tr><td><strong>高通</strong></td><td style="text-align:center">3 年</td><td style="text-align:center">3 年</td><td style="text-align:center"><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td style="text-align:center"><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td style="text-align:center"><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td style="text-align:center"><span class="tier-chip" style="background:#ddd20;color:#ddd">—</span></td><td class="right">NTD 176k</td></tr><tr><td><strong>GAP</strong></td><td style="text-align:center">4 年</td><td style="text-align:center">8 年</td><td style="text-align:center"><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單購</span></td><td style="text-align:center"><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單購</span></td><td style="text-align:center"><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單購</span></td><td style="text-align:center"><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單購</span></td><td class="right">NTD 115k</td></tr><tr><td><strong>彩虹酷兒健康文化中心</strong></td><td style="text-align:center">4 年</td><td style="text-align:center">8 年</td><td style="text-align:center"><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單購</span></td><td style="text-align:center"><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單購</span></td><td style="text-align:center"><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單購</span></td><td style="text-align:center"><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單購</span></td><td class="right">NTD 115k</td></tr><tr><td><strong>M.A.C</strong></td><td style="text-align:center">3 年</td><td style="text-align:center">4 年</td><td style="text-align:center"><span class="tier-chip" style="background:#ddd20;color:#ddd">—</span></td><td style="text-align:center"><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td style="text-align:center"><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td style="text-align:center"><span class="tier-chip" style="background:#aaa20;color:#aaa">其他</span></td><td class="right">NTD 141k</td></tr><tr><td><strong>默沙東</strong></td><td style="text-align:center">3 年</td><td style="text-align:center">3 年</td><td style="text-align:center"><span class="tier-chip" style="background:#ddd20;color:#ddd">—</span></td><td style="text-align:center"><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td style="text-align:center"><span class="tier-chip" style="background:#ED7D3120;color:#ED7D31">T5</span></td><td style="text-align:center"><span class="tier-chip" style="background:#ED7D3120;color:#ED7D31">T5</span></td><td class="right">NTD 136k</td></tr><tr><td><strong>Sagami</strong></td><td style="text-align:center">4 年</td><td style="text-align:center">4 年</td><td style="text-align:center"><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單購</span></td><td style="text-align:center"><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單購</span></td><td style="text-align:center"><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單購</span></td><td style="text-align:center"><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單購</span></td><td class="right">NTD 50k</td></tr><tr><td><strong>台灣百健</strong></td><td style="text-align:center">3 年</td><td style="text-align:center">5 年</td><td style="text-align:center"><span class="tier-chip" style="background:#ddd20;color:#ddd">—</span></td><td style="text-align:center"><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單購</span></td><td style="text-align:center"><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單購</span></td><td style="text-align:center"><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單購</span></td><td class="right">NTD 33k</td></tr><tr><td><strong>辻利茶舖</strong></td><td style="text-align:center">4 年</td><td style="text-align:center">10 年</td><td style="text-align:center"><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單購</span></td><td style="text-align:center"><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單購</span></td><td style="text-align:center"><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單購</span></td><td style="text-align:center"><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單購</span></td><td class="right">NTD 22k</td></tr></tbody>
+        <tbody id="loyalist-tbody"></tbody>
       </table>
     </div>
     <div class="action-box">
@@ -610,6 +617,7 @@
   </div><!-- /panel-analysis-d -->
 
   <div class="tab-panel" id="panel-analysis-a">
+
   <!-- Section: Analysis A -->
   <div class="section-title">分析 A：年度留存率趨勢</div>
   <div class="chart-card">
@@ -617,61 +625,110 @@
     <p class="plain-desc">
       留存率 = 去年有贊助的廠商中，今年繼續合作的比例。
       灰色柱子（2019–2021）因原始資料不完整，數字僅供參考。
-      <strong>2024→2025 的留存率從 53% 掉到 41%，是近四年最低點——相當於每 10 家去年的廠商，有 6 家沒有回來。</strong>
+      <strong>2024→2025 的留存率為 39.7%，是近四年最低點。</strong>
     </p>
-    <div style="position:relative;width:100%;height:240px;">
+    <div style="position:relative;width:100%;height:220px;">
       <canvas id="retentionChart"></canvas>
     </div>
+
+    <h3 style="margin-top:24px">流失廠商 vs 留存廠商——上一年平均贊助金額（2022–2025）</h3>
+    <p class="plain-desc">
+      若流失廠商的平均金額低於留存廠商，代表高價值廠商的黏著度較高；
+      若相近，則說明任何層級廠商都有流失風險，需全面加強關係維護。
+    </p>
+    <div style="position:relative;width:100%;height:200px;">
+      <canvas id="churnAmtChart"></canvas>
+    </div>
+
     <div style="overflow-x:auto;margin-top:16px;">
       <table class="data-table">
         <thead><tr>
-          <th>年度</th><th class="right">前一年廠商數</th><th class="right">續簽數</th><th class="right">留存率</th>
+          <th>年度</th><th class="right">前年廠商數</th>
+          <th class="right">續簽</th><th class="right">流失</th>
+          <th class="right">留存率</th>
+          <th class="right" style="color:#c62828">流失廠商均額</th>
+          <th class="right" style="color:#2e7d32">留存廠商均額</th>
         </tr></thead>
-        <tbody><tr class="unreliable"><td>2019→2020 <span style="font-size:11px;color:var(--text-muted);font-style:italic">（參考）</span></td><td class="right">7</td><td class="right">4</td><td class="right"><strong>57.1%</strong></td></tr><tr class="unreliable"><td>2020→2021 <span style="font-size:11px;color:var(--text-muted);font-style:italic">（參考）</span></td><td class="right">35</td><td class="right">8</td><td class="right"><strong>22.9%</strong></td></tr><tr class="unreliable"><td>2021→2022 <span style="font-size:11px;color:var(--text-muted);font-style:italic">（參考）</span></td><td class="right">12</td><td class="right">8</td><td class="right"><strong>66.7%</strong></td></tr><tr><td>2022→2023</td><td class="right">37</td><td class="right">18</td><td class="right"><strong>48.6%</strong></td></tr><tr><td>2023→2024</td><td class="right">45</td><td class="right">25</td><td class="right"><strong>55.6%</strong></td></tr><tr><td>2024→2025</td><td class="right">78</td><td class="right">31</td><td class="right"><strong>39.7%</strong></td></tr></tbody>
+        <tbody><tr class="unreliable"><td>2019→2020 <span style="font-size:11px;color:var(--text-muted);font-style:italic">（參考）</span></td><td class="right">7</td><td class="right">4</td><td class="right">3</td><td class="right"><strong>57.1%</strong></td><td class="right" colspan="2" style="color:var(--text-muted);font-size:11px">資料不完整</td></tr><tr class="unreliable"><td>2020→2021 <span style="font-size:11px;color:var(--text-muted);font-style:italic">（參考）</span></td><td class="right">35</td><td class="right">8</td><td class="right">27</td><td class="right"><strong>22.9%</strong></td><td class="right" colspan="2" style="color:var(--text-muted);font-size:11px">資料不完整</td></tr><tr class="unreliable"><td>2021→2022 <span style="font-size:11px;color:var(--text-muted);font-style:italic">（參考）</span></td><td class="right">12</td><td class="right">8</td><td class="right">4</td><td class="right"><strong>66.7%</strong></td><td class="right" colspan="2" style="color:var(--text-muted);font-size:11px">資料不完整</td></tr><tr><td>2022→2023</td><td class="right">37</td><td class="right">18</td><td class="right">19</td><td class="right"><strong>48.6%</strong></td><td class="right" style="color:#c62828">NTD 257k</td><td class="right" style="color:#2e7d32">NTD 210k</td></tr><tr><td>2023→2024</td><td class="right">45</td><td class="right">25</td><td class="right">20</td><td class="right"><strong>55.6%</strong></td><td class="right" style="color:#c62828">NTD 138k</td><td class="right" style="color:#2e7d32">NTD 218k</td></tr><tr><td>2024→2025</td><td class="right">78</td><td class="right">31</td><td class="right">47</td><td class="right"><strong>39.7%</strong></td><td class="right" style="color:#c62828">NTD 84k</td><td class="right" style="color:#2e7d32">NTD 192k</td></tr></tbody>
       </table>
     </div>
     <div class="action-box">
       <span class="act-icon">📉</span>
       <div><strong>行動建議：</strong>
-      留存率下滑是 2026 缺口的主要成因之一。建議在 2026 年合約到期前 3 個月主動啟動續簽溝通，
-      並針對 2024 年仍在、2025 年流失的廠商（見分析 B），排定電話或拜訪計畫。</div>
+      留存率下滑是 2026 缺口的主要成因之一。若流失廠商均額接近留存廠商，
+      代表需對所有級別加強早期續約溝通；若流失以小額廠商為主，則聚焦挽回大廠即可。
+      建議在合約到期前 3 個月主動啟動溝通。</div>
     </div>
   </div>
 
   </div><!-- /panel-analysis-a -->
 
   <div class="tab-panel" id="panel-analysis-b">
+
   <!-- Section: Analysis B -->
-  <div class="section-title">分析 B：2024 流失廠商挽回優先清單</div>
+  <div class="section-title">分析 B：流失廠商挽回優先清單</div>
   <div class="chart-card">
-    <h3>2024 年有贊助、但 2025 年沒有出現的廠商（共 47 家）</h3>
+    <h3>2022–2024 年曾贊助、但 2025 年未出現的廠商（市集／飯店類已排除）</h3>
     <p class="plain-desc">
-      這 47 家廠商在 2024 年合計貢獻了 NTD 3.97M。
-      優先分數越高，代表挽回後的潛在收益越大，請從第 1 名開始依序聯繫。
+      共追蹤 57 家廠商，上一年合計貢獻 NTD 10.48M。
+      依最後活躍年度分組，優先聯繫 2024 年流失的廠商，再逐步往前追蹤。
+      優先分數 = （金額 ÷ 10,000）×（出席加成）×（類型權重），數字越高越值得優先聯繫。
     </p>
     <div class="note" style="margin-bottom:16px;">
-      <strong>優先分數計算方式：</strong>（2024 年金額 ÷ 10,000）×（出席年數加成，最高 +50%）×（類型權重：T3 鈦金=1.5、T4 銀=1.2、T5 銅=1.0、單購=0.8、其他/市集=0.6）
+      <strong>優先分數：</strong> 類型權重：鈦金=1.5、銀=1.2、銅=1.0、花車/單買=0.8；出席加成每年+10%，最高+50%
     </div>
-    <div style="overflow-x:auto;">
-      <table class="data-table">
-        <thead><tr>
-          <th style="text-align:center">#</th><th>廠商名稱</th><th>2024 年類型</th>
-          <th class="right">2024 年金額</th><th class="right">歷年出席</th><th class="right">優先分數</th>
-        </tr></thead>
-        <tbody><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">1</td><td><strong>羅氏</strong></td><td><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td class="right">NTD 220,000</td><td class="right">2 年</td><td class="right"><strong>29.0</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">2</td><td><strong>諾和諾德</strong></td><td><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td class="right">NTD 220,000</td><td class="right">2 年</td><td class="right"><strong>29.0</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">3</td><td><strong>高通</strong></td><td><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td class="right">NTD 198,000</td><td class="right">3 年</td><td class="right"><strong>28.5</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">4</td><td><strong>GU</strong></td><td><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td class="right">NTD 220,000</td><td class="right">1 年</td><td class="right"><strong>26.4</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">5</td><td><strong>捷豹路虎</strong></td><td><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td class="right">NTD 220,000</td><td class="right">1 年</td><td class="right"><strong>26.4</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">6</td><td><strong>MYFEEL</strong></td><td><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td class="right">NTD 219,985</td><td class="right">1 年</td><td class="right"><strong>26.4</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">7</td><td><strong>樂天</strong></td><td><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td class="right">NTD 197,985</td><td class="right">2 年</td><td class="right"><strong>26.1</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">8</td><td><strong>諾億</strong></td><td><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td class="right">NTD 198,000</td><td class="right">1 年</td><td class="right"><strong>23.8</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">9</td><td><strong>Suntory</strong></td><td><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單購</span></td><td class="right">NTD 240,000</td><td class="right">1 年</td><td class="right"><strong>19.2</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">10</td><td><strong>海峰電腦</strong></td><td><span class="tier-chip" style="background:#ED7D3120;color:#ED7D31">T5</span></td><td class="right">NTD 120,000</td><td class="right">2 年</td><td class="right"><strong>13.2</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">11</td><td><strong>宜蘊醫療</strong></td><td><span class="tier-chip" style="background:#ED7D3120;color:#ED7D31">T5</span></td><td class="right">NTD 120,000</td><td class="right">1 年</td><td class="right"><strong>12.0</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">12</td><td><strong>Kenvue</strong></td><td><span class="tier-chip" style="background:#ED7D3120;color:#ED7D31">T5</span></td><td class="right">NTD 120,000</td><td class="right">1 年</td><td class="right"><strong>12.0</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">13</td><td><strong>SleekStrip</strong></td><td><span class="tier-chip" style="background:#ED7D3120;color:#ED7D31">T5</span></td><td class="right">NTD 120,000</td><td class="right">1 年</td><td class="right"><strong>12.0</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">14</td><td><strong>台灣武田</strong></td><td><span class="tier-chip" style="background:#ED7D3120;color:#ED7D31">T5</span></td><td class="right">NTD 120,000</td><td class="right">1 年</td><td class="right"><strong>12.0</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">15</td><td><strong>TaskUs</strong></td><td><span class="tier-chip" style="background:#ED7D3120;color:#ED7D31">T5</span></td><td class="right">NTD 120,000</td><td class="right">1 年</td><td class="right"><strong>12.0</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">16</td><td><strong>Zenyum</strong></td><td><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單購</span></td><td class="right">NTD 140,000</td><td class="right">1 年</td><td class="right"><strong>11.2</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">17</td><td><strong>高誠公關</strong></td><td><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單購</span></td><td class="right">NTD 120,000</td><td class="right">2 年</td><td class="right"><strong>10.6</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">18</td><td><strong>澳洲紐西蘭商會</strong></td><td><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單購</span></td><td class="right">NTD 120,000</td><td class="right">1 年</td><td class="right"><strong>9.6</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">19</td><td><strong>佳葆視聽</strong></td><td><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單購</span></td><td class="right">NTD 120,000</td><td class="right">1 年</td><td class="right"><strong>9.6</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">20</td><td><strong>Fusion 聚變</strong></td><td><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單購</span></td><td class="right">NTD 120,000</td><td class="right">1 年</td><td class="right"><strong>9.6</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">21</td><td><strong>法國巴黎人壽</strong></td><td><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單購</span></td><td class="right">NTD 120,000</td><td class="right">1 年</td><td class="right"><strong>9.6</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">22</td><td><strong>灣島皇后</strong></td><td><span class="tier-chip" style="background:#aaa20;color:#aaa">其他</span></td><td class="right">NTD 106,500</td><td class="right">1 年</td><td class="right"><strong>6.4</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">23</td><td><strong>EROLABS</strong></td><td><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單購</span></td><td class="right">NTD 50,000</td><td class="right">1 年</td><td class="right"><strong>4.0</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">24</td><td><strong>相鐵GRAND FRESA 台北西門</strong></td><td><span class="tier-chip" style="background:#aaa20;color:#aaa">其他</span></td><td class="right">NTD 60,000</td><td class="right">1 年</td><td class="right"><strong>3.6</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">25</td><td><strong>台灣不二</strong></td><td><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單購</span></td><td class="right">NTD 43,000</td><td class="right">1 年</td><td class="right"><strong>3.4</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">26</td><td><strong>六福居公寓式酒店</strong></td><td><span class="tier-chip" style="background:#aaa20;color:#aaa">其他</span></td><td class="right">NTD 48,000</td><td class="right">1 年</td><td class="right"><strong>2.9</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">27</td><td><strong>Sanofi</strong></td><td><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單購</span></td><td class="right">NTD 25,000</td><td class="right">1 年</td><td class="right"><strong>2.0</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">28</td><td><strong>知淳 x Cholula</strong></td><td><span class="tier-chip" style="background:#aaa20;color:#aaa">市集</span></td><td class="right">NTD 20,000</td><td class="right">1 年</td><td class="right"><strong>1.2</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">29</td><td><strong>倉箱蜜境</strong></td><td><span class="tier-chip" style="background:#aaa20;color:#aaa">其他</span></td><td class="right">NTD 20,000</td><td class="right">1 年</td><td class="right"><strong>1.2</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">30</td><td><strong>王道銀行</strong></td><td><span class="tier-chip" style="background:#aaa20;color:#aaa">市集</span></td><td class="right">NTD 20,000</td><td class="right">1 年</td><td class="right"><strong>1.2</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">31</td><td><strong>台北六福萬怡酒店</strong></td><td><span class="tier-chip" style="background:#aaa20;color:#aaa">其他</span></td><td class="right">NTD 20,000</td><td class="right">1 年</td><td class="right"><strong>1.2</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">32</td><td><strong>格拉斯麗台北飯店</strong></td><td><span class="tier-chip" style="background:#aaa20;color:#aaa">其他</span></td><td class="right">NTD 13,000</td><td class="right">1 年</td><td class="right"><strong>0.8</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">33</td><td><strong>台北中山九昱希爾頓逸林酒店</strong></td><td><span class="tier-chip" style="background:#aaa20;color:#aaa">其他</span></td><td class="right">NTD 10,000</td><td class="right">1 年</td><td class="right"><strong>0.6</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">34</td><td><strong>捷絲旅台北西門館</strong></td><td><span class="tier-chip" style="background:#aaa20;color:#aaa">其他</span></td><td class="right">NTD 10,000</td><td class="right">1 年</td><td class="right"><strong>0.6</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">35</td><td><strong>台北西門町意舍酒店</strong></td><td><span class="tier-chip" style="background:#aaa20;color:#aaa">其他</span></td><td class="right">NTD 10,000</td><td class="right">1 年</td><td class="right"><strong>0.6</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">36</td><td><strong>台北大安伊普索凱悅尚選酒店</strong></td><td><span class="tier-chip" style="background:#aaa20;color:#aaa">其他</span></td><td class="right">NTD 10,000</td><td class="right">1 年</td><td class="right"><strong>0.6</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">37</td><td><strong>台北時代寓所</strong></td><td><span class="tier-chip" style="background:#aaa20;color:#aaa">其他</span></td><td class="right">NTD 10,000</td><td class="right">1 年</td><td class="right"><strong>0.6</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">38</td><td><strong>台北喜來登大飯店</strong></td><td><span class="tier-chip" style="background:#aaa20;color:#aaa">其他</span></td><td class="right">NTD 10,000</td><td class="right">1 年</td><td class="right"><strong>0.6</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">39</td><td><strong>台北大直英迪格酒店</strong></td><td><span class="tier-chip" style="background:#aaa20;color:#aaa">其他</span></td><td class="right">NTD 10,000</td><td class="right">1 年</td><td class="right"><strong>0.6</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">40</td><td><strong>國聯大飯店</strong></td><td><span class="tier-chip" style="background:#aaa20;color:#aaa">其他</span></td><td class="right">NTD 10,000</td><td class="right">1 年</td><td class="right"><strong>0.6</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">41</td><td><strong>台北怡亨酒店</strong></td><td><span class="tier-chip" style="background:#aaa20;color:#aaa">其他</span></td><td class="right">NTD 10,000</td><td class="right">1 年</td><td class="right"><strong>0.6</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">42</td><td><strong>金普頓大安酒店</strong></td><td><span class="tier-chip" style="background:#aaa20;color:#aaa">其他</span></td><td class="right">NTD 10,000</td><td class="right">1 年</td><td class="right"><strong>0.6</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">43</td><td><strong>福泰飯店集團</strong></td><td><span class="tier-chip" style="background:#aaa20;color:#aaa">其他</span></td><td class="right">NTD 10,000</td><td class="right">1 年</td><td class="right"><strong>0.6</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">44</td><td><strong>慕舍酒店</strong></td><td><span class="tier-chip" style="background:#aaa20;color:#aaa">其他</span></td><td class="right">NTD 10,000</td><td class="right">1 年</td><td class="right"><strong>0.6</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">45</td><td><strong>南港老爺行旅</strong></td><td><span class="tier-chip" style="background:#aaa20;color:#aaa">其他</span></td><td class="right">NTD 10,000</td><td class="right">1 年</td><td class="right"><strong>0.6</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">46</td><td><strong>台北中山雅樂軒酒店</strong></td><td><span class="tier-chip" style="background:#aaa20;color:#aaa">其他</span></td><td class="right">NTD 10,000</td><td class="right">1 年</td><td class="right"><strong>0.6</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">47</td><td><strong>台北君悅酒店</strong></td><td><span class="tier-chip" style="background:#aaa20;color:#aaa">其他</span></td><td class="right">NTD 5,985</td><td class="right">1 年</td><td class="right"><strong>0.4</strong></td></tr></tbody>
-      </table>
-    </div>
+    
+    <details open>
+      <summary>▸ 2024 年流失（最高優先）（24 家，上一年合計 NTD 3.51M）</summary>
+      <div style="overflow-x:auto;margin-top:8px;">
+        <table class="data-table">
+          <thead><tr>
+            <th style="text-align:center">#</th><th>廠商名稱</th><th>產業</th><th>類型</th>
+            <th class="right">最後金額</th><th class="right">歷年</th><th class="right">優先分</th>
+          </tr></thead>
+          <tbody><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">1</td><td><strong>諾和諾德</strong></td><td style="font-size:11px;color:var(--text-muted)">醫藥</td><td><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td class="right">NTD 220,000</td><td class="right">2 年</td><td class="right"><strong>29.0</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">2</td><td><strong>羅氏</strong></td><td style="font-size:11px;color:var(--text-muted)">醫藥</td><td><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td class="right">NTD 220,000</td><td class="right">2 年</td><td class="right"><strong>29.0</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">3</td><td><strong>高通</strong></td><td style="font-size:11px;color:var(--text-muted)">半導體</td><td><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td class="right">NTD 198,000</td><td class="right">3 年</td><td class="right"><strong>28.5</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">4</td><td><strong>GU</strong></td><td style="font-size:11px;color:var(--text-muted)">服飾</td><td><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td class="right">NTD 220,000</td><td class="right">1 年</td><td class="right"><strong>26.4</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">5</td><td><strong>MYFEEL</strong></td><td style="font-size:11px;color:var(--text-muted)">新創</td><td><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td class="right">NTD 219,985</td><td class="right">1 年</td><td class="right"><strong>26.4</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">6</td><td><strong>捷豹路虎</strong></td><td style="font-size:11px;color:var(--text-muted)">車業</td><td><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td class="right">NTD 220,000</td><td class="right">1 年</td><td class="right"><strong>26.4</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">7</td><td><strong>樂天</strong></td><td style="font-size:11px;color:var(--text-muted)">電商</td><td><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td class="right">NTD 197,985</td><td class="right">2 年</td><td class="right"><strong>26.1</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">8</td><td><strong>諾億</strong></td><td style="font-size:11px;color:var(--text-muted)">金融</td><td><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td class="right">NTD 198,000</td><td class="right">1 年</td><td class="right"><strong>23.8</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">9</td><td><strong>Suntory</strong></td><td style="font-size:11px;color:var(--text-muted)">酒業</td><td><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">花車</span></td><td class="right">NTD 240,000</td><td class="right">1 年</td><td class="right"><strong>19.2</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">10</td><td><strong>海峰電腦</strong></td><td style="font-size:11px;color:var(--text-muted)">電腦</td><td><span class="tier-chip" style="background:#ED7D3120;color:#ED7D31">T5</span></td><td class="right">NTD 120,000</td><td class="right">2 年</td><td class="right"><strong>13.2</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">11</td><td><strong>TaskUs</strong></td><td style="font-size:11px;color:var(--text-muted)">軟體</td><td><span class="tier-chip" style="background:#ED7D3120;color:#ED7D31">T5</span></td><td class="right">NTD 120,000</td><td class="right">1 年</td><td class="right"><strong>12.0</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">12</td><td><strong>Kenvue</strong></td><td style="font-size:11px;color:var(--text-muted)">FMCG</td><td><span class="tier-chip" style="background:#ED7D3120;color:#ED7D31">T5</span></td><td class="right">NTD 120,000</td><td class="right">1 年</td><td class="right"><strong>12.0</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">13</td><td><strong>台灣武田</strong></td><td style="font-size:11px;color:var(--text-muted)">醫藥</td><td><span class="tier-chip" style="background:#ED7D3120;color:#ED7D31">T5</span></td><td class="right">NTD 120,000</td><td class="right">1 年</td><td class="right"><strong>12.0</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">14</td><td><strong>SleekStrip</strong></td><td style="font-size:11px;color:var(--text-muted)">生活</td><td><span class="tier-chip" style="background:#ED7D3120;color:#ED7D31">T5</span></td><td class="right">NTD 120,000</td><td class="right">1 年</td><td class="right"><strong>12.0</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">15</td><td><strong>宜蘊醫療</strong></td><td style="font-size:11px;color:var(--text-muted)">醫藥</td><td><span class="tier-chip" style="background:#ED7D3120;color:#ED7D31">T5</span></td><td class="right">NTD 120,000</td><td class="right">1 年</td><td class="right"><strong>12.0</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">16</td><td><strong>Zenyum</strong></td><td style="font-size:11px;color:var(--text-muted)">生活</td><td><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">花車</span></td><td class="right">NTD 140,000</td><td class="right">1 年</td><td class="right"><strong>11.2</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">17</td><td><strong>高誠公關</strong></td><td style="font-size:11px;color:var(--text-muted)">公關</td><td><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">花車</span></td><td class="right">NTD 120,000</td><td class="right">2 年</td><td class="right"><strong>10.6</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">18</td><td><strong>法國巴黎人壽</strong></td><td style="font-size:11px;color:var(--text-muted)">壽險</td><td><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">花車</span></td><td class="right">NTD 120,000</td><td class="right">1 年</td><td class="right"><strong>9.6</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">19</td><td><strong>Fusion 聚變</strong></td><td style="font-size:11px;color:var(--text-muted)">活動</td><td><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">花車</span></td><td class="right">NTD 120,000</td><td class="right">1 年</td><td class="right"><strong>9.6</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">20</td><td><strong>澳洲紐西蘭商會</strong></td><td style="font-size:11px;color:var(--text-muted)">商會</td><td><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">花車</span></td><td class="right">NTD 120,000</td><td class="right">1 年</td><td class="right"><strong>9.6</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">21</td><td><strong>佳葆視聽</strong></td><td></td><td><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">花車</span></td><td class="right">NTD 120,000</td><td class="right">1 年</td><td class="right"><strong>9.6</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">22</td><td><strong>EROLABS</strong></td><td style="font-size:11px;color:var(--text-muted)">成人</td><td><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單買</span></td><td class="right">NTD 50,000</td><td class="right">1 年</td><td class="right"><strong>4.0</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">23</td><td><strong>台灣不二</strong></td><td style="font-size:11px;color:var(--text-muted)">生活</td><td><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單買</span></td><td class="right">NTD 43,000</td><td class="right">1 年</td><td class="right"><strong>3.4</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">24</td><td><strong>Sanofi</strong></td><td style="font-size:11px;color:var(--text-muted)">醫療</td><td><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單買</span></td><td class="right">NTD 25,000</td><td class="right">1 年</td><td class="right"><strong>2.0</strong></td></tr></tbody>
+        </table>
+      </div>
+    </details>
+    
+    <details >
+      <summary>▸ 2023 年流失（中期目標）（18 家，上一年合計 NTD 2.59M）</summary>
+      <div style="overflow-x:auto;margin-top:8px;">
+        <table class="data-table">
+          <thead><tr>
+            <th style="text-align:center">#</th><th>廠商名稱</th><th>產業</th><th>類型</th>
+            <th class="right">最後金額</th><th class="right">歷年</th><th class="right">優先分</th>
+          </tr></thead>
+          <tbody><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">1</td><td><strong>GaGaoLaLa</strong></td><td style="font-size:11px;color:var(--text-muted)">影音</td><td><span class="tier-chip" style="background:#4472C420;color:#4472C4">T3</span></td><td class="right">NTD 400,000</td><td class="right">3 年</td><td class="right"><strong>57.6</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">2</td><td><strong>PINKOI</strong></td><td style="font-size:11px;color:var(--text-muted)">電商</td><td><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td class="right">NTD 180,000</td><td class="right">3 年</td><td class="right"><strong>25.9</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">3</td><td><strong>PANGU by Kenal X Durex</strong></td><td style="font-size:11px;color:var(--text-muted)">遊戲</td><td><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td class="right">NTD 200,000</td><td class="right">1 年</td><td class="right"><strong>24.0</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">4</td><td><strong>飛比</strong></td><td style="font-size:11px;color:var(--text-muted)">電商</td><td><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td class="right">NTD 180,000</td><td class="right">1 年</td><td class="right"><strong>21.6</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">5</td><td><strong>世邦魏理仕</strong></td><td style="font-size:11px;color:var(--text-muted)">房地產</td><td><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td class="right">NTD 180,000</td><td class="right">1 年</td><td class="right"><strong>21.6</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">6</td><td><strong>諾億財富管理顧問</strong></td><td style="font-size:11px;color:var(--text-muted)">投資理財</td><td><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td class="right">NTD 180,000</td><td class="right">1 年</td><td class="right"><strong>21.6</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">7</td><td><strong>LIFEWONDERS</strong></td><td style="font-size:11px;color:var(--text-muted)">遊戲</td><td><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td class="right">NTD 180,000</td><td class="right">1 年</td><td class="right"><strong>21.6</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">8</td><td><strong>美商百富門</strong></td><td style="font-size:11px;color:var(--text-muted)">酒商</td><td><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td class="right">NTD 180,000</td><td class="right">1 年</td><td class="right"><strong>21.6</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">9</td><td><strong>雷醫國際股份有限公司</strong></td><td style="font-size:11px;color:var(--text-muted)">醫美</td><td><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td class="right">NTD 180,000</td><td class="right">1 年</td><td class="right"><strong>21.6</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">10</td><td><strong>GroupM</strong></td><td style="font-size:11px;color:var(--text-muted)">廣告</td><td><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td class="right">NTD 180,000</td><td class="right">1 年</td><td class="right"><strong>21.6</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">11</td><td><strong>VIETJET</strong></td><td style="font-size:11px;color:var(--text-muted)">航空</td><td><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">花車</span></td><td class="right">NTD 160,000</td><td class="right">1 年</td><td class="right"><strong>12.8</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">12</td><td><strong>La Crema</strong></td><td style="font-size:11px;color:var(--text-muted)">餐飲</td><td><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">花車</span></td><td class="right">NTD 140,000</td><td class="right">1 年</td><td class="right"><strong>11.2</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">13</td><td><strong>台灣保時捷車業股份有限公司 
+Porsche Taiwan Motors Limited</strong></td><td style="font-size:11px;color:var(--text-muted)">車商</td><td><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">花車</span></td><td class="right">NTD 120,000</td><td class="right">1 年</td><td class="right"><strong>9.6</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">14</td><td><strong>樂桃航空</strong></td><td style="font-size:11px;color:var(--text-muted)">航空</td><td><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td class="right">NTD 68,000</td><td class="right">1 年</td><td class="right"><strong>8.2</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">15</td><td><strong>國際人權特赦組織(AI)</strong></td><td style="font-size:11px;color:var(--text-muted)">NGO</td><td><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單買</span></td><td class="right">NTD 25,000</td><td class="right">4 年</td><td class="right"><strong>2.6</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">16</td><td><strong>紅犀牛</strong></td><td style="font-size:11px;color:var(--text-muted)">情趣用品</td><td><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單買</span></td><td class="right">NTD 15,000</td><td class="right">1 年</td><td class="right"><strong>1.2</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">17</td><td><strong>賽諾菲</strong></td><td style="font-size:11px;color:var(--text-muted)">醫藥</td><td><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單買</span></td><td class="right">NTD 15,000</td><td class="right">1 年</td><td class="right"><strong>1.2</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">18</td><td><strong>我們一起穩交吧</strong></td><td style="font-size:11px;color:var(--text-muted)">交友</td><td><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單買</span></td><td class="right">NTD 5,000</td><td class="right">1 年</td><td class="right"><strong>0.4</strong></td></tr></tbody>
+        </table>
+      </div>
+    </details>
+    
+    <details >
+      <summary>▸ 2022 年流失（長期重啟）（15 家，上一年合計 NTD 4.38M）</summary>
+      <div style="overflow-x:auto;margin-top:8px;">
+        <table class="data-table">
+          <thead><tr>
+            <th style="text-align:center">#</th><th>廠商名稱</th><th>產業</th><th>類型</th>
+            <th class="right">最後金額</th><th class="right">歷年</th><th class="right">優先分</th>
+          </tr></thead>
+          <tbody><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">1</td><td><strong>FiftyPercent</strong></td><td style="font-size:11px;color:var(--text-muted)">服飾</td><td><span class="tier-chip" style="background:#B8860B20;color:#B8860B">T1</span></td><td class="right">NTD 1,000,000</td><td class="right">1 年</td><td class="right"><strong>150.0</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">2</td><td><strong>DIKE</strong></td><td></td><td><span class="tier-chip" style="background:#E8A60020;color:#E8A600">T2</span></td><td class="right">NTD 700,000</td><td class="right">2 年</td><td class="right"><strong>115.5</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">3</td><td><strong>Model TV</strong></td><td></td><td><span class="tier-chip" style="background:#E8A60020;color:#E8A600">T2</span></td><td class="right">NTD 700,000</td><td class="right">1 年</td><td class="right"><strong>105.0</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">4</td><td><strong>lululemon</strong></td><td></td><td><span class="tier-chip" style="background:#4472C420;color:#4472C4">T3</span></td><td class="right">NTD 300,000</td><td class="right">1 年</td><td class="right"><strong>36.0</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">5</td><td><strong>杜蕾斯</strong></td><td></td><td><span class="tier-chip" style="background:#4472C420;color:#4472C4">T3</span></td><td class="right">NTD 300,000</td><td class="right">1 年</td><td class="right"><strong>36.0</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">6</td><td><strong>UT麗舍</strong></td><td></td><td><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td class="right">NTD 254,000</td><td class="right">1 年</td><td class="right"><strong>30.5</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">7</td><td><strong>MAC</strong></td><td></td><td><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單買</span></td><td class="right">NTD 352,000</td><td class="right">1 年</td><td class="right"><strong>28.2</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">8</td><td><strong>YAHOO</strong></td><td></td><td><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td class="right">NTD 170,000</td><td class="right">2 年</td><td class="right"><strong>22.4</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">9</td><td><strong>台北市觀傳局</strong></td><td></td><td><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td class="right">NTD 150,000</td><td class="right">1 年</td><td class="right"><strong>18.0</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">10</td><td><strong>磊山保經</strong></td><td></td><td><span class="tier-chip" style="background:#70AD4720;color:#70AD47">T4</span></td><td class="right">NTD 150,000</td><td class="right">1 年</td><td class="right"><strong>18.0</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">11</td><td><strong>麥肯錫</strong></td><td></td><td><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單買</span></td><td class="right">NTD 100,000</td><td class="right">1 年</td><td class="right"><strong>8.0</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">12</td><td><strong>無心戒酒</strong></td><td></td><td><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單買</span></td><td class="right">NTD 100,000</td><td class="right">1 年</td><td class="right"><strong>8.0</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">13</td><td><strong>永準貿易</strong></td><td></td><td><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單買</span></td><td class="right">NTD 80,000</td><td class="right">1 年</td><td class="right"><strong>6.4</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">14</td><td><strong>澤豐</strong></td><td></td><td><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單買</span></td><td class="right">NTD 10,000</td><td class="right">2 年</td><td class="right"><strong>0.9</strong></td></tr><tr><td style="text-align:center;color:var(--text-muted);font-size:12px">15</td><td><strong>七彩翼國際</strong></td><td></td><td><span class="tier-chip" style="background:#5BC0EB20;color:#5BC0EB">單買</span></td><td class="right">NTD 10,000</td><td class="right">1 年</td><td class="right"><strong>0.8</strong></td></tr></tbody>
+        </table>
+      </div>
+    </details>
     <div class="action-box">
       <span class="act-icon">📞</span>
       <div><strong>行動建議：</strong>
-      挽回這 47 家的一半，預計可補回約 NTD 1.98M 的收入缺口，
-      直接有助於達成 2026 年 9.5M 的目標。建議業務組依排名分配拜訪任務，每人負責前幾名。</div>
+      先集中火力挽回 2024 年流失廠商（最近一年），再逐年往前聯繫 2023 及 2022 年流失廠商。
+      曾在多年前流失的廠商若重新接洽，建議以新合作形式（升級或特別方案）重新吸引。</div>
     </div>
   </div>
 
   </div><!-- /panel-analysis-b -->
 
   <div class="tab-panel" id="panel-analysis-c">
+
   <!-- Section: Analysis C -->
   <div class="section-title">分析 C：級別異動 2024 → 2025</div>
   <div class="chart-card">
@@ -698,6 +755,7 @@
   </div><!-- /panel-analysis-c -->
 
   <div class="tab-panel" id="panel-analysis-e">
+
   <!-- Section: Analysis E -->
   <div class="section-title">分析 E：新廠商隔年存活率</div>
   <div class="chart-card">
@@ -731,6 +789,7 @@
   </div><!-- /panel-analysis-e -->
 
   <div class="tab-panel" id="panel-analysis-f">
+
   <!-- Section: Analysis F -->
   <div class="section-title">分析 F：贊助收入集中度風險</div>
   <div class="chart-card">
@@ -1210,6 +1269,235 @@ buildLineChart();
     });
   })();
 
+
+    /* ANALYSIS_JS_START */
+
+  (function() {
+    const DATA_LOYALISTS = [{"name": "GILEAD", "industry": "醫藥", "maxRun": 4, "totalYears": 6, "tiers": {"2022": "T1", "2023": "T2", "2024": "T3", "2025": "T4"}, "amounts": {"2022": 1000000, "2023": 1000000, "2024": 550000, "2025": 230000}, "avgAmount": 695000}, {"name": "美光", "industry": "科技", "maxRun": 4, "totalYears": 4, "tiers": {"2022": "T3", "2023": "T3", "2024": "T3", "2025": "T3"}, "amounts": {"2022": 300000, "2023": 400000, "2024": 405000, "2025": 405000}, "avgAmount": 377500}, {"name": "波士頓", "industry": "醫材", "maxRun": 4, "totalYears": 4, "tiers": {"2022": "單買", "2023": "T3", "2024": "T3", "2025": "T3"}, "amounts": {"2022": 25000, "2023": 400000, "2024": 405000, "2025": 405000}, "avgAmount": 308750}, {"name": "拉拉公園", "industry": "生活", "maxRun": 4, "totalYears": 10, "tiers": {"2022": "T3", "2023": "T4", "2024": "T4", "2025": "T4"}, "amounts": {"2022": 300000, "2023": 180000, "2024": 198000, "2025": 198000}, "avgAmount": 219000}, {"name": "UBer", "industry": "生活", "maxRun": 4, "totalYears": 7, "tiers": {"2022": "單買", "2023": "T4", "2024": "花車", "2025": "花車"}, "amounts": {"2022": 310000, "2023": 190000, "2024": 250000, "2025": 120000}, "avgAmount": 217500}, {"name": "VERVE", "industry": "服飾", "maxRun": 3, "totalYears": 3, "tiers": {"2022": "—", "2023": "T4", "2024": "T4", "2025": "花車"}, "amounts": {"2023": 180000, "2024": 240000, "2025": 350000}, "avgAmount": 256667}, {"name": "可口可樂", "industry": "生活", "maxRun": 3, "totalYears": 3, "tiers": {"2022": "其他", "2023": "單買", "2024": "單買", "2025": "單買"}, "amounts": {"2023": 250000, "2024": 250000, "2025": 250000}, "avgAmount": 250000}, {"name": "Google", "industry": "科技", "maxRun": 4, "totalYears": 5, "tiers": {"2022": "T4", "2023": "T4", "2024": "T4", "2025": "T4"}, "amounts": {"2022": 170000, "2023": 180000, "2024": 198000, "2025": 198000}, "avgAmount": 186500}, {"name": "台虎", "industry": "生活", "maxRun": 4, "totalYears": 6, "tiers": {"2022": "花車", "2023": "T4", "2024": "T4", "2025": "T4"}, "amounts": {"2022": 249000, "2023": 100000, "2024": 198000, "2025": 198000}, "avgAmount": 186250}, {"name": "AZ", "industry": "醫藥", "maxRun": 4, "totalYears": 5, "tiers": {"2022": "T4", "2023": "T4", "2024": "T4", "2025": "T4"}, "amounts": {"2022": 155000, "2023": 180000, "2024": 198000, "2025": 198000}, "avgAmount": 182750}, {"name": "GSK", "industry": "醫藥", "maxRun": 4, "totalYears": 6, "tiers": {"2022": "T4", "2023": "T4", "2024": "T4", "2025": "T4"}, "amounts": {"2022": 150000, "2023": 180000, "2024": 198000, "2025": 198000}, "avgAmount": 181500}, {"name": "G-Star", "industry": "夜店", "maxRun": 4, "totalYears": 4, "tiers": {"2022": "T4", "2023": "T4", "2024": "T4", "2025": "T4"}, "amounts": {"2022": 150000, "2023": 180000, "2024": 198000, "2025": 198000}, "avgAmount": 181500}, {"name": "NIKE", "industry": "運動", "maxRun": 4, "totalYears": 4, "tiers": {"2022": "單買", "2023": "T4", "2024": "花車", "2025": "花車"}, "amounts": {"2022": 250000, "2023": 230000, "2024": 120000, "2025": 120000}, "avgAmount": 180000}, {"name": "Unilever", "industry": "FMCG", "maxRun": 4, "totalYears": 6, "tiers": {"2022": "T4", "2023": "T4", "2024": "T5", "2025": "T4"}, "amounts": {"2022": 170000, "2023": 150000, "2024": 120000, "2025": 198000}, "avgAmount": 159500}, {"name": "高通", "industry": "科技", "maxRun": 3, "totalYears": 3, "tiers": {"2022": "T4", "2023": "T4", "2024": "T4", "2025": "—"}, "amounts": {"2022": 150000, "2023": 180000, "2024": 198000}, "avgAmount": 176000}, {"name": "GAP", "industry": "服飾", "maxRun": 4, "totalYears": 8, "tiers": {"2022": "單買", "2023": "花車", "2024": "花車", "2025": "花車"}, "amounts": {"2022": 100000, "2023": 120000, "2024": 120000, "2025": 120000}, "avgAmount": 115000}, {"name": "彩虹酷兒健康文化中心", "industry": "NGO", "maxRun": 4, "totalYears": 8, "tiers": {"2022": "單買", "2023": "花車", "2024": "花車", "2025": "花車"}, "amounts": {"2022": 100000, "2023": 120000, "2024": 120000, "2025": 120000}, "avgAmount": 115000}, {"name": "M.A.C", "industry": "彩妝", "maxRun": 3, "totalYears": 4, "tiers": {"2022": "—", "2023": "T4", "2024": "T4", "2025": "其他"}, "amounts": {"2023": 180000, "2024": 198000, "2025": 44000}, "avgAmount": 140667}, {"name": "默沙東", "industry": "醫藥", "maxRun": 3, "totalYears": 3, "tiers": {"2022": "—", "2023": "T4", "2024": "T5", "2025": "T5"}, "amounts": {"2023": 180000, "2024": 120000, "2025": 108000}, "avgAmount": 136000}, {"name": "Sagami", "industry": "生活", "maxRun": 4, "totalYears": 4, "tiers": {"2022": "單買", "2023": "單買", "2024": "單買", "2025": "單買"}, "amounts": {"2022": 49000, "2023": 30000, "2024": 60000, "2025": 63000}, "avgAmount": 50500}, {"name": "台灣百健", "industry": "醫藥", "maxRun": 3, "totalYears": 5, "tiers": {"2022": "—", "2023": "單買", "2024": "單買", "2025": "單買"}, "amounts": {"2023": 55000, "2024": 25000, "2025": 20000}, "avgAmount": 33333}, {"name": "辻利茶舖", "industry": "食品", "maxRun": 4, "totalYears": 10, "tiers": {"2022": "單買", "2023": "單買", "2024": "單買", "2025": "單買"}, "amounts": {"2022": 15000, "2023": 25000, "2024": 25000, "2025": 25000}, "avgAmount": 22500}];
+    let loyalistView = 'tier';
+    const TCOL = { T1:'#B8860B',T2:'#E8A600',T3:'#4472C4',T4:'#70AD47',T5:'#ED7D31',
+                    '花車':'#5BC0EB','單買':'#5BC0EB','單購':'#5BC0EB',
+                    '其他':'#aaa','市集':'#aaa','—':'#ddd','?':'#ccc' };
+
+    function fmtA(v) {
+      if (!v) return '—';
+      return v>=1000000?(v/1000000).toFixed(1)+'M':v>=1000?(v/1000).toFixed(0)+'k':String(v);
+    }
+
+    function renderLoyalistTable() {
+      const tbody = document.getElementById('loyalist-tbody');
+      if (!tbody) return;
+      const YRS = ['2022','2023','2024','2025'];
+      const maxAmt = Math.max(...DATA_LOYALISTS.map(d => d.avgAmount));
+      tbody.innerHTML = DATA_LOYALISTS.map(d => {
+        const cells = YRS.map(yr => {
+          if (loyalistView === 'tier') {
+            const t = d.tiers[yr] || '—';
+            const c = TCOL[t] || '#ddd';
+            return `<td style="text-align:center"><span class="tier-chip" style="background:${c}20;color:${c}">${t}</span></td>`;
+          } else {
+            const amt = d.amounts[yr] || 0;
+            const barW = maxAmt > 0 ? Math.round(amt/maxAmt*48) : 0;
+            return `<td style="text-align:right;font-size:12px;white-space:nowrap;">
+              <span style="display:inline-block;width:${barW}px;height:7px;background:#B8860B40;border-radius:2px;margin-right:3px;vertical-align:middle;"></span>${fmtA(amt)}
+            </td>`;
+          }
+        }).join('');
+        const indCell = `<td style="text-align:center;font-size:11px;color:var(--text-muted)">${d.industry||''}</td>`;
+        return `<tr><td><strong>${d.name}</strong></td>${indCell}<td style="text-align:center">${d.maxRun}年</td>${cells}<td class="right">NTD ${fmtA(d.avgAmount)}</td></tr>`;
+      }).join('');
+    }
+
+    window.toggleLoyalistView = function(view, btn) {
+      loyalistView = view;
+      renderLoyalistTable();
+      document.querySelectorAll('.loyalist-toggle').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+    };
+
+    renderLoyalistTable();
+
+    const loyalistLabelPlugin = {
+      id: 'loyalistLabel',
+      afterDatasetsDraw(chart) {
+        const { ctx } = chart;
+        const meta = chart.getDatasetMeta(0);
+        meta.data.forEach((bar, i) => {
+          const v = chart.data.datasets[0].data[i];
+          if (!v) return;
+          const lbl = v>=1000000?(v/1000000).toFixed(1)+'M':v>=1000?(v/1000).toFixed(0)+'k':String(v);
+          ctx.save(); ctx.textAlign='left'; ctx.font='bold 9px sans-serif'; ctx.fillStyle='#555';
+          ctx.fillText(lbl, bar.x+4, bar.y+3.5); ctx.restore();
+        });
+      }
+    };
+
+    new Chart(document.getElementById('loyalistChart'), {
+      type: 'bar',
+      data: { labels: ["GILEAD", "美光", "波士頓", "拉拉公園", "UBer", "VERVE", "可口可樂", "Google", "台虎", "AZ", "GSK", "G-Star", "NIKE", "Unilever", "高通", "GAP", "彩虹酷兒健康文化中心", "M.A.C", "默沙東", "Sagami", "台灣百健", "辻利茶舖"], datasets: [{ label:'年平均贊助金額', data:[695000, 377500, 308750, 219000, 217500, 256667, 250000, 186500, 186250, 182750, 181500, 181500, 180000, 159500, 176000, 115000, 115000, 140667, 136000, 50500, 33333, 22500], backgroundColor:'#B8860B', borderRadius:4 }] },
+      plugins: [loyalistLabelPlugin],
+      options: {
+        indexAxis:'y', responsive:true, maintainAspectRatio:false,
+        layout:{ padding:{ right:60 } },
+        plugins:{ legend:{display:false}, tooltip:{callbacks:{label: ctx=>' NTD '+ctx.raw.toLocaleString('zh-TW')}} },
+        scales:{
+          x:{ ticks:{callback: v=>v>=1000000?(v/1000000).toFixed(1)+'M':v>=1000?(v/1000).toFixed(0)+'k':String(v)}, grid:{color:'rgba(0,0,0,0.05)'} },
+          y:{ ticks:{font:{size:11}}, grid:{display:false} }
+        }
+      }
+    });
+  })();
+
+  (function() {
+    const retPctPlugin = {
+      id:'retPctLabel',
+      afterDatasetsDraw(chart) {
+        const {ctx} = chart;
+        chart.data.datasets.forEach((ds,di) => {
+          const meta = chart.getDatasetMeta(di);
+          meta.data.forEach((bar,i) => {
+            const v = ds.data[i];
+            if (!v) return;
+            ctx.save(); ctx.textAlign='center'; ctx.font='bold 10px sans-serif';
+            ctx.fillStyle='#333'; ctx.fillText(v+'%', bar.x, bar.y-4); ctx.restore();
+          });
+        });
+      }
+    };
+
+    new Chart(document.getElementById('retentionChart'), {
+      type:'bar',
+      data:{ labels:["2019→2020", "2020→2021", "2021→2022", "2022→2023", "2023→2024", "2024→2025"], datasets:[{ label:'留存率（%）', data:[57.1, 22.9, 66.7, 48.6, 55.6, 39.7], backgroundColor:["#cccccc", "#cccccc", "#cccccc", "#4472C4", "#4472C4", "#4472C4"], borderRadius:4 }] },
+      plugins:[retPctPlugin],
+      options:{
+        responsive:true, maintainAspectRatio:false,
+        layout:{ padding:{ top:20 } },
+        plugins:{ legend:{display:false}, tooltip:{callbacks:{label: ctx=>' 留存率：'+ctx.raw+'%'}} },
+        scales:{
+          y:{ max:100, ticks:{callback: v=>v+'%'}, grid:{color:'rgba(0,0,0,0.05)'} },
+          x:{ grid:{display:false} }
+        }
+      }
+    });
+
+    const amtLabelPlugin = {
+      id:'amtLabel',
+      afterDatasetsDraw(chart) {
+        const {ctx} = chart;
+        chart.data.datasets.forEach((ds,di) => {
+          const meta = chart.getDatasetMeta(di);
+          meta.data.forEach((bar,i) => {
+            const v = ds.data[i];
+            if (!v) return;
+            const lbl = v>=1000000?(v/1000000).toFixed(1)+'M':v>=1000?(v/1000).toFixed(0)+'k':String(v);
+            ctx.save(); ctx.textAlign='center'; ctx.font='bold 9px sans-serif';
+            ctx.fillStyle=ds.backgroundColor; ctx.fillText(lbl, bar.x, bar.y-4); ctx.restore();
+          });
+        });
+      }
+    };
+
+    new Chart(document.getElementById('churnAmtChart'), {
+      type:'bar',
+      data:{
+        labels:["2022→2023", "2023→2024", "2024→2025"],
+        datasets:[
+          { label:'流失廠商（上一年均額）', data:[257000, 137900, 84371], backgroundColor:'#e8445a', borderRadius:4 },
+          { label:'留存廠商（上一年均額）', data:[210444, 218000, 191873], backgroundColor:'#4472C4', borderRadius:4 },
+        ]
+      },
+      plugins:[amtLabelPlugin],
+      options:{
+        responsive:true, maintainAspectRatio:false,
+        layout:{ padding:{ top:22 } },
+        plugins:{
+          legend:{ display:true, position:'top', labels:{font:{size:12},usePointStyle:true} },
+          tooltip:{callbacks:{label: ctx=>' '+ctx.dataset.label+': NTD '+ctx.raw.toLocaleString('zh-TW')}}
+        },
+        scales:{
+          y:{ ticks:{callback: v=>v>=1000000?(v/1000000).toFixed(1)+'M':v>=1000?(v/1000).toFixed(0)+'k':String(v)}, grid:{color:'rgba(0,0,0,0.05)'} },
+          x:{ grid:{display:false} }
+        }
+      }
+    });
+  })();
+
+  (function() {
+    const survPctPlugin = {
+      id:'survPctLabel',
+      afterDatasetsDraw(chart) {
+        const {ctx} = chart;
+        const meta = chart.getDatasetMeta(0);
+        meta.data.forEach((bar,i) => {
+          const v = chart.data.datasets[0].data[i];
+          if (!v) return;
+          ctx.save(); ctx.textAlign='center'; ctx.font='bold 10px sans-serif';
+          ctx.fillStyle='#333'; ctx.fillText(v+'%', bar.x, bar.y-4); ctx.restore();
+        });
+      }
+    };
+    new Chart(document.getElementById('survivalChart'), {
+      type:'bar',
+      data:{ labels:["2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"], datasets:[{ label:'新廠商隔年存活率（%）', data:[53.3, 41.7, 0.0, 0, 20.0, 50.0, 28.6, 27.3, 19.6], backgroundColor:["#cccccc", "#cccccc", "#cccccc", "#cccccc", "#cccccc", "#cccccc", "#5BC0EB", "#5BC0EB", "#5BC0EB"], borderRadius:4 }] },
+      plugins:[survPctPlugin],
+      options:{
+        responsive:true, maintainAspectRatio:false,
+        layout:{ padding:{ top:20 } },
+        plugins:{ legend:{display:false}, tooltip:{callbacks:{label: ctx=>' 存活率：'+ctx.raw+'%'}} },
+        scales:{
+          y:{ max:100, ticks:{callback: v=>v+'%'}, grid:{color:'rgba(0,0,0,0.05)'} },
+          x:{ grid:{display:false} }
+        }
+      }
+    });
+  })();
+
+  (function() {
+    const concLabelPlugin = {
+      id:'concLabel',
+      afterDatasetsDraw(chart) {
+        const {ctx} = chart;
+        chart.data.datasets.forEach((ds,di) => {
+          if (ds.type === 'line') return;
+          const meta = chart.getDatasetMeta(di);
+          meta.data.forEach((bar,i) => {
+            const v = ds.data[i];
+            if (!v) return;
+            ctx.save(); ctx.textAlign='center'; ctx.font='bold 9px sans-serif';
+            ctx.fillStyle='#555'; ctx.fillText(v+'%', bar.x, bar.y-4); ctx.restore();
+          });
+        });
+      }
+    };
+    new Chart(document.getElementById('concentrationChart'), {
+      type:'bar',
+      data:{
+        labels:["2022", "2023", "2024", "2025"],
+        datasets:[
+          { type:'bar',  label:'前 3 家佔比（%）', data:[29.8, 19.8, 15.8, 15.8], backgroundColor:'#B8860B', borderRadius:4, yAxisID:'y' },
+          { type:'bar',  label:'前 5 家佔比（%）', data:[41.4, 28.6, 23.1, 25.0], backgroundColor:'#E8A600', borderRadius:4, yAxisID:'y' },
+          { type:'line', label:'HHI 集中度指數',   data:[502, 313, 222, 248],  borderColor:'#e8445a', backgroundColor:'transparent',
+             pointBackgroundColor:'#e8445a', borderWidth:2.5, pointRadius:5, yAxisID:'y2' },
+        ]
+      },
+      plugins:[concLabelPlugin],
+      options:{
+        responsive:true, maintainAspectRatio:false,
+        layout:{ padding:{ top:20 } },
+        plugins:{
+          legend:{ display:true, position:'top', labels:{font:{size:12},usePointStyle:true} },
+          tooltip:{ mode:'index' }
+        },
+        scales:{
+          y:  { position:'left',  max:60, ticks:{callback: v=>v+'%'}, title:{display:true,text:'佔總收入比例（%）',font:{size:11}}, grid:{color:'rgba(0,0,0,0.05)'} },
+          y2: { position:'right', title:{display:true,text:'HHI 指數',font:{size:11}}, grid:{display:false} },
+          x:  { grid:{display:false} }
+        }
+      }
+    });
+  })();
+
+    /* ANALYSIS_JS_END */
 </script>
 </body>
 </html>
