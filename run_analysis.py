@@ -345,28 +345,81 @@ def analyze_E(dp, id_to_name, ext):
 
 # ── Analysis F: Concentration ─────────────────────────────────────────────────
 
-def analyze_F(dp, id_to_name, ext, cys):
-    years = ['2022', '2023', '2024', '2025']
-    by_year = []
-    for yr in years:
-        total = sum((cys[yr][c].get('amount') or 0) for c in cys[yr]) if yr in cys else 0
-        donor_amts = {}
+# Reliability flags: 2019–2021 have incomplete per-donor data
+_F_RELIABLE = {'2016', '2017', '2018', '2022', '2023', '2024', '2025'}
+_F_PARTIAL  = {'2019', '2020', '2021'}
+
+def _donor_amts_yr(d, ext, yr):
+    """Return {name: amount} for any year 2016–2025."""
+    if yr in ('2022', '2023', '2024', '2025'):
+        result = {}
         for r in ext.get(yr, []):
             n = r['name_canonical']
-            donor_amts[n] = donor_amts.get(n, 0) + (r.get('amount') or 0)
-        sorted_d = sorted(donor_amts.items(), key=lambda x: -x[1])
+            result[n] = result.get(n, 0) + (r.get('amount') or 0)
+        return result
+    if yr == '2016':
+        return {r['sponsor']: (r.get('total_quote') or 0)
+                for r in d['y2016'].get('classification', [])}
+    if yr == '2017':
+        return {r['sponsor']: (r.get('total_quote') or 0)
+                for r in d['y2017'].get('classification', [])}
+    if yr == '2018':
+        return {r['sponsor_canonical']: (r.get('total_quote') or 0)
+                for r in d['y2018'].get('classification', [])}
+    if yr == '2019':
+        result = {}
+        for r in d['y2019'].get('records', []):
+            n = r.get('sponsor_canonical', '')
+            result[n] = result.get(n, 0) + (r.get('amount') or 0)
+        return result
+    if yr == '2020':
+        result = {}
+        for r in d['y2020'].get('records', []):
+            n = r.get('sponsor_canonical', '')
+            result[n] = result.get(n, 0) + (r.get('amount') or 0)
+        return result
+    if yr == '2021':
+        result = {}
+        for group, items in d['y2021'].items():
+            for item in items:
+                name, amt = item[1], item[3]
+                if amt:
+                    result[name] = result.get(name, 0) + amt
+        return result
+    return {}
+
+def analyze_F(dp, id_to_name, ext, cys, d):
+    ALL_YEARS = ['2016','2017','2018','2019','2020','2021','2022','2023','2024','2025']
+    CYS_TOTAL_2021 = 2_120_000  # from cross_year_summary (not in cys file)
+
+    by_year = []
+    for yr in ALL_YEARS:
+        donor_amts = _donor_amts_yr(d, ext, yr)
+        # Authoritative total from cys; fall back to 2021 known total
+        if yr in cys:
+            total = sum((cys[yr][c].get('amount') or 0) for c in cys[yr] if isinstance(cys[yr][c], dict))
+        elif yr == '2021':
+            total = CYS_TOTAL_2021
+        else:
+            total = sum(donor_amts.values())
+
+        sorted_d = sorted(((n, a) for n, a in donor_amts.items() if a > 0), key=lambda x: -x[1])
         top3 = sorted_d[:3]; top5 = sorted_d[:5]
         top3_amt = sum(a for _, a in top3)
         top5_amt = sum(a for _, a in top5)
         hhi = round(sum((a / total * 100) ** 2 for _, a in sorted_d)) if total else 0
+        reliable = yr in _F_RELIABLE
+
         by_year.append({
-            'year': yr, 'total': round(total), 'n_donors': len(donor_amts),
+            'year': yr, 'total': round(total), 'n_donors': len(sorted_d),
             'top3_pct': round(top3_amt / total * 100, 1) if total else 0,
             'top5_pct': round(top5_amt / total * 100, 1) if total else 0,
             'hhi': hhi,
             'top3_names': [n for n, _ in top3],
             'top3_amts':  [round(a) for _, a in top3],
+            'reliable': reliable,
         })
+
     r25 = by_year[-1]
     top3_total = sum(r25['top3_amts'])
     remaining  = r25['total'] - top3_total
@@ -951,12 +1004,18 @@ def section_F(data):
     top3_j  = jd([d['top3_pct'] for d in by_year])
     top5_j  = jd([d['top5_pct'] for d in by_year])
     hhi_j   = jd([d['hhi']      for d in by_year])
+    # Bar colors: gray for unreliable years, colored for reliable
+    top3_colors_j = jd(['#cccccc' if not d['reliable'] else '#B8860B' for d in by_year])
+    top5_colors_j = jd(['#e0e0e0' if not d['reliable'] else '#E8A600' for d in by_year])
+    hhi_point_j   = jd(['#cccccc' if not d['reliable'] else '#e8445a' for d in by_year])
 
     rows = []
     for d in by_year:
         top3_names = '、'.join(d['top3_names'][:3])
+        note = '' if d['reliable'] else ' <span style="font-size:10px;color:var(--text-muted);font-style:italic">（參考）</span>'
+        row_cls = '' if d['reliable'] else ' class="unreliable"'
         rows.append(
-            f'<tr><td>{d["year"]}</td>'
+            f'<tr{row_cls}><td>{d["year"]}{note}</td>'
             f'<td class="right">{d["n_donors"]}</td>'
             f'<td class="right">NTD {fmt_ntd(d["total"])}</td>'
             f'<td class="right">{d["top3_pct"]}%</td>'
@@ -971,12 +1030,12 @@ def section_F(data):
   <!-- Section: Analysis F -->
   <div class="section-title">贊助收入集中度風險</div>
   <div class="chart-card">
-    <h3>前幾大廠商佔了多少收入？萬一他們不來了呢？（2022–2025）</h3>
+    <h3>前幾大廠商佔了多少收入？萬一他們不來了呢？（2016–2025）</h3>
     <p class="plain-desc">
       集中度越高代表我們越依賴少數廠商。HHI 指數是衡量集中度的通用標準，數字越大風險越高
-      （1,500 以上屬高度集中）。前三大廠商通常佔總收入的 15–25%，任何一家不續約都會造成顯著缺口。
+      （1,500 以上屬高度集中）。灰色柱子（2019–2021）因各廠商金額資料不完整，僅供趨勢參考。
     </p>
-    <div style="position:relative;width:100%;height:260px;">
+    <div style="position:relative;width:100%;height:280px;">
       <canvas id="concentrationChart"></canvas>
     </div>
     <div style="overflow-x:auto;margin-top:16px;">
@@ -1026,10 +1085,10 @@ def section_F(data):
       data:{{
         labels:{years_j},
         datasets:[
-          {{ type:'bar',  label:'前 3 家佔比（%）', data:{top3_j}, backgroundColor:'#B8860B', borderRadius:4, yAxisID:'y' }},
-          {{ type:'bar',  label:'前 5 家佔比（%）', data:{top5_j}, backgroundColor:'#E8A600', borderRadius:4, yAxisID:'y' }},
+          {{ type:'bar',  label:'前 3 家佔比（%）', data:{top3_j}, backgroundColor:{top3_colors_j}, borderRadius:4, yAxisID:'y' }},
+          {{ type:'bar',  label:'前 5 家佔比（%）', data:{top5_j}, backgroundColor:{top5_colors_j}, borderRadius:4, yAxisID:'y' }},
           {{ type:'line', label:'HHI 集中度指數',   data:{hhi_j},  borderColor:'#e8445a', backgroundColor:'transparent',
-             pointBackgroundColor:'#e8445a', borderWidth:2.5, pointRadius:5, yAxisID:'y2' }},
+             pointBackgroundColor:{hhi_point_j}, borderWidth:2.5, pointRadius:5, yAxisID:'y2' }},
         ]
       }},
       plugins:[concLabelPlugin],
@@ -1114,7 +1173,7 @@ def main():
     print("E — New Entrant Survival...")
     rE = analyze_E(dp, id_to_name, ext)
     print("F — Concentration Risk...")
-    rF = analyze_F(dp, id_to_name, ext, cys)
+    rF = analyze_F(dp, id_to_name, ext, cys, d)
 
     print("\n=== VERIFICATION ===")
     print(f"[D] Loyalists: {len(rD)}")
