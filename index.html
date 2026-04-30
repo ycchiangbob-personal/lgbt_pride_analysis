@@ -412,6 +412,25 @@
   details summary { cursor: pointer; font-size: 13px; font-weight: 600; color: var(--text-secondary); padding: 6px 0; user-select: none; }
   details summary:hover { color: var(--text-primary); }
 
+  /* Tab Navigation */
+  .tab-nav {
+    display: flex; gap: 3px; flex-wrap: wrap;
+    margin: 20px 0 0; padding: 4px;
+    background: #f0ede8; border-radius: 10px;
+    position: sticky; top: 0; z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .tab-btn {
+    flex: 1; min-width: 72px; padding: 8px 10px;
+    border: none; background: transparent; border-radius: 7px;
+    font-size: 12px; font-weight: 500; color: var(--text-secondary);
+    cursor: pointer; transition: all 0.15s; white-space: nowrap; line-height: 1.3;
+  }
+  .tab-btn:hover { background: rgba(255,255,255,0.6); color: var(--text-primary); }
+  .tab-btn.active { background: white; color: var(--text-primary); font-weight: 700; box-shadow: 0 1px 4px rgba(0,0,0,0.14); }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
 </style>
 </head>
 <body>
@@ -420,25 +439,6 @@
   <div class="eyebrow">商業贊助分析報告 · 2016–2025</div>
   <h1>臺灣同志遊行 商業贊助結構全景</h1>
   <p class="subtitle">由 2016 年第 14 屆至 2025 年第 23 屆，共 10 個有資料年度（2021 縮小規模辦理）</p>
-  <div class="meta-bar">
-    <div class="meta-item">
-      <span class="meta-label">金額高峰</span>
-      <span class="meta-value accent">2024 · 10.8M</span>
-    </div>
-    <div class="meta-item">
-      <span class="meta-label">首次級別制度</span>
-      <span class="meta-value">2019 第 17 屆</span>
-    </div>
-    <div class="meta-item">
-      <span class="meta-label">資料年度</span>
-      <span class="meta-value">10 年</span>
-    </div>
-    <div class="meta-item">
-      <span class="meta-label">金額單位</span>
-      <span class="meta-value">NTD（新台幣）</span>
-    </div>
-  </div>
-
   <div class="challenge-bar">
     <div class="challenge-title">2026 第 24 屆 · 核心挑戰</div>
     <div class="challenge-row">
@@ -478,6 +478,19 @@
     金額採合約報價，未付款但未取消者視同已付款計入。政府補助排除（如台北市政府）。2021 年因 COVID-19 縮小規模辦理，金額為確認最低值（部分廠商金額不明）。市集欄含攤位費聚合（2019+），市集廠商不重複計入級別贊助。
   </div>
 
+  <nav class="tab-nav">
+    <button class="tab-btn active" onclick="showTab('overview', this)">總覽</button>
+    <button class="tab-btn" onclick="showTab('analysis-d', this)">D · 忠實贊助商</button>
+    <button class="tab-btn" onclick="showTab('analysis-a', this)">A · 留存率</button>
+    <button class="tab-btn" onclick="showTab('analysis-b', this)">B · 挽回清單</button>
+    <button class="tab-btn" onclick="showTab('analysis-c', this)">C · 級別異動</button>
+    <button class="tab-btn" onclick="showTab('analysis-e', this)">E · 存活率</button>
+    <button class="tab-btn" onclick="showTab('analysis-f', this)">F · 集中度</button>
+    <button class="tab-btn" onclick="showTab('methodology', this)">說明</button>
+  </nav>
+
+  <div class="tab-panel active" id="panel-overview">
+
   <!-- Section: Charts -->
   <div class="section-title">趨勢圖表</div>
 
@@ -497,7 +510,7 @@
 
   <div class="chart-card">
     <h3>總贊助金額趨勢（折線）</h3>
-    <p class="chart-desc">含各分類拆解</p>
+    <p class="chart-desc">點選圖例項目可單獨檢視該類別趨勢並標示金額，再次點選還原</p>
     <div id="line-legend" class="legend"></div>
     <div style="position:relative; width:100%; height:260px;">
       <canvas id="lineChart" role="img" aria-label="2016至2025年總贊助金額折線圖"></canvas>
@@ -561,6 +574,9 @@
   </div>
 
 
+  </div><!-- /panel-overview -->
+
+  <div class="tab-panel" id="panel-analysis-d">
   <!-- Section: Analysis D -->
   <div class="section-title">分析 D：忠實贊助商輪廓</div>
   <div class="chart-card">
@@ -591,6 +607,9 @@
     </div>
   </div>
 
+  </div><!-- /panel-analysis-d -->
+
+  <div class="tab-panel" id="panel-analysis-a">
   <!-- Section: Analysis A -->
   <div class="section-title">分析 A：年度留存率趨勢</div>
   <div class="chart-card">
@@ -619,6 +638,9 @@
     </div>
   </div>
 
+  </div><!-- /panel-analysis-a -->
+
+  <div class="tab-panel" id="panel-analysis-b">
   <!-- Section: Analysis B -->
   <div class="section-title">分析 B：2024 流失廠商挽回優先清單</div>
   <div class="chart-card">
@@ -647,6 +669,9 @@
     </div>
   </div>
 
+  </div><!-- /panel-analysis-b -->
+
+  <div class="tab-panel" id="panel-analysis-c">
   <!-- Section: Analysis C -->
   <div class="section-title">分析 C：級別異動 2024 → 2025</div>
   <div class="chart-card">
@@ -670,6 +695,9 @@
     </div>
   </div>
 
+  </div><!-- /panel-analysis-c -->
+
+  <div class="tab-panel" id="panel-analysis-e">
   <!-- Section: Analysis E -->
   <div class="section-title">分析 E：新廠商隔年存活率</div>
   <div class="chart-card">
@@ -700,6 +728,9 @@
     </div>
   </div>
 
+  </div><!-- /panel-analysis-e -->
+
+  <div class="tab-panel" id="panel-analysis-f">
   <!-- Section: Analysis F -->
   <div class="section-title">分析 F：贊助收入集中度風險</div>
   <div class="chart-card">
@@ -735,6 +766,9 @@
     </div>
   </div>
 
+  </div><!-- /panel-analysis-f -->
+
+  <div class="tab-panel" id="panel-methodology">
   <!-- Section: Methodology -->
   <div class="section-title">統計口徑說明</div>
 
@@ -786,6 +820,8 @@
       如需核對，請對照各年度業務暨財務總表原始資料，搭配上述口徑逐一比對。
     </div>
   </div>
+
+  </div><!-- /panel-methodology -->
 
 </main>
 
@@ -878,7 +914,7 @@ let currentView = 'amount';
 const totalLabelPlugin = {
   id: 'totalLabel',
   afterDatasetsDraw(chart) {
-    if (currentView !== 'amount') return;
+    if (currentView !== 'amount' && currentView !== 'count') return;
     const { ctx } = chart;
     chart.data.labels.forEach((label, i) => {
       const yearData = YEARS_NO_COVID[i];
@@ -889,15 +925,21 @@ const totalLabelPlugin = {
         if (bar && !isNaN(bar.y) && bar.y < minY) { minY = bar.y; barX = bar.x; }
       }
       if (minY === Infinity) return;
-      const amtLabel = (yearData.covid_scaled ? '≥' : '') + fmtM(yearData.total);
       ctx.save();
       ctx.textAlign = 'center';
-      ctx.font = 'bold 10px sans-serif';
-      ctx.fillStyle = '#333';
-      ctx.fillText(amtLabel, barX, minY - 14);
-      ctx.font = '9px sans-serif';
-      ctx.fillStyle = '#888';
-      ctx.fillText(yearData.total_count + '家', barX, minY - 4);
+      if (currentView === 'amount') {
+        const amtLabel = (yearData.covid_scaled ? '≥' : '') + fmtM(yearData.total);
+        ctx.font = 'bold 10px sans-serif';
+        ctx.fillStyle = '#333';
+        ctx.fillText(amtLabel, barX, minY - 14);
+        ctx.font = '9px sans-serif';
+        ctx.fillStyle = '#888';
+        ctx.fillText(yearData.total_count + '家', barX, minY - 4);
+      } else {
+        ctx.font = 'bold 10px sans-serif';
+        ctx.fillStyle = '#333';
+        ctx.fillText(yearData.total_count + '家', barX, minY - 6);
+      }
       ctx.restore();
     });
   }
@@ -973,17 +1015,64 @@ function switchChart(view, btn) {
   });
 }
 
-function buildLineChart() {
-  const cats = [
-    { key: 'tier', label: '級別贊助', color: '#B8860B', dash: [] },
-    { key: 'single', label: '單購/花車', color: '#4472C4', dash: [5,3] },
-    { key: 'market', label: '市集', color: '#5BC0EB', dash: [3,3] },
-    { key: 'other', label: '其他', color: '#aaa', dash: [8,4] },
-    { key: 'total', label: '合計', color: '#1a1917', dash: [] },
-  ];
+let lineChartInstance = null;
+let activeLineCat = null;
 
-  const datasets = cats.map(c => ({
+const LINE_CATS = [
+  { key: 'tier',   label: '級別贊助', color: '#B8860B', dash: [] },
+  { key: 'single', label: '單購/花車', color: '#4472C4', dash: [5,3] },
+  { key: 'market', label: '市集',     color: '#5BC0EB', dash: [3,3] },
+  { key: 'other',  label: '其他',     color: '#aaa',    dash: [8,4] },
+  { key: 'total',  label: '合計',     color: '#1a1917', dash: [] },
+];
+
+const lineLabelPlugin = {
+  id: 'lineLabel',
+  afterDatasetsDraw(chart) {
+    if (activeLineCat === null) return;
+    const { ctx } = chart;
+    chart.data.datasets.forEach((ds, di) => {
+      if (ds.hidden) return;
+      const meta = chart.getDatasetMeta(di);
+      meta.data.forEach((point, i) => {
+        const v = ds.data[i];
+        if (!v) return;
+        const label = v.toFixed(2).replace(/\.?0+$/, '') + 'M';
+        ctx.save();
+        ctx.textAlign = 'center';
+        ctx.font = 'bold 9px sans-serif';
+        ctx.fillStyle = ds.borderColor;
+        ctx.globalAlpha = 0.9;
+        ctx.fillText(label, point.x, point.y - 9);
+        ctx.restore();
+      });
+    });
+  }
+};
+
+function buildLineLegend() {
+  if (!lineChartInstance) return;
+  const available = lineChartInstance.data.datasets;
+  document.getElementById('line-legend').innerHTML = LINE_CATS
+    .filter(c => available.find(d => d.label === c.label))
+    .map(c => {
+      const dashAttr = c.dash.length ? c.dash.join(' ') : 'none';
+      const isActive = activeLineCat === null || activeLineCat === c.key;
+      return `<span class="legend-item" data-key="${c.key}" onclick="toggleLineCat('${c.key}')"
+        style="font-size:13px;gap:8px;align-items:center;opacity:${isActive ? 1 : 0.35};cursor:pointer;transition:opacity 0.15s;">
+        <svg width="32" height="14" style="flex-shrink:0;overflow:visible;">
+          <line x1="1" y1="7" x2="31" y2="7" stroke="${c.color}" stroke-width="${c.key==='total'?2.5:2}" stroke-dasharray="${dashAttr}"/>
+          <circle cx="16" cy="7" r="3.5" fill="${c.color}"/>
+        </svg>
+        <span style="color:${c.color};font-weight:${activeLineCat===c.key?700:c.key==='total'?700:500};">${c.label}</span>
+      </span>`;
+    }).join('');
+}
+
+function buildLineChart() {
+  const datasets = LINE_CATS.map(c => ({
     label: c.label,
+    catKey: c.key,
     data: YEARS_NO_COVID.map(d => Math.round((d[c.key] || 0) / 10000) / 100),
     borderColor: c.color,
     backgroundColor: c.color + '18',
@@ -995,27 +1084,16 @@ function buildLineChart() {
     fill: false
   })).filter(d => d.data.some(v => v > 0));
 
-  document.getElementById('line-legend').innerHTML = cats
-    .filter(c => datasets.find(d => d.label === c.label))
-    .map(c => {
-      const dashAttr = c.dash.length ? c.dash.join(' ') : 'none';
-      return `<span class="legend-item" style="font-size:13px;gap:8px;align-items:center;">
-        <svg width="32" height="14" style="flex-shrink:0;overflow:visible;">
-          <line x1="1" y1="7" x2="31" y2="7" stroke="${c.color}" stroke-width="${c.key==='total'?2.5:2}" stroke-dasharray="${dashAttr}"/>
-          <circle cx="16" cy="7" r="3.5" fill="${c.color}"/>
-        </svg>
-        <span style="color:${c.color};font-weight:${c.key==='total'?700:500};">${c.label}</span>
-      </span>`;
-    }).join('');
-
-  new Chart(document.getElementById('lineChart'), {
+  if (lineChartInstance) lineChartInstance.destroy();
+  lineChartInstance = new Chart(document.getElementById('lineChart'), {
     type: 'line',
     data: { labels: YEAR_LABELS, datasets },
+    plugins: [lineLabelPlugin],
     options: {
       responsive: true, maintainAspectRatio: false,
       plugins: {
         legend: { display: false },
-        tooltip: { callbacks: { label: ctx => ` ${ctx.dataset.label}: NTD ${(ctx.raw*1000000/1000000*1000).toLocaleString('zh-TW')}M` } }
+        tooltip: { callbacks: { label: ctx => ` ${ctx.dataset.label}: NTD ${(ctx.raw * 1000000).toLocaleString('zh-TW')}` } }
       },
       scales: {
         x: { grid: { display: false }, ticks: { font: { size: 12 }, color: '#888' } },
@@ -1027,6 +1105,31 @@ function buildLineChart() {
       }
     }
   });
+  buildLineLegend();
+}
+
+function toggleLineCat(key) {
+  activeLineCat = (activeLineCat === key) ? null : key;
+  if (lineChartInstance) {
+    lineChartInstance.data.datasets.forEach(ds => {
+      ds.hidden = activeLineCat !== null && ds.catKey !== activeLineCat;
+    });
+    lineChartInstance.update();
+  }
+  buildLineLegend();
+}
+
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('panel-' + id).classList.add('active');
+  btn.classList.add('active');
+  if (id === 'overview') {
+    setTimeout(() => {
+      if (mainChart) mainChart.resize();
+      if (lineChartInstance) lineChartInstance.resize();
+    }, 10);
+  }
 }
 
 // Init
