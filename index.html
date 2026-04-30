@@ -295,7 +295,7 @@
 <header>
   <div class="eyebrow">商業贊助分析報告 · 2016–2025</div>
   <h1>臺灣同志遊行 商業贊助結構全景</h1>
-  <p class="subtitle">由 2016 年第 14 屆至 2025 年第 23 屆，共 9 個有資料年度（2021 停辦）</p>
+  <p class="subtitle">由 2016 年第 14 屆至 2025 年第 23 屆，共 10 個有資料年度（2021 縮小規模辦理）</p>
   <div class="meta-bar">
     <div class="meta-item">
       <span class="meta-label">金額高峰</span>
@@ -319,7 +319,7 @@
 <main>
 
   <div class="note">
-    金額採合約報價，未付款但未取消者視同已付款計入。政府補助排除（如台北市政府）。2021 年因 COVID-19 疫情停辦無資料。市集欄含攤位費聚合（2019+），市集廠商不重複計入級別贊助。
+    金額採合約報價，未付款但未取消者視同已付款計入。政府補助排除（如台北市政府）。2021 年因 COVID-19 縮小規模辦理，金額為確認最低值（部分廠商金額不明）。市集欄含攤位費聚合（2019+），市集廠商不重複計入級別贊助。
   </div>
 
   <!-- Section: Charts -->
@@ -382,8 +382,8 @@
       <tbody>
         <tr>
           <td><span style="display:inline-flex;align-items:center;gap:8px;"><span style="width:10px;height:10px;border-radius:2px;background:var(--t1);"></span><strong>級別贊助</strong></span></td>
-          <td>白金（≥800k）、黃金（500–799k）、白銀/鈦金（300–499k）、銀（150–299k）、銅（40–149k）</td>
-          <td>依固定牌價購買整套贊助方案。2019 年起正式設立，2024 起新增「銅級」，「白銀」更名為「鈦金」。</td>
+          <td>T1（≥800k）、T2（500–799k）、T3（300–499k）、T4（150–299k）、T5（40–149k）</td>
+          <td>依固定牌價購買整套贊助方案。2019 年起正式設立。T1–T5 為統一代稱，歷年實際名稱有所調整（如白金、黃金、鈦金等），以 T1–T5 為準避免混淆。</td>
         </tr>
         <tr>
           <td><span style="display:inline-flex;align-items:center;gap:8px;"><span style="width:10px;height:10px;border-radius:2px;background:var(--single);"></span><strong>單購</strong></span></td>
@@ -408,7 +408,7 @@
 
 <footer>
   臺灣同志遊行 商業合作組 · 資料來源：各年度業務暨財務總表 · 本文件採用報價金額，不考慮實收差異<br>
-  2021 年第 19 屆「友善日常」因 COVID-19 疫情停辦，無贊助資料
+  2021 年第 19 屆「友善日常」因 COVID-19 縮小規模辦理，金額為確認最低值（≥210萬，部分廠商金額不明）
 </footer>
 
 <script>
@@ -418,7 +418,7 @@ const DATA = [
   { year:2018, 屆:"16", 主題:"性平攻略由你說，人人18投彩虹", total_count:18, total:1565000, tier_count:0, tier:0, single_count:0, single:0, market_count:0, market:0, other_count:18, other:1565000 },
   { year:2019, 屆:"17", 主題:"同志好厝邊", total_count:103, total:3948642, tier_count:10, tier:1875000, single_count:5, single:100000, market_count:71, market:528000, other_count:17, other:1445642 },
   { year:2020, 屆:"18", 主題:"成人之美", total_count:134, total:4270000, tier_count:12, tier:2355000, single_count:19, single:773000, market_count:88, market:549500, other_count:15, other:592500 },
-  { year:2021, 屆:"19", 主題:"友善日常（COVID-19 疫情停辦）", total_count:0, total:0, tier_count:0, tier:0, single_count:0, single:0, market_count:0, market:0, other_count:0, other:0, covid:true },
+  { year:2021, 屆:"19", 主題:"友善日常（COVID-19 縮小規模辦理）", total_count:29, total:2120000, tier_count:9, tier:2120000, single_count:0, single:0, market_count:0, market:0, other_count:20, other:0, covid_scaled:true },
   { year:2022, 屆:"20", 主題:"無限性", total_count:90, total:9060650, tier_count:23, tier:6779000, single_count:20, single:1651500, market_count:41, market:239150, other_count:6, other:391000 },
   { year:2023, 屆:"21", 主題:"與多元同行 STAND WITH DIVERSITY", total_count:98, total:9100990, tier_count:32, tier:6958000, single_count:24, single:1250000, market_count:40, market:892990, other_count:2, other:0 },
   { year:2024, 屆:"22", 主題:"邁向共榮 交織共生", total_count:125, total:10803504, tier_count:32, tier:6486219, single_count:44, single:3280785, market_count:48, market:930000, other_count:1, other:106500 },
@@ -429,7 +429,7 @@ const DATA = [
 const COLORS = { tier:'#B8860B', single:'#4472C4', market:'#5BC0EB', other:'#b0ae a8' };
 const COLORS_FIXED = { tier:'#B8860B', single:'#4472C4', market:'#5BC0EB', other:'#aaaaaa' };
 const LABELS = { tier:'級別贊助', single:'單購/花車', market:'市集', other:'其他' };
-const YEARS_NO_COVID = DATA.filter(d => !d.covid);
+const YEARS_NO_COVID = DATA.filter(d => !d.covid && !d.future);
 const YEAR_LABELS = YEARS_NO_COVID.map(d => String(d.year));
 
 function fmt(n) { return Math.round(n).toLocaleString('zh-TW'); }
@@ -438,18 +438,10 @@ function fmtM(n) { return n >= 1000000 ? (n/1000000).toFixed(2) + 'M' : n >= 100
 // ---- Table ----
 function buildTable() {
   const tbody = document.getElementById('tableBody');
-  const maxTotal = Math.max(...DATA.filter(d => !d.covid).map(d => d.total));
+  const maxTotal = Math.max(...DATA.filter(d => !d.covid && !d.future).map(d => d.total));
 
   DATA.forEach(d => {
     const tr = document.createElement('tr');
-    if (d.covid) {
-      tr.className = 'covid';
-      tr.innerHTML = `
-        <td><span class="year-badge">${d.year}</span></td>
-        <td><span class="edition-badge">第${d.屆}屆</span></td>
-        <td colspan="4" style="color:var(--text-muted);font-style:italic;">${d.主題}</td>`;
-      tbody.appendChild(tr); return;
-    }
     if (d.future) {
       tr.className = 'future';
       tr.innerHTML = `
@@ -473,7 +465,7 @@ function buildTable() {
       <td><span class="edition-badge">第${d.屆}屆</span></td>
       <td class="right">${d.total_count}</td>
       <td class="right">
-        <div class="amount-cell total-amount">NTD ${fmt(d.total)}</div>
+        <div class="amount-cell total-amount">${d.covid_scaled ? '≥' : ''}NTD ${fmt(d.total)}</div>
       </td>
       <td>
         <div class="cat-row">
@@ -499,6 +491,34 @@ function buildTable() {
 // ---- Charts ----
 let mainChart = null;
 let currentView = 'amount';
+
+const totalLabelPlugin = {
+  id: 'totalLabel',
+  afterDatasetsDraw(chart) {
+    if (currentView !== 'amount') return;
+    const { ctx } = chart;
+    chart.data.labels.forEach((label, i) => {
+      const yearData = YEARS_NO_COVID[i];
+      if (!yearData || yearData.total === 0) return;
+      let minY = Infinity, barX = 0;
+      for (let di = 0; di < chart.data.datasets.length; di++) {
+        const bar = chart.getDatasetMeta(di).data[i];
+        if (bar && !isNaN(bar.y) && bar.y < minY) { minY = bar.y; barX = bar.x; }
+      }
+      if (minY === Infinity) return;
+      const amtLabel = (yearData.covid_scaled ? '≥' : '') + fmtM(yearData.total);
+      ctx.save();
+      ctx.textAlign = 'center';
+      ctx.font = 'bold 10px sans-serif';
+      ctx.fillStyle = '#333';
+      ctx.fillText(amtLabel, barX, minY - 14);
+      ctx.font = '9px sans-serif';
+      ctx.fillStyle = '#888';
+      ctx.fillText(yearData.total_count + '家', barX, minY - 4);
+      ctx.restore();
+    });
+  }
+};
 
 const CATS = ['tier','single','market','other'];
 
@@ -549,8 +569,10 @@ function switchChart(view, btn) {
   mainChart = new Chart(document.getElementById('mainChart'), {
     type: 'bar',
     data: { labels: YEAR_LABELS, datasets },
+    plugins: [totalLabelPlugin],
     options: {
       responsive: true, maintainAspectRatio: false,
+      layout: { padding: { top: 32 } },
       plugins: {
         legend: { display: false },
         tooltip: { callbacks: { label: ttCb } }
@@ -590,7 +612,18 @@ function buildLineChart() {
     fill: false
   })).filter(d => d.data.some(v => v > 0));
 
-  buildLegend(datasets, 'line-legend');
+  document.getElementById('line-legend').innerHTML = cats
+    .filter(c => datasets.find(d => d.label === c.label))
+    .map(c => {
+      const dashAttr = c.dash.length ? c.dash.join(' ') : 'none';
+      return `<span class="legend-item" style="font-size:13px;gap:8px;align-items:center;">
+        <svg width="32" height="14" style="flex-shrink:0;overflow:visible;">
+          <line x1="1" y1="7" x2="31" y2="7" stroke="${c.color}" stroke-width="${c.key==='total'?2.5:2}" stroke-dasharray="${dashAttr}"/>
+          <circle cx="16" cy="7" r="3.5" fill="${c.color}"/>
+        </svg>
+        <span style="color:${c.color};font-weight:${c.key==='total'?700:500};">${c.label}</span>
+      </span>`;
+    }).join('');
 
   new Chart(document.getElementById('lineChart'), {
     type: 'line',
