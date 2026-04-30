@@ -267,7 +267,7 @@ def analyze_C(ext):
         if name in t25:
             t = t25[name]
             if   RANK[t] > RANK[tier]: upgraded.append({'name': name, 'from': LABEL[tier], 'to': LABEL[t]})
-            elif RANK[t] < RANK[tier]: downgraded.append({'name': name, 'from': LABEL[tier], 'to': LABEL[t]})
+            elif RANK[t] < RANK[tier]: downgraded.append({'name': name, 'from': LABEL[tier], 'to': LABEL[t], 'delta': RANK[tier] - RANK[t]})
             else:                       stayed.append({'name': name, 'tier': LABEL[tier]})
         else:
             dropped.append({'name': name, 'tier': LABEL[tier]})
@@ -736,8 +736,18 @@ def section_C(data):
         rows = []
         for item in items:
             if 'from' in item:
-                rows.append(f'<tr><td>{item["name"]}</td><td>'
-                            f'{tier_badge(item["from"])} → {tier_badge(item["to"])}</td></tr>')
+                delta = item.get('delta', 0)
+                if delta == 2:
+                    row_style = ' style="background:#FEE8E8;border-left:3px solid #D93025"'
+                    badge = '<span style="font-size:10px;color:#D93025;font-weight:700;margin-left:6px">▼▼ 降兩級</span>'
+                elif delta == 1:
+                    row_style = ' style="background:#FFF8E6;border-left:3px solid #F6B93B"'
+                    badge = '<span style="font-size:10px;color:#B8860B;font-weight:700;margin-left:6px">▼ 降一級</span>'
+                else:
+                    row_style = ''
+                    badge = ''
+                rows.append(f'<tr{row_style}><td>{item["name"]}</td>'
+                            f'<td style="color:#111;font-size:13px">{item["from"]} → {item["to"]}{badge}</td></tr>')
             else:
                 rows.append(f'<tr><td>{item["name"]}</td><td>{tier_badge(item.get("tier",""))}</td></tr>')
         return f'<table class="data-table" style="margin-top:6px">{"".join(rows)}</table>'
