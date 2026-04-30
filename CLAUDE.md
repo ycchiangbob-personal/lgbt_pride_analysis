@@ -51,7 +51,7 @@ If a tier sponsor also has a market booth (included in tier package), do NOT dou
 | Year | Edition | Theme |
 |---|---|---|
 | 2016 | 14 | 一起FUN出來—打破假友善，你我撐自在 |
-| 2017 | 15 | 我們都一樣 |
+| 2017 | 15 | 澀澀性平打開開，多元教慾跟上來 |
 | 2018 | 16 | 性平攻略由你說，人人18投彩虹 |
 | 2019 | 17 | 同志好厝邊 |
 | 2020 | 18 | 成人之美 |
@@ -60,7 +60,7 @@ If a tier sponsor also has a market booth (included in tier package), do NOT dou
 | 2023 | 21 | 與多元同行 STAND WITH DIVERSITY |
 | 2024 | 22 | 邁向共榮 交織共生 |
 | 2025 | 23 | 超·連結 |
-| 2027 | 25 | 澀澀性平打開開，多元教慾跟上來 |
+| 2027 | 25 | （主題未定） |
 
 ## Cross-Year Summary (final numbers)
 | Year | Total | 級別贊助 | 單購 | 市集 | 其他 |

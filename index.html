@@ -357,7 +357,7 @@
         <tr>
           <th>年度</th>
           <th>屆</th>
-          <th>廠商數</th>
+          <th>級別贊助廠商數</th>
           <th class="right">總贊助金額</th>
           <th>分類結構</th>
           <th>金額比例</th>
@@ -414,7 +414,7 @@
 <script>
 const DATA = [
   { year:2016, 屆:"14", 主題:"一起FUN出來—打破假友善，你我撐自在", total_count:15, total:808000, tier_count:0, tier:0, single_count:0, single:0, market_count:2, market:23000, other_count:13, other:785000 },
-  { year:2017, 屆:"15", 主題:"我們都一樣", total_count:20, total:1494500, tier_count:0, tier:0, single_count:0, single:0, market_count:1, market:20000, other_count:19, other:1474500 },
+  { year:2017, 屆:"15", 主題:"澀澀性平打開開，多元教慾跟上來", total_count:20, total:1494500, tier_count:0, tier:0, single_count:0, single:0, market_count:1, market:20000, other_count:19, other:1474500 },
   { year:2018, 屆:"16", 主題:"性平攻略由你說，人人18投彩虹", total_count:18, total:1565000, tier_count:0, tier:0, single_count:0, single:0, market_count:0, market:0, other_count:18, other:1565000 },
   { year:2019, 屆:"17", 主題:"同志好厝邊", total_count:103, total:3948642, tier_count:10, tier:1875000, single_count:5, single:100000, market_count:71, market:528000, other_count:17, other:1445642 },
   { year:2020, 屆:"18", 主題:"成人之美", total_count:134, total:4270000, tier_count:12, tier:2355000, single_count:19, single:773000, market_count:88, market:549500, other_count:15, other:592500 },
@@ -423,7 +423,7 @@ const DATA = [
   { year:2023, 屆:"21", 主題:"與多元同行 STAND WITH DIVERSITY", total_count:98, total:9100990, tier_count:32, tier:6958000, single_count:24, single:1250000, market_count:40, market:892990, other_count:2, other:0 },
   { year:2024, 屆:"22", 主題:"邁向共榮 交織共生", total_count:125, total:10803504, tier_count:32, tier:6486219, single_count:44, single:3280785, market_count:48, market:930000, other_count:1, other:106500 },
   { year:2025, 屆:"23", 主題:"超·連結", total_count:107, total:8274000, tier_count:22, tier:4915000, single_count:31, single:2119000, market_count:49, market:1000000, other_count:5, other:240000 },
-  { year:2027, 屆:"25", 主題:"澀澀性平打開開，多元教慾跟上來", total_count:0, total:0, tier_count:0, tier:0, single_count:0, single:0, market_count:0, market:0, other_count:0, other:0, future:true }
+  { year:2027, 屆:"25", 主題:"（主題未定）", total_count:0, total:0, tier_count:0, tier:0, single_count:0, single:0, market_count:0, market:0, other_count:0, other:0, future:true }
 ];
 
 const COLORS = { tier:'#B8860B', single:'#4472C4', market:'#5BC0EB', other:'#b0ae a8' };
@@ -463,7 +463,7 @@ function buildTable() {
         <div class="theme-text">${d.主題}</div>
       </td>
       <td><span class="edition-badge">第${d.屆}屆</span></td>
-      <td class="right">${d.total_count}</td>
+      <td class="right">${d.tier_count || '—'}</td>
       <td class="right">
         <div class="amount-cell total-amount">${d.covid_scaled ? '≥' : ''}NTD ${fmt(d.total)}</div>
       </td>
