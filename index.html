@@ -484,7 +484,7 @@
     <button class="tab-btn" onclick="showTab('analysis-a', this)">留存率</button>
     <button class="tab-btn" onclick="showTab('analysis-b', this)">挽回清單</button>
     <button class="tab-btn" onclick="showTab('analysis-c', this)">級別異動</button>
-    <button class="tab-btn" onclick="showTab('analysis-e', this)">存活率</button>
+    <button class="tab-btn" onclick="showTab('analysis-e', this)">新品牌續約率</button>
     <button class="tab-btn" onclick="showTab('analysis-f', this)">集中度</button>
     <button class="tab-btn" onclick="showTab('opportunities', this)">機會識別</button>
     <button class="tab-btn" onclick="showTab('methodology', this)">說明</button>
@@ -576,6 +576,7 @@
 
 
   </div><!-- /panel-overview -->
+
 
 
 
@@ -761,7 +762,7 @@ Porsche Taiwan Motors Limited</strong></td><td style="font-size:11px;color:var(-
   <div class="tab-panel" id="panel-analysis-e">
 
   <!-- Section: Analysis E -->
-  <div class="section-title">新廠商隔年存活率</div>
+  <div class="section-title">新品牌續約率</div>
   <div class="chart-card">
     <h3>第一次合作的廠商，隔年還會繼續嗎？（2022–2024 年新客）</h3>
     <p class="plain-desc">
@@ -776,17 +777,36 @@ Porsche Taiwan Motors Limited</strong></td><td style="font-size:11px;color:var(-
       <table class="data-table">
         <thead><tr>
           <th>新廠商加入年度</th><th class="right">新廠商數</th>
-          <th class="right">隔年存活</th><th class="right">存活率</th>
+          <th class="right">隔年續約</th><th class="right">續約率</th>
         </tr></thead>
         <tbody><tr class="unreliable"><td>2016 年新廠商 <span style="font-size:11px;color:var(--text-muted);font-style:italic">（參考）</span></td><td class="right">15</td><td class="right">8</td><td class="right"><strong>53.3%</strong></td></tr><tr class="unreliable"><td>2017 年新廠商 <span style="font-size:11px;color:var(--text-muted);font-style:italic">（參考）</span></td><td class="right">12</td><td class="right">5</td><td class="right"><strong>41.7%</strong></td></tr><tr class="unreliable"><td>2018 年新廠商 <span style="font-size:11px;color:var(--text-muted);font-style:italic">（參考）</span></td><td class="right">7</td><td class="right">0</td><td class="right"><strong>0.0%</strong></td></tr><tr class="unreliable"><td>2019 年新廠商 <span style="font-size:11px;color:var(--text-muted);font-style:italic">（參考）</span></td><td class="right">0</td><td class="right">0</td><td class="right"><strong>0%</strong></td></tr><tr class="unreliable"><td>2020 年新廠商 <span style="font-size:11px;color:var(--text-muted);font-style:italic">（參考）</span></td><td class="right">30</td><td class="right">6</td><td class="right"><strong>20.0%</strong></td></tr><tr class="unreliable"><td>2021 年新廠商 <span style="font-size:11px;color:var(--text-muted);font-style:italic">（參考）</span></td><td class="right">4</td><td class="right">2</td><td class="right"><strong>50.0%</strong></td></tr><tr><td>2022 年新廠商</td><td class="right">21</td><td class="right">6</td><td class="right"><strong>28.6%</strong></td></tr><tr><td>2023 年新廠商</td><td class="right">22</td><td class="right">6</td><td class="right"><strong>27.3%</strong></td></tr><tr><td>2024 年新廠商</td><td class="right">51</td><td class="right">10</td><td class="right"><strong>19.6%</strong></td></tr></tbody>
       </table>
     </div>
+
+    <h3 style="margin-top:28px">首年購買類型 vs 隔年續約率（2022–2024 合計）</h3>
+    <p class="plain-desc">
+      同樣是第一次合作的廠商，簽了哪種合約，決定了他們隔年回來的機率。
+    </p>
+    <div style="overflow-x:auto;">
+      <table class="data-table">
+        <thead><tr>
+          <th>首年購買類型</th><th class="right">新廠商數</th>
+          <th class="right">隔年續約</th><th class="right">續約率</th>
+        </tr></thead>
+        <tbody><tr><td><strong>T3+</strong></td><td class="right">1</td><td class="right">0</td><td class="right" style="color:#D93025;font-weight:700">0.0%</td></tr><tr><td><strong>T3 鈦金</strong></td><td class="right">4</td><td class="right">2</td><td class="right" style="color:#1B7A3E;font-weight:700">50.0%</td></tr><tr><td><strong>T4 銀</strong></td><td class="right">25</td><td class="right">7</td><td class="right" style="color:#F6B93B;font-weight:700">28.0%</td></tr><tr><td><strong>T5 銅</strong></td><td class="right">8</td><td class="right">3</td><td class="right" style="color:#F6B93B;font-weight:700">37.5%</td></tr><tr><td><strong>花車/單買</strong></td><td class="right">27</td><td class="right">6</td><td class="right" style="color:#D93025;font-weight:700">22.2%</td></tr><tr><td><strong>其他</strong></td><td class="right">28</td><td class="right">4</td><td class="right" style="color:#D93025;font-weight:700">14.3%</td></tr><tr><td><strong>不明</strong></td><td class="right">1</td><td class="right">0</td><td class="right" style="color:#D93025;font-weight:700">0.0%</td></tr></tbody>
+      </table>
+    </div>
+    <p class="plain-desc" style="margin-top:10px">
+      ▸ 綠色 ≥ 40%　橘色 25–39%　紅色 &lt; 25%
+    </p>
+
     <div class="action-box">
       <span class="act-icon">🌱</span>
       <div><strong>行動建議：</strong>
-      對 2025 年首次贊助的廠商，建立「新客跟進三步驟」：
-      ①活動結束後一個月內發送感謝函、②三個月內電話回訪了解體驗、③六個月前發出 2026 邀請。
-      若能把存活率從 14% 提升到 30%，等同於多留住約 10 家新廠商。</div>
+      新廠商開發時，優先引導簽訂級別合約（T4 銀以上），而非花車或單次活動，
+      因為級別廠商的隔年續約率明顯更高。
+      對 2025 年首次贊助的廠商，建立三步跟進：
+      ①活動後一個月發感謝函、②三個月電話回訪、③六個月前發出 2026 邀請。</div>
     </div>
   </div>
 
@@ -1273,6 +1293,8 @@ buildLineChart();
     });
   })();
 
+
+  
 
   
 

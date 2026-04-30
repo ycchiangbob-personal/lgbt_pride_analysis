@@ -284,22 +284,64 @@ def analyze_C(ext):
 
 # ── Analysis E: New Entrant Survival ─────────────────────────────────────────
 
-def analyze_E(dp):
+def analyze_E(dp, id_to_name, ext):
     years = ['2016','2017','2018','2019','2020','2021','2022','2023','2024','2025']
+
+    # Tier display mapping for first-year product comparison
+    FIRST_TIER = {
+        '鈦金級': 'T3 鈦金', '白銀級': 'T3 鈦金', '白金級': 'T3+',
+        '銀級': 'T4 銀',
+        '銅級': 'T5 銅',
+        '花車': '花車/單買', '單買': '花車/單買',
+        '友善飯店': '其他', '市集': '其他', '其他': '其他',
+    }
+    TIER_ORDER = ['T3+', 'T3 鈦金', 'T4 銀', 'T5 銅', '花車/單買', '其他', '不明']
+
+    # Build name→tier lookup per year from ext (for reliable years only)
+    name_tier_yr = {}  # {yr: {name_lower: tier_disp}}
+    for yr in ['2022', '2023', '2024']:
+        name_tier_yr[yr] = {}
+        for r in ext.get(yr, []):
+            n = r['name_canonical'].lower()
+            raw = r.get('tier_orig', '') or ''
+            name_tier_yr[yr][n] = FIRST_TIER.get(raw, '不明')
+
     results = []
+    tier_combined = {t: {'new': 0, 'survived': 0} for t in TIER_ORDER}
+
     for i, yr in enumerate(years[:-1]):
-        nxt  = years[i + 1]
+        nxt   = years[i + 1]
         prior = years[:i]
         new_set  = {did for did, v in dp.items()
                     if yr in v and v[yr] and not any(py in v and v[py] for py in prior)}
         survived = sum(1 for did in new_set if nxt in dp[did] and dp[did][nxt])
         rate = survived / len(new_set) * 100 if new_set else 0
+
+        # Product breakdown for reliable cohorts
+        if yr in name_tier_yr:
+            lookup = name_tier_yr[yr]
+            for did in new_set:
+                name = id_to_name.get(did, '').lower()
+                t = lookup.get(name, '不明')
+                did_survived = did in dp and nxt in dp[did] and bool(dp[did][nxt])
+                tier_combined[t]['new'] += 1
+                if did_survived:
+                    tier_combined[t]['survived'] += 1
+
         results.append({
             'cohort': yr, 'next': nxt,
             'new_count': len(new_set), 'survived': survived,
             'rate': round(rate, 1), 'reliable': yr >= '2022',
         })
-    return results
+
+    # Filter out empty tiers, keep order
+    tier_rows = [
+        {'tier': t, **tier_combined[t],
+         'rate': round(tier_combined[t]['survived'] / tier_combined[t]['new'] * 100, 1)
+                 if tier_combined[t]['new'] else 0}
+        for t in TIER_ORDER if tier_combined[t]['new'] > 0
+    ]
+    return results, tier_rows
 
 # ── Analysis F: Concentration ─────────────────────────────────────────────────
 
@@ -779,7 +821,8 @@ def section_C(data):
 
 # ── Section E ─────────────────────────────────────────────────────────────────
 
-def section_E(data):
+def section_E(payload):
+    data, tier_rows = payload
     labels_j = jd([d['cohort'] for d in data])
     rates_j  = jd([d['rate']   for d in data])
     colors_j = jd(['#cccccc' if not d['reliable'] else '#5BC0EB' for d in data])
@@ -797,9 +840,27 @@ def section_E(data):
             f'<td class="right"><strong>{d["rate"]}%</strong></td></tr>'
         )
 
+    # Tier product comparison table (2022–2024 combined)
+    def rate_color(r):
+        if r >= 40: return '#1B7A3E'
+        if r >= 25: return '#F6B93B'
+        return '#D93025'
+
+    tier_tbl_rows = []
+    for t in tier_rows:
+        rc = rate_color(t['rate'])
+        tier_tbl_rows.append(
+            f'<tr>'
+            f'<td><strong>{t["tier"]}</strong></td>'
+            f'<td class="right">{t["new"]}</td>'
+            f'<td class="right">{t["survived"]}</td>'
+            f'<td class="right" style="color:{rc};font-weight:700">{t["rate"]}%</td>'
+            f'</tr>'
+        )
+
     html = f"""
   <!-- Section: Analysis E -->
-  <div class="section-title">新廠商隔年存活率</div>
+  <div class="section-title">新品牌續約率</div>
   <div class="chart-card">
     <h3>第一次合作的廠商，隔年還會繼續嗎？（2022–2024 年新客）</h3>
     <p class="plain-desc">
@@ -814,17 +875,36 @@ def section_E(data):
       <table class="data-table">
         <thead><tr>
           <th>新廠商加入年度</th><th class="right">新廠商數</th>
-          <th class="right">隔年存活</th><th class="right">存活率</th>
+          <th class="right">隔年續約</th><th class="right">續約率</th>
         </tr></thead>
         <tbody>{''.join(rows)}</tbody>
       </table>
     </div>
+
+    <h3 style="margin-top:28px">首年購買類型 vs 隔年續約率（2022–2024 合計）</h3>
+    <p class="plain-desc">
+      同樣是第一次合作的廠商，簽了哪種合約，決定了他們隔年回來的機率。
+    </p>
+    <div style="overflow-x:auto;">
+      <table class="data-table">
+        <thead><tr>
+          <th>首年購買類型</th><th class="right">新廠商數</th>
+          <th class="right">隔年續約</th><th class="right">續約率</th>
+        </tr></thead>
+        <tbody>{''.join(tier_tbl_rows)}</tbody>
+      </table>
+    </div>
+    <p class="plain-desc" style="margin-top:10px">
+      ▸ 綠色 ≥ 40%　橘色 25–39%　紅色 &lt; 25%
+    </p>
+
     <div class="action-box">
       <span class="act-icon">🌱</span>
       <div><strong>行動建議：</strong>
-      對 2025 年首次贊助的廠商，建立「新客跟進三步驟」：
-      ①活動結束後一個月內發送感謝函、②三個月內電話回訪了解體驗、③六個月前發出 2026 邀請。
-      若能把存活率從 14% 提升到 30%，等同於多留住約 10 家新廠商。</div>
+      新廠商開發時，優先引導簽訂級別合約（T4 銀以上），而非花車或單次活動，
+      因為級別廠商的隔年續約率明顯更高。
+      對 2025 年首次贊助的廠商，建立三步跟進：
+      ①活動後一個月發感謝函、②三個月電話回訪、③六個月前發出 2026 邀請。</div>
     </div>
   </div>
 """
@@ -1032,7 +1112,7 @@ def main():
     print("C — Tier Movement...")
     rC = analyze_C(ext)
     print("E — New Entrant Survival...")
-    rE = analyze_E(dp)
+    rE = analyze_E(dp, id_to_name, ext)
     print("F — Concentration Risk...")
     rF = analyze_F(dp, id_to_name, ext, cys)
 
@@ -1048,8 +1128,10 @@ def main():
         print(f"[B] {yr} lapsed (excl. mkt/hotel): {len(grp)}")
     s = rC['summary']
     print(f"[C] upgraded={s['upgraded']} stayed={s['stayed']} downgraded={s['downgraded']} dropped={s['dropped']} new={s['new']}")
-    ed = {r['cohort']: r['rate'] for r in rE}
+    ed = {r['cohort']: r['rate'] for r in rE[0]}
     print(f"[E] 2022: {ed.get('2022')}%  2023: {ed.get('2023')}%  2024: {ed.get('2024')}%")
+    for t in rE[1]:
+        print(f"[E] tier {t['tier']}: {t['new']} new, {t['survived']} survived, {t['rate']}%")
 
     print("\nGenerating HTML sections...")
     sections = [
