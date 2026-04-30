@@ -1,0 +1,236 @@
+{
+  "2016": [
+    {
+      "priority": "✅",
+      "type": "分類定義",
+      "item": "粉紅卡夫卡 (20k) / 酷兒影展 (20k)",
+      "current": "其他（未分級）",
+      "question": "本質為商業攤位，是否重歸類為「市集」？",
+      "options": "A. 維持「其他」 / B. 改為「市集」"
+    },
+    {
+      "priority": "L",
+      "type": "聚合資料",
+      "item": "2016 是否有 NGO 攤位/社運車聚合？",
+      "current": "未抓到",
+      "question": "請確認源檔案是否有市集 NGO 攤、社運車等聚合收入",
+      "options": "請確認源檔案"
+    }
+  ],
+  "2017": [
+    {
+      "priority": "H",
+      "type": "未付款處理",
+      "item": "觸控科技 315k 未付款",
+      "current": "計入「其他」",
+      "question": "報價但完全未實際入帳，是否排除？",
+      "options": "A. 計入（目前）/ B. 排除（總額 -315k）"
+    },
+    {
+      "priority": "✅",
+      "type": "未付款處理",
+      "item": "Tokyo RBP 47k 未付款",
+      "current": "計入「其他」",
+      "question": "連 2 年（2016+2017）未付款",
+      "options": "A. 計入（目前）/ B. 排除"
+    },
+    {
+      "priority": "✅",
+      "type": "分類定義",
+      "item": "GaGaoLaLa (20k) / 婚姻大平台 (20k)",
+      "current": "其他",
+      "question": "同 2016 邏輯，20k 商業攤位歸類？",
+      "options": "A. 維持「其他」/ B. 改為「市集」"
+    },
+    {
+      "priority": "L",
+      "type": "異常項",
+      "item": "花旗商銀 7,500",
+      "current": "其他",
+      "question": "只有財務表入帳但無採購品項",
+      "options": "A. 計入（目前）/ B. 排除"
+    }
+  ],
+  "2018": [
+    {
+      "priority": "H",
+      "type": "未付款處理",
+      "item": "Lifewonders 160k / YAHOO 110k / Tokyo RBP 50k / 婚姻大平台 36k 共 356k",
+      "current": "全部計入「其他」",
+      "question": "報價但未實際入帳",
+      "options": "A. 計入（目前）/ B. 排除（-356k）"
+    },
+    {
+      "priority": "L",
+      "type": "分類定義",
+      "item": "社運帳篷-AI 20k / 社運帳篷-婚權大平台 10k",
+      "current": "併入廠商主紀錄",
+      "question": "是否拆出獨立計入「市集」？",
+      "options": "A. 併入主紀錄（目前）/ B. 拆為市集"
+    }
+  ],
+  "2019": [
+    {
+      "priority": "H",
+      "type": "廠商身分",
+      "item": "DES 100k = D0004 Destination,Beijing？",
+      "current": "視為新進廠商 D0040",
+      "question": "請確認",
+      "options": "A. 是同一家（合併）/ B. 不同（維持新進）"
+    },
+    {
+      "priority": "✅",
+      "type": "廠商身分",
+      "item": "茶鋪 50k = D0001 辻利茶舖？",
+      "current": "視為新進廠商 D0044",
+      "question": "請確認",
+      "options": "A. 是同一家 / B. 不同"
+    },
+    {
+      "priority": "✅",
+      "type": "分類定義",
+      "item": "紅樓友善商家聯盟 250k",
+      "current": "其他（未分級）",
+      "question": "商圈聯盟整批簽約",
+      "options": "A. 維持「其他」/ B. 改為「單購」"
+    },
+    {
+      "priority": "L",
+      "type": "聚合資料",
+      "item": "R45 社運車 100k 與 R32 5台NGO車 100k 是否重複？",
+      "current": "只用 R32",
+      "question": "R45 是 R32 的彙總列嗎？",
+      "options": "A. 是彙總（目前）/ B. 是另筆"
+    }
+  ],
+  "2020": [
+    {
+      "priority": "✓",
+      "type": "已釐清",
+      "item": "無",
+      "current": "已完成所有決策",
+      "question": "無",
+      "options": "—"
+    }
+  ],
+  "2022": [
+    {
+      "priority": "✅",
+      "type": "分類",
+      "item": "臺虎精釀 249k",
+      "current": "「其他」",
+      "question": "2023 是「花車」，2022 是「其他」— 一致性？",
+      "options": "A. 維持「其他」/ B. 改為「單購」"
+    },
+    {
+      "priority": "✅",
+      "type": "雙重計算",
+      "item": "32收款對帳表 NGO花車 1 筆 150.5k",
+      "current": "計入單購",
+      "question": "是否與 31業務統計總表廠商重疊？",
+      "options": "需查對"
+    },
+    {
+      "priority": "L",
+      "type": "不明項",
+      "item": "32收款對帳表「未分類」1 筆 150.5k",
+      "current": "未計入",
+      "question": "此筆是誰？",
+      "options": "需確認廠商身分"
+    }
+  ],
+  "2023": [
+    {
+      "priority": "✅",
+      "type": "0 金額",
+      "item": "T-Studio / 50% FIFTY PERCENT 銀級 0 金額",
+      "current": "計入級別贊助但金額 0",
+      "question": "in-kind 換贊助？",
+      "options": "A. 計入金額 0（目前）/ B. 排除 / C. 估算金額"
+    },
+    {
+      "priority": "L",
+      "type": "0 金額",
+      "item": "Cake Resume / Keyword Studios 其他類 0 金額",
+      "current": "計入其他但 0 金額",
+      "question": "同上",
+      "options": "A. 計入 / B. 排除"
+    },
+    {
+      "priority": "L",
+      "type": "不明項",
+      "item": "32收款對帳表「其它」1 筆 250k",
+      "current": "未計入",
+      "question": "此筆是誰？",
+      "options": "需確認廠商身分"
+    },
+    {
+      "priority": "✅",
+      "type": "0 金額",
+      "item": "2023 友善飯店 8 家全部 0 金額",
+      "current": "計入單購但 0 金額",
+      "question": "飯店方案是否實際收費？",
+      "options": "A. 計入 / B. 排除 / C. 補入金額"
+    }
+  ],
+  "2024": [
+    {
+      "priority": "L",
+      "type": "異常金額",
+      "item": "愛群婦產科 銅級 390k（標準 120k 的 3 倍）",
+      "current": "計入 390k",
+      "question": "可能多重贊助加碼",
+      "options": "A. 維持 390k / B. 拆分為多筆 / C. 標準 120k"
+    },
+    {
+      "priority": "L",
+      "type": "異常金額",
+      "item": "犀牛盾 單買 750k",
+      "current": "計入單購 750k",
+      "question": "可能是多項加總",
+      "options": "A. 維持 750k / B. 拆分"
+    },
+    {
+      "priority": "L",
+      "type": "異常金額",
+      "item": "Heroine 市集 帳篷 2 源 fee 100k vs 我規則 40k",
+      "current": "採規則 40k",
+      "question": "原始 100k 可能含特殊方案",
+      "options": "A. 規則 40k（目前）/ B. 採源 100k"
+    }
+  ],
+  "2025": [
+    {
+      "priority": "✅",
+      "type": "異常金額",
+      "item": "VERVE 花車 350k（標準 120k）",
+      "current": "計入單購 350k",
+      "question": "比標準高 230k",
+      "options": "A. 維持 350k / B. 標準 120k 其餘歸其他"
+    },
+    {
+      "priority": "L",
+      "type": "0 金額",
+      "item": "TENGA 市集 0 金額",
+      "current": "計入市集但 0 金額",
+      "question": "是否補金額？",
+      "options": "A. 排除 / B. 補入標準價"
+    },
+    {
+      "priority": "H",
+      "type": "空資料",
+      "item": "2025 市集分頁是空的",
+      "current": "只計入 31業務統計總表 1 家",
+      "question": "是否真的只有 1 攤？或市集尚未填寫？",
+      "options": "請確認 2025 市集是否還有其他攤商"
+    },
+    {
+      "priority": "L",
+      "type": "分類",
+      "item": "2025 聯名商品 160k",
+      "current": "其他",
+      "question": "聯名是「其他」還是「單購」？",
+      "options": "A. 維持「其他」/ B. 改為「單購」"
+    }
+  ]
+}

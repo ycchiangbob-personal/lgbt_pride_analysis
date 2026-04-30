@@ -1,0 +1,818 @@
+{
+  "classification": [
+    {
+      "sponsor": "辻利茶舖",
+      "total_quote": 40000,
+      "total_received": 40000,
+      "items": [
+        {
+          "item": "無柄圓扇",
+          "sponsor": "辻利茶舖",
+          "quote": 40000.0,
+          "handler": "苡昇Eason",
+          "contact_person": ""
+        }
+      ],
+      "item_count": 1,
+      "items_unique": [
+        "無柄圓扇"
+      ],
+      "is_ngo": false,
+      "tier": "T5",
+      "target": "fact_sponsorship",
+      "payment": "已付款",
+      "handler": "苡昇Eason",
+      "contact_person": "",
+      "returning": true,
+      "donor_id": "D0001"
+    },
+    {
+      "sponsor": "Par.T",
+      "total_quote": 100000,
+      "total_received": 100000,
+      "items": [
+        {
+          "item": "攤位帳篷",
+          "sponsor": "Par.T",
+          "quote": 100000.0,
+          "handler": "玉甄&宏展",
+          "contact_person": ""
+        }
+      ],
+      "item_count": 1,
+      "items_unique": [
+        "攤位帳篷"
+      ],
+      "is_ngo": false,
+      "tier": "T5",
+      "target": "fact_sponsorship",
+      "payment": "已付款",
+      "handler": "玉甄&宏展",
+      "contact_person": "",
+      "returning": true,
+      "donor_id": "D0002"
+    },
+    {
+      "sponsor": "Blue",
+      "total_quote": 80000,
+      "total_received": 80000,
+      "items": [
+        {
+          "item": "遊行花車(B車)\n商業車路權",
+          "sponsor": "Blue",
+          "quote": 80000.0,
+          "handler": "Ruby",
+          "contact_person": "大霆/野獸"
+        }
+      ],
+      "item_count": 1,
+      "items_unique": [
+        "遊行花車(B車)\n商業車路權"
+      ],
+      "is_ngo": false,
+      "tier": "T5",
+      "target": "fact_sponsorship",
+      "payment": "已付款",
+      "handler": "Ruby",
+      "contact_person": "大霆/野獸",
+      "returning": true,
+      "donor_id": "D0003"
+    },
+    {
+      "sponsor": "Destination,Beijing",
+      "total_quote": 110000,
+      "total_received": 110000,
+      "items": [
+        {
+          "item": "遊行花車(B車)\n商業車路權",
+          "sponsor": "Destination,Beijing",
+          "quote": 80000.0,
+          "handler": "Ruby",
+          "contact_person": "小竹"
+        },
+        {
+          "item": "官網banner",
+          "sponsor": "Destination,Beijing",
+          "quote": 30000.0,
+          "handler": "Ruby",
+          "contact_person": ""
+        }
+      ],
+      "item_count": 2,
+      "items_unique": [
+        "官網banner",
+        "遊行花車(B車)\n商業車路權"
+      ],
+      "is_ngo": false,
+      "tier": "T5",
+      "target": "fact_sponsorship",
+      "payment": "已付款",
+      "handler": "Ruby",
+      "contact_person": "小竹",
+      "returning": true,
+      "donor_id": "D0004"
+    },
+    {
+      "sponsor": "拉拉公園",
+      "total_quote": 80000,
+      "total_received": 80000,
+      "items": [
+        {
+          "item": "遊行花車(B車)\n商業車路權",
+          "sponsor": "拉拉公園",
+          "quote": 80000.0,
+          "handler": "玉甄 & 宏展",
+          "contact_person": "苡昇Eason"
+        }
+      ],
+      "item_count": 1,
+      "items_unique": [
+        "遊行花車(B車)\n商業車路權"
+      ],
+      "is_ngo": false,
+      "tier": "T5",
+      "target": "fact_sponsorship",
+      "payment": "已付款",
+      "handler": "玉甄 & 宏展",
+      "contact_person": "苡昇Eason",
+      "returning": true,
+      "donor_id": "D0006"
+    },
+    {
+      "sponsor": "Hornet",
+      "total_quote": 60000,
+      "total_received": 60000,
+      "items": [
+        {
+          "item": "遊行花車(B車)\n商業車路權",
+          "sponsor": "Hornet",
+          "quote": 60000.0,
+          "handler": "Ruby",
+          "contact_person": "小竹"
+        }
+      ],
+      "item_count": 1,
+      "items_unique": [
+        "遊行花車(B車)\n商業車路權"
+      ],
+      "is_ngo": false,
+      "tier": "T5",
+      "target": "fact_sponsorship",
+      "payment": "已付款",
+      "handler": "Ruby",
+      "contact_person": "小竹",
+      "returning": true,
+      "donor_id": "D0008"
+    },
+    {
+      "sponsor": "Tokyo RainBow Pride",
+      "total_quote": 47000,
+      "total_received": 0,
+      "items": [
+        {
+          "item": "遊行花車(B車)\n商業車路權",
+          "sponsor": "Tokyo RainBow Pride",
+          "quote": 47000.0,
+          "handler": "Albert",
+          "contact_person": "小竹"
+        }
+      ],
+      "item_count": 1,
+      "items_unique": [
+        "遊行花車(B車)\n商業車路權"
+      ],
+      "is_ngo": false,
+      "tier": "T5",
+      "target": "fact_sponsorship",
+      "payment": "未付款",
+      "handler": "Albert",
+      "contact_person": "小竹",
+      "returning": true,
+      "donor_id": "D0011"
+    },
+    {
+      "sponsor": "國際人權特赦組織(AI)",
+      "total_quote": 20000,
+      "total_received": 19970,
+      "items": [
+        {
+          "item": "攤位帳篷",
+          "sponsor": "國際人權特赦組織(AI)",
+          "quote": 20000.0,
+          "handler": "Ruby",
+          "contact_person": ""
+        }
+      ],
+      "item_count": 1,
+      "items_unique": [
+        "攤位帳篷"
+      ],
+      "is_ngo": true,
+      "tier": null,
+      "target": "fact_market_booth",
+      "payment": "已付款",
+      "handler": "Ruby",
+      "contact_person": "",
+      "returning": true,
+      "donor_id": "D0012"
+    },
+    {
+      "sponsor": "觸控科技",
+      "total_quote": 315000,
+      "total_received": 0,
+      "items": [
+        {
+          "item": "攤位帳篷",
+          "sponsor": "觸控科技",
+          "quote": 100000.0,
+          "handler": "Albert",
+          "contact_person": ""
+        },
+        {
+          "item": "瓶裝水\n(60 箱 ，\n24 瓶 / 箱 )",
+          "sponsor": "觸控科技",
+          "quote": 30000.0,
+          "handler": "Albert",
+          "contact_person": ""
+        },
+        {
+          "item": "瓶裝水\n(60 箱 ，\n24 瓶 / 箱 )",
+          "sponsor": "觸控科技",
+          "quote": 30000.0,
+          "handler": "Albert",
+          "contact_person": ""
+        },
+        {
+          "item": "主舞台前緣看板",
+          "sponsor": "觸控科技",
+          "quote": 85000.0,
+          "handler": "Albert",
+          "contact_person": ""
+        },
+        {
+          "item": "現場輪撥影片\n(30s/10000)",
+          "sponsor": "觸控科技",
+          "quote": 10000.0,
+          "handler": "Albert",
+          "contact_person": ""
+        },
+        {
+          "item": "現場輪撥影片\n(30s/10000)",
+          "sponsor": "觸控科技",
+          "quote": 10000.0,
+          "handler": "Albert",
+          "contact_person": ""
+        },
+        {
+          "item": "遊行當天DM贊助",
+          "sponsor": "觸控科技",
+          "quote": 50000.0,
+          "handler": "Albert",
+          "contact_person": ""
+        }
+      ],
+      "item_count": 7,
+      "items_unique": [
+        "主舞台前緣看板",
+        "現場輪撥影片\n(30s/10000)",
+        "攤位帳篷",
+        "瓶裝水\n(60 箱 ，\n24 瓶 / 箱 )",
+        "遊行當天DM贊助"
+      ],
+      "is_ngo": false,
+      "tier": "T3",
+      "target": "fact_sponsorship",
+      "payment": "未付款",
+      "handler": "Albert",
+      "contact_person": "",
+      "returning": false,
+      "donor_id": "D0016"
+    },
+    {
+      "sponsor": "UBer",
+      "total_quote": 100000,
+      "total_received": 100000,
+      "items": [
+        {
+          "item": "攤位帳篷",
+          "sponsor": "UBer",
+          "quote": 100000.0,
+          "handler": "Albert",
+          "contact_person": ""
+        }
+      ],
+      "item_count": 1,
+      "items_unique": [
+        "攤位帳篷"
+      ],
+      "is_ngo": false,
+      "tier": "T5",
+      "target": "fact_sponsorship",
+      "payment": "已付款",
+      "handler": "Albert",
+      "contact_person": "",
+      "returning": false,
+      "donor_id": "D0017"
+    },
+    {
+      "sponsor": "達博企業社(大龜)",
+      "total_quote": 100000,
+      "total_received": 100000,
+      "items": [
+        {
+          "item": "攤位帳篷",
+          "sponsor": "達博企業社(大龜)",
+          "quote": 100000.0,
+          "handler": "Ruby",
+          "contact_person": ""
+        }
+      ],
+      "item_count": 1,
+      "items_unique": [
+        "攤位帳篷"
+      ],
+      "is_ngo": false,
+      "tier": "T5",
+      "target": "fact_sponsorship",
+      "payment": "已付款",
+      "handler": "Ruby",
+      "contact_person": "",
+      "returning": false,
+      "donor_id": "D0018"
+    },
+    {
+      "sponsor": "雪豹科技",
+      "total_quote": 100000,
+      "total_received": 99990,
+      "items": [
+        {
+          "item": "攤位帳篷",
+          "sponsor": "雪豹科技",
+          "quote": 100000.0,
+          "handler": "苡昇",
+          "contact_person": ""
+        }
+      ],
+      "item_count": 1,
+      "items_unique": [
+        "攤位帳篷"
+      ],
+      "is_ngo": false,
+      "tier": "T5",
+      "target": "fact_sponsorship",
+      "payment": "已付款",
+      "handler": "苡昇",
+      "contact_person": "",
+      "returning": false,
+      "donor_id": "D0019"
+    },
+    {
+      "sponsor": "GAP",
+      "total_quote": 60000,
+      "total_received": 60000,
+      "items": [
+        {
+          "item": "遊行花車(B車)\n商業車路權",
+          "sponsor": "GAP",
+          "quote": 60000.0,
+          "handler": "Ruby",
+          "contact_person": "大霆/野獸"
+        }
+      ],
+      "item_count": 1,
+      "items_unique": [
+        "遊行花車(B車)\n商業車路權"
+      ],
+      "is_ngo": false,
+      "tier": "T5",
+      "target": "fact_sponsorship",
+      "payment": "已付款",
+      "handler": "Ruby",
+      "contact_person": "大霆/野獸",
+      "returning": false,
+      "donor_id": "D0020"
+    },
+    {
+      "sponsor": "Sunpride Foundation 驕陽基金會",
+      "total_quote": 60000,
+      "total_received": 60000,
+      "items": [
+        {
+          "item": "遊行花車(B車)\n商業車路權",
+          "sponsor": "Sunpride Foundation 驕陽基金會",
+          "quote": 60000.0,
+          "handler": "Albert",
+          "contact_person": "大霆/野獸"
+        }
+      ],
+      "item_count": 1,
+      "items_unique": [
+        "遊行花車(B車)\n商業車路權"
+      ],
+      "is_ngo": true,
+      "tier": "T5",
+      "target": "fact_sponsorship",
+      "payment": "已付款",
+      "handler": "Albert",
+      "contact_person": "大霆/野獸",
+      "returning": false,
+      "donor_id": "D0021"
+    },
+    {
+      "sponsor": "彩虹酷兒健康文化中心",
+      "total_quote": 60000,
+      "total_received": 60000,
+      "items": [
+        {
+          "item": "遊行花車(B車)\n商業車路權",
+          "sponsor": "彩虹酷兒健康文化中心",
+          "quote": 60000.0,
+          "handler": "Albert",
+          "contact_person": "苡昇Eason"
+        }
+      ],
+      "item_count": 1,
+      "items_unique": [
+        "遊行花車(B車)\n商業車路權"
+      ],
+      "is_ngo": true,
+      "tier": "T5",
+      "target": "fact_sponsorship",
+      "payment": "已付款",
+      "handler": "Albert",
+      "contact_person": "苡昇Eason",
+      "returning": false,
+      "donor_id": "D0022"
+    },
+    {
+      "sponsor": "艾緦整合行銷",
+      "total_quote": 60000,
+      "total_received": 60000,
+      "items": [
+        {
+          "item": "遊行花車(B車)\n商業車路權",
+          "sponsor": "艾緦整合行銷",
+          "quote": 60000.0,
+          "handler": "Ruby",
+          "contact_person": "苡昇Eason"
+        }
+      ],
+      "item_count": 1,
+      "items_unique": [
+        "遊行花車(B車)\n商業車路權"
+      ],
+      "is_ngo": false,
+      "tier": "T5",
+      "target": "fact_sponsorship",
+      "payment": "已付款",
+      "handler": "Ruby",
+      "contact_person": "苡昇Eason",
+      "returning": false,
+      "donor_id": "D0023"
+    },
+    {
+      "sponsor": "ESHA",
+      "total_quote": 55000,
+      "total_received": 55000,
+      "items": [
+        {
+          "item": "鷹架旁看板廣告",
+          "sponsor": "ESHA",
+          "quote": 55000.0,
+          "handler": "Ruby",
+          "contact_person": ""
+        }
+      ],
+      "item_count": 1,
+      "items_unique": [
+        "鷹架旁看板廣告"
+      ],
+      "is_ngo": true,
+      "tier": "T5",
+      "target": "fact_sponsorship",
+      "payment": "已付款",
+      "handler": "Ruby",
+      "contact_person": "",
+      "returning": false,
+      "donor_id": "D0024"
+    },
+    {
+      "sponsor": "GaGaoLaLa",
+      "total_quote": 20000,
+      "total_received": 20000,
+      "items": [
+        {
+          "item": "攤位帳篷",
+          "sponsor": "GaGaoLaLa",
+          "quote": 20000.0,
+          "handler": "Albert",
+          "contact_person": ""
+        }
+      ],
+      "item_count": 1,
+      "items_unique": [
+        "攤位帳篷"
+      ],
+      "is_ngo": false,
+      "tier": "T6",
+      "target": "fact_sponsorship",
+      "payment": "已付款",
+      "handler": "Albert",
+      "contact_person": "",
+      "returning": false,
+      "donor_id": "D0025"
+    },
+    {
+      "sponsor": "婚姻大平台",
+      "total_quote": 20000,
+      "total_received": 20000,
+      "items": [
+        {
+          "item": "大隊車(A車)",
+          "sponsor": "婚姻大平台",
+          "quote": 20000.0,
+          "handler": "Ruby",
+          "contact_person": ""
+        }
+      ],
+      "item_count": 1,
+      "items_unique": [
+        "大隊車(A車)"
+      ],
+      "is_ngo": true,
+      "tier": "T6",
+      "target": "fact_sponsorship",
+      "payment": "已付款",
+      "handler": "Ruby",
+      "contact_person": "",
+      "returning": false,
+      "donor_id": "D0026"
+    },
+    {
+      "sponsor": "花旗商銀",
+      "total_quote": 7500.0,
+      "total_received": 7500.0,
+      "items": [],
+      "item_count": 0,
+      "items_unique": [],
+      "is_ngo": false,
+      "tier": "T6",
+      "target": "fact_sponsorship",
+      "payment": "已付款",
+      "handler": "",
+      "contact_person": "",
+      "returning": false,
+      "donor_id": "D0027"
+    }
+  ],
+  "item_records": [
+    {
+      "item": "攤位帳篷",
+      "sponsor": "Par.T",
+      "quote": 100000.0,
+      "handler": "玉甄&宏展",
+      "contact_person": ""
+    },
+    {
+      "item": "攤位帳篷",
+      "sponsor": "國際人權特赦組織(AI)",
+      "quote": 20000.0,
+      "handler": "Ruby",
+      "contact_person": ""
+    },
+    {
+      "item": "攤位帳篷",
+      "sponsor": "雪豹科技",
+      "quote": 100000.0,
+      "handler": "苡昇",
+      "contact_person": ""
+    },
+    {
+      "item": "攤位帳篷",
+      "sponsor": "達博企業社(大龜)",
+      "quote": 100000.0,
+      "handler": "Ruby",
+      "contact_person": ""
+    },
+    {
+      "item": "攤位帳篷",
+      "sponsor": "觸控科技",
+      "quote": 100000.0,
+      "handler": "Albert",
+      "contact_person": ""
+    },
+    {
+      "item": "攤位帳篷",
+      "sponsor": "同志咨詢熱線",
+      "quote": 5000.0,
+      "handler": "Ruby",
+      "contact_person": ""
+    },
+    {
+      "item": "攤位帳篷",
+      "sponsor": "GaGaoLaLa",
+      "quote": 20000.0,
+      "handler": "Albert",
+      "contact_person": ""
+    },
+    {
+      "item": "攤位帳篷",
+      "sponsor": "UBer",
+      "quote": 100000.0,
+      "handler": "Albert",
+      "contact_person": ""
+    },
+    {
+      "item": "遊行花車(B車)\n商業車路權",
+      "sponsor": "Destination,Beijing",
+      "quote": 80000.0,
+      "handler": "Ruby",
+      "contact_person": "小竹"
+    },
+    {
+      "item": "遊行花車(B車)\n商業車路權",
+      "sponsor": "Hornet",
+      "quote": 60000.0,
+      "handler": "Ruby",
+      "contact_person": "小竹"
+    },
+    {
+      "item": "遊行花車(B車)\n商業車路權",
+      "sponsor": "Tokyo RainBow Pride",
+      "quote": 47000.0,
+      "handler": "Albert",
+      "contact_person": "小竹"
+    },
+    {
+      "item": "遊行花車(B車)\n商業車路權",
+      "sponsor": "Blue",
+      "quote": 80000.0,
+      "handler": "Ruby",
+      "contact_person": "大霆/野獸"
+    },
+    {
+      "item": "遊行花車(B車)\n商業車路權",
+      "sponsor": "GAP",
+      "quote": 60000.0,
+      "handler": "Ruby",
+      "contact_person": "大霆/野獸"
+    },
+    {
+      "item": "遊行花車(B車)\n商業車路權",
+      "sponsor": "Sunpride Foundation 驕陽基金會",
+      "quote": 60000.0,
+      "handler": "Albert",
+      "contact_person": "大霆/野獸"
+    },
+    {
+      "item": "遊行花車(B車)\n商業車路權",
+      "sponsor": "拉拉公園",
+      "quote": 80000.0,
+      "handler": "玉甄 & 宏展",
+      "contact_person": "苡昇Eason"
+    },
+    {
+      "item": "遊行花車(B車)\n商業車路權",
+      "sponsor": "艾緦整合行銷",
+      "quote": 60000.0,
+      "handler": "Ruby",
+      "contact_person": "苡昇Eason"
+    },
+    {
+      "item": "遊行花車(B車)\n商業車路權",
+      "sponsor": "彩虹酷兒健康文化中心",
+      "quote": 60000.0,
+      "handler": "Albert",
+      "contact_person": "苡昇Eason"
+    },
+    {
+      "item": "大隊車(A車)",
+      "sponsor": "婚姻大平台",
+      "quote": 20000.0,
+      "handler": "Ruby",
+      "contact_person": ""
+    },
+    {
+      "item": "大隊車(A車)",
+      "sponsor": "同志咨詢熱線",
+      "quote": 20000.0,
+      "handler": "Ruby",
+      "contact_person": ""
+    },
+    {
+      "item": "鷹架旁看板廣告",
+      "sponsor": "ESHA",
+      "quote": 55000.0,
+      "handler": "Ruby",
+      "contact_person": ""
+    },
+    {
+      "item": "瓶裝水\n(60 箱 ，\n24 瓶 / 箱 )",
+      "sponsor": "觸控科技",
+      "quote": 30000.0,
+      "handler": "Albert",
+      "contact_person": ""
+    },
+    {
+      "item": "瓶裝水\n(60 箱 ，\n24 瓶 / 箱 )",
+      "sponsor": "觸控科技",
+      "quote": 30000.0,
+      "handler": "Albert",
+      "contact_person": ""
+    },
+    {
+      "item": "主舞台前緣看板",
+      "sponsor": "觸控科技",
+      "quote": 85000.0,
+      "handler": "Albert",
+      "contact_person": ""
+    },
+    {
+      "item": "現場輪撥影片\n(30s/10000)",
+      "sponsor": "觸控科技",
+      "quote": 10000.0,
+      "handler": "Albert",
+      "contact_person": ""
+    },
+    {
+      "item": "現場輪撥影片\n(30s/10000)",
+      "sponsor": "觸控科技",
+      "quote": 10000.0,
+      "handler": "Albert",
+      "contact_person": ""
+    },
+    {
+      "item": "遊行當天DM贊助",
+      "sponsor": "觸控科技",
+      "quote": 50000.0,
+      "handler": "Albert",
+      "contact_person": ""
+    },
+    {
+      "item": "無柄圓扇",
+      "sponsor": "辻利茶舖",
+      "quote": 40000.0,
+      "handler": "苡昇Eason",
+      "contact_person": ""
+    },
+    {
+      "item": "官網banner",
+      "sponsor": "Destination,Beijing",
+      "quote": 30000.0,
+      "handler": "Ruby",
+      "contact_person": ""
+    }
+  ],
+  "item_category": {
+    "攤位帳篷": "市集帳篷",
+    "遊行花車(B車)\n商業車路權": "花車",
+    "大隊車(A車)": "花車",
+    "鷹架旁看板廣告": "現場版位露出",
+    "瓶裝水\n(60 箱 ，\n24 瓶 / 箱 )": "其他合作",
+    "主舞台前緣看板": "現場版位露出",
+    "現場輪撥影片\n(30s/10000)": "現場版位露出",
+    "遊行當天DM贊助": "印刷品贊助",
+    "無柄圓扇": "印刷品贊助",
+    "official banner": "線上版位露出",
+    "官網banner": "線上版位露出"
+  },
+  "industry": {
+    "Par.T": "夜店／娛樂",
+    "辻利茶舖": "餐飲",
+    "Blue": "夜店／娛樂",
+    "Destination,Beijing": "夜店／娛樂",
+    "拉拉公園": "LGBT 媒體",
+    "Hornet": "社交軟體",
+    "Tokyo RainBow Pride": "海外友台組織",
+    "國際人權特赦組織(AI)": "公益／NGO",
+    "雪豹科技": "科技／網路",
+    "達博企業社(大龜)": "製造／企業社",
+    "GaGaoLaLa": "影音串流",
+    "UBer": "科技／交通",
+    "GAP": "服飾",
+    "Sunpride Foundation 驕陽基金會": "公益／NGO",
+    "艾緦整合行銷": "行銷／代理",
+    "彩虹酷兒健康文化中心": "公益／NGO（健康）",
+    "婚姻大平台": "公益／NGO（婚姻平權）",
+    "ESHA": "愛滋公益／NGO",
+    "觸控科技": "科技／硬體",
+    "花旗商銀": "金融銀行"
+  },
+  "existing_ids": {
+    "辻利茶舖": "D0001",
+    "Par.T": "D0002",
+    "Blue": "D0003",
+    "Destination,Beijing": "D0004",
+    "愛滋病理協會": "D0005",
+    "拉拉公園": "D0006",
+    "華泰飯店": "D0007",
+    "Hornet": "D0008",
+    "基本書坊": "D0009",
+    "金鑛咖啡": "D0010",
+    "Tokyo RainBow Pride": "D0011",
+    "國際人權特赦組織(AI)": "D0012",
+    "粉紅卡夫卡": "D0013",
+    "酷兒影展": "D0014",
+    "島國前進": "D0015"
+  }
+}

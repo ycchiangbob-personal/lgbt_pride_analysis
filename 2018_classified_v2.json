@@ -1,0 +1,551 @@
+{
+  "classification": [
+    {
+      "sponsor_canonical": "辻利茶舖",
+      "orig_names": [
+        "高平摩志股份有限公司/辻利茶舗"
+      ],
+      "total_quote": 30000.0,
+      "total_received": 30000.0,
+      "item_count": 1,
+      "items": [
+        {
+          "row": 20,
+          "item": "瓶裝水",
+          "subcat": "I",
+          "sponsor_orig": "高平摩志股份有限公司/辻利茶舗",
+          "sponsor_canonical": "辻利茶舖",
+          "quote": 30000.0,
+          "received": 30000.0,
+          "handler": "Ruby"
+        }
+      ],
+      "tier": "T6",
+      "target": "fact_sponsorship",
+      "payment": "已付款",
+      "handler": "Ruby",
+      "returning": true,
+      "donor_id": "D0001"
+    },
+    {
+      "sponsor_canonical": "Destination,Beijing",
+      "orig_names": [
+        "Destination,Beijing"
+      ],
+      "total_quote": 120000.0,
+      "total_received": 120000.0,
+      "item_count": 1,
+      "items": [
+        {
+          "row": 5,
+          "item": "商業車",
+          "subcat": "西路線(往中山南路南端)",
+          "sponsor_orig": "Destination,Beijing",
+          "sponsor_canonical": "Destination,Beijing",
+          "quote": 120000.0,
+          "received": 120000.0,
+          "handler": "Ruby、Albert"
+        }
+      ],
+      "tier": "T5",
+      "target": "fact_sponsorship",
+      "payment": "已付款",
+      "handler": "Ruby、Albert",
+      "returning": true,
+      "donor_id": "D0004"
+    },
+    {
+      "sponsor_canonical": "拉拉公園",
+      "orig_names": [
+        "拉拉公園"
+      ],
+      "total_quote": 90000.0,
+      "total_received": 89060.0,
+      "item_count": 1,
+      "items": [
+        {
+          "row": 7,
+          "item": "商業車",
+          "subcat": "西路線(往中山南路南端)",
+          "sponsor_orig": "拉拉公園",
+          "sponsor_canonical": "拉拉公園",
+          "quote": 90000.0,
+          "received": 89060.0,
+          "handler": "Ruby"
+        }
+      ],
+      "tier": "T5",
+      "target": "fact_sponsorship",
+      "payment": "已付款",
+      "handler": "Ruby",
+      "returning": true,
+      "donor_id": "D0006"
+    },
+    {
+      "sponsor_canonical": "Hornet",
+      "orig_names": [
+        "HORNET"
+      ],
+      "total_quote": 90000.0,
+      "total_received": 90000.0,
+      "item_count": 1,
+      "items": [
+        {
+          "row": 9,
+          "item": "商業車",
+          "subcat": "南路線(往中山南路北端)",
+          "sponsor_orig": "HORNET",
+          "sponsor_canonical": "Hornet",
+          "quote": 90000.0,
+          "received": 90000.0,
+          "handler": "Ruby"
+        }
+      ],
+      "tier": "T5",
+      "target": "fact_sponsorship",
+      "payment": "已付款",
+      "handler": "Ruby",
+      "returning": true,
+      "donor_id": "D0008"
+    },
+    {
+      "sponsor_canonical": "Tokyo RainBow Pride",
+      "orig_names": [
+        "TokyoRainbowPride"
+      ],
+      "total_quote": 50000.0,
+      "total_received": 0,
+      "item_count": 1,
+      "items": [
+        {
+          "row": 8,
+          "item": "商業車",
+          "subcat": "南路線(往中山南路北端)",
+          "sponsor_orig": "TokyoRainbowPride",
+          "sponsor_canonical": "Tokyo RainBow Pride",
+          "quote": 50000.0,
+          "received": 0,
+          "handler": "Albert"
+        }
+      ],
+      "tier": "T5",
+      "target": "fact_sponsorship",
+      "payment": "未付款",
+      "handler": "Albert",
+      "returning": true,
+      "donor_id": "D0011"
+    },
+    {
+      "sponsor_canonical": "國際人權特赦組織(AI)",
+      "orig_names": [
+        "國際特赦組織 ( Amnesty International )",
+        "社運帳篷-AI"
+      ],
+      "total_quote": 29000.0,
+      "total_received": 28970.0,
+      "item_count": 2,
+      "items": [
+        {
+          "row": 14,
+          "item": "商業車",
+          "subcat": "A",
+          "sponsor_orig": "社運帳篷-AI",
+          "sponsor_canonical": "國際人權特赦組織(AI)",
+          "quote": 20000.0,
+          "received": 19985.0,
+          "handler": "Ruby"
+        },
+        {
+          "row": 26,
+          "item": "輪播影片",
+          "subcat": "3單位→90s",
+          "sponsor_orig": "國際特赦組織 ( Amnesty International )",
+          "sponsor_canonical": "國際人權特赦組織(AI)",
+          "quote": 9000,
+          "received": 8985.0,
+          "handler": "Ruby"
+        }
+      ],
+      "tier": "T6",
+      "target": "fact_sponsorship",
+      "payment": "已付款",
+      "handler": "Ruby",
+      "returning": true,
+      "donor_id": "D0012"
+    },
+    {
+      "sponsor_canonical": "UBer",
+      "orig_names": [
+        "Uber"
+      ],
+      "total_quote": 100000.0,
+      "total_received": 100000.0,
+      "item_count": 1,
+      "items": [
+        {
+          "row": 17,
+          "item": "商業車",
+          "subcat": "G",
+          "sponsor_orig": "Uber",
+          "sponsor_canonical": "UBer",
+          "quote": 100000.0,
+          "received": 100000.0,
+          "handler": "Eason"
+        }
+      ],
+      "tier": "T5",
+      "target": "fact_sponsorship",
+      "payment": "已付款",
+      "handler": "Eason",
+      "returning": true,
+      "donor_id": "D0017"
+    },
+    {
+      "sponsor_canonical": "GAP",
+      "orig_names": [
+        "GAP"
+      ],
+      "total_quote": 90000.0,
+      "total_received": 90000.0,
+      "item_count": 1,
+      "items": [
+        {
+          "row": 6,
+          "item": "商業車",
+          "subcat": "西路線(往中山南路南端)",
+          "sponsor_orig": "GAP",
+          "sponsor_canonical": "GAP",
+          "quote": 90000.0,
+          "received": 90000.0,
+          "handler": "Ruby"
+        }
+      ],
+      "tier": "T5",
+      "target": "fact_sponsorship",
+      "payment": "已付款",
+      "handler": "Ruby",
+      "returning": true,
+      "donor_id": "D0020"
+    },
+    {
+      "sponsor_canonical": "彩虹酷兒健康文化中心",
+      "orig_names": [
+        "彩虹酷兒健康文化中心"
+      ],
+      "total_quote": 120000.0,
+      "total_received": 120000.0,
+      "item_count": 2,
+      "items": [
+        {
+          "row": 10,
+          "item": "商業車",
+          "subcat": "南路線(往中山南路北端)",
+          "sponsor_orig": "彩虹酷兒健康文化中心",
+          "sponsor_canonical": "彩虹酷兒健康文化中心",
+          "quote": 90000.0,
+          "received": 90000.0,
+          "handler": "Ruby"
+        },
+        {
+          "row": 23,
+          "item": "網站-固定商標露出",
+          "subcat": "II",
+          "sponsor_orig": "彩虹酷兒健康文化中心",
+          "sponsor_canonical": "彩虹酷兒健康文化中心",
+          "quote": 30000.0,
+          "received": 30000.0,
+          "handler": "Ruby"
+        }
+      ],
+      "tier": "T5",
+      "target": "fact_sponsorship",
+      "payment": "已付款",
+      "handler": "Ruby",
+      "returning": true,
+      "donor_id": "D0022"
+    },
+    {
+      "sponsor_canonical": "GaGaoLaLa",
+      "orig_names": [
+        "GaGaoLaLa"
+      ],
+      "total_quote": 90000.0,
+      "total_received": 90000.0,
+      "item_count": 1,
+      "items": [
+        {
+          "row": 13,
+          "item": "商業車",
+          "subcat": "東路線(往信義路)",
+          "sponsor_orig": "GaGaoLaLa",
+          "sponsor_canonical": "GaGaoLaLa",
+          "quote": 90000.0,
+          "received": 90000.0,
+          "handler": "Albert"
+        }
+      ],
+      "tier": "T5",
+      "target": "fact_sponsorship",
+      "payment": "已付款",
+      "handler": "Albert",
+      "returning": true,
+      "donor_id": "D0025"
+    },
+    {
+      "sponsor_canonical": "婚姻大平台",
+      "orig_names": [
+        "婚權大平台",
+        "社運帳篷-婚權大平台"
+      ],
+      "total_quote": 36000.0,
+      "total_received": 0,
+      "item_count": 3,
+      "items": [
+        {
+          "row": 4,
+          "item": "商業車",
+          "subcat": "西路線(往中山南路南端)",
+          "sponsor_orig": "婚權大平台",
+          "sponsor_canonical": "婚姻大平台",
+          "quote": 20000.0,
+          "received": 0,
+          "handler": "Ruby"
+        },
+        {
+          "row": 15,
+          "item": "商業車",
+          "subcat": "B",
+          "sponsor_orig": "社運帳篷-婚權大平台",
+          "sponsor_canonical": "婚姻大平台",
+          "quote": 10000.0,
+          "received": 0,
+          "handler": "Ruby"
+        },
+        {
+          "row": 27,
+          "item": "輪播影片",
+          "subcat": "2單位→60s",
+          "sponsor_orig": "婚權大平台",
+          "sponsor_canonical": "婚姻大平台",
+          "quote": 6000,
+          "received": 0,
+          "handler": "Ruby"
+        }
+      ],
+      "tier": "T6",
+      "target": "fact_sponsorship",
+      "payment": "未付款",
+      "handler": "Ruby",
+      "returning": true,
+      "donor_id": "D0026"
+    },
+    {
+      "sponsor_canonical": "Tstudio",
+      "orig_names": [
+        "T-STUDIO"
+      ],
+      "total_quote": 100000.0,
+      "total_received": 100000.0,
+      "item_count": 1,
+      "items": [
+        {
+          "row": 16,
+          "item": "商業車",
+          "subcat": "D",
+          "sponsor_orig": "T-STUDIO",
+          "sponsor_canonical": "Tstudio",
+          "quote": 100000.0,
+          "received": 100000.0,
+          "handler": "Eason"
+        }
+      ],
+      "tier": "T5",
+      "target": "fact_sponsorship",
+      "payment": "已付款",
+      "handler": "Eason",
+      "returning": true,
+      "donor_id": "D0034"
+    },
+    {
+      "sponsor_canonical": "Double APP",
+      "orig_names": [
+        "Double"
+      ],
+      "total_quote": 110000.0,
+      "total_received": 110000.0,
+      "item_count": 1,
+      "items": [
+        {
+          "row": 18,
+          "item": "音響鷹架旁看板廣告",
+          "subcat": "I",
+          "sponsor_orig": "Double",
+          "sponsor_canonical": "Double APP",
+          "quote": 110000.0,
+          "received": 110000.0,
+          "handler": "宏展"
+        }
+      ],
+      "tier": "T5",
+      "target": "fact_sponsorship",
+      "payment": "已付款",
+      "handler": "宏展",
+      "returning": true,
+      "donor_id": "D0036"
+    },
+    {
+      "sponsor_canonical": "Grindr",
+      "orig_names": [
+        "GRINDR"
+      ],
+      "total_quote": 90000.0,
+      "total_received": 90000.0,
+      "item_count": 1,
+      "items": [
+        {
+          "row": 12,
+          "item": "商業車",
+          "subcat": "東路線(往信義路)",
+          "sponsor_orig": "GRINDR",
+          "sponsor_canonical": "Grindr",
+          "quote": 90000.0,
+          "received": 90000.0,
+          "handler": "Ruby"
+        }
+      ],
+      "tier": "T5",
+      "target": "fact_sponsorship",
+      "payment": "已付款",
+      "handler": "Ruby",
+      "returning": true,
+      "donor_id": "D0042"
+    },
+    {
+      "sponsor_canonical": "YAHOO",
+      "orig_names": [
+        "Yahoo"
+      ],
+      "total_quote": 110000.0,
+      "total_received": 0,
+      "item_count": 1,
+      "items": [
+        {
+          "row": 19,
+          "item": "音響鷹架旁看板廣告",
+          "subcat": "II",
+          "sponsor_orig": "Yahoo",
+          "sponsor_canonical": "YAHOO",
+          "quote": 110000.0,
+          "received": 0,
+          "handler": "Ruby"
+        }
+      ],
+      "tier": "T5",
+      "target": "fact_sponsorship",
+      "payment": "未付款",
+      "handler": "Ruby",
+      "returning": true,
+      "donor_id": "D0045"
+    },
+    {
+      "sponsor_canonical": "Lifewonders",
+      "orig_names": [
+        "Lifewonders"
+      ],
+      "total_quote": 160000,
+      "total_received": 0,
+      "item_count": 1,
+      "items": [
+        {
+          "row": 24,
+          "item": "扇子",
+          "subcat": "I~IV",
+          "sponsor_orig": "Lifewonders",
+          "sponsor_canonical": "Lifewonders",
+          "quote": 160000,
+          "received": 0,
+          "handler": "Albert"
+        }
+      ],
+      "tier": "T4",
+      "target": "fact_sponsorship",
+      "payment": "未付款",
+      "handler": "Albert",
+      "returning": false,
+      "donor_id": "D0076"
+    },
+    {
+      "sponsor_canonical": "Blued",
+      "orig_names": [
+        "Blued"
+      ],
+      "total_quote": 120000.0,
+      "total_received": 118676.0,
+      "item_count": 1,
+      "items": [
+        {
+          "row": 11,
+          "item": "商業車",
+          "subcat": "東路線(往信義路)",
+          "sponsor_orig": "Blued",
+          "sponsor_canonical": "Blued",
+          "quote": 120000.0,
+          "received": 118676.0,
+          "handler": "Ruby、Albert"
+        }
+      ],
+      "tier": "T5",
+      "target": "fact_sponsorship",
+      "payment": "已付款",
+      "handler": "Ruby、Albert",
+      "returning": false,
+      "donor_id": "D0077"
+    },
+    {
+      "sponsor_canonical": "COOL GUY",
+      "orig_names": [
+        "COOL GUY"
+      ],
+      "total_quote": 30000.0,
+      "total_received": 30000.0,
+      "item_count": 1,
+      "items": [
+        {
+          "row": 21,
+          "item": "瓶裝水",
+          "subcat": "II",
+          "sponsor_orig": "COOL GUY",
+          "sponsor_canonical": "COOL GUY",
+          "quote": 30000.0,
+          "received": 30000.0,
+          "handler": "Ruby"
+        }
+      ],
+      "tier": "T6",
+      "target": "fact_sponsorship",
+      "payment": "已付款",
+      "handler": "Ruby",
+      "returning": false,
+      "donor_id": "D0078"
+    }
+  ],
+  "item_category": {
+    "商業車": "花車",
+    "扇子": "印刷品贊助",
+    "瓶裝水": "其他合作",
+    "網站-固定商標露出": "線上版位露出",
+    "輪播影片": "現場版位露出",
+    "音響鷹架旁看板廣告": "現場版位露出"
+  },
+  "industry": {
+    "Lifewonders": "社交軟體（gay）",
+    "Blued": "社交軟體（gay）",
+    "COOL GUY": "生活／文創"
+  },
+  "first_year_fixes": [
+    "D0034",
+    "D0036",
+    "D0042",
+    "D0045"
+  ]
+}

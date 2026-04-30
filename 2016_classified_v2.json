@@ -1,0 +1,406 @@
+{
+  "classification": [
+    {
+      "sponsor": "辻利茶舖",
+      "total_quote": 125000.0,
+      "total_received": 89000.0,
+      "item_count": 2,
+      "items_set": [
+        "攤位帳篷",
+        "遊行當天DM贊助"
+      ],
+      "is_ngo": false,
+      "tier": "T5",
+      "target": "fact_sponsorship",
+      "payment": "已付款",
+      "handler": "Ruby",
+      "donor_id": "D0001"
+    },
+    {
+      "sponsor": "Par.T",
+      "total_quote": 110000.0,
+      "total_received": 110000.0,
+      "item_count": 2,
+      "items_set": [
+        "攤位帳篷",
+        "官網banner"
+      ],
+      "is_ngo": false,
+      "tier": "T5",
+      "target": "fact_sponsorship",
+      "payment": "已付款",
+      "handler": "玉甄 & Ruby",
+      "donor_id": "D0002"
+    },
+    {
+      "sponsor": "Blue",
+      "total_quote": 80000.0,
+      "total_received": 80000.0,
+      "item_count": 1,
+      "items_set": [
+        "遊行花車(B車)\n商業車路權"
+      ],
+      "is_ngo": false,
+      "tier": "T5",
+      "target": "fact_sponsorship",
+      "payment": "已付款",
+      "handler": "Albert",
+      "donor_id": "D0003"
+    },
+    {
+      "sponsor": "Destination,Beijing",
+      "total_quote": 80000.0,
+      "total_received": 80000.0,
+      "item_count": 1,
+      "items_set": [
+        "遊行花車(B車)\n商業車路權"
+      ],
+      "is_ngo": false,
+      "tier": "T5",
+      "target": "fact_sponsorship",
+      "payment": "已付款",
+      "handler": "Albert",
+      "donor_id": "D0004"
+    },
+    {
+      "sponsor": "愛滋病理協會",
+      "total_quote": 60000.0,
+      "total_received": 60000.0,
+      "item_count": 1,
+      "items_set": [
+        "遊行花車(B車)\n商業車路權"
+      ],
+      "is_ngo": true,
+      "tier": "T5",
+      "target": "fact_sponsorship",
+      "payment": "已付款",
+      "handler": "Albert",
+      "donor_id": "D0005"
+    },
+    {
+      "sponsor": "拉拉公園",
+      "total_quote": 60000.0,
+      "total_received": 60000.0,
+      "item_count": 1,
+      "items_set": [
+        "遊行花車(B車)\n商業車路權"
+      ],
+      "is_ngo": false,
+      "tier": "T5",
+      "target": "fact_sponsorship",
+      "payment": "已付款",
+      "handler": "Albert",
+      "donor_id": "D0006"
+    },
+    {
+      "sponsor": "華泰飯店",
+      "total_quote": 60000.0,
+      "total_received": 60000.0,
+      "item_count": 1,
+      "items_set": [
+        "攤位帳篷"
+      ],
+      "is_ngo": false,
+      "tier": "T5",
+      "target": "fact_sponsorship",
+      "payment": "已付款",
+      "handler": "苡昇 &  阿莫",
+      "donor_id": "D0007"
+    },
+    {
+      "sponsor": "Hornet",
+      "total_quote": 50000.0,
+      "total_received": 0,
+      "item_count": 1,
+      "items_set": [
+        "遊行當天DM贊助"
+      ],
+      "is_ngo": false,
+      "tier": "T5",
+      "target": "fact_sponsorship",
+      "payment": "未付款",
+      "handler": "Albert",
+      "donor_id": "D0008"
+    },
+    {
+      "sponsor": "基本書坊",
+      "total_quote": 50000.0,
+      "total_received": 50000.0,
+      "item_count": 2,
+      "items_set": [
+        "攤位帳篷",
+        "遊行當天DM贊助"
+      ],
+      "is_ngo": false,
+      "tier": "T5",
+      "target": "fact_sponsorship",
+      "payment": "已付款",
+      "handler": "宏展",
+      "donor_id": "D0009"
+    },
+    {
+      "sponsor": "金鑛咖啡",
+      "total_quote": 40000.0,
+      "total_received": 40000.0,
+      "item_count": 1,
+      "items_set": [
+        "攤位帳篷"
+      ],
+      "is_ngo": false,
+      "tier": "T5",
+      "target": "fact_sponsorship",
+      "payment": "已付款",
+      "handler": "苡昇",
+      "donor_id": "D0010"
+    },
+    {
+      "sponsor": "Tokyo RainBow Pride",
+      "total_quote": 30000.0,
+      "total_received": 0,
+      "item_count": 1,
+      "items_set": [
+        "遊行花車(B車)\n商業車路權"
+      ],
+      "is_ngo": false,
+      "tier": "T6",
+      "target": "fact_sponsorship",
+      "payment": "未付款",
+      "handler": "Albert",
+      "donor_id": "D0011"
+    },
+    {
+      "sponsor": "國際人權特赦組織(AI)",
+      "total_quote": 20000.0,
+      "total_received": 19970.0,
+      "item_count": 1,
+      "items_set": [
+        "攤位帳篷"
+      ],
+      "is_ngo": true,
+      "tier": null,
+      "target": "fact_market_booth",
+      "payment": "已付款",
+      "handler": "Albert",
+      "donor_id": "D0012"
+    },
+    {
+      "sponsor": "粉紅卡夫卡",
+      "total_quote": 20000.0,
+      "total_received": 20000.0,
+      "item_count": 1,
+      "items_set": [
+        "攤位帳篷"
+      ],
+      "is_ngo": false,
+      "tier": "T6",
+      "target": "fact_sponsorship",
+      "payment": "已付款",
+      "handler": "苡昇",
+      "donor_id": "D0013"
+    },
+    {
+      "sponsor": "酷兒影展",
+      "total_quote": 20000.0,
+      "total_received": 20000.0,
+      "item_count": 1,
+      "items_set": [
+        "攤位帳篷"
+      ],
+      "is_ngo": false,
+      "tier": "T6",
+      "target": "fact_sponsorship",
+      "payment": "已付款",
+      "handler": "苡昇 &  阿莫",
+      "donor_id": "D0014"
+    },
+    {
+      "sponsor": "島國前進",
+      "total_quote": 3000.0,
+      "total_received": 3000.0,
+      "item_count": 1,
+      "items_set": [
+        "攤位帳篷"
+      ],
+      "is_ngo": true,
+      "tier": null,
+      "target": "fact_market_booth",
+      "payment": "已付款",
+      "handler": "Albert",
+      "donor_id": "D0015"
+    }
+  ],
+  "records": [
+    {
+      "item": "遊行當天DM贊助",
+      "sponsor": "基本書坊",
+      "handler": "宏展",
+      "quote": 30000.0,
+      "received": 30000.0
+    },
+    {
+      "item": "遊行當天DM贊助",
+      "sponsor": "辻利茶舖",
+      "handler": "Ruby",
+      "quote": 40000.0,
+      "received": 4000.0
+    },
+    {
+      "item": "遊行當天DM贊助",
+      "sponsor": "Hornet",
+      "handler": "Albert",
+      "quote": 50000.0,
+      "received": 0
+    },
+    {
+      "item": "官網banner",
+      "sponsor": "Par.T",
+      "handler": "玉甄 & Ruby",
+      "quote": 10000.0,
+      "received": 10000.0
+    },
+    {
+      "item": "攤位帳篷",
+      "sponsor": "Par.T",
+      "handler": "玉甄 & Ruby",
+      "quote": 100000.0,
+      "received": 100000.0
+    },
+    {
+      "item": "攤位帳篷",
+      "sponsor": "金鑛咖啡",
+      "handler": "苡昇",
+      "quote": 40000.0,
+      "received": 40000.0
+    },
+    {
+      "item": "攤位帳篷",
+      "sponsor": "基本書坊",
+      "handler": "宏展",
+      "quote": 20000.0,
+      "received": 20000.0
+    },
+    {
+      "item": "攤位帳篷",
+      "sponsor": "辻利茶舖",
+      "handler": "Ruby",
+      "quote": 85000.0,
+      "received": 85000.0
+    },
+    {
+      "item": "攤位帳篷",
+      "sponsor": "國際人權特赦組織(AI)",
+      "handler": "Albert",
+      "quote": 20000.0,
+      "received": 19970.0
+    },
+    {
+      "item": "攤位帳篷",
+      "sponsor": "島國前進",
+      "handler": "Albert",
+      "quote": 3000.0,
+      "received": 3000.0
+    },
+    {
+      "item": "攤位帳篷",
+      "sponsor": "華泰飯店",
+      "handler": "苡昇 &  阿莫",
+      "quote": 60000.0,
+      "received": 60000.0
+    },
+    {
+      "item": "攤位帳篷",
+      "sponsor": "酷兒影展",
+      "handler": "苡昇 &  阿莫",
+      "quote": 20000.0,
+      "received": 20000.0
+    },
+    {
+      "item": "攤位帳篷",
+      "sponsor": "粉紅卡夫卡",
+      "handler": "苡昇",
+      "quote": 20000.0,
+      "received": 20000.0
+    },
+    {
+      "item": "遊行花車(B車)\n商業車路權",
+      "sponsor": "Destination,Beijing",
+      "handler": "Albert",
+      "quote": 80000.0,
+      "received": 80000.0
+    },
+    {
+      "item": "遊行花車(B車)\n商業車路權",
+      "sponsor": "愛滋病理協會",
+      "handler": "Albert",
+      "quote": 60000.0,
+      "received": 60000.0
+    },
+    {
+      "item": "遊行花車(B車)\n商業車路權",
+      "sponsor": "Tokyo RainBow Pride",
+      "handler": "Albert",
+      "quote": 30000.0,
+      "received": 0
+    },
+    {
+      "item": "遊行花車(B車)\n商業車路權",
+      "sponsor": "Blue",
+      "handler": "Albert",
+      "quote": 80000.0,
+      "received": 80000.0
+    },
+    {
+      "item": "遊行花車(B車)\n商業車路權",
+      "sponsor": "拉拉公園",
+      "handler": "Albert",
+      "quote": 60000.0,
+      "received": 60000.0
+    }
+  ],
+  "item_category": {
+    "遊行當天DM贊助": "印刷品贊助",
+    "官網banner": "線上版位露出",
+    "攤位帳篷": "市集帳篷",
+    "遊行花車(A車)\n大隊車": "花車",
+    "遊行花車(B車)\n商業車路權": "花車",
+    "鷹架旁看板廣告": "現場版位露出",
+    "瓶裝水\n(60 箱 ，24 瓶 / 箱 )": "其他合作",
+    "酷卡": "印刷品贊助",
+    "投影幕下方看板廣告": "現場版位露出",
+    "舞台下緣看板": "現場版位露出"
+  },
+  "donor_map": {
+    "辻利茶舖": "D0001",
+    "Par.T": "D0002",
+    "Blue": "D0003",
+    "Destination,Beijing": "D0004",
+    "愛滋病理協會": "D0005",
+    "拉拉公園": "D0006",
+    "華泰飯店": "D0007",
+    "Hornet": "D0008",
+    "基本書坊": "D0009",
+    "金鑛咖啡": "D0010",
+    "Tokyo RainBow Pride": "D0011",
+    "國際人權特赦組織(AI)": "D0012",
+    "粉紅卡夫卡": "D0013",
+    "酷兒影展": "D0014",
+    "島國前進": "D0015"
+  },
+  "industry_guess": {
+    "Par.T": "夜店／娛樂",
+    "辻利茶舖": "餐飲",
+    "Blue": "夜店／娛樂",
+    "Destination,Beijing": "夜店／娛樂",
+    "愛滋病理協會": "公益／NGO",
+    "拉拉公園": "LGBT 媒體",
+    "華泰飯店": "飯店",
+    "基本書坊": "書店／文創",
+    "金鑛咖啡": "餐飲",
+    "粉紅卡夫卡": "文創",
+    "酷兒影展": "影展／文化",
+    "國際人權特赦組織(AI)": "公益／NGO",
+    "島國前進": "公益／NGO",
+    "Hornet": "社交軟體",
+    "Tokyo RainBow Pride": "海外友台組織"
+  }
+}
