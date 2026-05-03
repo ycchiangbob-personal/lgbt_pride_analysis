@@ -431,6 +431,22 @@
   .tab-panel { display: none; }
   .tab-panel.active { display: block; }
 
+
+  /* Donor list tab */
+  .donor-filter-bar { display:flex; align-items:center; gap:14px; margin-bottom:16px; }
+  .donor-filter-bar input {
+    flex:1; max-width:380px; padding:8px 12px;
+    border:1px solid var(--border); border-radius:6px;
+    font-size:14px; font-family:inherit; background:var(--surface);
+    color:var(--text-primary); outline:none;
+  }
+  .donor-filter-bar input:focus { border-color:var(--accent); box-shadow:0 0 0 2px rgba(232,68,90,.12); }
+  .donor-filter-bar .donor-count { font-size:13px; color:var(--text-muted); }
+  .id-col { font-family:monospace; font-size:13px; color:var(--accent); font-weight:600; width:72px; }
+  .donor-years { font-size:12px; color:var(--text-secondary); line-height:1.8; }
+  .donor-alias { display:inline-block; font-size:11px; background:#f0ede8; color:var(--text-secondary); padding:1px 6px; border-radius:4px; margin-right:4px; }
+  .donor-orig { font-size:11px; color:var(--text-muted); }
+  #donor-tbody tr.d-hidden { display:none; }
 </style>
 </head>
 <body>
@@ -487,6 +503,7 @@
     <button class="tab-btn" onclick="showTab('analysis-e', this)">新品牌續約率</button>
     <button class="tab-btn" onclick="showTab('analysis-f', this)">集中度</button>
     <button class="tab-btn" onclick="showTab('opportunities', this)">機會識別</button>
+    <button class="tab-btn" onclick="showTab('donors', this)">贊助商名錄</button>
     <button class="tab-btn" onclick="showTab('methodology', this)">說明</button>
   </nav>
 
@@ -1079,6 +1096,264 @@ Porsche Taiwan Motors Limited</strong></td><td style="font-size:11px;color:var(-
   </div>
 
   </div><!-- /panel-methodology -->
+
+
+  <div class="tab-panel" id="panel-donors">
+    <div class="section-card">
+      <h2 class="section-title">贊助商名錄</h2>
+      <p class="plain-desc">共 226 筆廠商紀錄（2016–2025）。可使用下方篩選框快速查找，或直接按 Ctrl+F 搜尋頁面文字。</p>
+      <div class="donor-filter-bar">
+        <input type="text" id="donorQ" placeholder="輸入廠商名稱、別名或 D 編號…" oninput="filterDonors()">
+        <span class="donor-count" id="donorCount">共 226 筆</span>
+      </div>
+      <div style="overflow-x:auto">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>D 編號</th>
+              <th>廠商名稱</th>
+              <th>出現年份</th>
+              <th style="text-align:center">年數</th>
+              <th>最近類型</th>
+              <th class="right">最近金額</th>
+            </tr>
+          </thead>
+          <tbody id="donor-tbody">
+    <tr><td class="id-col">D0001</td><td>辻利茶舖</td><td class="donor-years">2016、2017、2018、2019、2020、2021、2022、2023、2024、2025</td><td style="text-align:center;color:var(--text-muted)">10</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">單買</span></td><td class="right">$25,000</td></tr>
+    <tr><td class="id-col">D0002</td><td>Par.T<br><span class="donor-orig">原名：Part.T</span></td><td class="donor-years">2016、2017、2022</td><td style="text-align:center;color:var(--text-muted)">3</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">其他</span></td><td class="right">—</td></tr>
+    <tr><td class="id-col">D0003</td><td>Blue</td><td class="donor-years">2016、2017</td><td style="text-align:center;color:var(--text-muted)">2</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0004</td><td>Destination,Beijing</td><td class="donor-years">2016、2017、2018、2019</td><td style="text-align:center;color:var(--text-muted)">4</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0005</td><td>愛滋病理協會</td><td class="donor-years">2016</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0006</td><td>拉拉公園<br><span class="donor-orig">原名：Lespark</span></td><td class="donor-years">2016、2017、2018、2019、2020、2021、2022、2023、2024、2025</td><td style="text-align:center;color:var(--text-muted)">10</td><td><span class="tier-chip" style="background:#70AD4722;color:#70AD47">銀級</span></td><td class="right">$198,000</td></tr>
+    <tr><td class="id-col">D0007</td><td>華泰飯店</td><td class="donor-years">2016</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0008</td><td>Hornet</td><td class="donor-years">2016、2017、2018</td><td style="text-align:center;color:var(--text-muted)">3</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0009</td><td>基本書坊</td><td class="donor-years">2016</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0010</td><td>金鑛咖啡</td><td class="donor-years">2016</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0011</td><td>Tokyo RainBow Pride</td><td class="donor-years">2016、2017、2018</td><td style="text-align:center;color:var(--text-muted)">3</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0012</td><td>國際人權特赦組織(AI)<br><span class="donor-orig">原名：國際特赦組織台灣分會</span></td><td class="donor-years">2016、2017、2018、2023</td><td style="text-align:center;color:var(--text-muted)">4</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">單買</span></td><td class="right">$25,000</td></tr>
+    <tr><td class="id-col">D0013</td><td>粉紅卡夫卡</td><td class="donor-years">2016</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0014</td><td>酷兒影展</td><td class="donor-years">2016</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0015</td><td>島國前進</td><td class="donor-years">2016</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0016</td><td>觸控科技</td><td class="donor-years">2017</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0017</td><td>UBer<br><span class="donor-orig">原名：Uber
+Eats</span></td><td class="donor-years">2017、2018、2019、2022、2023、2024、2025</td><td style="text-align:center;color:var(--text-muted)">7</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">花車</span></td><td class="right">$120,000</td></tr>
+    <tr><td class="id-col">D0018</td><td>達博企業社(大龜)</td><td class="donor-years">2017</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0019</td><td>雪豹科技</td><td class="donor-years">2017</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0020</td><td>GAP</td><td class="donor-years">2017、2018、2019、2020、2022、2023、2024、2025</td><td style="text-align:center;color:var(--text-muted)">8</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">花車</span></td><td class="right">$120,000</td></tr>
+    <tr><td class="id-col">D0021</td><td>Sunpride Foundation 驕陽基金會</td><td class="donor-years">2017、2019</td><td style="text-align:center;color:var(--text-muted)">2</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0022</td><td>彩虹酷兒健康文化中心<br><span class="donor-orig">原名：彩虹酷兒</span></td><td class="donor-years">2017、2018、2019、2020、2022、2023、2024、2025</td><td style="text-align:center;color:var(--text-muted)">8</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">花車</span></td><td class="right">$120,000</td></tr>
+    <tr><td class="id-col">D0023</td><td>艾緦整合行銷</td><td class="donor-years">2017</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0024</td><td>ESHA</td><td class="donor-years">2017</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0025</td><td>GaGaoLaLa<br><span class="donor-orig">原名：GagaOOLala LGBTQ+ & BL線上影音平台</span></td><td class="donor-years">2017、2018、2023</td><td style="text-align:center;color:var(--text-muted)">3</td><td><span class="tier-chip" style="background:#9e9e9e22;color:#9e9e9e">白銀級</span></td><td class="right">$400,000</td></tr>
+    <tr><td class="id-col">D0026</td><td>婚姻大平台</td><td class="donor-years">2017、2018</td><td style="text-align:center;color:var(--text-muted)">2</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0027</td><td>花旗商銀</td><td class="donor-years">2017</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0028</td><td>GILEAD<br><span class="donor-orig">原名：吉利亞醫藥</span></td><td class="donor-years">2020、2021、2022、2023、2024、2025</td><td style="text-align:center;color:var(--text-muted)">6</td><td><span class="tier-chip" style="background:#70AD4722;color:#70AD47">銀級</span></td><td class="right">$230,000</td></tr>
+    <tr><td class="id-col">D0029</td><td>戶戶送</td><td class="donor-years">—</td><td style="text-align:center;color:var(--text-muted)">0</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0030</td><td>紅樓友善商家聯盟</td><td class="donor-years">—</td><td style="text-align:center;color:var(--text-muted)">0</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0031</td><td>美生國際</td><td class="donor-years">—</td><td style="text-align:center;color:var(--text-muted)">0</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0032</td><td>G-Star<br><span class="donor-orig">原名：Gstar</span></td><td class="donor-years">2021、2022、2023、2024、2025</td><td style="text-align:center;color:var(--text-muted)">5</td><td><span class="tier-chip" style="background:#70AD4722;color:#70AD47">銀級</span></td><td class="right">$198,000</td></tr>
+    <tr><td class="id-col">D0033</td><td>杰德影音</td><td class="donor-years">—</td><td style="text-align:center;color:var(--text-muted)">0</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0034</td><td>Tstudio</td><td class="donor-years">2018、2020、2022、2023、2024、2025</td><td style="text-align:center;color:var(--text-muted)">6</td><td><span class="tier-chip" style="background:#ED7D3122;color:#ED7D31">銅級</span></td><td class="right">$108,000</td></tr>
+    <tr><td class="id-col">D0035</td><td>臺灣酷蓋</td><td class="donor-years">—</td><td style="text-align:center;color:var(--text-muted)">0</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0036</td><td>Double APP</td><td class="donor-years">2018</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0037</td><td>Google</td><td class="donor-years">2020、2022、2023、2024、2025</td><td style="text-align:center;color:var(--text-muted)">5</td><td><span class="tier-chip" style="background:#70AD4722;color:#70AD47">銀級</span></td><td class="right">$198,000</td></tr>
+    <tr><td class="id-col">D0038</td><td>Mozilla</td><td class="donor-years">—</td><td style="text-align:center;color:var(--text-muted)">0</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0039</td><td>FACEBOOK</td><td class="donor-years">—</td><td style="text-align:center;color:var(--text-muted)">0</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0041</td><td>英諾美生物科技</td><td class="donor-years">2020</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0042</td><td>Grindr</td><td class="donor-years">2018</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0043</td><td>哈利男孩</td><td class="donor-years">—</td><td style="text-align:center;color:var(--text-muted)">0</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0045</td><td>YAHOO<br><span class="donor-orig">原名：Yahoo</span></td><td class="donor-years">2018、2022</td><td style="text-align:center;color:var(--text-muted)">2</td><td><span class="tier-chip" style="background:#70AD4722;color:#70AD47">銀級</span></td><td class="right">$170,000</td></tr>
+    <tr><td class="id-col">D0046</td><td>熱海</td><td class="donor-years">—</td><td style="text-align:center;color:var(--text-muted)">0</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0047</td><td>質男幫</td><td class="donor-years">—</td><td style="text-align:center;color:var(--text-muted)">0</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0048</td><td>EY</td><td class="donor-years">2020</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0049</td><td>基島科技</td><td class="donor-years">—</td><td style="text-align:center;color:var(--text-muted)">0</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0050</td><td>艿緦服裝有限公司</td><td class="donor-years">—</td><td style="text-align:center;color:var(--text-muted)">0</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0051</td><td>redbull</td><td class="donor-years">2020</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0052</td><td>GSK</td><td class="donor-years">2020、2021、2022、2023、2024、2025</td><td style="text-align:center;color:var(--text-muted)">6</td><td><span class="tier-chip" style="background:#70AD4722;color:#70AD47">銀級</span></td><td class="right">$198,000</td></tr>
+    <tr><td class="id-col">D0053</td><td>磊山</td><td class="donor-years">2020、2021</td><td style="text-align:center;color:var(--text-muted)">2</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0054</td><td>TINDER</td><td class="donor-years">2020</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0055</td><td>Microsoft</td><td class="donor-years">2020</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0056</td><td>台灣百健</td><td class="donor-years">2020、2021、2023、2024、2025</td><td style="text-align:center;color:var(--text-muted)">5</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">單買</span></td><td class="right">$20,000</td></tr>
+    <tr><td class="id-col">D0057</td><td>Foodpanda</td><td class="donor-years">2020</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0058</td><td>Unilever<br><span class="donor-orig">原名：聯合利華</span></td><td class="donor-years">2020、2021、2022、2023、2024、2025</td><td style="text-align:center;color:var(--text-muted)">6</td><td><span class="tier-chip" style="background:#70AD4722;color:#70AD47">銀級</span></td><td class="right">$198,000</td></tr>
+    <tr><td class="id-col">D0059</td><td>PINKOI<br><span class="donor-orig">原名：Pinkoi</span></td><td class="donor-years">2020、2021、2022、2023</td><td style="text-align:center;color:var(--text-muted)">4</td><td><span class="tier-chip" style="background:#70AD4722;color:#70AD47">銀級</span></td><td class="right">$180,000</td></tr>
+    <tr><td class="id-col">D0060</td><td>澤豐</td><td class="donor-years">2020、2022</td><td style="text-align:center;color:var(--text-muted)">2</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">單買</span></td><td class="right">$10,000</td></tr>
+    <tr><td class="id-col">D0061</td><td>Klook</td><td class="donor-years">2020</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0062</td><td>台虎<br><span class="donor-orig">原名：臺虎精釀</span></td><td class="donor-years">2020、2021、2022、2023、2024、2025</td><td style="text-align:center;color:var(--text-muted)">6</td><td><span class="tier-chip" style="background:#70AD4722;color:#70AD47">銀級</span></td><td class="right">$198,000</td></tr>
+    <tr><td class="id-col">D0063</td><td>獨角落</td><td class="donor-years">2020</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0064</td><td>瑪莉珍比薩</td><td class="donor-years">2020</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0065</td><td>SONY</td><td class="donor-years">2020</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0066</td><td>GOLIN</td><td class="donor-years">2020</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0067</td><td>hyve solutions<br><span class="donor-orig">原名：Hyve</span></td><td class="donor-years">2020、2021、2023、2025</td><td style="text-align:center;color:var(--text-muted)">4</td><td><span class="tier-chip" style="background:#ED7D3122;color:#ED7D31">銅級</span></td><td class="right">$108,000</td></tr>
+    <tr><td class="id-col">D0068</td><td>JACK D</td><td class="donor-years">2020</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0069</td><td>熱線藥廠</td><td class="donor-years">2020</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0070</td><td>HotelCom</td><td class="donor-years">2020</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0071</td><td>放駟科技</td><td class="donor-years">2020</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0072</td><td>大安金普頓</td><td class="donor-years">2020</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0073</td><td>ANASIUM 艾納舒</td><td class="donor-years">2020</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0074</td><td>18歲公民聯盟</td><td class="donor-years">2020</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0075</td><td>紅樓</td><td class="donor-years">2020</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0076</td><td>Lifewonders<br><span class="donor-alias">lifewonders</span></td><td class="donor-years">2018、2021</td><td style="text-align:center;color:var(--text-muted)">2</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0077</td><td>Blued</td><td class="donor-years">2018</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0078</td><td>COOL GUY</td><td class="donor-years">2018</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0079</td><td>FiftyPercent<br><span class="donor-orig">原名：50% FIFTY PERCENT</span></td><td class="donor-years">2022、2023</td><td style="text-align:center;color:var(--text-muted)">2</td><td><span class="tier-chip" style="background:#70AD4722;color:#70AD47">銀級</span></td><td class="right">—</td></tr>
+    <tr><td class="id-col">D0080</td><td>DIKE</td><td class="donor-years">2021、2022</td><td style="text-align:center;color:var(--text-muted)">2</td><td><span class="tier-chip" style="background:#e8a60022;color:#e8a600">黃金級</span></td><td class="right">$700,000</td></tr>
+    <tr><td class="id-col">D0081</td><td>Model TV</td><td class="donor-years">2022</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#e8a60022;color:#e8a600">黃金級</span></td><td class="right">$700,000</td></tr>
+    <tr><td class="id-col">D0082</td><td>lululemon</td><td class="donor-years">2022</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9e9e9e22;color:#9e9e9e">白銀級</span></td><td class="right">$300,000</td></tr>
+    <tr><td class="id-col">D0083</td><td>杜蕾斯</td><td class="donor-years">2022</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9e9e9e22;color:#9e9e9e">白銀級</span></td><td class="right">$300,000</td></tr>
+    <tr><td class="id-col">D0084</td><td>美光<br><span class="donor-orig">原名：台灣美光</span></td><td class="donor-years">2022、2023、2024、2025</td><td style="text-align:center;color:var(--text-muted)">4</td><td><span class="tier-chip" style="background:#4472C422;color:#4472C4">鈦金級</span></td><td class="right">$405,000</td></tr>
+    <tr><td class="id-col">D0085</td><td>AZ</td><td class="donor-years">2021、2022、2023、2024、2025</td><td style="text-align:center;color:var(--text-muted)">5</td><td><span class="tier-chip" style="background:#70AD4722;color:#70AD47">銀級</span></td><td class="right">$198,000</td></tr>
+    <tr><td class="id-col">D0086</td><td>GSTAR</td><td class="donor-years">2020</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0087</td><td>UT麗舍</td><td class="donor-years">2022</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#70AD4722;color:#70AD47">銀級</span></td><td class="right">$254,000</td></tr>
+    <tr><td class="id-col">D0088</td><td>台北市觀傳局</td><td class="donor-years">2022</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#70AD4722;color:#70AD47">銀級</span></td><td class="right">$150,000</td></tr>
+    <tr><td class="id-col">D0089</td><td>百健</td><td class="donor-years">2022</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#70AD4722;color:#70AD47">銀級</span></td><td class="right">—</td></tr>
+    <tr><td class="id-col">D0090</td><td>海峰電腦</td><td class="donor-years">2022、2024</td><td style="text-align:center;color:var(--text-muted)">2</td><td><span class="tier-chip" style="background:#ED7D3122;color:#ED7D31">銅級</span></td><td class="right">$120,000</td></tr>
+    <tr><td class="id-col">D0091</td><td>高通<br><span class="donor-orig">原名：Qualcomm</span></td><td class="donor-years">2022、2023、2024</td><td style="text-align:center;color:var(--text-muted)">3</td><td><span class="tier-chip" style="background:#70AD4722;color:#70AD47">銀級</span></td><td class="right">$198,000</td></tr>
+    <tr><td class="id-col">D0092</td><td>高誠公關</td><td class="donor-years">2022、2024</td><td style="text-align:center;color:var(--text-muted)">2</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">花車</span></td><td class="right">$120,000</td></tr>
+    <tr><td class="id-col">D0093</td><td>樂天</td><td class="donor-years">2022、2023、2024</td><td style="text-align:center;color:var(--text-muted)">3</td><td><span class="tier-chip" style="background:#70AD4722;color:#70AD47">銀級</span></td><td class="right">$197,985</td></tr>
+    <tr><td class="id-col">D0094</td><td>磊山保經</td><td class="donor-years">2022</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#70AD4722;color:#70AD47">銀級</span></td><td class="right">$150,000</td></tr>
+    <tr><td class="id-col">D0095</td><td>Lab Series</td><td class="donor-years">2022</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">單買</span></td><td class="right">—</td></tr>
+    <tr><td class="id-col">D0096</td><td>MAC</td><td class="donor-years">2022</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">單買</span></td><td class="right">$352,000</td></tr>
+    <tr><td class="id-col">D0097</td><td>NIKE</td><td class="donor-years">2022、2023、2024、2025</td><td style="text-align:center;color:var(--text-muted)">4</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">花車</span></td><td class="right">$120,000</td></tr>
+    <tr><td class="id-col">D0098</td><td>TaskUs</td><td class="donor-years">2022、2024</td><td style="text-align:center;color:var(--text-muted)">2</td><td><span class="tier-chip" style="background:#ED7D3122;color:#ED7D31">銅級</span></td><td class="right">$120,000</td></tr>
+    <tr><td class="id-col">D0099</td><td>ZIMA</td><td class="donor-years">2022</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">單買</span></td><td class="right">—</td></tr>
+    <tr><td class="id-col">D0100</td><td>七彩翼國際</td><td class="donor-years">2022</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">單買</span></td><td class="right">$10,000</td></tr>
+    <tr><td class="id-col">D0101</td><td>台北市民政局</td><td class="donor-years">2022</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">單買</span></td><td class="right">—</td></tr>
+    <tr><td class="id-col">D0102</td><td>永準貿易</td><td class="donor-years">2022</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">單買</span></td><td class="right">$80,000</td></tr>
+    <tr><td class="id-col">D0103</td><td>同窗會</td><td class="donor-years">2022</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">單買</span></td><td class="right">—</td></tr>
+    <tr><td class="id-col">D0104</td><td>波士頓<br><span class="donor-orig">原名：波士頓科技</span></td><td class="donor-years">2022、2023、2024、2025</td><td style="text-align:center;color:var(--text-muted)">4</td><td><span class="tier-chip" style="background:#4472C422;color:#4472C4">鈦金級</span></td><td class="right">$405,000</td></tr>
+    <tr><td class="id-col">D0105</td><td>Sagami</td><td class="donor-years">2022、2023、2024、2025</td><td style="text-align:center;color:var(--text-muted)">4</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">單買</span></td><td class="right">$63,000</td></tr>
+    <tr><td class="id-col">D0106</td><td>彩虹平權大平台</td><td class="donor-years">2022</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">單買</span></td><td class="right">—</td></tr>
+    <tr><td class="id-col">D0107</td><td>麥肯錫</td><td class="donor-years">2022</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">單買</span></td><td class="right">$100,000</td></tr>
+    <tr><td class="id-col">D0108</td><td>無心戒酒</td><td class="donor-years">2022</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">單買</span></td><td class="right">$100,000</td></tr>
+    <tr><td class="id-col">D0109</td><td>TAIWANIZE</td><td class="donor-years">2022</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">其他</span></td><td class="right">—</td></tr>
+    <tr><td class="id-col">D0110</td><td>可口可樂</td><td class="donor-years">2022、2023、2024、2025</td><td style="text-align:center;color:var(--text-muted)">4</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">單買</span></td><td class="right">$250,000</td></tr>
+    <tr><td class="id-col">D0111</td><td>合橋國際</td><td class="donor-years">2022</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">其他</span></td><td class="right">$107,000</td></tr>
+    <tr><td class="id-col">D0112</td><td>諾和諾德</td><td class="donor-years">2023、2024</td><td style="text-align:center;color:var(--text-muted)">2</td><td><span class="tier-chip" style="background:#70AD4722;color:#70AD47">銀級</span></td><td class="right">$220,000</td></tr>
+    <tr><td class="id-col">D0113</td><td>飛比<br><span class="donor-orig">原名：飛比 Feebee</span></td><td class="donor-years">2023</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#70AD4722;color:#70AD47">銀級</span></td><td class="right">$180,000</td></tr>
+    <tr><td class="id-col">D0114</td><td>世邦魏理仕</td><td class="donor-years">2023</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#70AD4722;color:#70AD47">銀級</span></td><td class="right">$180,000</td></tr>
+    <tr><td class="id-col">D0115</td><td>羅氏</td><td class="donor-years">2023、2024</td><td style="text-align:center;color:var(--text-muted)">2</td><td><span class="tier-chip" style="background:#70AD4722;color:#70AD47">銀級</span></td><td class="right">$220,000</td></tr>
+    <tr><td class="id-col">D0116</td><td>諾億財富管理顧問</td><td class="donor-years">2023</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#70AD4722;color:#70AD47">銀級</span></td><td class="right">$180,000</td></tr>
+    <tr><td class="id-col">D0117</td><td>VERVE</td><td class="donor-years">2023、2024、2025</td><td style="text-align:center;color:var(--text-muted)">3</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">花車</span></td><td class="right">$350,000</td></tr>
+    <tr><td class="id-col">D0118</td><td>PANGU by Kenal X Durex</td><td class="donor-years">2023</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#70AD4722;color:#70AD47">銀級</span></td><td class="right">$200,000</td></tr>
+    <tr><td class="id-col">D0119</td><td>LIFEWONDERS</td><td class="donor-years">2023</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#70AD4722;color:#70AD47">銀級</span></td><td class="right">$180,000</td></tr>
+    <tr><td class="id-col">D0120</td><td>美商百富門</td><td class="donor-years">2023</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#70AD4722;color:#70AD47">銀級</span></td><td class="right">$180,000</td></tr>
+    <tr><td class="id-col">D0121</td><td>雷醫國際股份有限公司</td><td class="donor-years">2023</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#70AD4722;color:#70AD47">銀級</span></td><td class="right">$180,000</td></tr>
+    <tr><td class="id-col">D0122</td><td>GroupM</td><td class="donor-years">2023</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#70AD4722;color:#70AD47">銀級</span></td><td class="right">$180,000</td></tr>
+    <tr><td class="id-col">D0123</td><td>M.A.C</td><td class="donor-years">2021、2023、2024、2025</td><td style="text-align:center;color:var(--text-muted)">4</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">其他</span></td><td class="right">$44,000</td></tr>
+    <tr><td class="id-col">D0124</td><td>樂桃航空</td><td class="donor-years">2023</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#70AD4722;color:#70AD47">銀級</span></td><td class="right">$68,000</td></tr>
+    <tr><td class="id-col">D0125</td><td>默沙東</td><td class="donor-years">2023、2024、2025</td><td style="text-align:center;color:var(--text-muted)">3</td><td><span class="tier-chip" style="background:#ED7D3122;color:#ED7D31">銅級</span></td><td class="right">$108,000</td></tr>
+    <tr><td class="id-col">D0126</td><td>台灣保時捷車業股份有限公司 
+Porsche Taiwan Motors Limited</td><td class="donor-years">2023</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">花車</span></td><td class="right">$120,000</td></tr>
+    <tr><td class="id-col">D0127</td><td>La Crema</td><td class="donor-years">2023</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">花車</span></td><td class="right">$140,000</td></tr>
+    <tr><td class="id-col">D0128</td><td>必勝客</td><td class="donor-years">2023、2025</td><td style="text-align:center;color:var(--text-muted)">2</td><td><span class="tier-chip" style="background:#70AD4722;color:#70AD47">銀級</span></td><td class="right">$220,000</td></tr>
+    <tr><td class="id-col">D0129</td><td>VIETJET</td><td class="donor-years">2023</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">花車</span></td><td class="right">$160,000</td></tr>
+    <tr><td class="id-col">D0130</td><td>紅犀牛</td><td class="donor-years">2023</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">單買</span></td><td class="right">$15,000</td></tr>
+    <tr><td class="id-col">D0131</td><td>我們一起穩交吧</td><td class="donor-years">2023</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">單買</span></td><td class="right">$5,000</td></tr>
+    <tr><td class="id-col">D0132</td><td>MAKE UP FOR EVER</td><td class="donor-years">2023</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">單買</span></td><td class="right">—</td></tr>
+    <tr><td class="id-col">D0133</td><td>賽諾菲</td><td class="donor-years">2023</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">單買</span></td><td class="right">$15,000</td></tr>
+    <tr><td class="id-col">D0134</td><td>Cake Resume</td><td class="donor-years">2023</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">其他</span></td><td class="right">—</td></tr>
+    <tr><td class="id-col">D0135</td><td>Keyword Studios</td><td class="donor-years">2023</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">其他</span></td><td class="right">—</td></tr>
+    <tr><td class="id-col">D0136</td><td>台北中山雅樂軒酒店</td><td class="donor-years">2023、2024</td><td style="text-align:center;color:var(--text-muted)">2</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">友善飯店</span></td><td class="right">$10,000</td></tr>
+    <tr><td class="id-col">D0137</td><td>台北時代寓所</td><td class="donor-years">2023、2024</td><td style="text-align:center;color:var(--text-muted)">2</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">友善飯店</span></td><td class="right">$10,000</td></tr>
+    <tr><td class="id-col">D0138</td><td>小鹿文娛</td><td class="donor-years">2023、2024、2025</td><td style="text-align:center;color:var(--text-muted)">3</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">友善飯店</span></td><td class="right">$10,000</td></tr>
+    <tr><td class="id-col">D0139</td><td>永安棧</td><td class="donor-years">2023、2024、2025</td><td style="text-align:center;color:var(--text-muted)">3</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">友善飯店</span></td><td class="right">$25,000</td></tr>
+    <tr><td class="id-col">D0140</td><td>世民酒店台北北門</td><td class="donor-years">—</td><td style="text-align:center;color:var(--text-muted)">0</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0141</td><td>i+Land Nagasaki</td><td class="donor-years">2023</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">其他</span></td><td class="right">—</td></tr>
+    <tr><td class="id-col">D0142</td><td>Lyf Tenjin Fukuoka</td><td class="donor-years">2023</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">其他</span></td><td class="right">—</td></tr>
+    <tr><td class="id-col">D0143</td><td>Expedia</td><td class="donor-years">2023</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">其他</span></td><td class="right">—</td></tr>
+    <tr><td class="id-col">D0144</td><td>Tapestry</td><td class="donor-years">2024、2025</td><td style="text-align:center;color:var(--text-muted)">2</td><td><span class="tier-chip" style="background:#70AD4722;color:#70AD47">銀級</span></td><td class="right">$220,000</td></tr>
+    <tr><td class="id-col">D0145</td><td>諾億</td><td class="donor-years">2024</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#70AD4722;color:#70AD47">銀級</span></td><td class="right">$198,000</td></tr>
+    <tr><td class="id-col">D0146</td><td>GU</td><td class="donor-years">2024</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#70AD4722;color:#70AD47">銀級</span></td><td class="right">$220,000</td></tr>
+    <tr><td class="id-col">D0147</td><td>MYFEEL</td><td class="donor-years">2024</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#70AD4722;color:#70AD47">銀級</span></td><td class="right">$219,985</td></tr>
+    <tr><td class="id-col">D0148</td><td>捷豹路虎</td><td class="donor-years">2024</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#70AD4722;color:#70AD47">銀級</span></td><td class="right">$220,000</td></tr>
+    <tr><td class="id-col">D0149</td><td>Kenvue</td><td class="donor-years">2024</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#ED7D3122;color:#ED7D31">銅級</span></td><td class="right">$120,000</td></tr>
+    <tr><td class="id-col">D0150</td><td>LifeWonders</td><td class="donor-years">2024、2025</td><td style="text-align:center;color:var(--text-muted)">2</td><td><span class="tier-chip" style="background:#70AD4722;color:#70AD47">銀級</span></td><td class="right">$216,000</td></tr>
+    <tr><td class="id-col">D0151</td><td>台灣武田</td><td class="donor-years">2024</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#ED7D3122;color:#ED7D31">銅級</span></td><td class="right">$120,000</td></tr>
+    <tr><td class="id-col">D0152</td><td>SleekStrip</td><td class="donor-years">2024</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#ED7D3122;color:#ED7D31">銅級</span></td><td class="right">$120,000</td></tr>
+    <tr><td class="id-col">D0153</td><td>愛群婦產科</td><td class="donor-years">2021、2024、2025</td><td style="text-align:center;color:var(--text-muted)">3</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">單買</span></td><td class="right">$105,000</td></tr>
+    <tr><td class="id-col">D0154</td><td>宜蘊醫療</td><td class="donor-years">2024</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#ED7D3122;color:#ED7D31">銅級</span></td><td class="right">$120,000</td></tr>
+    <tr><td class="id-col">D0155</td><td>疾管署</td><td class="donor-years">2024、2025</td><td style="text-align:center;color:var(--text-muted)">2</td><td><span class="tier-chip" style="background:#ED7D3122;color:#ED7D31">銅級</span></td><td class="right">$114,000</td></tr>
+    <tr><td class="id-col">D0156</td><td>渣打銀行</td><td class="donor-years">2024、2025</td><td style="text-align:center;color:var(--text-muted)">2</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">花車</span></td><td class="right">$120,000</td></tr>
+    <tr><td class="id-col">D0157</td><td>法國巴黎人壽</td><td class="donor-years">2024</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">花車</span></td><td class="right">$120,000</td></tr>
+    <tr><td class="id-col">D0158</td><td>Fusion 聚變</td><td class="donor-years">2024</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">花車</span></td><td class="right">$120,000</td></tr>
+    <tr><td class="id-col">D0159</td><td>澳洲紐西蘭商會</td><td class="donor-years">2024</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">花車</span></td><td class="right">$120,000</td></tr>
+    <tr><td class="id-col">D0160</td><td>Zenyum</td><td class="donor-years">2024</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">花車</span></td><td class="right">$140,000</td></tr>
+    <tr><td class="id-col">D0161</td><td>Suntory</td><td class="donor-years">2024</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">花車</span></td><td class="right">$240,000</td></tr>
+    <tr><td class="id-col">D0162</td><td>佳葆視聽</td><td class="donor-years">2024</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">花車</span></td><td class="right">$120,000</td></tr>
+    <tr><td class="id-col">D0163</td><td>犀牛盾</td><td class="donor-years">2024、2025</td><td style="text-align:center;color:var(--text-muted)">2</td><td><span class="tier-chip" style="background:#ED7D3122;color:#ED7D31">銅級</span></td><td class="right">$150,000</td></tr>
+    <tr><td class="id-col">D0164</td><td>台灣不二</td><td class="donor-years">2024</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">單買</span></td><td class="right">$43,000</td></tr>
+    <tr><td class="id-col">D0165</td><td>Sanofi</td><td class="donor-years">2024</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">單買</span></td><td class="right">$25,000</td></tr>
+    <tr><td class="id-col">D0166</td><td>EROLABS</td><td class="donor-years">2024</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">單買</span></td><td class="right">$50,000</td></tr>
+    <tr><td class="id-col">D0167</td><td>灣島皇后</td><td class="donor-years">2024</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">其他</span></td><td class="right">$106,500</td></tr>
+    <tr><td class="id-col">D0168</td><td>王道銀行</td><td class="donor-years">2024</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#5BA25B22;color:#5BA25B">市集</span></td><td class="right">$20,000</td></tr>
+    <tr><td class="id-col">D0169</td><td>知淳 x Cholula</td><td class="donor-years">2024</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#5BA25B22;color:#5BA25B">市集</span></td><td class="right">$20,000</td></tr>
+    <tr><td class="id-col">D0170</td><td>國聯大飯店</td><td class="donor-years">2024</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">友善飯店</span></td><td class="right">$10,000</td></tr>
+    <tr><td class="id-col">D0171</td><td>台北六福萬怡酒店</td><td class="donor-years">2024</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">友善飯店</span></td><td class="right">$20,000</td></tr>
+    <tr><td class="id-col">D0172</td><td>六福居公寓式酒店</td><td class="donor-years">2024</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">友善飯店</span></td><td class="right">$48,000</td></tr>
+    <tr><td class="id-col">D0173</td><td>南港老爺行旅</td><td class="donor-years">2024</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">友善飯店</span></td><td class="right">$10,000</td></tr>
+    <tr><td class="id-col">D0174</td><td>台北大安伊普索凱悅尚選酒店</td><td class="donor-years">2024</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">友善飯店</span></td><td class="right">$10,000</td></tr>
+    <tr><td class="id-col">D0175</td><td>福泰飯店集團</td><td class="donor-years">2024</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">友善飯店</span></td><td class="right">$10,000</td></tr>
+    <tr><td class="id-col">D0176</td><td>金普頓大安酒店</td><td class="donor-years">2024</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">友善飯店</span></td><td class="right">$10,000</td></tr>
+    <tr><td class="id-col">D0177</td><td>台北中山九昱希爾頓逸林酒店</td><td class="donor-years">2024</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">友善飯店</span></td><td class="right">$10,000</td></tr>
+    <tr><td class="id-col">D0178</td><td>台北北門世民酒店</td><td class="donor-years">—</td><td style="text-align:center;color:var(--text-muted)">0</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0179</td><td>台北喜來登大飯店</td><td class="donor-years">2024</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">友善飯店</span></td><td class="right">$10,000</td></tr>
+    <tr><td class="id-col">D0180</td><td>捷絲旅台北西門館</td><td class="donor-years">2024</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">友善飯店</span></td><td class="right">$10,000</td></tr>
+    <tr><td class="id-col">D0181</td><td>慕舍酒店</td><td class="donor-years">2024</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">友善飯店</span></td><td class="right">$10,000</td></tr>
+    <tr><td class="id-col">D0182</td><td>台北怡亨酒店</td><td class="donor-years">2024</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">友善飯店</span></td><td class="right">$10,000</td></tr>
+    <tr><td class="id-col">D0183</td><td>台北大直英迪格酒店</td><td class="donor-years">2024</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">友善飯店</span></td><td class="right">$10,000</td></tr>
+    <tr><td class="id-col">D0184</td><td>台北西門町意舍酒店</td><td class="donor-years">2024</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">友善飯店</span></td><td class="right">$10,000</td></tr>
+    <tr><td class="id-col">D0185</td><td>格拉斯麗台北飯店</td><td class="donor-years">2024</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">友善飯店</span></td><td class="right">$13,000</td></tr>
+    <tr><td class="id-col">D0186</td><td>相鐵GRAND FRESA 台北西門</td><td class="donor-years">2024</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">友善飯店</span></td><td class="right">$60,000</td></tr>
+    <tr><td class="id-col">D0187</td><td>倉箱蜜境</td><td class="donor-years">2024</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">友善飯店</span></td><td class="right">$20,000</td></tr>
+    <tr><td class="id-col">D0188</td><td>台北君悅酒店</td><td class="donor-years">2024</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">友善飯店</span></td><td class="right">$5,985</td></tr>
+    <tr><td class="id-col">D0189</td><td>西門大飯店</td><td class="donor-years">2024、2025</td><td style="text-align:center;color:var(--text-muted)">2</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">友善飯店</span></td><td class="right">$10,000</td></tr>
+    <tr><td class="id-col">D0190</td><td>諾億保經</td><td class="donor-years">2025</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#4472C422;color:#4472C4">鈦金級</span></td><td class="right">$405,000</td></tr>
+    <tr><td class="id-col">D0191</td><td>JINS</td><td class="donor-years">2025</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#4472C422;color:#4472C4">鈦金級</span></td><td class="right">$500,000</td></tr>
+    <tr><td class="id-col">D0192</td><td>Johnnie Walker</td><td class="donor-years">2025</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#70AD4722;color:#70AD47">銀級</span></td><td class="right">$220,000</td></tr>
+    <tr><td class="id-col">D0193</td><td>TFC 
+臺北婦產科診所</td><td class="donor-years">2025</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#ED7D3122;color:#ED7D31">銅級</span></td><td class="right">$120,000</td></tr>
+    <tr><td class="id-col">D0194</td><td>IM Adult</td><td class="donor-years">2025</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">花車</span></td><td class="right">$120,000</td></tr>
+    <tr><td class="id-col">D0195</td><td>TSMC</td><td class="donor-years">2025</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">花車</span></td><td class="right">$120,000</td></tr>
+    <tr><td class="id-col">D0196</td><td>FNF</td><td class="donor-years">2025</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">花車</span></td><td class="right">$120,000</td></tr>
+    <tr><td class="id-col">D0197</td><td>新思科技</td><td class="donor-years">2025</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">單買</span></td><td class="right">$10,000</td></tr>
+    <tr><td class="id-col">D0198</td><td>華納兄弟</td><td class="donor-years">2025</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#5BC0EB22;color:#5BC0EB">單買</span></td><td class="right">$36,000</td></tr>
+    <tr><td class="id-col">D0199</td><td>TENGA</td><td class="donor-years">2025</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#5BA25B22;color:#5BA25B">市集</span></td><td class="right">—</td></tr>
+    <tr><td class="id-col">D0200</td><td>一口純淨</td><td class="donor-years">2025</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">其他</span></td><td class="right">—</td></tr>
+    <tr><td class="id-col">D0201</td><td>Precision
+Biotics</td><td class="donor-years">2025</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">其他</span></td><td class="right">—</td></tr>
+    <tr><td class="id-col">D0202</td><td>聯名商品</td><td class="donor-years">2025</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">其他</span></td><td class="right">$160,000</td></tr>
+    <tr><td class="id-col">D0203</td><td>環球影城</td><td class="donor-years">2025</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">其他</span></td><td class="right">$36,000</td></tr>
+    <tr><td class="id-col">D0204</td><td>國泰萬怡</td><td class="donor-years">2025</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">友善飯店</span></td><td class="right">$40,000</td></tr>
+    <tr><td class="id-col">D0205</td><td>和逸飯店</td><td class="donor-years">2025</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">友善飯店</span></td><td class="right">$40,000</td></tr>
+    <tr><td class="id-col">D0206</td><td>大直英迪格</td><td class="donor-years">2025</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">友善飯店</span></td><td class="right">$25,000</td></tr>
+    <tr><td class="id-col">D0207</td><td>慕軒飯店</td><td class="donor-years">2025</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">友善飯店</span></td><td class="right">$25,000</td></tr>
+    <tr><td class="id-col">D0208</td><td>北門世民</td><td class="donor-years">2023、2024、2025</td><td style="text-align:center;color:var(--text-muted)">3</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">友善飯店</span></td><td class="right">$25,000</td></tr>
+    <tr><td class="id-col">D0209</td><td>amba</td><td class="donor-years">2025</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">友善飯店</span></td><td class="right">$25,000</td></tr>
+    <tr><td class="id-col">D0210</td><td>君悅飯店</td><td class="donor-years">2025</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">友善飯店</span></td><td class="right">$25,000</td></tr>
+    <tr><td class="id-col">D0211</td><td>中山雅樂軒</td><td class="donor-years">2025</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">友善飯店</span></td><td class="right">$10,000</td></tr>
+    <tr><td class="id-col">D0212</td><td>希爾頓逸林</td><td class="donor-years">2025</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">友善飯店</span></td><td class="right">$10,000</td></tr>
+    <tr><td class="id-col">D0213</td><td>南港老爺</td><td class="donor-years">2025</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">友善飯店</span></td><td class="right">$10,000</td></tr>
+    <tr><td class="id-col">D0214</td><td>大安伊普索</td><td class="donor-years">2025</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">友善飯店</span></td><td class="right">$10,000</td></tr>
+    <tr><td class="id-col">D0215</td><td>金普頓大安</td><td class="donor-years">2025</td><td style="text-align:center;color:var(--text-muted)">1</td><td><span class="tier-chip" style="background:#9c7bb522;color:#9c7bb5">友善飯店</span></td><td class="right">$10,000</td></tr>
+    <tr><td class="id-col">D0216</td><td>Hotels.com</td><td class="donor-years">2021</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0217</td><td>B.Y.O.</td><td class="donor-years">2021</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0219</td><td>Club Locker Room</td><td class="donor-years">2021</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0220</td><td>志祺七七 X 圖文不符</td><td class="donor-years">2021</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0221</td><td>Hotel Indigo Taipei</td><td class="donor-years">2021</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0222</td><td>NUZONE</td><td class="donor-years">2021</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0223</td><td>英勝國際</td><td class="donor-years">2021</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0224</td><td>WSI</td><td class="donor-years">2021</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0225</td><td>INF</td><td class="donor-years">2021</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0226</td><td>Satisfyer Taiwan</td><td class="donor-years">2021</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0227</td><td>KKBOX</td><td class="donor-years">2021</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0228</td><td>台灣資生堂專業美髮事業部</td><td class="donor-years">2021</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+    <tr><td class="id-col">D0229</td><td>磊山保經諾億特許事業部<br><span class="donor-alias">諾億特許事業部</span></td><td class="donor-years">2021</td><td style="text-align:center;color:var(--text-muted)">1</td><td></td><td class="right"></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div><!-- /panel-donors -->
 
 </main>
 
@@ -1712,6 +1987,19 @@ buildLineChart();
   })();
 
     /* ANALYSIS_JS_END */
+
+function filterDonors() {
+  const q = document.getElementById('donorQ').value.trim().toLowerCase();
+  const rows = document.querySelectorAll('#donor-tbody tr');
+  let n = 0;
+  rows.forEach(r => {
+    const match = !q || r.textContent.toLowerCase().includes(q);
+    r.classList.toggle('d-hidden', !match);
+    if (match) n++;
+  });
+  document.getElementById('donorCount').textContent =
+    q ? `符合 ${n} / 226 筆` : `共 226 筆`;
+}
 </script>
 </body>
 </html>
