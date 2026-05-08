@@ -21,6 +21,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: '臺灣同志遊行 商業贊助分析 2016–2025',
   description: '臺灣同志遊行商業贊助資料庫，2016–2025年度跨年度分析報告',
+  icons: {
+    icon: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌈</text></svg>",
+  },
 }
 
 export default function RootLayout({

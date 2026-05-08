@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { BASE } from '@/lib/basePath'
 import { usePathname } from 'next/navigation'
 import {
   LayoutDashboard,
@@ -46,7 +47,7 @@ export function AppSidebar() {
       <SidebarHeader className="border-b border-border px-4 py-4">
         <div className="flex flex-col gap-1">
           <Image
-            src="/logo-light.png"
+            src={`${BASE}/logo-light.png`}
             alt="臺灣同志遊行"
             width={160}
             height={60}
