@@ -751,6 +751,56 @@
   @media (max-width: 700px) {
     .header-logo { height: 52px; }
   }
+  .why-panel {
+    margin: 22px 0 0 0;
+    border: 1px solid #e0d8cc;
+    border-left: 4px solid #b8860b;
+    border-radius: 6px;
+    background: #fdfaf4;
+  }
+  .why-panel summary {
+    padding: 10px 14px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #7a5c00;
+    font-size: 0.95em;
+    user-select: none;
+    list-style: none;
+  }
+  .why-panel summary::-webkit-details-marker { display: none; }
+  .why-panel summary::before {
+    content: "▶ ";
+    font-size: 0.8em;
+  }
+  details[open].why-panel summary::before {
+    content: "▼ ";
+  }
+  .why-panel .why-body {
+    padding: 10px 16px 14px;
+    border-top: 1px solid #e8e0cc;
+  }
+  .why-panel .why-q {
+    color: #444;
+    margin: 0 0 10px 0;
+    font-size: 0.92em;
+    line-height: 1.6;
+  }
+  .why-panel .why-ans {
+    font-size: 0.92em;
+    color: #1a4731;
+    border-left: 3px solid #4caf50;
+    padding-left: 10px;
+    margin: 0;
+    line-height: 1.6;
+  }
+  .why-panel .why-ans-label {
+    font-weight: 600;
+    color: #2e7d32;
+    margin-bottom: 4px;
+    font-size: 0.88em;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
 </style>
 </head>
 <body>
@@ -946,6 +996,24 @@
     </div>
   </div>
 
+  <details class="why-panel">
+    <summary>Bob的資料反芻</summary>
+    <div class="why-body">
+      <p class="why-q">
+        我們想知道 2026 年最重要的夥伴是誰、現有忠實廠商有沒有流失的預警訊號，
+        同時理解核心夥伴網絡的組成——有些廠商支持我們是因為共同價值觀，
+        有些則更看重遊行帶來的曝光效益。這個分析同時用「金額」與「持續出席年數」
+        兩個維度衡量忠誠度，讓我們對高價值廠商有更立體的理解。
+      </p>
+      <div class="why-ans-label">資料怎麼說</div>
+      <p class="why-ans">
+        23 家廠商連續贊助 3 年以上，Google、可口可樂、GILEAD 等 7 家構成最穩定的收入支柱。
+        以「年均金額 × 連續年數」綜合排序，整體尚未出現群體性流失預警，
+        但部分廠商在 2025 年金額縮減，值得 2026 年優先確認續約意願。
+      </p>
+    </div>
+  </details>
+
   </div><!-- /panel-analysis-d -->
 
   <div class="tab-panel" id="panel-analysis-a">
@@ -995,6 +1063,23 @@
       ③所有現有廠商在合約到期前 3 個月主動啟動溝通。</div>
     </div>
   </div>
+
+  <details class="why-panel">
+    <summary>Bob的資料反芻</summary>
+    <div class="why-body">
+      <p class="why-q">
+        2025 年整體收入比 2024 年下滑，但留存率數字看起來和前幾年差不多。
+        這讓我懷疑問題不是「留下來的廠商少了」，而是「離開的廠商平均金額更高」。
+        這個分析要驗證這個假設，找出高價值廠商流失背後可能的原因。
+      </p>
+      <div class="why-ans-label">資料怎麼說</div>
+      <p class="why-ans">
+        2024→2025 留存率 39.7%，是近四年最低點。更關鍵的是：
+        流失廠商的平均貢獻金額明顯高於留存廠商——我們失去的是相對高價值的客戶，
+        而非邊際贊助商。這解釋了為何留存家數和前幾年相近，收入卻仍顯著下滑。
+      </p>
+    </div>
+  </details>
 
   </div><!-- /panel-analysis-a -->
 
@@ -1059,6 +1144,23 @@ Porsche Taiwan Motors Limited</strong></td><td style="font-size:11px;color:var(-
       曾在多年前流失的廠商若重新接洽，建議以新合作形式（升級或特別方案）重新吸引。</div>
     </div>
   </div>
+
+  <details class="why-panel">
+    <summary>Bob的資料反芻</summary>
+    <div class="why-body">
+      <p class="why-q">
+        2026 年的募款目標與 2025 年實績之間有 NTD 123 萬的缺口需要補足。
+        重新接觸曾合作但已流失的廠商，比開發全新廠商需要更少的信任建立成本——
+        這份名單就是為了讓 BD 團隊知道應該先打哪通電話。
+      </p>
+      <div class="why-ans-label">資料怎麼說</div>
+      <p class="why-ans">
+        共追蹤 57 家流失廠商，其上一年合計貢獻 NTD 10.48M。
+        依「金額 × 出席年數 × 類型權重」計算優先分數，
+        若能以 35% 的成功率挽回高優先廠商，預估可填補大部分 2026 年缺口。
+      </p>
+    </div>
+  </details>
 
   </div><!-- /panel-analysis-b -->
 
@@ -1141,6 +1243,24 @@ Biotics</span></div>
   </ul>
 </div>
 
+  <details class="why-panel">
+    <summary>Bob的資料反芻</summary>
+    <div class="why-body">
+      <p class="why-q">
+        我注意到有越來越多廠商的實際採購金額達到甚至超過較高級別的定價，
+        他們是自行組合品項（例如犀牛盾、VERVE），付了等同 T2 的費用卻沒有 T2 的名分。
+        我想驗證這個現象是否是現有級別設計出現裂縫的預警，
+        同時釐清這個行為代表的是流失風險（廠商在找替代方案）還是升級潛力（廠商其實願意花更多）。
+      </p>
+      <div class="why-ans-label">資料怎麼說</div>
+      <p class="why-ans">
+        分析確認多家廠商以單購拼湊方式達到甚至超過較高級別的消費水位。
+        同時，活動看板（83%）、轉播螢幕（72%）、手冊版位（72%）是跨類型廠商保留率最高的品項，
+        顯示廠商真正在意的是實體曝光配置，而非現有級別框架本身。
+        這支持未來重新設計以「實體佈局套組」為核心的彈性方案。
+      </p>
+    </div>
+  </details>
 
   </div><!-- /panel-analysis-c -->
 
@@ -1245,6 +1365,24 @@ Biotics</span></div>
       另有 <strong>7 家</strong>「跳年回歸」廠商（曾於 2022/2023 參與、跳過 2024、2025 回歸），在「機會識別」頁也計入新廠商，但其歷史關係在各頁籤中目前未特別標示。</div>
     </div>
   </div>
+
+  <details class="why-panel">
+    <summary>Bob的資料反芻</summary>
+    <div class="why-body">
+      <p class="why-q">
+        BD 團隊的時間有限，新廠商的開發成本高。如果大多數廠商在第一年後就離開，
+        那持續投入新開發就很難回本。這個分析要量化新廠商的留存基準、
+        找出首年後流失的可能原因（承諾落差？後續服務不足？），
+        以便 2026 年針對性改善，同時識別 2025 年新廠商中最值得跟進的名單。
+      </p>
+      <div class="why-ans-label">資料怎麼說</div>
+      <p class="why-ans">
+        歷年新廠商隔年存活率約 20–29%，而 2024 年新廠商到 2025 年僅剩 14%——近年最低。
+        級別贊助者的隔年留存率明顯優於單購者，顯示「引導首年廠商選擇套裝方案」
+        可能是提升長期 LTV 的關鍵槓桿。
+      </p>
+    </div>
+  </details>
 
   </div><!-- /panel-analysis-e -->
 
@@ -1481,6 +1619,26 @@ Biotics</span></div>
       </div>
     </div>
   </div>
+
+  <details class="why-panel">
+    <summary>Bob的資料反芻</summary>
+    <div class="why-body">
+      <p class="why-q">
+        分別看完流失、忠實廠商、新品牌之後，我需要一個整合視角：
+        把所有可能的回收、升級、新開發機會加總起來，
+        估算 2026 年在各種情境下能達成的收入上限。
+        這個分析的目的是讓 BD 團隊對缺口有一個現實的預期，
+        而不是各自努力卻沒有整體感。
+      </p>
+      <div class="why-ans-label">資料怎麼說</div>
+      <p class="why-ans">
+        在樂觀情境（現有廠商 85% 留存 + 挽回前 5 名流失廠商 + 引入 2 家新廠商）下，
+        預估 2026 年可達 NTD 5.64M——仍低於 9.5M 目標。
+        缺口主要需靠「現有廠商升級」和「引入高單價新廠商」來填補，
+        純靠挽回和留存不足以達標。
+      </p>
+    </div>
+  </details>
 
   </div><!-- /panel-opportunities -->
 
