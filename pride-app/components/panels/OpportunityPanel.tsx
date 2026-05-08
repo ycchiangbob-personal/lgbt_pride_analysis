@@ -6,7 +6,14 @@ import { BASE } from '@/lib/basePath'
 type ProductItem = { bg?: string; price?: number; unit?: string }
 type RetentionItem = { item: string; adopters: number; retention_pct: number; consec: number; total: number; price: number }
 type ValueGapItem = { sponsor: string; year: string; actual: number; items: string[]; item_list_cost: number; tier_label: string; tier_price: number; gap: number }
-type LoyaltyItem = { item: string; sponsors: string[]; years: number[] }
+type LoyaltyItem = {
+  sponsor: string
+  years_count: number
+  core_items: string[]
+  total_unique: number
+  loyalty_score: number
+  cat: string[]
+}
 type ProductAnalysis = {
   prices: Record<string, ProductItem>
   retention: RetentionItem[]
@@ -563,26 +570,32 @@ export function OpportunityPanel() {
             </div>
           </SectionCard>
 
-          {/* H. 品項忠誠度 */}
+          {/* H. 廠商忠誠度 */}
           <SectionCard>
             <div className="px-5 pt-4 pb-3 border-b border-border">
-              <h2 className="text-base font-semibold text-foreground mb-1">H．品項忠誠度分析</h2>
-              <p className="text-sm text-text-muted">每個品項的長期採用廠商，顯示哪些權益最受忠實廠商青睞。</p>
+              <h2 className="text-base font-semibold text-foreground mb-1">H．廠商忠誠度分析</h2>
+              <p className="text-sm text-text-muted">依忠誠度分數排序的前 20 家廠商，列出他們長期穩定採用的核心品項。</p>
             </div>
             <div className="p-5">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {analysis.loyalty.slice(0, 20).map((item) => (
-                  <div key={item.item} className="rounded-lg border border-border p-3" style={{ background: '#fafafa' }}>
+                  <div key={item.sponsor} className="rounded-lg border border-border p-3" style={{ background: '#fafafa' }}>
                     <div className="flex justify-between items-start mb-2">
-                      <p className="font-medium text-foreground text-sm">{item.item}</p>
-                      <span className="text-xs text-text-muted">{item.sponsors.length} 家</span>
+                      <div>
+                        <p className="font-medium text-foreground text-sm">{item.sponsor}</p>
+                        <p className="text-xs text-text-muted mt-0.5">{item.years_count} 年連續 · 忠誠度 {item.loyalty_score}</p>
+                      </div>
+                      <span className="text-xs text-text-muted whitespace-nowrap">{item.core_items?.length ?? 0} 項核心品項</span>
                     </div>
                     <div className="flex flex-wrap gap-1">
-                      {item.sponsors.map((sp) => (
-                        <span key={sp} className="text-xs px-2 py-0.5 rounded-full" style={{ background: '#f3e8ff', color: '#7c3aed', border: '1px solid #e9d5ff' }}>
-                          {sp}
+                      {(item.core_items ?? []).map((it) => (
+                        <span key={it} className="text-xs px-2 py-0.5 rounded-full" style={{ background: '#f3e8ff', color: '#7c3aed', border: '1px solid #e9d5ff' }}>
+                          {it}
                         </span>
                       ))}
+                      {(!item.core_items || item.core_items.length === 0) && (
+                        <span className="text-xs text-text-muted">尚無穩定核心品項</span>
+                      )}
                     </div>
                   </div>
                 ))}
