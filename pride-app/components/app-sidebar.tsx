@@ -28,15 +28,15 @@ import {
 } from '@/components/ui/sidebar'
 
 const NAV_ITEMS = [
-  { label: '總覽', href: '/',            icon: LayoutDashboard },
-  { label: '忠實贊助商', href: '/loyalist',  icon: Star },
-  { label: '留存率', href: '/retention', icon: TrendingUp },
-  { label: '挽回清單', href: '/winback',   icon: RotateCcw },
-  { label: '採購行為', href: '/purchase',  icon: ShoppingCart },
-  { label: '新品牌續約率', href: '/new-brand', icon: Sparkles },
-  { label: '機會識別', href: '/opportunity', icon: Target },
-  { label: '贊助商名錄', href: '/directory', icon: BookOpen },
-  { label: '遊行隊伍', href: '/parade',    icon: Flag },
+  { label: '總覽',       href: '/',            icon: LayoutDashboard, color: '#E53E3E' },
+  { label: '忠實贊助商', href: '/loyalist',    icon: Star,            color: '#ED8936' },
+  { label: '留存率',     href: '/retention',   icon: TrendingUp,      color: '#D69E2E' },
+  { label: '挽回清單',   href: '/winback',     icon: RotateCcw,       color: '#38A169' },
+  { label: '採購行為',   href: '/purchase',    icon: ShoppingCart,    color: '#319795' },
+  { label: '新品牌續約率', href: '/new-brand', icon: Sparkles,        color: '#3182CE' },
+  { label: '機會識別',   href: '/opportunity', icon: Target,          color: '#5A67D8' },
+  { label: '贊助商名錄', href: '/directory',   icon: BookOpen,        color: '#805AD5' },
+  { label: '遊行隊伍',   href: '/parade',      icon: Flag,            color: '#D53F8C' },
 ]
 
 export function AppSidebar() {
@@ -70,8 +70,12 @@ export function AppSidebar() {
                 return (
                   <SidebarMenuItem key={item.href}>
                     <SidebarMenuButton asChild isActive={isActive}>
-                      <Link href={item.href} className="flex items-center gap-2">
-                        <item.icon className="h-4 w-4 shrink-0" />
+                      <Link
+                        href={item.href}
+                        className="group flex items-center gap-2"
+                        style={{ '--item-color': item.color } as React.CSSProperties}
+                      >
+                        <item.icon className="h-4 w-4 shrink-0 transition-colors duration-150 group-hover:text-[var(--item-color)]" />
                         <span>{item.label}</span>
                       </Link>
                     </SidebarMenuButton>
