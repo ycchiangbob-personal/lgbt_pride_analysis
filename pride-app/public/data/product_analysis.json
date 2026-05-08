@@ -1,0 +1,3412 @@
+{
+  "prices": {
+    "活動打卡牆": 150000,
+    "企業品牌空間 A": 250000,
+    "企業品牌空間 B": 150000,
+    "商業花車": 120000,
+    "商業花車（首位）": 200000,
+    "官網廣告 A": 80000,
+    "官網廣告 B": 50000,
+    "官網廣告 C": 20000,
+    "FB 10月貼文": 45000,
+    "IG 10月貼文": 45000,
+    "IG 10月 Reels": 45000,
+    "活動看板": 35000,
+    "FB 9/11月貼文": 30000,
+    "IG 9/11月貼文": 30000,
+    "IG 9/11月 Reels": 30000,
+    "FB 11月貼文": 30000,
+    "IG 11月貼文": 30000,
+    "IG 11月 Reels": 30000,
+    "手冊廣告版位": 25000,
+    "轉播螢幕廣告": 18000,
+    "市集獨立棚": 20000,
+    "FB+IG 限時動態": 10000,
+    "FB 9月貼文": 20000,
+    "IG 9月貼文": 20000,
+    "IG 9月 Reels": 20000,
+    "FB 貼文": 30000,
+    "IG 貼文": 30000,
+    "新聞稿置入": 0,
+    "LOGO 曝光": 0,
+    "LOGO 曝光（線上）": 0,
+    "LOGO 曝光（現場）": 0,
+    "年度素材授權": 250000,
+    "轉播螢幕看板": 200000,
+    "舞台廣告": 250000,
+    "主持人唱名": 0,
+    "FB+IG Reels": 30000
+  },
+  "retention": [
+    {
+      "item": "LOGO 曝光（線上）",
+      "adopters": 34,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 27,
+      "price": 0
+    },
+    {
+      "item": "活動看板",
+      "adopters": 32,
+      "retention_pct": 83,
+      "consec": 34,
+      "total": 41,
+      "price": 35000
+    },
+    {
+      "item": "手冊廣告版位",
+      "adopters": 32,
+      "retention_pct": 72,
+      "consec": 28,
+      "total": 39,
+      "price": 25000
+    },
+    {
+      "item": "FB+IG 限時動態",
+      "adopters": 32,
+      "retention_pct": 68,
+      "consec": 26,
+      "total": 38,
+      "price": 10000
+    },
+    {
+      "item": "轉播螢幕廣告",
+      "adopters": 31,
+      "retention_pct": 72,
+      "consec": 28,
+      "total": 39,
+      "price": 18000
+    },
+    {
+      "item": "LOGO 曝光",
+      "adopters": 31,
+      "retention_pct": 35,
+      "consec": 14,
+      "total": 40,
+      "price": 0
+    },
+    {
+      "item": "市集獨立棚",
+      "adopters": 25,
+      "retention_pct": 70,
+      "consec": 28,
+      "total": 40,
+      "price": 20000
+    },
+    {
+      "item": "IG 貼文",
+      "adopters": 21,
+      "retention_pct": 24,
+      "consec": 6,
+      "total": 25,
+      "price": 30000
+    },
+    {
+      "item": "IG 9/11月貼文",
+      "adopters": 21,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 16,
+      "price": 30000
+    },
+    {
+      "item": "商業花車",
+      "adopters": 20,
+      "retention_pct": 92,
+      "consec": 33,
+      "total": 36,
+      "price": 120000
+    },
+    {
+      "item": "FB 貼文",
+      "adopters": 19,
+      "retention_pct": 26,
+      "consec": 6,
+      "total": 23,
+      "price": 30000
+    },
+    {
+      "item": "官網廣告 B",
+      "adopters": 18,
+      "retention_pct": 62,
+      "consec": 5,
+      "total": 8,
+      "price": 50000
+    },
+    {
+      "item": "IG 10月貼文",
+      "adopters": 17,
+      "retention_pct": 83,
+      "consec": 10,
+      "total": 12,
+      "price": 45000
+    },
+    {
+      "item": "官網廣告 C",
+      "adopters": 17,
+      "retention_pct": 33,
+      "consec": 5,
+      "total": 15,
+      "price": 20000
+    },
+    {
+      "item": "新聞稿置入",
+      "adopters": 16,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 16,
+      "price": 0
+    },
+    {
+      "item": "FB+IG Reels",
+      "adopters": 16,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 14,
+      "price": 30000
+    },
+    {
+      "item": "FB 9/11月貼文",
+      "adopters": 16,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 12,
+      "price": 30000
+    },
+    {
+      "item": "LOGO 曝光（現場）",
+      "adopters": 16,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 12,
+      "price": 0
+    },
+    {
+      "item": "FB 10月貼文",
+      "adopters": 15,
+      "retention_pct": 60,
+      "consec": 6,
+      "total": 10,
+      "price": 45000
+    },
+    {
+      "item": "IG 10月 Reels",
+      "adopters": 13,
+      "retention_pct": 33,
+      "consec": 2,
+      "total": 6,
+      "price": 45000
+    },
+    {
+      "item": "IG 9月貼文",
+      "adopters": 12,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 0,
+      "price": 20000
+    },
+    {
+      "item": "IG 9/11月 Reels",
+      "adopters": 11,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 9,
+      "price": 30000
+    },
+    {
+      "item": "IG 11月 Reels",
+      "adopters": 9,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 0,
+      "price": 30000
+    },
+    {
+      "item": "IG 11月貼文",
+      "adopters": 9,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 0,
+      "price": 30000
+    },
+    {
+      "item": "FB 9月貼文",
+      "adopters": 8,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 0,
+      "price": 20000
+    },
+    {
+      "item": "企業品牌空間 B",
+      "adopters": 7,
+      "retention_pct": 25,
+      "consec": 2,
+      "total": 8,
+      "price": 150000
+    },
+    {
+      "item": "官方網站滾動式廣告欄位 B",
+      "adopters": 6,
+      "retention_pct": 20,
+      "consec": 1,
+      "total": 5,
+      "price": 0
+    },
+    {
+      "item": "官網廣告 A",
+      "adopters": 6,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 4,
+      "price": 80000
+    },
+    {
+      "item": "主視覺使用權",
+      "adopters": 5,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 5,
+      "price": 0
+    },
+    {
+      "item": "企業品牌空間 A",
+      "adopters": 4,
+      "retention_pct": 67,
+      "consec": 2,
+      "total": 3,
+      "price": 250000
+    },
+    {
+      "item": "企業品牌空間使用權",
+      "adopters": 4,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 4,
+      "price": 0
+    },
+    {
+      "item": "線上轉播外框-贊助商LOGO圖卡、固定Bar、跑馬燈",
+      "adopters": 4,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 4,
+      "price": 0
+    },
+    {
+      "item": "FB 11月貼文",
+      "adopters": 4,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 0,
+      "price": 30000
+    },
+    {
+      "item": "IG 9月 Reels",
+      "adopters": 4,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 0,
+      "price": 20000
+    },
+    {
+      "item": "商業花車（首位）",
+      "adopters": 3,
+      "retention_pct": 50,
+      "consec": 2,
+      "total": 4,
+      "price": 200000
+    },
+    {
+      "item": "官方網站滾動式廣告欄位 A",
+      "adopters": 3,
+      "retention_pct": 25,
+      "consec": 1,
+      "total": 4,
+      "price": 0
+    },
+    {
+      "item": "轉播LED大螢幕之橫幅帆布廣告版位",
+      "adopters": 3,
+      "retention_pct": 25,
+      "consec": 1,
+      "total": 4,
+      "price": 0
+    },
+    {
+      "item": "行前記者會新聞稿適當置入",
+      "adopters": 3,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 3,
+      "price": 0
+    },
+    {
+      "item": "主持人唱名",
+      "adopters": 3,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 2,
+      "price": 0
+    },
+    {
+      "item": "活動打卡牆",
+      "adopters": 3,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 1,
+      "price": 150000
+    },
+    {
+      "item": "企業打卡牆",
+      "adopters": 3,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 3,
+      "price": 0
+    },
+    {
+      "item": "行前記者會之友善企業發言權",
+      "adopters": 2,
+      "retention_pct": 33,
+      "consec": 1,
+      "total": 3,
+      "price": 0
+    },
+    {
+      "item": "行前記者會之會後媒體採訪權",
+      "adopters": 2,
+      "retention_pct": 33,
+      "consec": 1,
+      "total": 3,
+      "price": 0
+    },
+    {
+      "item": "起走儀式參與權",
+      "adopters": 2,
+      "retention_pct": 33,
+      "consec": 1,
+      "total": 3,
+      "price": 0
+    },
+    {
+      "item": "20週年紀念專刊 專區介紹（預計1000本)",
+      "adopters": 2,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 2,
+      "price": 0
+    },
+    {
+      "item": "FB\\IG宣傳文宣置入Logo",
+      "adopters": 2,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 2,
+      "price": 0
+    },
+    {
+      "item": "FB活動貼文一篇",
+      "adopters": 2,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 2,
+      "price": 0
+    },
+    {
+      "item": "主舞台背板兩側之主廣告版位",
+      "adopters": 2,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 2,
+      "price": 0
+    },
+    {
+      "item": "企業CEO致詞影片",
+      "adopters": 2,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 2,
+      "price": 0
+    },
+    {
+      "item": "入口主視覺置入logo（最優位置）",
+      "adopters": 2,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 2,
+      "price": 0
+    },
+    {
+      "item": "友善企業介紹立牌（A3尺寸放置於最大展間）",
+      "adopters": 2,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 2,
+      "price": 0
+    },
+    {
+      "item": "導覽專員介紹",
+      "adopters": 2,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 2,
+      "price": 0
+    },
+    {
+      "item": "展場DM專區介紹（5000份）",
+      "adopters": 2,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 2,
+      "price": 0
+    },
+    {
+      "item": "展場DM線上版 置入Logo",
+      "adopters": 2,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 2,
+      "price": 0
+    },
+    {
+      "item": "彩虹地景場地使用權",
+      "adopters": 2,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 2,
+      "price": 0
+    },
+    {
+      "item": "活動當日媒體受訪權",
+      "adopters": 2,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 2,
+      "price": 0
+    },
+    {
+      "item": "活動當日舞台致詞權",
+      "adopters": 2,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 2,
+      "price": 0
+    },
+    {
+      "item": "置入新聞稿一則",
+      "adopters": 2,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 2,
+      "price": 0
+    },
+    {
+      "item": "開幕記者會出席與發言",
+      "adopters": 2,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 2,
+      "price": 0
+    },
+    {
+      "item": "年度素材授權",
+      "adopters": 2,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 0,
+      "price": 250000
+    },
+    {
+      "item": "舞台廣告",
+      "adopters": 2,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 2,
+      "price": 250000
+    },
+    {
+      "item": "專題講座冠名權",
+      "adopters": 2,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 2,
+      "price": 0
+    },
+    {
+      "item": "場地指示用空飄氣球",
+      "adopters": 2,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 2,
+      "price": 0
+    },
+    {
+      "item": "沿途小舞台之廣告欄位",
+      "adopters": 2,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 2,
+      "price": 0
+    },
+    {
+      "item": "紀念專書出版印刷贊助",
+      "adopters": 2,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 1,
+      "price": 0
+    },
+    {
+      "item": "入口主視覺置入logo曝光",
+      "adopters": 2,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 2,
+      "price": 0
+    },
+    {
+      "item": "友善企業介紹立牌（A4尺寸）",
+      "adopters": 2,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 2,
+      "price": 0
+    },
+    {
+      "item": "展場DM logo曝光（5000份）",
+      "adopters": 2,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 2,
+      "price": 0
+    },
+    {
+      "item": "展場DM線上版 logo曝光",
+      "adopters": 2,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 2,
+      "price": 0
+    },
+    {
+      "item": "展間贊助",
+      "adopters": 2,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 2,
+      "price": 0
+    },
+    {
+      "item": "跨界合作",
+      "adopters": 1,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 1,
+      "price": 0
+    },
+    {
+      "item": "當日攤位-合併棚",
+      "adopters": 1,
+      "retention_pct": 0,
+      "consec": 0,
+      "total": 1,
+      "price": 0
+    }
+  ],
+  "value_gaps": [
+    {
+      "sponsor": "犀牛盾",
+      "year": "2024",
+      "actual": 750000,
+      "items": [
+        "LOGO 曝光（線上）",
+        "企業品牌空間 A",
+        "商業花車（首位）",
+        "活動打卡牆"
+      ],
+      "item_list_cost": 600000,
+      "tier_label": "T2 黃金",
+      "tier_price": 700000,
+      "gap": -50000
+    },
+    {
+      "sponsor": "VERVE",
+      "year": "2025",
+      "actual": 350000,
+      "items": [
+        "企業品牌空間 A",
+        "商業花車"
+      ],
+      "item_list_cost": 370000,
+      "tier_label": "T3 白銀/鈦金",
+      "tier_price": 400000,
+      "gap": 50000
+    },
+    {
+      "sponsor": "UBer",
+      "year": "2022",
+      "actual": 310000,
+      "items": [
+        "LOGO 曝光",
+        "企業品牌空間使用權",
+        "商業花車",
+        "市集獨立棚",
+        "活動看板"
+      ],
+      "item_list_cost": 175000,
+      "tier_label": "T3 白銀/鈦金",
+      "tier_price": 400000,
+      "gap": 90000
+    },
+    {
+      "sponsor": "NIKE",
+      "year": "2022",
+      "actual": 250000,
+      "items": [
+        "LOGO 曝光",
+        "企業品牌空間使用權",
+        "商業花車",
+        "市集獨立棚"
+      ],
+      "item_list_cost": 140000,
+      "tier_label": "T3 白銀/鈦金",
+      "tier_price": 400000,
+      "gap": 150000
+    },
+    {
+      "sponsor": "可口可樂",
+      "year": "2023",
+      "actual": 250000,
+      "items": [
+        "企業品牌空間 A"
+      ],
+      "item_list_cost": 250000,
+      "tier_label": "T3 白銀/鈦金",
+      "tier_price": 400000,
+      "gap": 150000
+    },
+    {
+      "sponsor": "UBer",
+      "year": "2024",
+      "actual": 250000,
+      "items": [
+        "LOGO 曝光（線上）",
+        "企業品牌空間 B",
+        "商業花車"
+      ],
+      "item_list_cost": 270000,
+      "tier_label": "T3 白銀/鈦金",
+      "tier_price": 400000,
+      "gap": 150000
+    },
+    {
+      "sponsor": "可口可樂",
+      "year": "2024",
+      "actual": 250000,
+      "items": [
+        "LOGO 曝光（線上）",
+        "企業品牌空間 A"
+      ],
+      "item_list_cost": 250000,
+      "tier_label": "T3 白銀/鈦金",
+      "tier_price": 400000,
+      "gap": 150000
+    },
+    {
+      "sponsor": "可口可樂",
+      "year": "2025",
+      "actual": 250000,
+      "items": [
+        "企業品牌空間 A"
+      ],
+      "item_list_cost": 250000,
+      "tier_label": "T3 白銀/鈦金",
+      "tier_price": 400000,
+      "gap": 150000
+    },
+    {
+      "sponsor": "台虎",
+      "year": "2022",
+      "actual": 249000,
+      "items": [
+        "FB 貼文",
+        "FB+IG 限時動態",
+        "IG 貼文",
+        "LOGO 曝光",
+        "主視覺使用權",
+        "市集獨立棚",
+        "跨界合作"
+      ],
+      "item_list_cost": 90000,
+      "tier_label": "T3 白銀/鈦金",
+      "tier_price": 400000,
+      "gap": 151000
+    },
+    {
+      "sponsor": "GAP",
+      "year": "2023",
+      "actual": 120000,
+      "items": [
+        "商業花車"
+      ],
+      "item_list_cost": 120000,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": -12000
+    },
+    {
+      "sponsor": "彩虹酷兒健康文化中心",
+      "year": "2023",
+      "actual": 120000,
+      "items": [
+        "商業花車"
+      ],
+      "item_list_cost": 120000,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": -12000
+    },
+    {
+      "sponsor": "必勝客",
+      "year": "2023",
+      "actual": 120000,
+      "items": [
+        "商業花車"
+      ],
+      "item_list_cost": 120000,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": -12000
+    },
+    {
+      "sponsor": "GAP",
+      "year": "2024",
+      "actual": 120000,
+      "items": [
+        "LOGO 曝光（線上）",
+        "商業花車"
+      ],
+      "item_list_cost": 120000,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": -12000
+    },
+    {
+      "sponsor": "彩虹酷兒健康文化中心",
+      "year": "2024",
+      "actual": 120000,
+      "items": [
+        "LOGO 曝光（線上）",
+        "商業花車"
+      ],
+      "item_list_cost": 120000,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": -12000
+    },
+    {
+      "sponsor": "NIKE",
+      "year": "2024",
+      "actual": 120000,
+      "items": [
+        "LOGO 曝光（線上）",
+        "商業花車"
+      ],
+      "item_list_cost": 120000,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": -12000
+    },
+    {
+      "sponsor": "渣打銀行",
+      "year": "2024",
+      "actual": 120000,
+      "items": [
+        "LOGO 曝光（線上）",
+        "商業花車"
+      ],
+      "item_list_cost": 120000,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": -12000
+    },
+    {
+      "sponsor": "高誠公關",
+      "year": "2024",
+      "actual": 120000,
+      "items": [
+        "LOGO 曝光（線上）",
+        "商業花車"
+      ],
+      "item_list_cost": 120000,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": -12000
+    },
+    {
+      "sponsor": "GAP",
+      "year": "2025",
+      "actual": 120000,
+      "items": [
+        "商業花車"
+      ],
+      "item_list_cost": 120000,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": -12000
+    },
+    {
+      "sponsor": "彩虹酷兒健康文化中心",
+      "year": "2025",
+      "actual": 120000,
+      "items": [
+        "商業花車"
+      ],
+      "item_list_cost": 120000,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": -12000
+    },
+    {
+      "sponsor": "UBer",
+      "year": "2025",
+      "actual": 120000,
+      "items": [
+        "商業花車"
+      ],
+      "item_list_cost": 120000,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": -12000
+    },
+    {
+      "sponsor": "NIKE",
+      "year": "2025",
+      "actual": 120000,
+      "items": [
+        "商業花車"
+      ],
+      "item_list_cost": 120000,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": -12000
+    },
+    {
+      "sponsor": "渣打銀行",
+      "year": "2025",
+      "actual": 120000,
+      "items": [
+        "商業花車"
+      ],
+      "item_list_cost": 120000,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": -12000
+    },
+    {
+      "sponsor": "愛群婦產科",
+      "year": "2025",
+      "actual": 105000,
+      "items": [
+        "FB 10月貼文",
+        "FB+IG 限時動態",
+        "手冊廣告版位",
+        "活動看板"
+      ],
+      "item_list_cost": 115000,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": 3000
+    },
+    {
+      "sponsor": "澤豐",
+      "year": "2020",
+      "actual": 102000,
+      "items": [],
+      "item_list_cost": 0,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": 6000
+    },
+    {
+      "sponsor": "GAP",
+      "year": "2022",
+      "actual": 100000,
+      "items": [
+        "LOGO 曝光",
+        "商業花車"
+      ],
+      "item_list_cost": 120000,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": 8000
+    },
+    {
+      "sponsor": "彩虹酷兒健康文化中心",
+      "year": "2022",
+      "actual": 100000,
+      "items": [
+        "LOGO 曝光",
+        "商業花車"
+      ],
+      "item_list_cost": 120000,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": 8000
+    },
+    {
+      "sponsor": "拉拉公園",
+      "year": "2019",
+      "actual": 90160,
+      "items": [],
+      "item_list_cost": 0,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": 17840
+    },
+    {
+      "sponsor": "台虎",
+      "year": "2020",
+      "actual": 80000,
+      "items": [],
+      "item_list_cost": 0,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": 28000
+    },
+    {
+      "sponsor": "GAP",
+      "year": "2019",
+      "actual": 70000,
+      "items": [],
+      "item_list_cost": 0,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": 38000
+    },
+    {
+      "sponsor": "GAP",
+      "year": "2020",
+      "actual": 70000,
+      "items": [],
+      "item_list_cost": 0,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": 38000
+    },
+    {
+      "sponsor": "彩虹酷兒健康文化中心",
+      "year": "2020",
+      "actual": 70000,
+      "items": [],
+      "item_list_cost": 0,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": 38000
+    },
+    {
+      "sponsor": "Sagami",
+      "year": "2025",
+      "actual": 63000,
+      "items": [
+        "IG 10月貼文",
+        "轉播螢幕廣告"
+      ],
+      "item_list_cost": 63000,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": 45000
+    },
+    {
+      "sponsor": "hyve solutions",
+      "year": "2020",
+      "actual": 60000,
+      "items": [],
+      "item_list_cost": 0,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": 48000
+    },
+    {
+      "sponsor": "Sagami",
+      "year": "2024",
+      "actual": 60000,
+      "items": [
+        "FB+IG 限時動態",
+        "IG 9/11月貼文",
+        "LOGO 曝光（線上）",
+        "轉播螢幕廣告"
+      ],
+      "item_list_cost": 58000,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": 48000
+    },
+    {
+      "sponsor": "台灣百健",
+      "year": "2023",
+      "actual": 55000,
+      "items": [],
+      "item_list_cost": 0,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": 53000
+    },
+    {
+      "sponsor": "辻利茶舖",
+      "year": "2019",
+      "actual": 50000,
+      "items": [],
+      "item_list_cost": 0,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": 58000
+    },
+    {
+      "sponsor": "YAHOO",
+      "year": "2019",
+      "actual": 50000,
+      "items": [],
+      "item_list_cost": 0,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": 58000
+    },
+    {
+      "sponsor": "hyve solutions",
+      "year": "2023",
+      "actual": 50000,
+      "items": [
+        "FB+IG 限時動態",
+        "官網廣告 C",
+        "活動看板"
+      ],
+      "item_list_cost": 65000,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": 58000
+    },
+    {
+      "sponsor": "Sagami",
+      "year": "2022",
+      "actual": 49000,
+      "items": [],
+      "item_list_cost": 0,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": 59000
+    },
+    {
+      "sponsor": "M.A.C",
+      "year": "2025",
+      "actual": 44000,
+      "items": [
+        "手冊廣告版位",
+        "轉播螢幕廣告"
+      ],
+      "item_list_cost": 43000,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": 64000
+    },
+    {
+      "sponsor": "彩虹酷兒健康文化中心",
+      "year": "2019",
+      "actual": 40000,
+      "items": [],
+      "item_list_cost": 0,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": 68000
+    },
+    {
+      "sponsor": "Tstudio",
+      "year": "2022",
+      "actual": 35000,
+      "items": [],
+      "item_list_cost": 0,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": 73000
+    },
+    {
+      "sponsor": "UBer",
+      "year": "2019",
+      "actual": 31350,
+      "items": [],
+      "item_list_cost": 0,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": 76650
+    },
+    {
+      "sponsor": "Tstudio",
+      "year": "2020",
+      "actual": 30000,
+      "items": [],
+      "item_list_cost": 0,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": 78000
+    },
+    {
+      "sponsor": "Sagami",
+      "year": "2023",
+      "actual": 30000,
+      "items": [],
+      "item_list_cost": 0,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": 78000
+    },
+    {
+      "sponsor": "波士頓",
+      "year": "2022",
+      "actual": 25000,
+      "items": [
+        "LOGO 曝光",
+        "專題講座冠名權",
+        "手冊廣告版位",
+        "活動看板"
+      ],
+      "item_list_cost": 60000,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": 83000
+    },
+    {
+      "sponsor": "辻利茶舖",
+      "year": "2023",
+      "actual": 25000,
+      "items": [
+        "手冊廣告版位"
+      ],
+      "item_list_cost": 25000,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": 83000
+    },
+    {
+      "sponsor": "辻利茶舖",
+      "year": "2024",
+      "actual": 25000,
+      "items": [
+        "LOGO 曝光（線上）",
+        "手冊廣告版位"
+      ],
+      "item_list_cost": 25000,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": 83000
+    },
+    {
+      "sponsor": "台灣百健",
+      "year": "2024",
+      "actual": 25000,
+      "items": [
+        "LOGO 曝光（線上）",
+        "官網廣告 C"
+      ],
+      "item_list_cost": 20000,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": 83000
+    },
+    {
+      "sponsor": "辻利茶舖",
+      "year": "2025",
+      "actual": 25000,
+      "items": [
+        "手冊廣告版位"
+      ],
+      "item_list_cost": 25000,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": 83000
+    },
+    {
+      "sponsor": "辻利茶舖",
+      "year": "2020",
+      "actual": 20000,
+      "items": [],
+      "item_list_cost": 0,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": 88000
+    },
+    {
+      "sponsor": "台灣百健",
+      "year": "2025",
+      "actual": 20000,
+      "items": [
+        "官網廣告 C"
+      ],
+      "item_list_cost": 20000,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": 88000
+    },
+    {
+      "sponsor": "辻利茶舖",
+      "year": "2022",
+      "actual": 15000,
+      "items": [
+        "LOGO 曝光",
+        "手冊廣告版位"
+      ],
+      "item_list_cost": 25000,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": 93000
+    },
+    {
+      "sponsor": "澤豐",
+      "year": "2022",
+      "actual": 10000,
+      "items": [
+        "LOGO 曝光",
+        "轉播螢幕廣告"
+      ],
+      "item_list_cost": 18000,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": 98000
+    },
+    {
+      "sponsor": "可口可樂",
+      "year": "2022",
+      "actual": 0,
+      "items": [
+        "LOGO 曝光"
+      ],
+      "item_list_cost": 0,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": 108000
+    },
+    {
+      "sponsor": "TaskUs",
+      "year": "2022",
+      "actual": 0,
+      "items": [
+        "FB 貼文",
+        "IG 貼文",
+        "LOGO 曝光",
+        "轉播螢幕廣告"
+      ],
+      "item_list_cost": 78000,
+      "tier_label": "T5 銅",
+      "tier_price": 108000,
+      "gap": 108000
+    }
+  ],
+  "loyalty": [
+    {
+      "sponsor": "高通",
+      "years_count": 2,
+      "core_items": [
+        "LOGO 曝光",
+        "官方網站滾動式廣告欄位 B",
+        "市集獨立棚",
+        "手冊廣告版位",
+        "活動看板",
+        "轉播螢幕廣告"
+      ],
+      "total_unique": 10,
+      "loyalty_score": 60,
+      "added": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2023",
+          "items": [
+            "紀念專書出版印刷贊助"
+          ]
+        }
+      ],
+      "dropped": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2023",
+          "items": [
+            "FB 貼文",
+            "IG 貼文",
+            "新聞稿置入"
+          ]
+        }
+      ],
+      "cat": [
+        "TIER"
+      ]
+    },
+    {
+      "sponsor": "渣打銀行",
+      "years_count": 2,
+      "core_items": [
+        "商業花車"
+      ],
+      "total_unique": 2,
+      "loyalty_score": 50,
+      "added": [],
+      "dropped": [
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "LOGO 曝光（線上）"
+          ]
+        }
+      ],
+      "cat": [
+        "SINGLE"
+      ]
+    },
+    {
+      "sponsor": "諾億保經",
+      "years_count": 2,
+      "core_items": [
+        "FB 10月貼文",
+        "FB+IG 限時動態",
+        "IG 10月貼文",
+        "商業花車",
+        "官網廣告 C",
+        "手冊廣告版位",
+        "活動看板",
+        "轉播螢幕廣告"
+      ],
+      "total_unique": 18,
+      "loyalty_score": 44,
+      "added": [
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "FB 11月貼文",
+            "FB 9月貼文",
+            "IG 10月 Reels",
+            "IG 11月貼文",
+            "IG 9月貼文",
+            "官網廣告 B"
+          ]
+        }
+      ],
+      "dropped": [
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "FB 9/11月貼文",
+            "IG 9/11月貼文",
+            "LOGO 曝光（現場）",
+            "LOGO 曝光（線上）"
+          ]
+        }
+      ],
+      "cat": [
+        "TIER"
+      ]
+    },
+    {
+      "sponsor": "愛群婦產科",
+      "years_count": 2,
+      "core_items": [
+        "FB 10月貼文",
+        "FB+IG 限時動態",
+        "手冊廣告版位",
+        "活動看板"
+      ],
+      "total_unique": 9,
+      "loyalty_score": 44,
+      "added": [],
+      "dropped": [
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "FB 9/11月貼文",
+            "LOGO 曝光（線上）",
+            "市集獨立棚",
+            "舞台廣告",
+            "轉播螢幕廣告"
+          ]
+        }
+      ],
+      "cat": [
+        "TIER",
+        "SINGLE"
+      ]
+    },
+    {
+      "sponsor": "羅氏",
+      "years_count": 2,
+      "core_items": [
+        "FB+IG 限時動態",
+        "商業花車",
+        "市集獨立棚",
+        "手冊廣告版位",
+        "活動看板",
+        "轉播螢幕廣告"
+      ],
+      "total_unique": 15,
+      "loyalty_score": 40,
+      "added": [
+        {
+          "from_yr": "2023",
+          "to_yr": "2024",
+          "items": [
+            "IG 10月 Reels",
+            "IG 10月貼文",
+            "IG 9/11月 Reels",
+            "IG 9/11月貼文",
+            "LOGO 曝光（現場）",
+            "LOGO 曝光（線上）",
+            "官網廣告 B"
+          ]
+        }
+      ],
+      "dropped": [
+        {
+          "from_yr": "2023",
+          "to_yr": "2024",
+          "items": [
+            "FB+IG Reels",
+            "LOGO 曝光"
+          ]
+        }
+      ],
+      "cat": [
+        "TIER"
+      ]
+    },
+    {
+      "sponsor": "GAP",
+      "years_count": 4,
+      "core_items": [
+        "商業花車"
+      ],
+      "total_unique": 3,
+      "loyalty_score": 33,
+      "added": [
+        {
+          "from_yr": "2023",
+          "to_yr": "2024",
+          "items": [
+            "LOGO 曝光（線上）"
+          ]
+        }
+      ],
+      "dropped": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2023",
+          "items": [
+            "LOGO 曝光"
+          ]
+        },
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "LOGO 曝光（線上）"
+          ]
+        }
+      ],
+      "cat": [
+        "SINGLE",
+        "OTHER"
+      ]
+    },
+    {
+      "sponsor": "彩虹酷兒健康文化中心",
+      "years_count": 4,
+      "core_items": [
+        "商業花車"
+      ],
+      "total_unique": 3,
+      "loyalty_score": 33,
+      "added": [
+        {
+          "from_yr": "2023",
+          "to_yr": "2024",
+          "items": [
+            "LOGO 曝光（線上）"
+          ]
+        }
+      ],
+      "dropped": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2023",
+          "items": [
+            "LOGO 曝光"
+          ]
+        },
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "LOGO 曝光（線上）"
+          ]
+        }
+      ],
+      "cat": [
+        "SINGLE",
+        "OTHER"
+      ]
+    },
+    {
+      "sponsor": "辻利茶舖",
+      "years_count": 4,
+      "core_items": [
+        "手冊廣告版位"
+      ],
+      "total_unique": 3,
+      "loyalty_score": 33,
+      "added": [
+        {
+          "from_yr": "2023",
+          "to_yr": "2024",
+          "items": [
+            "LOGO 曝光（線上）"
+          ]
+        }
+      ],
+      "dropped": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2023",
+          "items": [
+            "LOGO 曝光"
+          ]
+        },
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "LOGO 曝光（線上）"
+          ]
+        }
+      ],
+      "cat": [
+        "SINGLE",
+        "OTHER"
+      ]
+    },
+    {
+      "sponsor": "Tapestry",
+      "years_count": 2,
+      "core_items": [
+        "FB+IG 限時動態",
+        "IG 10月貼文",
+        "商業花車",
+        "官網廣告 B",
+        "活動看板",
+        "轉播螢幕廣告"
+      ],
+      "total_unique": 18,
+      "loyalty_score": 33,
+      "added": [
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "IG 11月 Reels",
+            "IG 11月貼文",
+            "IG 9月 Reels",
+            "IG 9月貼文",
+            "市集獨立棚"
+          ]
+        }
+      ],
+      "dropped": [
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "IG 10月 Reels",
+            "IG 9/11月 Reels",
+            "IG 9/11月貼文",
+            "LOGO 曝光（現場）",
+            "LOGO 曝光（線上）",
+            "官網廣告 C",
+            "手冊廣告版位"
+          ]
+        }
+      ],
+      "cat": [
+        "TIER"
+      ]
+    },
+    {
+      "sponsor": "諾和諾德",
+      "years_count": 2,
+      "core_items": [
+        "FB+IG 限時動態",
+        "商業花車",
+        "市集獨立棚",
+        "手冊廣告版位",
+        "活動看板",
+        "轉播螢幕廣告"
+      ],
+      "total_unique": 18,
+      "loyalty_score": 33,
+      "added": [
+        {
+          "from_yr": "2023",
+          "to_yr": "2024",
+          "items": [
+            "FB 9/11月貼文",
+            "IG 10月 Reels",
+            "IG 10月貼文",
+            "IG 9/11月貼文",
+            "LOGO 曝光（現場）",
+            "LOGO 曝光（線上）",
+            "官網廣告 B"
+          ]
+        }
+      ],
+      "dropped": [
+        {
+          "from_yr": "2023",
+          "to_yr": "2024",
+          "items": [
+            "FB 貼文",
+            "FB+IG Reels",
+            "IG 貼文",
+            "LOGO 曝光",
+            "官網廣告 C"
+          ]
+        }
+      ],
+      "cat": [
+        "TIER"
+      ]
+    },
+    {
+      "sponsor": "疾管署",
+      "years_count": 2,
+      "core_items": [
+        "IG 10月貼文",
+        "官網廣告 B",
+        "手冊廣告版位"
+      ],
+      "total_unique": 11,
+      "loyalty_score": 27,
+      "added": [
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "FB 9月貼文",
+            "IG 9月貼文",
+            "活動看板",
+            "轉播螢幕廣告"
+          ]
+        }
+      ],
+      "dropped": [
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "IG 9/11月 Reels",
+            "IG 9/11月貼文",
+            "LOGO 曝光（線上）",
+            "市集獨立棚"
+          ]
+        }
+      ],
+      "cat": [
+        "TIER"
+      ]
+    },
+    {
+      "sponsor": "PINKOI",
+      "years_count": 2,
+      "core_items": [
+        "LOGO 曝光",
+        "市集獨立棚",
+        "轉播螢幕廣告"
+      ],
+      "total_unique": 12,
+      "loyalty_score": 25,
+      "added": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2023",
+          "items": [
+            "FB+IG Reels",
+            "FB+IG 限時動態",
+            "手冊廣告版位",
+            "活動看板"
+          ]
+        }
+      ],
+      "dropped": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2023",
+          "items": [
+            "FB 貼文",
+            "IG 貼文",
+            "官網廣告 C",
+            "新聞稿置入",
+            "當日攤位-合併棚"
+          ]
+        }
+      ],
+      "cat": [
+        "TIER"
+      ]
+    },
+    {
+      "sponsor": "hyve solutions",
+      "years_count": 2,
+      "core_items": [
+        "FB+IG 限時動態",
+        "活動看板"
+      ],
+      "total_unique": 8,
+      "loyalty_score": 25,
+      "added": [
+        {
+          "from_yr": "2023",
+          "to_yr": "2025",
+          "items": [
+            "FB 10月貼文",
+            "IG 9月貼文",
+            "官網廣告 B",
+            "手冊廣告版位",
+            "轉播螢幕廣告"
+          ]
+        }
+      ],
+      "dropped": [
+        {
+          "from_yr": "2023",
+          "to_yr": "2025",
+          "items": [
+            "官網廣告 C"
+          ]
+        }
+      ],
+      "cat": [
+        "TIER",
+        "SINGLE",
+        "OTHER"
+      ]
+    },
+    {
+      "sponsor": "Sagami",
+      "years_count": 2,
+      "core_items": [
+        "轉播螢幕廣告"
+      ],
+      "total_unique": 5,
+      "loyalty_score": 20,
+      "added": [
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "IG 10月貼文"
+          ]
+        }
+      ],
+      "dropped": [
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "FB+IG 限時動態",
+            "IG 9/11月貼文",
+            "LOGO 曝光（線上）"
+          ]
+        }
+      ],
+      "cat": [
+        "SINGLE"
+      ]
+    },
+    {
+      "sponsor": "拉拉公園",
+      "years_count": 4,
+      "core_items": [
+        "FB+IG 限時動態",
+        "商業花車",
+        "市集獨立棚",
+        "手冊廣告版位",
+        "活動看板"
+      ],
+      "total_unique": 26,
+      "loyalty_score": 19,
+      "added": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2023",
+          "items": [
+            "FB+IG Reels"
+          ]
+        },
+        {
+          "from_yr": "2023",
+          "to_yr": "2024",
+          "items": [
+            "FB 10月貼文",
+            "IG 10月貼文",
+            "IG 9/11月 Reels",
+            "IG 9/11月貼文",
+            "LOGO 曝光（現場）",
+            "LOGO 曝光（線上）",
+            "官網廣告 B"
+          ]
+        },
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "FB 11月貼文",
+            "FB 9月貼文",
+            "IG 11月 Reels",
+            "IG 9月貼文",
+            "官網廣告 C"
+          ]
+        }
+      ],
+      "dropped": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2023",
+          "items": [
+            "FB 貼文",
+            "主視覺使用權",
+            "官方網站滾動式廣告欄位 B",
+            "新聞稿置入",
+            "線上轉播外框-贊助商LOGO圖卡、固定Bar、跑馬燈"
+          ]
+        },
+        {
+          "from_yr": "2023",
+          "to_yr": "2024",
+          "items": [
+            "FB+IG Reels",
+            "IG 貼文",
+            "LOGO 曝光"
+          ]
+        },
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "FB 10月貼文",
+            "IG 9/11月 Reels",
+            "IG 9/11月貼文",
+            "LOGO 曝光（現場）",
+            "LOGO 曝光（線上）",
+            "轉播螢幕廣告"
+          ]
+        }
+      ],
+      "cat": [
+        "TIER",
+        "OTHER"
+      ]
+    },
+    {
+      "sponsor": "Unilever",
+      "years_count": 4,
+      "core_items": [
+        "FB+IG 限時動態",
+        "活動看板",
+        "轉播螢幕廣告"
+      ],
+      "total_unique": 19,
+      "loyalty_score": 16,
+      "added": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2023",
+          "items": [
+            "FB+IG Reels",
+            "企業品牌空間 B",
+            "手冊廣告版位"
+          ]
+        },
+        {
+          "from_yr": "2023",
+          "to_yr": "2024",
+          "items": [
+            "FB 9/11月貼文",
+            "LOGO 曝光（線上）",
+            "官網廣告 C"
+          ]
+        },
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "FB 10月貼文",
+            "IG 11月 Reels",
+            "IG 11月貼文",
+            "商業花車",
+            "官網廣告 B",
+            "市集獨立棚"
+          ]
+        }
+      ],
+      "dropped": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2023",
+          "items": [
+            "IG 貼文",
+            "商業花車",
+            "官網廣告 C",
+            "新聞稿置入"
+          ]
+        },
+        {
+          "from_yr": "2023",
+          "to_yr": "2024",
+          "items": [
+            "FB 貼文",
+            "FB+IG Reels",
+            "LOGO 曝光",
+            "企業品牌空間 B",
+            "市集獨立棚"
+          ]
+        },
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "FB 9/11月貼文",
+            "LOGO 曝光（線上）",
+            "手冊廣告版位"
+          ]
+        }
+      ],
+      "cat": [
+        "TIER"
+      ]
+    },
+    {
+      "sponsor": "美光",
+      "years_count": 4,
+      "core_items": [
+        "FB+IG 限時動態",
+        "市集獨立棚",
+        "手冊廣告版位",
+        "活動看板",
+        "轉播螢幕廣告"
+      ],
+      "total_unique": 37,
+      "loyalty_score": 14,
+      "added": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2023",
+          "items": [
+            "FB+IG Reels",
+            "場地指示用空飄氣球",
+            "官網廣告 C"
+          ]
+        },
+        {
+          "from_yr": "2023",
+          "to_yr": "2024",
+          "items": [
+            "FB 10月貼文",
+            "FB 9/11月貼文",
+            "IG 10月 Reels",
+            "IG 10月貼文",
+            "IG 9/11月 Reels",
+            "IG 9/11月貼文",
+            "LOGO 曝光（現場）",
+            "LOGO 曝光（線上）",
+            "主持人唱名",
+            "企業品牌空間 B",
+            "官網廣告 A",
+            "新聞稿置入"
+          ]
+        },
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "FB 9月貼文",
+            "IG 11月 Reels",
+            "IG 11月貼文",
+            "IG 9月貼文",
+            "官網廣告 B"
+          ]
+        }
+      ],
+      "dropped": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2023",
+          "items": [
+            "主視覺使用權",
+            "入口主視覺置入logo曝光",
+            "友善企業介紹立牌（A4尺寸）",
+            "官方網站滾動式廣告欄位 B",
+            "專題講座冠名權",
+            "展場DM logo曝光（5000份）",
+            "展場DM線上版 logo曝光",
+            "展間贊助",
+            "新聞稿置入",
+            "線上轉播外框-贊助商LOGO圖卡、固定Bar、跑馬燈"
+          ]
+        },
+        {
+          "from_yr": "2023",
+          "to_yr": "2024",
+          "items": [
+            "FB 貼文",
+            "FB+IG Reels",
+            "IG 貼文",
+            "LOGO 曝光",
+            "場地指示用空飄氣球",
+            "官網廣告 C"
+          ]
+        },
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "FB 9/11月貼文",
+            "IG 9/11月 Reels",
+            "IG 9/11月貼文",
+            "LOGO 曝光（現場）",
+            "LOGO 曝光（線上）",
+            "主持人唱名",
+            "企業品牌空間 B",
+            "官網廣告 A",
+            "新聞稿置入"
+          ]
+        }
+      ],
+      "cat": [
+        "TIER"
+      ]
+    },
+    {
+      "sponsor": "FiftyPercent",
+      "years_count": 2,
+      "core_items": [
+        "FB 貼文",
+        "FB+IG 限時動態",
+        "IG 貼文",
+        "LOGO 曝光",
+        "市集獨立棚"
+      ],
+      "total_unique": 35,
+      "loyalty_score": 14,
+      "added": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2023",
+          "items": [
+            "FB+IG Reels",
+            "官方網站滾動式廣告欄位 B"
+          ]
+        }
+      ],
+      "dropped": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2023",
+          "items": [
+            "20週年紀念專刊 專區介紹（預計1000本)",
+            "FB\\IG宣傳文宣置入Logo",
+            "FB活動貼文一篇",
+            "主舞台背板兩側之主廣告版位",
+            "主視覺使用權",
+            "企業CEO致詞影片",
+            "企業品牌空間使用權",
+            "入口主視覺置入logo（最優位置）",
+            "友善企業介紹立牌（A3尺寸放置於最大展間）",
+            "商業花車（首位）",
+            "官方網站滾動式廣告欄位 A",
+            "導覽專員介紹",
+            "展場DM專區介紹（5000份）",
+            "展場DM線上版 置入Logo",
+            "彩虹地景場地使用權",
+            "手冊廣告版位",
+            "新聞稿置入",
+            "活動當日媒體受訪權",
+            "活動當日舞台致詞權",
+            "活動看板",
+            "線上轉播外框-贊助商LOGO圖卡、固定Bar、跑馬燈",
+            "置入新聞稿一則",
+            "行前記者會之友善企業發言權",
+            "行前記者會之會後媒體採訪權",
+            "起走儀式參與權",
+            "轉播LED大螢幕之橫幅帆布廣告版位",
+            "轉播螢幕廣告",
+            "開幕記者會出席與發言"
+          ]
+        }
+      ],
+      "cat": [
+        "TIER"
+      ]
+    },
+    {
+      "sponsor": "高誠公關",
+      "years_count": 2,
+      "core_items": [
+        "商業花車"
+      ],
+      "total_unique": 7,
+      "loyalty_score": 14,
+      "added": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2024",
+          "items": [
+            "LOGO 曝光（線上）"
+          ]
+        }
+      ],
+      "dropped": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2024",
+          "items": [
+            "FB 貼文",
+            "FB+IG 限時動態",
+            "IG 貼文",
+            "LOGO 曝光",
+            "新聞稿置入"
+          ]
+        }
+      ],
+      "cat": [
+        "TIER",
+        "SINGLE"
+      ]
+    },
+    {
+      "sponsor": "海峰電腦",
+      "years_count": 2,
+      "core_items": [
+        "手冊廣告版位",
+        "活動看板"
+      ],
+      "total_unique": 17,
+      "loyalty_score": 12,
+      "added": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2024",
+          "items": [
+            "FB 9/11月貼文",
+            "FB+IG 限時動態",
+            "LOGO 曝光（線上）",
+            "官網廣告 A",
+            "轉播螢幕廣告"
+          ]
+        }
+      ],
+      "dropped": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2024",
+          "items": [
+            "FB 貼文",
+            "IG 貼文",
+            "LOGO 曝光",
+            "入口主視覺置入logo曝光",
+            "友善企業介紹立牌（A4尺寸）",
+            "官方網站滾動式廣告欄位 B",
+            "展場DM logo曝光（5000份）",
+            "展場DM線上版 logo曝光",
+            "展間贊助",
+            "新聞稿置入"
+          ]
+        }
+      ],
+      "cat": [
+        "TIER"
+      ]
+    },
+    {
+      "sponsor": "UBer",
+      "years_count": 4,
+      "core_items": [
+        "商業花車"
+      ],
+      "total_unique": 9,
+      "loyalty_score": 11,
+      "added": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2023",
+          "items": [
+            "企業品牌空間 B",
+            "官方網站滾動式廣告欄位 B",
+            "手冊廣告版位"
+          ]
+        },
+        {
+          "from_yr": "2023",
+          "to_yr": "2024",
+          "items": [
+            "LOGO 曝光（線上）"
+          ]
+        }
+      ],
+      "dropped": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2023",
+          "items": [
+            "企業品牌空間使用權"
+          ]
+        },
+        {
+          "from_yr": "2023",
+          "to_yr": "2024",
+          "items": [
+            "LOGO 曝光",
+            "官方網站滾動式廣告欄位 B",
+            "市集獨立棚",
+            "手冊廣告版位",
+            "活動看板"
+          ]
+        },
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "LOGO 曝光（線上）",
+            "企業品牌空間 B"
+          ]
+        }
+      ],
+      "cat": [
+        "TIER",
+        "SINGLE",
+        "OTHER"
+      ]
+    },
+    {
+      "sponsor": "台灣百健",
+      "years_count": 3,
+      "core_items": [
+        "官網廣告 C"
+      ],
+      "total_unique": 9,
+      "loyalty_score": 11,
+      "added": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2024",
+          "items": [
+            "LOGO 曝光（線上）"
+          ]
+        }
+      ],
+      "dropped": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2024",
+          "items": [
+            "FB 貼文",
+            "FB+IG 限時動態",
+            "IG 貼文",
+            "LOGO 曝光",
+            "商業花車",
+            "新聞稿置入",
+            "活動看板"
+          ]
+        },
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "LOGO 曝光（線上）"
+          ]
+        }
+      ],
+      "cat": [
+        "TIER",
+        "SINGLE"
+      ]
+    },
+    {
+      "sponsor": "LifeWonders",
+      "years_count": 3,
+      "core_items": [
+        "活動看板",
+        "轉播螢幕廣告"
+      ],
+      "total_unique": 18,
+      "loyalty_score": 11,
+      "added": [
+        {
+          "from_yr": "2023",
+          "to_yr": "2024",
+          "items": [
+            "FB 9/11月貼文",
+            "IG 9/11月貼文",
+            "LOGO 曝光（線上）",
+            "官網廣告 A",
+            "手冊廣告版位"
+          ]
+        },
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "FB+IG 限時動態",
+            "IG 10月 Reels",
+            "官網廣告 B",
+            "官網廣告 C",
+            "市集獨立棚",
+            "活動打卡牆"
+          ]
+        }
+      ],
+      "dropped": [
+        {
+          "from_yr": "2023",
+          "to_yr": "2024",
+          "items": [
+            "FB 貼文",
+            "FB+IG Reels",
+            "FB+IG 限時動態",
+            "LOGO 曝光",
+            "企業打卡牆",
+            "市集獨立棚",
+            "沿途小舞台之廣告欄位"
+          ]
+        },
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "FB 9/11月貼文",
+            "IG 9/11月貼文",
+            "LOGO 曝光（線上）",
+            "官網廣告 A",
+            "手冊廣告版位"
+          ]
+        }
+      ],
+      "cat": [
+        "TIER"
+      ]
+    },
+    {
+      "sponsor": "TaskUs",
+      "years_count": 2,
+      "core_items": [
+        "轉播螢幕廣告"
+      ],
+      "total_unique": 10,
+      "loyalty_score": 10,
+      "added": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2024",
+          "items": [
+            "FB+IG 限時動態",
+            "IG 9/11月貼文",
+            "LOGO 曝光（線上）",
+            "官網廣告 A",
+            "手冊廣告版位",
+            "活動看板"
+          ]
+        }
+      ],
+      "dropped": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2024",
+          "items": [
+            "FB 貼文",
+            "IG 貼文",
+            "LOGO 曝光"
+          ]
+        }
+      ],
+      "cat": [
+        "TIER",
+        "SINGLE"
+      ]
+    },
+    {
+      "sponsor": "Google",
+      "years_count": 4,
+      "core_items": [
+        "商業花車",
+        "轉播螢幕廣告"
+      ],
+      "total_unique": 22,
+      "loyalty_score": 9,
+      "added": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2023",
+          "items": [
+            "FB+IG Reels",
+            "FB+IG 限時動態",
+            "手冊廣告版位",
+            "活動看板"
+          ]
+        },
+        {
+          "from_yr": "2023",
+          "to_yr": "2024",
+          "items": [
+            "IG 10月 Reels",
+            "IG 10月貼文",
+            "IG 9/11月 Reels",
+            "IG 9/11月貼文",
+            "LOGO 曝光（現場）",
+            "LOGO 曝光（線上）",
+            "官網廣告 B"
+          ]
+        },
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "IG 11月 Reels",
+            "IG 11月貼文",
+            "IG 9月貼文",
+            "官網廣告 C"
+          ]
+        }
+      ],
+      "dropped": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2023",
+          "items": [
+            "FB 貼文",
+            "IG 貼文",
+            "官網廣告 C",
+            "新聞稿置入"
+          ]
+        },
+        {
+          "from_yr": "2023",
+          "to_yr": "2024",
+          "items": [
+            "FB+IG Reels",
+            "LOGO 曝光"
+          ]
+        },
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "IG 10月 Reels",
+            "IG 9/11月 Reels",
+            "IG 9/11月貼文",
+            "LOGO 曝光（現場）",
+            "LOGO 曝光（線上）",
+            "市集獨立棚"
+          ]
+        }
+      ],
+      "cat": [
+        "TIER"
+      ]
+    },
+    {
+      "sponsor": "必勝客",
+      "years_count": 2,
+      "core_items": [
+        "商業花車"
+      ],
+      "total_unique": 11,
+      "loyalty_score": 9,
+      "added": [
+        {
+          "from_yr": "2023",
+          "to_yr": "2025",
+          "items": [
+            "FB 10月貼文",
+            "FB 11月貼文",
+            "FB+IG 限時動態",
+            "IG 10月 Reels",
+            "IG 11月 Reels",
+            "IG 9月 Reels",
+            "官網廣告 C",
+            "市集獨立棚",
+            "活動看板",
+            "轉播螢幕廣告"
+          ]
+        }
+      ],
+      "dropped": [],
+      "cat": [
+        "TIER",
+        "SINGLE"
+      ]
+    },
+    {
+      "sponsor": "NIKE",
+      "years_count": 4,
+      "core_items": [
+        "商業花車"
+      ],
+      "total_unique": 12,
+      "loyalty_score": 8,
+      "added": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2023",
+          "items": [
+            "FB+IG 限時動態",
+            "IG 貼文",
+            "企業品牌空間 B",
+            "企業打卡牆",
+            "手冊廣告版位",
+            "活動看板",
+            "轉播螢幕廣告"
+          ]
+        },
+        {
+          "from_yr": "2023",
+          "to_yr": "2024",
+          "items": [
+            "LOGO 曝光（線上）"
+          ]
+        }
+      ],
+      "dropped": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2023",
+          "items": [
+            "企業品牌空間使用權"
+          ]
+        },
+        {
+          "from_yr": "2023",
+          "to_yr": "2024",
+          "items": [
+            "FB+IG 限時動態",
+            "IG 貼文",
+            "LOGO 曝光",
+            "企業品牌空間 B",
+            "企業打卡牆",
+            "市集獨立棚",
+            "手冊廣告版位",
+            "活動看板",
+            "轉播螢幕廣告"
+          ]
+        },
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "LOGO 曝光（線上）"
+          ]
+        }
+      ],
+      "cat": [
+        "TIER",
+        "SINGLE"
+      ]
+    },
+    {
+      "sponsor": "M.A.C",
+      "years_count": 2,
+      "core_items": [
+        "轉播螢幕廣告"
+      ],
+      "total_unique": 13,
+      "loyalty_score": 8,
+      "added": [
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "手冊廣告版位"
+          ]
+        }
+      ],
+      "dropped": [
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "FB+IG 限時動態",
+            "IG 10月 Reels",
+            "IG 10月貼文",
+            "IG 9/11月 Reels",
+            "IG 9/11月貼文",
+            "LOGO 曝光（現場）",
+            "LOGO 曝光（線上）",
+            "企業品牌空間 B",
+            "官網廣告 B",
+            "市集獨立棚",
+            "活動看板"
+          ]
+        }
+      ],
+      "cat": [
+        "TIER",
+        "OTHER"
+      ]
+    },
+    {
+      "sponsor": "波士頓",
+      "years_count": 4,
+      "core_items": [
+        "手冊廣告版位",
+        "活動看板"
+      ],
+      "total_unique": 30,
+      "loyalty_score": 7,
+      "added": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2023",
+          "items": [
+            "企業打卡牆",
+            "場地指示用空飄氣球",
+            "官方網站滾動式廣告欄位 A",
+            "市集獨立棚",
+            "沿途小舞台之廣告欄位",
+            "紀念專書出版印刷贊助",
+            "轉播螢幕廣告"
+          ]
+        },
+        {
+          "from_yr": "2023",
+          "to_yr": "2024",
+          "items": [
+            "FB 10月貼文",
+            "FB 9/11月貼文",
+            "FB+IG 限時動態",
+            "IG 10月 Reels",
+            "IG 10月貼文",
+            "IG 9/11月 Reels",
+            "IG 9/11月貼文",
+            "LOGO 曝光（現場）",
+            "LOGO 曝光（線上）",
+            "主持人唱名",
+            "企業品牌空間 B",
+            "官網廣告 A",
+            "新聞稿置入"
+          ]
+        },
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "IG 11月 Reels",
+            "IG 11月貼文",
+            "IG 9月 Reels",
+            "IG 9月貼文",
+            "官網廣告 B",
+            "官網廣告 C"
+          ]
+        }
+      ],
+      "dropped": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2023",
+          "items": [
+            "專題講座冠名權"
+          ]
+        },
+        {
+          "from_yr": "2023",
+          "to_yr": "2024",
+          "items": [
+            "LOGO 曝光",
+            "企業打卡牆",
+            "場地指示用空飄氣球",
+            "官方網站滾動式廣告欄位 A",
+            "沿途小舞台之廣告欄位",
+            "紀念專書出版印刷贊助"
+          ]
+        },
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "FB 9/11月貼文",
+            "IG 9/11月 Reels",
+            "IG 9/11月貼文",
+            "LOGO 曝光（現場）",
+            "LOGO 曝光（線上）",
+            "主持人唱名",
+            "官網廣告 A",
+            "新聞稿置入",
+            "轉播螢幕廣告"
+          ]
+        }
+      ],
+      "cat": [
+        "TIER",
+        "SINGLE"
+      ]
+    },
+    {
+      "sponsor": "默沙東",
+      "years_count": 3,
+      "core_items": [
+        "活動看板"
+      ],
+      "total_unique": 15,
+      "loyalty_score": 7,
+      "added": [
+        {
+          "from_yr": "2023",
+          "to_yr": "2024",
+          "items": [
+            "FB 9/11月貼文",
+            "IG 10月貼文",
+            "IG 9/11月貼文",
+            "LOGO 曝光（線上）"
+          ]
+        },
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "FB 9月貼文",
+            "FB+IG 限時動態",
+            "官網廣告 B",
+            "轉播螢幕廣告"
+          ]
+        }
+      ],
+      "dropped": [
+        {
+          "from_yr": "2023",
+          "to_yr": "2024",
+          "items": [
+            "FB+IG Reels",
+            "FB+IG 限時動態",
+            "IG 貼文",
+            "LOGO 曝光",
+            "手冊廣告版位",
+            "行前記者會新聞稿適當置入",
+            "轉播螢幕廣告"
+          ]
+        },
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "FB 9/11月貼文",
+            "IG 9/11月貼文",
+            "LOGO 曝光（線上）",
+            "市集獨立棚"
+          ]
+        }
+      ],
+      "cat": [
+        "TIER"
+      ]
+    },
+    {
+      "sponsor": "Tstudio",
+      "years_count": 3,
+      "core_items": [
+        "市集獨立棚"
+      ],
+      "total_unique": 16,
+      "loyalty_score": 6,
+      "added": [
+        {
+          "from_yr": "2023",
+          "to_yr": "2024",
+          "items": [
+            "FB 10月貼文",
+            "FB 9/11月貼文",
+            "IG 9/11月貼文",
+            "LOGO 曝光（現場）",
+            "LOGO 曝光（線上）",
+            "舞台廣告"
+          ]
+        },
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "手冊廣告版位"
+          ]
+        }
+      ],
+      "dropped": [
+        {
+          "from_yr": "2023",
+          "to_yr": "2024",
+          "items": [
+            "FB+IG Reels",
+            "FB+IG 限時動態",
+            "IG 貼文",
+            "LOGO 曝光",
+            "手冊廣告版位",
+            "行前記者會新聞稿適當置入",
+            "轉播LED大螢幕之橫幅帆布廣告版位"
+          ]
+        },
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "FB 10月貼文",
+            "FB 9/11月貼文",
+            "IG 9/11月貼文",
+            "LOGO 曝光（現場）",
+            "LOGO 曝光（線上）",
+            "活動看板",
+            "舞台廣告",
+            "轉播螢幕廣告"
+          ]
+        }
+      ],
+      "cat": [
+        "TIER",
+        "OTHER"
+      ]
+    },
+    {
+      "sponsor": "VERVE",
+      "years_count": 3,
+      "core_items": [
+        "商業花車"
+      ],
+      "total_unique": 16,
+      "loyalty_score": 6,
+      "added": [
+        {
+          "from_yr": "2023",
+          "to_yr": "2024",
+          "items": [
+            "FB 10月貼文",
+            "FB 9/11月貼文",
+            "IG 10月 Reels",
+            "IG 9/11月 Reels",
+            "IG 9/11月貼文",
+            "LOGO 曝光（現場）",
+            "LOGO 曝光（線上）",
+            "官網廣告 B"
+          ]
+        },
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "企業品牌空間 A"
+          ]
+        }
+      ],
+      "dropped": [
+        {
+          "from_yr": "2023",
+          "to_yr": "2024",
+          "items": [
+            "FB+IG Reels",
+            "IG 貼文",
+            "LOGO 曝光"
+          ]
+        },
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "FB 10月貼文",
+            "FB 9/11月貼文",
+            "FB+IG 限時動態",
+            "IG 10月 Reels",
+            "IG 9/11月 Reels",
+            "IG 9/11月貼文",
+            "LOGO 曝光（現場）",
+            "LOGO 曝光（線上）",
+            "官網廣告 B",
+            "市集獨立棚",
+            "手冊廣告版位"
+          ]
+        }
+      ],
+      "cat": [
+        "TIER",
+        "SINGLE"
+      ]
+    },
+    {
+      "sponsor": "GILEAD",
+      "years_count": 3,
+      "core_items": [
+        "商業花車（首位）",
+        "手冊廣告版位"
+      ],
+      "total_unique": 44,
+      "loyalty_score": 5,
+      "added": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2023",
+          "items": [
+            "FB+IG Reels",
+            "企業品牌空間 B",
+            "行前記者會新聞稿適當置入"
+          ]
+        },
+        {
+          "from_yr": "2023",
+          "to_yr": "2024",
+          "items": [
+            "FB 9/11月貼文",
+            "IG 9/11月貼文",
+            "LOGO 曝光（現場）",
+            "LOGO 曝光（線上）",
+            "主持人唱名",
+            "企業品牌空間 A",
+            "年度素材授權",
+            "新聞稿置入",
+            "活動打卡牆"
+          ]
+        }
+      ],
+      "dropped": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2023",
+          "items": [
+            "20週年紀念專刊 專區介紹（預計1000本)",
+            "FB\\IG宣傳文宣置入Logo",
+            "FB活動貼文一篇",
+            "主舞台背板兩側之主廣告版位",
+            "主視覺使用權",
+            "企業CEO致詞影片",
+            "企業品牌空間使用權",
+            "入口主視覺置入logo（最優位置）",
+            "友善企業介紹立牌（A3尺寸放置於最大展間）",
+            "導覽專員介紹",
+            "展場DM專區介紹（5000份）",
+            "展場DM線上版 置入Logo",
+            "市集獨立棚",
+            "彩虹地景場地使用權",
+            "新聞稿置入",
+            "活動當日媒體受訪權",
+            "活動當日舞台致詞權",
+            "線上轉播外框-贊助商LOGO圖卡、固定Bar、跑馬燈",
+            "置入新聞稿一則",
+            "開幕記者會出席與發言"
+          ]
+        },
+        {
+          "from_yr": "2023",
+          "to_yr": "2024",
+          "items": [
+            "FB 貼文",
+            "FB+IG Reels",
+            "FB+IG 限時動態",
+            "IG 貼文",
+            "LOGO 曝光",
+            "企業品牌空間 B",
+            "官方網站滾動式廣告欄位 A",
+            "活動看板",
+            "行前記者會之友善企業發言權",
+            "行前記者會之會後媒體採訪權",
+            "行前記者會新聞稿適當置入",
+            "起走儀式參與權",
+            "轉播LED大螢幕之橫幅帆布廣告版位",
+            "轉播螢幕廣告"
+          ]
+        }
+      ],
+      "cat": [
+        "TIER"
+      ]
+    },
+    {
+      "sponsor": "AZ",
+      "years_count": 3,
+      "core_items": [
+        "商業花車"
+      ],
+      "total_unique": 21,
+      "loyalty_score": 5,
+      "added": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2024",
+          "items": [
+            "FB 10月貼文",
+            "FB 9/11月貼文",
+            "FB+IG 限時動態",
+            "IG 10月貼文",
+            "IG 9/11月貼文",
+            "LOGO 曝光（現場）",
+            "LOGO 曝光（線上）",
+            "官網廣告 A",
+            "手冊廣告版位",
+            "活動看板"
+          ]
+        },
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "IG 10月 Reels",
+            "IG 11月 Reels",
+            "IG 11月貼文",
+            "IG 9月貼文",
+            "官網廣告 C",
+            "轉播螢幕廣告"
+          ]
+        }
+      ],
+      "dropped": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2024",
+          "items": [
+            "FB 貼文",
+            "IG 貼文",
+            "LOGO 曝光",
+            "官網廣告 C",
+            "新聞稿置入",
+            "轉播螢幕廣告"
+          ]
+        },
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "FB 9/11月貼文",
+            "IG 9/11月貼文",
+            "LOGO 曝光（現場）",
+            "LOGO 曝光（線上）",
+            "官網廣告 A"
+          ]
+        }
+      ],
+      "cat": [
+        "TIER"
+      ]
+    },
+    {
+      "sponsor": "樂天",
+      "years_count": 3,
+      "core_items": [
+        "市集獨立棚"
+      ],
+      "total_unique": 21,
+      "loyalty_score": 5,
+      "added": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2023",
+          "items": [
+            "FB+IG Reels",
+            "手冊廣告版位",
+            "活動看板",
+            "轉播螢幕廣告"
+          ]
+        },
+        {
+          "from_yr": "2023",
+          "to_yr": "2024",
+          "items": [
+            "FB 10月貼文",
+            "FB 9/11月貼文",
+            "IG 10月貼文",
+            "IG 9/11月 Reels",
+            "IG 9/11月貼文",
+            "LOGO 曝光（現場）",
+            "LOGO 曝光（線上）",
+            "官網廣告 B",
+            "官網廣告 C",
+            "年度素材授權"
+          ]
+        }
+      ],
+      "dropped": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2023",
+          "items": [
+            "商業花車",
+            "官網廣告 C",
+            "新聞稿置入"
+          ]
+        },
+        {
+          "from_yr": "2023",
+          "to_yr": "2024",
+          "items": [
+            "FB 貼文",
+            "FB+IG Reels",
+            "FB+IG 限時動態",
+            "IG 貼文",
+            "LOGO 曝光",
+            "手冊廣告版位",
+            "轉播螢幕廣告"
+          ]
+        }
+      ],
+      "cat": [
+        "TIER"
+      ]
+    },
+    {
+      "sponsor": "台虎",
+      "years_count": 4,
+      "core_items": [
+        "市集獨立棚"
+      ],
+      "total_unique": 26,
+      "loyalty_score": 4,
+      "added": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2023",
+          "items": [
+            "FB+IG Reels",
+            "商業花車",
+            "手冊廣告版位",
+            "轉播螢幕廣告"
+          ]
+        },
+        {
+          "from_yr": "2023",
+          "to_yr": "2024",
+          "items": [
+            "FB 10月貼文",
+            "FB 9/11月貼文",
+            "IG 10月貼文",
+            "IG 9/11月 Reels",
+            "IG 9/11月貼文",
+            "LOGO 曝光（現場）",
+            "LOGO 曝光（線上）",
+            "官網廣告 B",
+            "活動看板"
+          ]
+        },
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "FB 9月貼文",
+            "FB+IG 限時動態",
+            "IG 10月 Reels",
+            "IG 11月 Reels",
+            "IG 11月貼文",
+            "IG 9月 Reels",
+            "IG 9月貼文"
+          ]
+        }
+      ],
+      "dropped": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2023",
+          "items": [
+            "FB 貼文",
+            "主視覺使用權",
+            "跨界合作"
+          ]
+        },
+        {
+          "from_yr": "2023",
+          "to_yr": "2024",
+          "items": [
+            "FB+IG Reels",
+            "FB+IG 限時動態",
+            "IG 貼文",
+            "LOGO 曝光",
+            "手冊廣告版位"
+          ]
+        },
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "FB 10月貼文",
+            "FB 9/11月貼文",
+            "IG 9/11月 Reels",
+            "IG 9/11月貼文",
+            "LOGO 曝光（現場）",
+            "LOGO 曝光（線上）",
+            "官網廣告 B",
+            "轉播螢幕廣告"
+          ]
+        }
+      ],
+      "cat": [
+        "TIER",
+        "SINGLE",
+        "OTHER"
+      ]
+    },
+    {
+      "sponsor": "GSK",
+      "years_count": 4,
+      "core_items": [],
+      "total_unique": 22,
+      "loyalty_score": 0,
+      "added": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2023",
+          "items": [
+            "FB+IG Reels",
+            "FB+IG 限時動態",
+            "商業花車",
+            "手冊廣告版位",
+            "活動看板",
+            "轉播螢幕廣告"
+          ]
+        },
+        {
+          "from_yr": "2023",
+          "to_yr": "2024",
+          "items": [
+            "FB 10月貼文",
+            "FB 9/11月貼文",
+            "IG 10月貼文",
+            "IG 9/11月貼文",
+            "LOGO 曝光（現場）",
+            "LOGO 曝光（線上）",
+            "官網廣告 B",
+            "官網廣告 C"
+          ]
+        },
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "FB 11月貼文",
+            "FB 9月貼文",
+            "IG 11月貼文",
+            "IG 9月貼文"
+          ]
+        }
+      ],
+      "dropped": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2023",
+          "items": [
+            "官網廣告 C",
+            "新聞稿置入"
+          ]
+        },
+        {
+          "from_yr": "2023",
+          "to_yr": "2024",
+          "items": [
+            "FB 貼文",
+            "FB+IG Reels",
+            "LOGO 曝光",
+            "市集獨立棚"
+          ]
+        },
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "FB 9/11月貼文",
+            "IG 10月貼文",
+            "IG 9/11月貼文",
+            "LOGO 曝光（現場）",
+            "LOGO 曝光（線上）"
+          ]
+        }
+      ],
+      "cat": [
+        "TIER"
+      ]
+    },
+    {
+      "sponsor": "可口可樂",
+      "years_count": 4,
+      "core_items": [],
+      "total_unique": 3,
+      "loyalty_score": 0,
+      "added": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2023",
+          "items": [
+            "企業品牌空間 A"
+          ]
+        },
+        {
+          "from_yr": "2023",
+          "to_yr": "2024",
+          "items": [
+            "LOGO 曝光（線上）"
+          ]
+        }
+      ],
+      "dropped": [
+        {
+          "from_yr": "2022",
+          "to_yr": "2023",
+          "items": [
+            "LOGO 曝光"
+          ]
+        },
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "LOGO 曝光（線上）"
+          ]
+        }
+      ],
+      "cat": [
+        "SINGLE",
+        "OTHER"
+      ]
+    },
+    {
+      "sponsor": "犀牛盾",
+      "years_count": 2,
+      "core_items": [],
+      "total_unique": 11,
+      "loyalty_score": 0,
+      "added": [
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "FB 10月貼文",
+            "FB 9月貼文",
+            "FB+IG 限時動態",
+            "IG 10月貼文",
+            "IG 9月貼文",
+            "手冊廣告版位",
+            "活動看板"
+          ]
+        }
+      ],
+      "dropped": [
+        {
+          "from_yr": "2024",
+          "to_yr": "2025",
+          "items": [
+            "LOGO 曝光（線上）",
+            "企業品牌空間 A",
+            "商業花車（首位）",
+            "活動打卡牆"
+          ]
+        }
+      ],
+      "cat": [
+        "TIER",
+        "SINGLE"
+      ]
+    }
+  ]
+}

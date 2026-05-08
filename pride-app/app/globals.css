@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Brand */
+  --accent:       #e8005a;
+  --accent-light: #fff0f6;
+  --accent-2:     #7c3aed;
+
+  /* Category semantic colors */
+  --tier:   #7c3aed;
+  --single: #0284c7;
+  --market: #059669;
+  --other:  #94a3b8;
+
+  /* Tier level palette */
+  --t1: #7c3aed;
+  --t2: #e8005a;
+  --t3: #0284c7;
+  --t4: #059669;
+  --t5: #d97706;
+
+  /* Surfaces */
+  --background: #f8fafc;
+  --surface:    #ffffff;
+  --bg2:        #f1f5f9;
+
+  /* Text */
+  --foreground:     #0f172a;
+  --text-secondary: #475569;
+  --text-muted:     #94a3b8;
+
+  /* Borders + shadows */
+  --border:    #e2e8f0;
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / .07), 0 1px 2px -1px rgb(0 0 0 / .04);
+  --shadow:    0 4px 6px -1px rgb(0 0 0 / .07), 0 2px 4px -2px rgb(0 0 0 / .05);
+
+  /* Rainbow */
+  --rainbow: linear-gradient(90deg, #E40303, #FF8C00, #FFED00, #008026, #004DFF, #750787);
+
+  /* Shadcn sidebar tokens */
+  --sidebar:                     hsl(0 0% 100%);
+  --sidebar-foreground:          hsl(222 47% 11%);
+  --sidebar-primary:             #e8005a;
+  --sidebar-primary-foreground:  hsl(0 0% 100%);
+  --sidebar-accent:              hsl(210 40% 96%);
+  --sidebar-accent-foreground:   hsl(222 47% 11%);
+  --sidebar-border:              #e2e8f0;
+  --sidebar-ring:                #e8005a;
+}
+
+@theme inline {
+  --color-background:                 var(--background);
+  --color-foreground:                 var(--foreground);
+  --color-surface:                    var(--surface);
+  --color-bg2:                        var(--bg2);
+  --color-accent:                     var(--accent);
+  --color-accent-light:               var(--accent-light);
+  --color-accent-2:                   var(--accent-2);
+  --color-tier:                       var(--tier);
+  --color-single:                     var(--single);
+  --color-market:                     var(--market);
+  --color-other:                      var(--other);
+  --color-border:                     var(--border);
+  --color-text-secondary:             var(--text-secondary);
+  --color-text-muted:                 var(--text-muted);
+  --color-sidebar:                    var(--sidebar);
+  --color-sidebar-foreground:         var(--sidebar-foreground);
+  --color-sidebar-primary:            var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent:             var(--sidebar-accent);
+  --color-sidebar-accent-foreground:  var(--sidebar-accent-foreground);
+  --color-sidebar-border:             var(--sidebar-border);
+  --color-sidebar-ring:               var(--sidebar-ring);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans, Arial, sans-serif);
+}

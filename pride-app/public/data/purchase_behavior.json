@@ -1,0 +1,1004 @@
+{
+  "GAP": {
+    "donor_id": "D0020",
+    "name": "GAP",
+    "years": {
+      "2019": {
+        "cat": "OTHER",
+        "label": "其他",
+        "amount": 70000
+      },
+      "2020": {
+        "cat": "SINGLE",
+        "label": "花車",
+        "amount": 70000
+      },
+      "2022": {
+        "cat": "SINGLE",
+        "label": "單買",
+        "amount": 100000
+      },
+      "2023": {
+        "cat": "SINGLE",
+        "label": "花車",
+        "amount": 120000
+      },
+      "2024": {
+        "cat": "SINGLE",
+        "label": "花車",
+        "amount": 120000
+      },
+      "2025": {
+        "cat": "SINGLE",
+        "label": "花車",
+        "amount": 120000
+      }
+    }
+  },
+  "GILEAD": {
+    "donor_id": "D0028",
+    "name": "GILEAD",
+    "years": {
+      "2019": {
+        "cat": "TIER",
+        "label": "T2 黃金",
+        "amount": 500000
+      },
+      "2020": {
+        "cat": "TIER",
+        "label": "T2 黃金",
+        "amount": 595000
+      },
+      "2022": {
+        "cat": "TIER",
+        "label": "T1 白金",
+        "amount": 1000000
+      },
+      "2023": {
+        "cat": "TIER",
+        "label": "T2 黃金",
+        "amount": 1000000
+      },
+      "2024": {
+        "cat": "TIER",
+        "label": "T3 鈦金",
+        "amount": 550000
+      },
+      "2025": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 230000
+      }
+    }
+  },
+  "Google": {
+    "donor_id": "D0037",
+    "name": "Google",
+    "years": {
+      "2019": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 150000
+      },
+      "2020": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 160000
+      },
+      "2022": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 170000
+      },
+      "2023": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 180000
+      },
+      "2024": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 198000
+      },
+      "2025": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 198000
+      }
+    }
+  },
+  "Tstudio": {
+    "donor_id": "D0034",
+    "name": "Tstudio",
+    "years": {
+      "2019": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 150000
+      },
+      "2020": {
+        "cat": "OTHER",
+        "label": "其他",
+        "amount": 30000
+      },
+      "2022": {
+        "cat": "OTHER",
+        "label": "其他",
+        "amount": 35000
+      },
+      "2023": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 0
+      },
+      "2024": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 0
+      },
+      "2025": {
+        "cat": "TIER",
+        "label": "T5 銅",
+        "amount": 108000
+      }
+    }
+  },
+  "彩虹酷兒健康文化中心": {
+    "donor_id": "D0022",
+    "name": "彩虹酷兒健康文化中心",
+    "years": {
+      "2019": {
+        "cat": "OTHER",
+        "label": "其他",
+        "amount": 40000
+      },
+      "2020": {
+        "cat": "SINGLE",
+        "label": "花車",
+        "amount": 70000
+      },
+      "2022": {
+        "cat": "SINGLE",
+        "label": "單買",
+        "amount": 100000
+      },
+      "2023": {
+        "cat": "SINGLE",
+        "label": "花車",
+        "amount": 120000
+      },
+      "2024": {
+        "cat": "SINGLE",
+        "label": "花車",
+        "amount": 120000
+      },
+      "2025": {
+        "cat": "SINGLE",
+        "label": "花車",
+        "amount": 120000
+      }
+    }
+  },
+  "拉拉公園": {
+    "donor_id": "D0006",
+    "name": "拉拉公園",
+    "years": {
+      "2019": {
+        "cat": "OTHER",
+        "label": "其他",
+        "amount": 90160
+      },
+      "2020": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 160000
+      },
+      "2022": {
+        "cat": "TIER",
+        "label": "T3 白銀",
+        "amount": 300000
+      },
+      "2023": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 180000
+      },
+      "2024": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 198000
+      },
+      "2025": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 198000
+      }
+    }
+  },
+  "辻利茶舖": {
+    "donor_id": "D0001",
+    "name": "辻利茶舖",
+    "years": {
+      "2019": {
+        "cat": "OTHER",
+        "label": "其他",
+        "amount": 50000
+      },
+      "2020": {
+        "cat": "OTHER",
+        "label": "其他",
+        "amount": 20000
+      },
+      "2022": {
+        "cat": "SINGLE",
+        "label": "單買",
+        "amount": 15000
+      },
+      "2023": {
+        "cat": "SINGLE",
+        "label": "單買",
+        "amount": 25000
+      },
+      "2024": {
+        "cat": "SINGLE",
+        "label": "單買",
+        "amount": 25000
+      },
+      "2025": {
+        "cat": "SINGLE",
+        "label": "單買",
+        "amount": 25000
+      }
+    }
+  },
+  "G-Star": {
+    "donor_id": "D0032",
+    "name": "G-Star",
+    "years": {
+      "2019": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 150000
+      },
+      "2022": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 150000
+      },
+      "2023": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 180000
+      },
+      "2024": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 198000
+      },
+      "2025": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 198000
+      }
+    }
+  },
+  "GSK": {
+    "donor_id": "D0052",
+    "name": "GSK",
+    "years": {
+      "2020": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 160000
+      },
+      "2022": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 150000
+      },
+      "2023": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 180000
+      },
+      "2024": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 198000
+      },
+      "2025": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 198000
+      }
+    }
+  },
+  "UBer": {
+    "donor_id": "D0017",
+    "name": "UBer",
+    "years": {
+      "2019": {
+        "cat": "OTHER",
+        "label": "其他",
+        "amount": 31350
+      },
+      "2022": {
+        "cat": "SINGLE",
+        "label": "單買",
+        "amount": 310000
+      },
+      "2023": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 190000
+      },
+      "2024": {
+        "cat": "SINGLE",
+        "label": "花車",
+        "amount": 250000
+      },
+      "2025": {
+        "cat": "SINGLE",
+        "label": "花車",
+        "amount": 120000
+      }
+    }
+  },
+  "Unilever": {
+    "donor_id": "D0058",
+    "name": "Unilever",
+    "years": {
+      "2020": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 160000
+      },
+      "2022": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 170000
+      },
+      "2023": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 150000
+      },
+      "2024": {
+        "cat": "TIER",
+        "label": "T5 銅",
+        "amount": 120000
+      },
+      "2025": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 198000
+      }
+    }
+  },
+  "台虎": {
+    "donor_id": "D0062",
+    "name": "台虎",
+    "years": {
+      "2020": {
+        "cat": "OTHER",
+        "label": "其他",
+        "amount": 80000
+      },
+      "2022": {
+        "cat": "SINGLE",
+        "label": "花車",
+        "amount": 249000
+      },
+      "2023": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 100000
+      },
+      "2024": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 198000
+      },
+      "2025": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 198000
+      }
+    }
+  },
+  "AZ": {
+    "donor_id": "D0085",
+    "name": "AZ",
+    "years": {
+      "2022": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 155000
+      },
+      "2023": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 180000
+      },
+      "2024": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 198000
+      },
+      "2025": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 198000
+      }
+    }
+  },
+  "NIKE": {
+    "donor_id": "D0097",
+    "name": "NIKE",
+    "years": {
+      "2022": {
+        "cat": "SINGLE",
+        "label": "單買",
+        "amount": 250000
+      },
+      "2023": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 230000
+      },
+      "2024": {
+        "cat": "SINGLE",
+        "label": "花車",
+        "amount": 120000
+      },
+      "2025": {
+        "cat": "SINGLE",
+        "label": "花車",
+        "amount": 120000
+      }
+    }
+  },
+  "Sagami": {
+    "donor_id": "D0105",
+    "name": "Sagami",
+    "years": {
+      "2022": {
+        "cat": "SINGLE",
+        "label": "單買",
+        "amount": 49000
+      },
+      "2023": {
+        "cat": "SINGLE",
+        "label": "單買",
+        "amount": 30000
+      },
+      "2024": {
+        "cat": "SINGLE",
+        "label": "單買",
+        "amount": 60000
+      },
+      "2025": {
+        "cat": "SINGLE",
+        "label": "單買",
+        "amount": 63000
+      }
+    }
+  },
+  "可口可樂": {
+    "donor_id": "D0110",
+    "name": "可口可樂",
+    "years": {
+      "2022": {
+        "cat": "OTHER",
+        "label": "其他",
+        "amount": 0
+      },
+      "2023": {
+        "cat": "SINGLE",
+        "label": "單買",
+        "amount": 250000
+      },
+      "2024": {
+        "cat": "SINGLE",
+        "label": "單買",
+        "amount": 250000
+      },
+      "2025": {
+        "cat": "SINGLE",
+        "label": "單買",
+        "amount": 250000
+      }
+    }
+  },
+  "台灣百健": {
+    "donor_id": "D0056",
+    "name": "台灣百健",
+    "years": {
+      "2020": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 160000
+      },
+      "2023": {
+        "cat": "SINGLE",
+        "label": "單買",
+        "amount": 55000
+      },
+      "2024": {
+        "cat": "SINGLE",
+        "label": "單買",
+        "amount": 25000
+      },
+      "2025": {
+        "cat": "SINGLE",
+        "label": "單買",
+        "amount": 20000
+      }
+    }
+  },
+  "波士頓": {
+    "donor_id": "D0104",
+    "name": "波士頓",
+    "years": {
+      "2022": {
+        "cat": "SINGLE",
+        "label": "單買",
+        "amount": 25000
+      },
+      "2023": {
+        "cat": "TIER",
+        "label": "T3 白銀",
+        "amount": 400000
+      },
+      "2024": {
+        "cat": "TIER",
+        "label": "T3 鈦金",
+        "amount": 405000
+      },
+      "2025": {
+        "cat": "TIER",
+        "label": "T3 鈦金",
+        "amount": 405000
+      }
+    }
+  },
+  "美光": {
+    "donor_id": "D0084",
+    "name": "美光",
+    "years": {
+      "2022": {
+        "cat": "TIER",
+        "label": "T3 白銀",
+        "amount": 300000
+      },
+      "2023": {
+        "cat": "TIER",
+        "label": "T3 白銀",
+        "amount": 400000
+      },
+      "2024": {
+        "cat": "TIER",
+        "label": "T3 鈦金",
+        "amount": 405000
+      },
+      "2025": {
+        "cat": "TIER",
+        "label": "T3 鈦金",
+        "amount": 405000
+      }
+    }
+  },
+  "諾億保經": {
+    "donor_id": "D0094",
+    "name": "諾億保經",
+    "years": {
+      "2022": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 150000
+      },
+      "2023": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 180000
+      },
+      "2024": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 198000
+      },
+      "2025": {
+        "cat": "TIER",
+        "label": "T3 鈦金",
+        "amount": 405000
+      }
+    }
+  },
+  "M.A.C": {
+    "donor_id": "D0123",
+    "name": "M.A.C",
+    "years": {
+      "2023": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 180000
+      },
+      "2024": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 198000
+      },
+      "2025": {
+        "cat": "OTHER",
+        "label": "其他",
+        "amount": 44000
+      }
+    }
+  },
+  "PINKOI": {
+    "donor_id": "D0059",
+    "name": "PINKOI",
+    "years": {
+      "2020": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 160000
+      },
+      "2022": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 145000
+      },
+      "2023": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 180000
+      }
+    }
+  },
+  "VERVE": {
+    "donor_id": "D0117",
+    "name": "VERVE",
+    "years": {
+      "2023": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 180000
+      },
+      "2024": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 240000
+      },
+      "2025": {
+        "cat": "SINGLE",
+        "label": "花車",
+        "amount": 350000
+      }
+    }
+  },
+  "hyve solutions": {
+    "donor_id": "D0067",
+    "name": "hyve solutions",
+    "years": {
+      "2020": {
+        "cat": "OTHER",
+        "label": "其他",
+        "amount": 60000
+      },
+      "2023": {
+        "cat": "SINGLE",
+        "label": "單買",
+        "amount": 50000
+      },
+      "2025": {
+        "cat": "TIER",
+        "label": "T5 銅",
+        "amount": 108000
+      }
+    }
+  },
+  "樂天": {
+    "donor_id": "D0093",
+    "name": "樂天",
+    "years": {
+      "2022": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 0
+      },
+      "2023": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 180000
+      },
+      "2024": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 197985
+      }
+    }
+  },
+  "高通": {
+    "donor_id": "D0091",
+    "name": "高通",
+    "years": {
+      "2022": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 150000
+      },
+      "2023": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 180000
+      },
+      "2024": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 198000
+      }
+    }
+  },
+  "默沙東": {
+    "donor_id": "D0125",
+    "name": "默沙東",
+    "years": {
+      "2023": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 180000
+      },
+      "2024": {
+        "cat": "TIER",
+        "label": "T5 銅",
+        "amount": 120000
+      },
+      "2025": {
+        "cat": "TIER",
+        "label": "T5 銅",
+        "amount": 108000
+      }
+    }
+  },
+  "FiftyPercent": {
+    "donor_id": "D0079",
+    "name": "FiftyPercent",
+    "years": {
+      "2022": {
+        "cat": "TIER",
+        "label": "T1 白金",
+        "amount": 1000000
+      },
+      "2023": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 0
+      }
+    }
+  },
+  "LifeWonders": {
+    "donor_id": "D0150",
+    "name": "LifeWonders",
+    "years": {
+      "2024": {
+        "cat": "TIER",
+        "label": "T5 銅",
+        "amount": 116249
+      },
+      "2025": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 216000
+      }
+    }
+  },
+  "Tapestry": {
+    "donor_id": "D0144",
+    "name": "Tapestry",
+    "years": {
+      "2024": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 220000
+      },
+      "2025": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 220000
+      }
+    }
+  },
+  "TaskUs": {
+    "donor_id": "D0098",
+    "name": "TaskUs",
+    "years": {
+      "2022": {
+        "cat": "SINGLE",
+        "label": "單買",
+        "amount": 0
+      },
+      "2024": {
+        "cat": "TIER",
+        "label": "T5 銅",
+        "amount": 120000
+      }
+    }
+  },
+  "YAHOO": {
+    "donor_id": "D0045",
+    "name": "YAHOO",
+    "years": {
+      "2019": {
+        "cat": "OTHER",
+        "label": "其他",
+        "amount": 50000
+      },
+      "2022": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 170000
+      }
+    }
+  },
+  "必勝客": {
+    "donor_id": "D0128",
+    "name": "必勝客",
+    "years": {
+      "2023": {
+        "cat": "SINGLE",
+        "label": "花車",
+        "amount": 120000
+      },
+      "2025": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 220000
+      }
+    }
+  },
+  "愛群婦產科": {
+    "donor_id": "D0153",
+    "name": "愛群婦產科",
+    "years": {
+      "2024": {
+        "cat": "TIER",
+        "label": "T5 銅",
+        "amount": 390000
+      },
+      "2025": {
+        "cat": "SINGLE",
+        "label": "單買",
+        "amount": 105000
+      }
+    }
+  },
+  "海峰電腦": {
+    "donor_id": "D0090",
+    "name": "海峰電腦",
+    "years": {
+      "2022": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 215000
+      },
+      "2024": {
+        "cat": "TIER",
+        "label": "T5 銅",
+        "amount": 120000
+      }
+    }
+  },
+  "渣打銀行": {
+    "donor_id": "D0156",
+    "name": "渣打銀行",
+    "years": {
+      "2024": {
+        "cat": "SINGLE",
+        "label": "花車",
+        "amount": 120000
+      },
+      "2025": {
+        "cat": "SINGLE",
+        "label": "花車",
+        "amount": 120000
+      }
+    }
+  },
+  "澤豐": {
+    "donor_id": "D0060",
+    "name": "澤豐",
+    "years": {
+      "2020": {
+        "cat": "OTHER",
+        "label": "其他",
+        "amount": 102000
+      },
+      "2022": {
+        "cat": "SINGLE",
+        "label": "單買",
+        "amount": 10000
+      }
+    }
+  },
+  "犀牛盾": {
+    "donor_id": "D0163",
+    "name": "犀牛盾",
+    "years": {
+      "2024": {
+        "cat": "SINGLE",
+        "label": "單買",
+        "amount": 750000
+      },
+      "2025": {
+        "cat": "TIER",
+        "label": "T5 銅",
+        "amount": 150000
+      }
+    }
+  },
+  "疾管署": {
+    "donor_id": "D0155",
+    "name": "疾管署",
+    "years": {
+      "2024": {
+        "cat": "TIER",
+        "label": "T5 銅",
+        "amount": 120000
+      },
+      "2025": {
+        "cat": "TIER",
+        "label": "T5 銅",
+        "amount": 114000
+      }
+    }
+  },
+  "羅氏": {
+    "donor_id": "D0115",
+    "name": "羅氏",
+    "years": {
+      "2023": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 180000
+      },
+      "2024": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 220000
+      }
+    }
+  },
+  "諾和諾德": {
+    "donor_id": "D0112",
+    "name": "諾和諾德",
+    "years": {
+      "2023": {
+        "cat": "TIER",
+        "label": "T3 白銀",
+        "amount": 400000
+      },
+      "2024": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 220000
+      }
+    }
+  },
+  "高誠公關": {
+    "donor_id": "D0092",
+    "name": "高誠公關",
+    "years": {
+      "2022": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 150000
+      },
+      "2024": {
+        "cat": "SINGLE",
+        "label": "花車",
+        "amount": 120000
+      }
+    }
+  }
+}

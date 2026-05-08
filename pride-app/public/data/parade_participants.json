@@ -1,0 +1,4208 @@
+[
+  {
+    "donor_id": "D0001",
+    "name": "辻利茶舖",
+    "aliases": [],
+    "industry": "餐飲",
+    "first_donor_year": 2016,
+    "donor_years": [
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0002",
+    "name": "Par.T",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2016,
+    "donor_years": [
+      2016,
+      2017,
+      2022
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0003",
+    "name": "Blue",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2016,
+    "donor_years": [
+      2016,
+      2017
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0004",
+    "name": "Destination,Beijing",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2016,
+    "donor_years": [
+      2016,
+      2017,
+      2018,
+      2019
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0005",
+    "name": "愛滋病理協會",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2016,
+    "donor_years": [
+      2016
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0006",
+    "name": "拉拉公園",
+    "aliases": [],
+    "industry": "交友",
+    "first_donor_year": 2016,
+    "donor_years": [
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "first_parade_year": 2019,
+    "parade_detail": {
+      "2019": {
+        "raw_name": "LesPark 拉拉公園",
+        "section": "商業車",
+        "team": "黃色大隊 Team Yellow"
+      },
+      "2020": {
+        "raw_name": "LesPark",
+        "section": "商業車",
+        "team": "藍色大隊 Team Blue"
+      },
+      "2022": {
+        "raw_name": "LesPark",
+        "section": "商業車",
+        "team": "紅色大隊 Team Red"
+      },
+      "2023": {
+        "raw_name": "LesPark",
+        "section": "商業車",
+        "team": "橙色大隊 Team Orange"
+      },
+      "2024": {
+        "raw_name": "LesPark",
+        "section": "商業車",
+        "team": "藍色大隊 Team Blue"
+      },
+      "2025": {
+        "raw_name": "Lespark",
+        "section": "商業車",
+        "team": "黃色大隊 Team Yellow / South Route"
+      }
+    },
+    "parade_years": [
+      2019,
+      2020,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  {
+    "donor_id": "D0007",
+    "name": "華泰飯店",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2016,
+    "donor_years": [
+      2016
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0008",
+    "name": "Hornet",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2016,
+    "donor_years": [
+      2016,
+      2017,
+      2018
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0009",
+    "name": "基本書坊",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2016,
+    "donor_years": [
+      2016
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0010",
+    "name": "金鑛咖啡",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2016,
+    "donor_years": [
+      2016
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0011",
+    "name": "Tokyo RainBow Pride",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2016,
+    "donor_years": [
+      2016,
+      2017,
+      2018
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0012",
+    "name": "國際人權特赦組織(AI)",
+    "aliases": [],
+    "industry": "NGO",
+    "first_donor_year": 2016,
+    "donor_years": [
+      2016,
+      2017,
+      2018,
+      2023
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0013",
+    "name": "粉紅卡夫卡",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2016,
+    "donor_years": [
+      2016
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0014",
+    "name": "酷兒影展",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2016,
+    "donor_years": [
+      2016
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0015",
+    "name": "島國前進",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2016,
+    "donor_years": [
+      2016
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0016",
+    "name": "觸控科技",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2017,
+    "donor_years": [
+      2017
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0017",
+    "name": "UBer",
+    "aliases": [],
+    "industry": "交通",
+    "first_donor_year": 2017,
+    "donor_years": [
+      2017,
+      2018,
+      2019,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "first_parade_year": 2022,
+    "parade_detail": {
+      "2022": {
+        "raw_name": "Uber",
+        "section": "商業車",
+        "team": "藍色大隊 Team Blue"
+      },
+      "2023": {
+        "raw_name": "Uber",
+        "section": "商業車",
+        "team": "黃色大隊 Team Yellow"
+      },
+      "2024": {
+        "raw_name": "Uber｜Uber Eats",
+        "section": "商業車",
+        "team": "紅色大隊 Team Red"
+      },
+      "2025": {
+        "raw_name": "Uber",
+        "section": "商業車",
+        "team": "紅色大隊 Team Red / South Route"
+      }
+    },
+    "parade_years": [
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  {
+    "donor_id": "D0018",
+    "name": "達博企業社(大龜)",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2017,
+    "donor_years": [
+      2017
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0019",
+    "name": "雪豹科技",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2017,
+    "donor_years": [
+      2017
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0020",
+    "name": "GAP",
+    "aliases": [],
+    "industry": "服飾",
+    "first_donor_year": 2017,
+    "donor_years": [
+      2017,
+      2018,
+      2019,
+      2020,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "first_parade_year": 2019,
+    "parade_detail": {
+      "2019": {
+        "raw_name": "GAP",
+        "section": "商業車",
+        "team": "綠色大隊 Team Green"
+      },
+      "2020": {
+        "raw_name": "GAP（台灣蓋璞）",
+        "section": "商業車",
+        "team": "藍色大隊 Team Blue"
+      },
+      "2022": {
+        "raw_name": "台灣蓋璞",
+        "section": "商業車",
+        "team": "藍色大隊 Team Blue"
+      },
+      "2023": {
+        "raw_name": "GAP Taiwan",
+        "section": "商業車",
+        "team": "藍色大隊 Team Blue"
+      },
+      "2024": {
+        "raw_name": "GAP Taiwan",
+        "section": "商業車",
+        "team": "黃色大隊 Team Yellow"
+      },
+      "2025": {
+        "raw_name": "GAP",
+        "section": "商業車",
+        "team": "紅色大隊 Team Red / South Route"
+      }
+    },
+    "parade_years": [
+      2019,
+      2020,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  {
+    "donor_id": "D0021",
+    "name": "Sunpride Foundation 驕陽基金會",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2017,
+    "donor_years": [
+      2017,
+      2019
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0022",
+    "name": "彩虹酷兒健康文化中心",
+    "aliases": [],
+    "industry": "健康諮詢",
+    "first_donor_year": 2017,
+    "donor_years": [
+      2017,
+      2018,
+      2019,
+      2020,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "first_parade_year": 2019,
+    "parade_detail": {
+      "2019": {
+        "raw_name": "彩虹酷兒健康文化中心",
+        "section": "商業車",
+        "team": "藍色大隊 Team Blue"
+      },
+      "2020": {
+        "raw_name": "彩虹酷兒健康文化中心",
+        "section": "商業車",
+        "team": "紫色大隊 Team Purple"
+      },
+      "2022": {
+        "raw_name": "彩虹酷兒健康文化中心",
+        "section": "商業車",
+        "team": "紅色大隊 Team Red"
+      },
+      "2023": {
+        "raw_name": "彩虹酷兒健康文化中心",
+        "section": "商業車",
+        "team": "橙色大隊 Team Orange"
+      },
+      "2024": {
+        "raw_name": "彩虹酷兒健康文化中心",
+        "section": "商業車",
+        "team": "橙色大隊 Team Orange"
+      },
+      "2025": {
+        "raw_name": "彩虹酷兒",
+        "section": "商業車",
+        "team": "紫色大隊 Team Purple / North Route"
+      }
+    },
+    "parade_years": [
+      2019,
+      2020,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  {
+    "donor_id": "D0023",
+    "name": "艾緦整合行銷",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2017,
+    "donor_years": [
+      2017
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0024",
+    "name": "ESHA",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2017,
+    "donor_years": [
+      2017
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0025",
+    "name": "GaGaoLaLa",
+    "aliases": [],
+    "industry": "影音",
+    "first_donor_year": 2017,
+    "donor_years": [
+      2017,
+      2018,
+      2023
+    ],
+    "first_parade_year": 2019,
+    "parade_detail": {
+      "2019": {
+        "raw_name": "GagaOOLala 屬於你的故事",
+        "section": "商業車",
+        "team": "紅色大隊 Team Red"
+      },
+      "2023": {
+        "raw_name": "GagaOOLala LGBTQ+ & BL線上影音平台",
+        "section": "商業車",
+        "team": "紫色大隊 Team Purple"
+      }
+    },
+    "parade_years": [
+      2019,
+      2023
+    ]
+  },
+  {
+    "donor_id": "D0026",
+    "name": "婚姻大平台",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2017,
+    "donor_years": [
+      2017,
+      2018
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0027",
+    "name": "花旗商銀",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2017,
+    "donor_years": [
+      2017
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0028",
+    "name": "GILEAD",
+    "aliases": [],
+    "industry": "個別廠商業務統計",
+    "first_donor_year": 2020,
+    "donor_years": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "first_parade_year": 2019,
+    "parade_detail": {
+      "2019": {
+        "raw_name": "Gilead Sciences 吉立亞醫藥",
+        "section": "商業車",
+        "team": "紅色大隊 Team Red"
+      },
+      "2020": {
+        "raw_name": "Gilead",
+        "section": "商業車",
+        "team": "綠色大隊 Team Green"
+      },
+      "2022": {
+        "raw_name": "Gilead",
+        "section": "商業車",
+        "team": "橙色大隊 Team Orange"
+      },
+      "2023": {
+        "raw_name": "Gilead 吉立亞醫藥",
+        "section": "商業車",
+        "team": "紅色大隊 Team Red"
+      },
+      "2024": {
+        "raw_name": "吉立亞醫藥（Gilead）",
+        "section": "商業車",
+        "team": "紅色大隊 Team Red"
+      },
+      "2025": {
+        "raw_name": "吉立亞醫藥",
+        "section": "商業車",
+        "team": "橙色大隊 Team Orange / South Route"
+      }
+    },
+    "parade_years": [
+      2019,
+      2020,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  {
+    "donor_id": "D0032",
+    "name": "G-Star",
+    "aliases": [],
+    "industry": "夜店",
+    "first_donor_year": 2021,
+    "donor_years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "first_parade_year": 2019,
+    "parade_detail": {
+      "2019": {
+        "raw_name": "G.star",
+        "section": "商業車",
+        "team": "橙色大隊 Team Orange"
+      },
+      "2020": {
+        "raw_name": "G*star",
+        "section": "商業車",
+        "team": "橙色大隊 Team Orange"
+      },
+      "2022": {
+        "raw_name": "G*STAR",
+        "section": "商業車",
+        "team": "黃色大隊 Team Yellow"
+      },
+      "2023": {
+        "raw_name": "Gstar",
+        "section": "商業車",
+        "team": "橙色大隊 Team Orange"
+      },
+      "2024": {
+        "raw_name": "Gstar",
+        "section": "商業車",
+        "team": "黃色大隊 Team Yellow"
+      },
+      "2025": {
+        "raw_name": "Gstar",
+        "section": "商業車",
+        "team": "藍色大隊 Team Blue / North Route"
+      }
+    },
+    "parade_years": [
+      2019,
+      2020,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  {
+    "donor_id": "D0034",
+    "name": "Tstudio",
+    "aliases": [],
+    "industry": "服飾",
+    "first_donor_year": 2018,
+    "donor_years": [
+      2018,
+      2020,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "first_parade_year": 2019,
+    "parade_detail": {
+      "2019": {
+        "raw_name": "T-STUDIO x PAR.T",
+        "section": "商業車",
+        "team": "黃色大隊 Team Yellow"
+      },
+      "2020": {
+        "raw_name": "T-STUDIO x PAR.T",
+        "section": "隊伍",
+        "team": "橙色大隊 Team Orange"
+      }
+    },
+    "parade_years": [
+      2019,
+      2020
+    ]
+  },
+  {
+    "donor_id": "D0036",
+    "name": "Double APP",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2018,
+    "donor_years": [
+      2018
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0037",
+    "name": "Google",
+    "aliases": [],
+    "industry": "Ｖ",
+    "first_donor_year": 2020,
+    "donor_years": [
+      2020,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "first_parade_year": 2019,
+    "parade_detail": {
+      "2019": {
+        "raw_name": "Google Gaygler",
+        "section": "商業車",
+        "team": "紫色大隊 Team Purple"
+      },
+      "2022": {
+        "raw_name": "Pride at Google Taiwan",
+        "section": "商業車",
+        "team": "綠色大隊 Team Green"
+      },
+      "2023": {
+        "raw_name": "Google",
+        "section": "商業車",
+        "team": "藍色大隊 Team Blue"
+      },
+      "2024": {
+        "raw_name": "Google",
+        "section": "商業車",
+        "team": "紫色大隊 Team Purple"
+      },
+      "2025": {
+        "raw_name": "Google",
+        "section": "商業車",
+        "team": "橙色大隊 Team Orange / South Route"
+      }
+    },
+    "parade_years": [
+      2019,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  {
+    "donor_id": "D0041",
+    "name": "英諾美生物科技",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2020,
+    "donor_years": [
+      2020
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0042",
+    "name": "Grindr",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2018,
+    "donor_years": [
+      2018
+    ],
+    "first_parade_year": 2019,
+    "parade_detail": {
+      "2019": {
+        "raw_name": "Grindr",
+        "section": "商業車",
+        "team": "黃色大隊 Team Yellow"
+      }
+    },
+    "parade_years": [
+      2019
+    ]
+  },
+  {
+    "donor_id": "D0045",
+    "name": "YAHOO",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2018,
+    "donor_years": [
+      2018,
+      2022
+    ],
+    "first_parade_year": 2022,
+    "parade_detail": {
+      "2022": {
+        "raw_name": "Yahoo",
+        "section": "隊伍",
+        "team": "黃色大隊 Team Yellow"
+      },
+      "2023": {
+        "raw_name": "Yahoo",
+        "section": "隊伍",
+        "team": "紅色大隊 Team Red"
+      },
+      "2024": {
+        "raw_name": "Yahoo",
+        "section": "隊伍",
+        "team": "橙色大隊 Team Orange"
+      }
+    },
+    "parade_years": [
+      2022,
+      2023,
+      2024
+    ]
+  },
+  {
+    "donor_id": "D0048",
+    "name": "EY",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2020,
+    "donor_years": [
+      2020
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0051",
+    "name": "redbull",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2020,
+    "donor_years": [
+      2020
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0052",
+    "name": "GSK",
+    "aliases": [],
+    "industry": "Ｖ",
+    "first_donor_year": 2020,
+    "donor_years": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "first_parade_year": 2020,
+    "parade_detail": {
+      "2020": {
+        "raw_name": "GSK",
+        "section": "隊伍",
+        "team": "橙色大隊 Team Orange"
+      },
+      "2022": {
+        "raw_name": "GSK Taiwan",
+        "section": "隊伍",
+        "team": "紫色大隊 Team Purple"
+      },
+      "2023": {
+        "raw_name": "GSK Taiwan",
+        "section": "隊伍",
+        "team": "橙色大隊 Team Orange"
+      },
+      "2024": {
+        "raw_name": "GSK Taiwan",
+        "section": "商業車",
+        "team": "橙色大隊 Team Orange"
+      },
+      "2025": {
+        "raw_name": "GSK",
+        "section": "商業車",
+        "team": "紫色大隊 Team Purple / North Route"
+      }
+    },
+    "parade_years": [
+      2020,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  {
+    "donor_id": "D0094",
+    "name": "諾億保經",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2020,
+    "donor_years": [
+      2020,
+      2021
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0054",
+    "name": "TINDER",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2020,
+    "donor_years": [
+      2020
+    ],
+    "first_parade_year": 2020,
+    "parade_detail": {
+      "2020": {
+        "raw_name": "Tinder",
+        "section": "商業車",
+        "team": "紫色大隊 Team Purple"
+      }
+    },
+    "parade_years": [
+      2020
+    ]
+  },
+  {
+    "donor_id": "D0055",
+    "name": "Microsoft",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2020,
+    "donor_years": [
+      2020
+    ],
+    "first_parade_year": 2019,
+    "parade_detail": {
+      "2019": {
+        "raw_name": "Microsoft",
+        "section": "隊伍",
+        "team": "綠色大隊 Team Green"
+      },
+      "2022": {
+        "raw_name": "Microsoft（微軟）",
+        "section": "隊伍",
+        "team": "紅色大隊 Team Red"
+      },
+      "2023": {
+        "raw_name": "Microsoft",
+        "section": "隊伍",
+        "team": "紅色大隊 Team Red"
+      }
+    },
+    "parade_years": [
+      2019,
+      2022,
+      2023
+    ]
+  },
+  {
+    "donor_id": "D0056",
+    "name": "台灣百健",
+    "aliases": [],
+    "industry": "醫藥",
+    "first_donor_year": 2020,
+    "donor_years": [
+      2020,
+      2021,
+      2023,
+      2024,
+      2025
+    ],
+    "first_parade_year": 2020,
+    "parade_detail": {
+      "2020": {
+        "raw_name": "Biogen 台灣百健",
+        "section": "商業車",
+        "team": "藍色大隊 Team Blue"
+      },
+      "2022": {
+        "raw_name": "台灣百健",
+        "section": "隊伍",
+        "team": "藍色大隊 Team Blue"
+      },
+      "2023": {
+        "raw_name": "台灣百健",
+        "section": "隊伍",
+        "team": "綠色大隊 Team Green"
+      }
+    },
+    "parade_years": [
+      2020,
+      2022,
+      2023
+    ]
+  },
+  {
+    "donor_id": "D0057",
+    "name": "Foodpanda",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2020,
+    "donor_years": [
+      2020
+    ],
+    "first_parade_year": 2019,
+    "parade_detail": {
+      "2019": {
+        "raw_name": "foodpanda",
+        "section": "隊伍",
+        "team": "紫色大隊 Team Purple"
+      },
+      "2020": {
+        "raw_name": "foodpanda",
+        "section": "商業車",
+        "team": "黃色大隊 Team Yellow"
+      }
+    },
+    "parade_years": [
+      2019,
+      2020
+    ]
+  },
+  {
+    "donor_id": "D0058",
+    "name": "Unilever",
+    "aliases": [],
+    "industry": "Ｖ",
+    "first_donor_year": 2020,
+    "donor_years": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "first_parade_year": 2020,
+    "parade_detail": {
+      "2020": {
+        "raw_name": "Unilever 聯合利華股份有限公司",
+        "section": "商業車",
+        "team": "黃色大隊 Team Yellow"
+      },
+      "2022": {
+        "raw_name": "聯合利華",
+        "section": "商業車",
+        "team": "藍色大隊 Team Blue"
+      },
+      "2024": {
+        "raw_name": "聯合利華",
+        "section": "隊伍",
+        "team": "紫色大隊 Team Purple"
+      },
+      "2025": {
+        "raw_name": "聯合利華",
+        "section": "商業車",
+        "team": "綠色大隊 Team Green / North Route"
+      }
+    },
+    "parade_years": [
+      2020,
+      2022,
+      2024,
+      2025
+    ]
+  },
+  {
+    "donor_id": "D0059",
+    "name": "PINKOI",
+    "aliases": [],
+    "industry": "電商",
+    "first_donor_year": 2020,
+    "donor_years": [
+      2020,
+      2021,
+      2022,
+      2023
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0060",
+    "name": "澤豐",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2020,
+    "donor_years": [
+      2020,
+      2022
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0061",
+    "name": "Klook",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2020,
+    "donor_years": [
+      2020
+    ],
+    "first_parade_year": 2020,
+    "parade_detail": {
+      "2020": {
+        "raw_name": "KLOOK 客路",
+        "section": "商業車",
+        "team": "綠色大隊 Team Green"
+      }
+    },
+    "parade_years": [
+      2020
+    ]
+  },
+  {
+    "donor_id": "D0062",
+    "name": "台虎",
+    "aliases": [],
+    "industry": "酒商",
+    "first_donor_year": 2020,
+    "donor_years": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "first_parade_year": 2023,
+    "parade_detail": {
+      "2023": {
+        "raw_name": "臺虎精釀",
+        "section": "商業車",
+        "team": "黃色大隊 Team Yellow"
+      },
+      "2024": {
+        "raw_name": "臺虎精釀",
+        "section": "商業車",
+        "team": "紫色大隊 Team Purple"
+      },
+      "2025": {
+        "raw_name": "臺虎精釀",
+        "section": "商業車",
+        "team": "綠色大隊 Team Green / North Route"
+      }
+    },
+    "parade_years": [
+      2023,
+      2024,
+      2025
+    ]
+  },
+  {
+    "donor_id": "D0063",
+    "name": "獨角落",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2020,
+    "donor_years": [
+      2020
+    ],
+    "first_parade_year": 2020,
+    "parade_detail": {
+      "2020": {
+        "raw_name": "獨角落",
+        "section": "商業車",
+        "team": "橙色大隊 Team Orange"
+      }
+    },
+    "parade_years": [
+      2020
+    ]
+  },
+  {
+    "donor_id": "D0064",
+    "name": "瑪莉珍比薩",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2020,
+    "donor_years": [
+      2020
+    ],
+    "first_parade_year": 2020,
+    "parade_detail": {
+      "2020": {
+        "raw_name": "Maryjane Pizza",
+        "section": "商業車",
+        "team": "橙色大隊 Team Orange"
+      }
+    },
+    "parade_years": [
+      2020
+    ]
+  },
+  {
+    "donor_id": "D0065",
+    "name": "SONY",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2020,
+    "donor_years": [
+      2020
+    ],
+    "first_parade_year": 2020,
+    "parade_detail": {
+      "2020": {
+        "raw_name": "Sony Pictures 索尼影業",
+        "section": "商業車",
+        "team": "紅色大隊 Team Red"
+      }
+    },
+    "parade_years": [
+      2020
+    ]
+  },
+  {
+    "donor_id": "D0066",
+    "name": "GOLIN",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2020,
+    "donor_years": [
+      2020
+    ],
+    "first_parade_year": 2020,
+    "parade_detail": {
+      "2020": {
+        "raw_name": "GOLIN",
+        "section": "商業車",
+        "team": "紅色大隊 Team Red"
+      }
+    },
+    "parade_years": [
+      2020
+    ]
+  },
+  {
+    "donor_id": "D0067",
+    "name": "hyve solutions",
+    "aliases": [],
+    "industry": "電腦",
+    "first_donor_year": 2020,
+    "donor_years": [
+      2020,
+      2021,
+      2023,
+      2025
+    ],
+    "first_parade_year": 2024,
+    "parade_detail": {
+      "2024": {
+        "raw_name": "Hyve Solutions",
+        "section": "隊伍",
+        "team": "綠色大隊 Team Green"
+      }
+    },
+    "parade_years": [
+      2024
+    ]
+  },
+  {
+    "donor_id": "D0068",
+    "name": "JACK D",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2020,
+    "donor_years": [
+      2020
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0069",
+    "name": "熱線藥廠",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2020,
+    "donor_years": [
+      2020
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0070",
+    "name": "HotelCom",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2020,
+    "donor_years": [
+      2020
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0071",
+    "name": "放駟科技",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2020,
+    "donor_years": [
+      2020
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0072",
+    "name": "大安金普頓",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2020,
+    "donor_years": [
+      2020
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0073",
+    "name": "ANASIUM 艾納舒",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2020,
+    "donor_years": [
+      2020
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0074",
+    "name": "18歲公民聯盟",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2020,
+    "donor_years": [
+      2020
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0075",
+    "name": "紅樓",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2020,
+    "donor_years": [
+      2020
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0076",
+    "name": "Lifewonders",
+    "aliases": [
+      "lifewonders"
+    ],
+    "industry": "",
+    "first_donor_year": 2018,
+    "donor_years": [
+      2018,
+      2021
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0077",
+    "name": "Blued",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2018,
+    "donor_years": [
+      2018
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0078",
+    "name": "COOL GUY",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2018,
+    "donor_years": [
+      2018
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0079",
+    "name": "FiftyPercent",
+    "aliases": [],
+    "industry": "服飾",
+    "first_donor_year": 2022,
+    "donor_years": [
+      2022,
+      2023
+    ],
+    "first_parade_year": 2022,
+    "parade_detail": {
+      "2022": {
+        "raw_name": "50% FIFTY PERCENT",
+        "section": "商業車",
+        "team": "紅色大隊 Team Red"
+      }
+    },
+    "parade_years": [
+      2022
+    ]
+  },
+  {
+    "donor_id": "D0080",
+    "name": "DIKE",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2021,
+    "donor_years": [
+      2021,
+      2022
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0081",
+    "name": "Model TV",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2022,
+    "donor_years": [
+      2022
+    ],
+    "first_parade_year": 2022,
+    "parade_detail": {
+      "2022": {
+        "raw_name": "ModelTV 影音串流平台",
+        "section": "商業車",
+        "team": "橙色大隊 Team Orange"
+      }
+    },
+    "parade_years": [
+      2022
+    ]
+  },
+  {
+    "donor_id": "D0082",
+    "name": "lululemon",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2022,
+    "donor_years": [
+      2022
+    ],
+    "first_parade_year": 2022,
+    "parade_detail": {
+      "2022": {
+        "raw_name": "lululemon Taiwan",
+        "section": "商業車",
+        "team": "黃色大隊 Team Yellow"
+      }
+    },
+    "parade_years": [
+      2022
+    ]
+  },
+  {
+    "donor_id": "D0083",
+    "name": "杜蕾斯",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2022,
+    "donor_years": [
+      2022
+    ],
+    "first_parade_year": 2022,
+    "parade_detail": {
+      "2022": {
+        "raw_name": "杜蕾斯",
+        "section": "商業車",
+        "team": "紫色大隊 Team Purple"
+      }
+    },
+    "parade_years": [
+      2022
+    ]
+  },
+  {
+    "donor_id": "D0084",
+    "name": "美光",
+    "aliases": [],
+    "industry": "半導體",
+    "first_donor_year": 2022,
+    "donor_years": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0085",
+    "name": "AZ",
+    "aliases": [],
+    "industry": "醫藥",
+    "first_donor_year": 2021,
+    "donor_years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "first_parade_year": 2022,
+    "parade_detail": {
+      "2022": {
+        "raw_name": "臺灣阿斯特捷利康股份有限公司",
+        "section": "商業車",
+        "team": "橙色大隊 Team Orange"
+      },
+      "2023": {
+        "raw_name": "臺灣阿斯特捷利康",
+        "section": "商業車",
+        "team": "橙色大隊 Team Orange"
+      },
+      "2024": {
+        "raw_name": "臺灣阿斯特捷利康（AstraZeneca）",
+        "section": "商業車",
+        "team": "橙色大隊 Team Orange"
+      },
+      "2025": {
+        "raw_name": "AstraZeneca（AZ）",
+        "section": "商業車",
+        "team": "綠色大隊 Team Green / North Route"
+      }
+    },
+    "parade_years": [
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  {
+    "donor_id": "D0086",
+    "name": "GSTAR",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2020,
+    "donor_years": [
+      2020
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0087",
+    "name": "UT麗舍",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2022,
+    "donor_years": [
+      2022
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0088",
+    "name": "台北市觀傳局",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2022,
+    "donor_years": [
+      2022
+    ],
+    "first_parade_year": 2022,
+    "parade_detail": {
+      "2022": {
+        "raw_name": "臺北市觀光傳播局",
+        "section": "商業車",
+        "team": "黃色大隊 Team Yellow"
+      }
+    },
+    "parade_years": [
+      2022
+    ]
+  },
+  {
+    "donor_id": "D0089",
+    "name": "百健",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2022,
+    "donor_years": [
+      2022
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0090",
+    "name": "海峰電腦",
+    "aliases": [],
+    "industry": "電腦",
+    "first_donor_year": 2022,
+    "donor_years": [
+      2022,
+      2024
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0091",
+    "name": "高通",
+    "aliases": [],
+    "industry": "半導體",
+    "first_donor_year": 2022,
+    "donor_years": [
+      2022,
+      2023,
+      2024
+    ],
+    "first_parade_year": 2024,
+    "parade_detail": {
+      "2024": {
+        "raw_name": "美國高通公司",
+        "section": "商業車",
+        "team": "橙色大隊 Team Orange"
+      }
+    },
+    "parade_years": [
+      2024
+    ]
+  },
+  {
+    "donor_id": "D0092",
+    "name": "高誠公關",
+    "aliases": [],
+    "industry": "公關",
+    "first_donor_year": 2022,
+    "donor_years": [
+      2022,
+      2024
+    ],
+    "first_parade_year": 2022,
+    "parade_detail": {
+      "2022": {
+        "raw_name": "高誠公關 GOLIN Taipei",
+        "section": "商業車",
+        "team": "橙色大隊 Team Orange"
+      },
+      "2024": {
+        "raw_name": "高誠公關",
+        "section": "商業車",
+        "team": "綠色大隊 Team Green"
+      }
+    },
+    "parade_years": [
+      2022,
+      2024
+    ]
+  },
+  {
+    "donor_id": "D0093",
+    "name": "樂天",
+    "aliases": [],
+    "industry": "Ｖ",
+    "first_donor_year": 2022,
+    "donor_years": [
+      2022,
+      2023,
+      2024
+    ],
+    "first_parade_year": 2022,
+    "parade_detail": {
+      "2022": {
+        "raw_name": "台灣樂天集團",
+        "section": "商業車",
+        "team": "紫色大隊 Team Purple"
+      }
+    },
+    "parade_years": [
+      2022
+    ]
+  },
+  {
+    "donor_id": "D0094",
+    "name": "磊山保經",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2022,
+    "donor_years": [
+      2022
+    ],
+    "first_parade_year": 2020,
+    "parade_detail": {
+      "2020": {
+        "raw_name": "磊山保經諾億團隊",
+        "section": "商業車",
+        "team": "紫色大隊 Team Purple"
+      },
+      "2022": {
+        "raw_name": "磊山保經 諾億團隊",
+        "section": "商業車",
+        "team": "紅色大隊 Team Red"
+      }
+    },
+    "parade_years": [
+      2020,
+      2022
+    ]
+  },
+  {
+    "donor_id": "D0095",
+    "name": "Lab Series",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2022,
+    "donor_years": [
+      2022
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0096",
+    "name": "MAC",
+    "aliases": [],
+    "industry": "Ｖ",
+    "first_donor_year": 2022,
+    "donor_years": [
+      2022
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0097",
+    "name": "NIKE",
+    "aliases": [],
+    "industry": "運動",
+    "first_donor_year": 2022,
+    "donor_years": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "first_parade_year": 2022,
+    "parade_detail": {
+      "2022": {
+        "raw_name": "Nike",
+        "section": "商業車",
+        "team": "綠色大隊 Team Green"
+      },
+      "2023": {
+        "raw_name": "NIKE",
+        "section": "商業車",
+        "team": "綠色大隊 Team Green"
+      },
+      "2024": {
+        "raw_name": "NIKE",
+        "section": "商業車",
+        "team": "綠色大隊 Team Green"
+      },
+      "2025": {
+        "raw_name": "NIKE",
+        "section": "商業車",
+        "team": "紫色大隊 Team Purple / North Route"
+      }
+    },
+    "parade_years": [
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  {
+    "donor_id": "D0098",
+    "name": "TaskUs",
+    "aliases": [],
+    "industry": "軟體",
+    "first_donor_year": 2022,
+    "donor_years": [
+      2022,
+      2024
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0099",
+    "name": "ZIMA",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2022,
+    "donor_years": [
+      2022
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0100",
+    "name": "七彩翼國際",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2022,
+    "donor_years": [
+      2022
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0101",
+    "name": "台北市民政局",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2022,
+    "donor_years": [
+      2022
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0102",
+    "name": "永準貿易",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2022,
+    "donor_years": [
+      2022
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0103",
+    "name": "同窗會",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2022,
+    "donor_years": [
+      2022
+    ],
+    "first_parade_year": 2022,
+    "parade_detail": {
+      "2022": {
+        "raw_name": "同窗會",
+        "section": "商業車",
+        "team": "紫色大隊 Team Purple"
+      }
+    },
+    "parade_years": [
+      2022
+    ]
+  },
+  {
+    "donor_id": "D0104",
+    "name": "波士頓",
+    "aliases": [],
+    "industry": "醫材",
+    "first_donor_year": 2022,
+    "donor_years": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0105",
+    "name": "Sagami",
+    "aliases": [],
+    "industry": "保險套",
+    "first_donor_year": 2022,
+    "donor_years": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0106",
+    "name": "彩虹平權大平台",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2022,
+    "donor_years": [
+      2022
+    ],
+    "first_parade_year": 2022,
+    "parade_detail": {
+      "2022": {
+        "raw_name": "彩虹平權大平台",
+        "section": "隊伍",
+        "team": "紫色大隊 Team Purple"
+      },
+      "2023": {
+        "raw_name": "彩虹平權大平台",
+        "section": "隊伍",
+        "team": "紅色大隊 Team Red"
+      },
+      "2024": {
+        "raw_name": "彩虹平權大平台",
+        "section": "隊伍",
+        "team": "紅色大隊 Team Red"
+      },
+      "2025": {
+        "raw_name": "彩虹平權大平台",
+        "section": "隊伍",
+        "team": "紅色大隊 Team Red / South Route"
+      }
+    },
+    "parade_years": [
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  {
+    "donor_id": "D0107",
+    "name": "麥肯錫",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2022,
+    "donor_years": [
+      2022
+    ],
+    "first_parade_year": 2019,
+    "parade_detail": {
+      "2019": {
+        "raw_name": "麥肯錫",
+        "section": "商業車",
+        "team": "紫色大隊 Team Purple"
+      },
+      "2024": {
+        "raw_name": "麥肯錫",
+        "section": "隊伍",
+        "team": "橙色大隊 Team Orange"
+      }
+    },
+    "parade_years": [
+      2019,
+      2024
+    ]
+  },
+  {
+    "donor_id": "D0108",
+    "name": "無心戒酒",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2022,
+    "donor_years": [
+      2022
+    ],
+    "first_parade_year": 2022,
+    "parade_detail": {
+      "2022": {
+        "raw_name": "無心戒酒互助會",
+        "section": "商業車",
+        "team": "綠色大隊 Team Green"
+      }
+    },
+    "parade_years": [
+      2022
+    ]
+  },
+  {
+    "donor_id": "D0109",
+    "name": "TAIWANIZE",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2022,
+    "donor_years": [
+      2022
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0110",
+    "name": "可口可樂",
+    "aliases": [],
+    "industry": "餐飲",
+    "first_donor_year": 2022,
+    "donor_years": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "first_parade_year": 2023,
+    "parade_detail": {
+      "2023": {
+        "raw_name": "可口可樂",
+        "section": "隊伍",
+        "team": "紅色大隊 Team Red"
+      }
+    },
+    "parade_years": [
+      2023
+    ]
+  },
+  {
+    "donor_id": "D0111",
+    "name": "合橋國際",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2022,
+    "donor_years": [
+      2022
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0112",
+    "name": "諾和諾德",
+    "aliases": [],
+    "industry": "醫藥",
+    "first_donor_year": 2023,
+    "donor_years": [
+      2023,
+      2024
+    ],
+    "first_parade_year": 2023,
+    "parade_detail": {
+      "2023": {
+        "raw_name": "諾和諾德藥品股份有限公司（Novo Nordisk）",
+        "section": "商業車",
+        "team": "紅色大隊 Team Red"
+      },
+      "2024": {
+        "raw_name": "台灣諾和諾德藥品股份有限公司（Novo Nordisk）",
+        "section": "商業車",
+        "team": "紅色大隊 Team Red"
+      }
+    },
+    "parade_years": [
+      2023,
+      2024
+    ]
+  },
+  {
+    "donor_id": "D0113",
+    "name": "飛比",
+    "aliases": [],
+    "industry": "電商",
+    "first_donor_year": 2023,
+    "donor_years": [
+      2023
+    ],
+    "first_parade_year": 2023,
+    "parade_detail": {
+      "2023": {
+        "raw_name": "飛比 Feebee",
+        "section": "商業車",
+        "team": "黃色大隊 Team Yellow"
+      },
+      "2024": {
+        "raw_name": "飛比 feebee",
+        "section": "隊伍",
+        "team": "紅色大隊 Team Red"
+      },
+      "2025": {
+        "raw_name": "飛比",
+        "section": "隊伍",
+        "team": "綠色大隊 Team Green / North Route"
+      }
+    },
+    "parade_years": [
+      2023,
+      2024,
+      2025
+    ]
+  },
+  {
+    "donor_id": "D0114",
+    "name": "世邦魏理仕",
+    "aliases": [],
+    "industry": "房地產",
+    "first_donor_year": 2023,
+    "donor_years": [
+      2023
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0115",
+    "name": "羅氏",
+    "aliases": [],
+    "industry": "醫藥",
+    "first_donor_year": 2023,
+    "donor_years": [
+      2023,
+      2024
+    ],
+    "first_parade_year": 2023,
+    "parade_detail": {
+      "2023": {
+        "raw_name": "羅氏大藥廠與羅氏醫療診斷設備",
+        "section": "商業車",
+        "team": "藍色大隊 Team Blue"
+      },
+      "2024": {
+        "raw_name": "羅氏大藥廠與羅氏醫療診斷設備",
+        "section": "商業車",
+        "team": "黃色大隊 Team Yellow"
+      }
+    },
+    "parade_years": [
+      2023,
+      2024
+    ]
+  },
+  {
+    "donor_id": "D0094",
+    "name": "諾億保經",
+    "aliases": [],
+    "industry": "投資理財",
+    "first_donor_year": 2023,
+    "donor_years": [
+      2023
+    ],
+    "first_parade_year": 2023,
+    "parade_detail": {
+      "2023": {
+        "raw_name": "諾億財富管理顧問",
+        "section": "商業車",
+        "team": "橙色大隊 Team Orange"
+      }
+    },
+    "parade_years": [
+      2023
+    ]
+  },
+  {
+    "donor_id": "D0117",
+    "name": "VERVE",
+    "aliases": [],
+    "industry": "服飾",
+    "first_donor_year": 2023,
+    "donor_years": [
+      2023,
+      2024,
+      2025
+    ],
+    "first_parade_year": 2023,
+    "parade_detail": {
+      "2023": {
+        "raw_name": "VERVE",
+        "section": "商業車",
+        "team": "黃色大隊 Team Yellow"
+      },
+      "2024": {
+        "raw_name": "VERVE",
+        "section": "商業車",
+        "team": "黃色大隊 Team Yellow"
+      },
+      "2025": {
+        "raw_name": "VERVE",
+        "section": "商業車",
+        "team": "藍色大隊 Team Blue / North Route"
+      }
+    },
+    "parade_years": [
+      2023,
+      2024,
+      2025
+    ]
+  },
+  {
+    "donor_id": "D0118",
+    "name": "PANGU by Kenal X Durex",
+    "aliases": [],
+    "industry": "遊戲",
+    "first_donor_year": 2023,
+    "donor_years": [
+      2023
+    ],
+    "first_parade_year": 2023,
+    "parade_detail": {
+      "2023": {
+        "raw_name": "PANGU by Kenal X Durex",
+        "section": "商業車",
+        "team": "紫色大隊 Team Purple"
+      }
+    },
+    "parade_years": [
+      2023
+    ]
+  },
+  {
+    "donor_id": "D0119",
+    "name": "LIFEWONDERS",
+    "aliases": [],
+    "industry": "遊戲",
+    "first_donor_year": 2023,
+    "donor_years": [
+      2023
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0120",
+    "name": "美商百富門",
+    "aliases": [],
+    "industry": "酒商",
+    "first_donor_year": 2023,
+    "donor_years": [
+      2023
+    ],
+    "first_parade_year": 2023,
+    "parade_detail": {
+      "2023": {
+        "raw_name": "美商百富門",
+        "section": "商業車",
+        "team": "紅色大隊 Team Red"
+      }
+    },
+    "parade_years": [
+      2023
+    ]
+  },
+  {
+    "donor_id": "D0121",
+    "name": "雷醫國際股份有限公司",
+    "aliases": [],
+    "industry": "醫美",
+    "first_donor_year": 2023,
+    "donor_years": [
+      2023
+    ],
+    "first_parade_year": 2023,
+    "parade_detail": {
+      "2023": {
+        "raw_name": "雷醫國際股份有限公司",
+        "section": "商業車",
+        "team": "綠色大隊 Team Green"
+      }
+    },
+    "parade_years": [
+      2023
+    ]
+  },
+  {
+    "donor_id": "D0122",
+    "name": "GroupM",
+    "aliases": [],
+    "industry": "廣告",
+    "first_donor_year": 2023,
+    "donor_years": [
+      2023
+    ],
+    "first_parade_year": 2023,
+    "parade_detail": {
+      "2023": {
+        "raw_name": "GroupM",
+        "section": "商業車",
+        "team": "紫色大隊 Team Purple"
+      }
+    },
+    "parade_years": [
+      2023
+    ]
+  },
+  {
+    "donor_id": "D0123",
+    "name": "M.A.C",
+    "aliases": [],
+    "industry": "彩妝",
+    "first_donor_year": 2021,
+    "donor_years": [
+      2021,
+      2023,
+      2024,
+      2025
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0124",
+    "name": "樂桃航空",
+    "aliases": [],
+    "industry": "航空",
+    "first_donor_year": 2023,
+    "donor_years": [
+      2023
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0125",
+    "name": "默沙東",
+    "aliases": [],
+    "industry": "醫藥",
+    "first_donor_year": 2023,
+    "donor_years": [
+      2023,
+      2024,
+      2025
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0126",
+    "name": "台灣保時捷車業股份有限公司 \nPorsche Taiwan Motors Limited",
+    "aliases": [],
+    "industry": "車商",
+    "first_donor_year": 2023,
+    "donor_years": [
+      2023
+    ],
+    "first_parade_year": 2023,
+    "parade_detail": {
+      "2023": {
+        "raw_name": "台灣保時捷車業股份有限公司 Porsche Taiwan Motors Limited",
+        "section": "商業車",
+        "team": "黃色大隊 Team Yellow"
+      }
+    },
+    "parade_years": [
+      2023
+    ]
+  },
+  {
+    "donor_id": "D0127",
+    "name": "La Crema",
+    "aliases": [],
+    "industry": "餐飲",
+    "first_donor_year": 2023,
+    "donor_years": [
+      2023
+    ],
+    "first_parade_year": 2023,
+    "parade_detail": {
+      "2023": {
+        "raw_name": "La Crema",
+        "section": "商業車",
+        "team": "藍色大隊 Team Blue"
+      }
+    },
+    "parade_years": [
+      2023
+    ]
+  },
+  {
+    "donor_id": "D0128",
+    "name": "必勝客",
+    "aliases": [],
+    "industry": "餐飲",
+    "first_donor_year": 2023,
+    "donor_years": [
+      2023,
+      2025
+    ],
+    "first_parade_year": 2023,
+    "parade_detail": {
+      "2023": {
+        "raw_name": "必勝客",
+        "section": "商業車",
+        "team": "藍色大隊 Team Blue"
+      },
+      "2025": {
+        "raw_name": "Pizza Hut",
+        "section": "商業車",
+        "team": "黃色大隊 Team Yellow / South Route"
+      }
+    },
+    "parade_years": [
+      2023,
+      2025
+    ]
+  },
+  {
+    "donor_id": "D0129",
+    "name": "VIETJET",
+    "aliases": [],
+    "industry": "航空",
+    "first_donor_year": 2023,
+    "donor_years": [
+      2023
+    ],
+    "first_parade_year": 2023,
+    "parade_detail": {
+      "2023": {
+        "raw_name": "VIETJET",
+        "section": "商業車",
+        "team": "紅色大隊 Team Red"
+      }
+    },
+    "parade_years": [
+      2023
+    ]
+  },
+  {
+    "donor_id": "D0130",
+    "name": "紅犀牛",
+    "aliases": [],
+    "industry": "情趣用品",
+    "first_donor_year": 2023,
+    "donor_years": [
+      2023
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0131",
+    "name": "我們一起穩交吧",
+    "aliases": [],
+    "industry": "交友",
+    "first_donor_year": 2023,
+    "donor_years": [
+      2023
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0132",
+    "name": "MAKE UP FOR EVER",
+    "aliases": [],
+    "industry": "彩妝",
+    "first_donor_year": 2023,
+    "donor_years": [
+      2023
+    ],
+    "first_parade_year": 2022,
+    "parade_detail": {
+      "2022": {
+        "raw_name": "MAKE UP FOR EVER",
+        "section": "隊伍",
+        "team": "綠色大隊 Team Green"
+      }
+    },
+    "parade_years": [
+      2022
+    ]
+  },
+  {
+    "donor_id": "D0133",
+    "name": "賽諾菲",
+    "aliases": [],
+    "industry": "醫藥",
+    "first_donor_year": 2023,
+    "donor_years": [
+      2023
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0134",
+    "name": "Cake Resume",
+    "aliases": [],
+    "industry": "軟體",
+    "first_donor_year": 2023,
+    "donor_years": [
+      2023
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0135",
+    "name": "Keyword Studios",
+    "aliases": [],
+    "industry": "軟體",
+    "first_donor_year": 2023,
+    "donor_years": [
+      2023
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0136",
+    "name": "台北中山雅樂軒酒店",
+    "aliases": [],
+    "industry": "飯店",
+    "first_donor_year": 2023,
+    "donor_years": [
+      2023,
+      2024
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0137",
+    "name": "台北時代寓所",
+    "aliases": [],
+    "industry": "飯店",
+    "first_donor_year": 2023,
+    "donor_years": [
+      2023,
+      2024
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0138",
+    "name": "小鹿文娛",
+    "aliases": [],
+    "industry": "飯店",
+    "first_donor_year": 2023,
+    "donor_years": [
+      2023,
+      2024,
+      2025
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0139",
+    "name": "永安棧",
+    "aliases": [],
+    "industry": "飯店",
+    "first_donor_year": 2023,
+    "donor_years": [
+      2023,
+      2024,
+      2025
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0141",
+    "name": "i+Land Nagasaki",
+    "aliases": [],
+    "industry": "飯店",
+    "first_donor_year": 2023,
+    "donor_years": [
+      2023
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0142",
+    "name": "Lyf Tenjin Fukuoka",
+    "aliases": [],
+    "industry": "飯店",
+    "first_donor_year": 2023,
+    "donor_years": [
+      2023
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0143",
+    "name": "Expedia",
+    "aliases": [],
+    "industry": "平台",
+    "first_donor_year": 2023,
+    "donor_years": [
+      2023
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0144",
+    "name": "Tapestry",
+    "aliases": [],
+    "industry": "精品",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024,
+      2025
+    ],
+    "first_parade_year": 2023,
+    "parade_detail": {
+      "2023": {
+        "raw_name": "Tapestry",
+        "section": "隊伍",
+        "team": "紫色大隊 Team Purple"
+      },
+      "2024": {
+        "raw_name": "Tapestry",
+        "section": "商業車",
+        "team": "紅色大隊 Team Red"
+      },
+      "2025": {
+        "raw_name": "Tapestry",
+        "section": "商業車",
+        "team": "紅色大隊 Team Red / South Route"
+      }
+    },
+    "parade_years": [
+      2023,
+      2024,
+      2025
+    ]
+  },
+  {
+    "donor_id": "D0094",
+    "name": "諾億保經",
+    "aliases": [],
+    "industry": "金融",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0146",
+    "name": "GU",
+    "aliases": [],
+    "industry": "服飾",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024
+    ],
+    "first_parade_year": 2024,
+    "parade_detail": {
+      "2024": {
+        "raw_name": "GU",
+        "section": "商業車",
+        "team": "綠色大隊 Team Green"
+      }
+    },
+    "parade_years": [
+      2024
+    ]
+  },
+  {
+    "donor_id": "D0147",
+    "name": "MYFEEL",
+    "aliases": [],
+    "industry": "新創",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0148",
+    "name": "捷豹路虎",
+    "aliases": [],
+    "industry": "車業",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024
+    ],
+    "first_parade_year": 2024,
+    "parade_detail": {
+      "2024": {
+        "raw_name": "JLR Taiwan 台灣捷豹路虎",
+        "section": "商業車",
+        "team": "紫色大隊 Team Purple"
+      }
+    },
+    "parade_years": [
+      2024
+    ]
+  },
+  {
+    "donor_id": "D0149",
+    "name": "Kenvue",
+    "aliases": [],
+    "industry": "FMCG",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0150",
+    "name": "LifeWonders",
+    "aliases": [],
+    "industry": "遊戲",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024,
+      2025
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0151",
+    "name": "台灣武田",
+    "aliases": [],
+    "industry": "醫藥",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0152",
+    "name": "SleekStrip",
+    "aliases": [],
+    "industry": "生活",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0153",
+    "name": "愛群婦產科",
+    "aliases": [],
+    "industry": "醫藥",
+    "first_donor_year": 2021,
+    "donor_years": [
+      2021,
+      2024,
+      2025
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0154",
+    "name": "宜蘊醫療",
+    "aliases": [],
+    "industry": "醫藥",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0155",
+    "name": "疾管署",
+    "aliases": [],
+    "industry": "政府單位",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024,
+      2025
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0156",
+    "name": "渣打銀行",
+    "aliases": [],
+    "industry": "金融",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024,
+      2025
+    ],
+    "first_parade_year": 2022,
+    "parade_detail": {
+      "2022": {
+        "raw_name": "渣打銀行",
+        "section": "隊伍",
+        "team": "藍色大隊 Team Blue"
+      },
+      "2023": {
+        "raw_name": "渣打銀行",
+        "section": "隊伍",
+        "team": "紅色大隊 Team Red"
+      },
+      "2024": {
+        "raw_name": "渣打銀行（Standard Chartered）",
+        "section": "商業車",
+        "team": "紅色大隊 Team Red"
+      },
+      "2025": {
+        "raw_name": "渣打銀行",
+        "section": "商業車",
+        "team": "橙色大隊 Team Orange / South Route"
+      }
+    },
+    "parade_years": [
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  {
+    "donor_id": "D0157",
+    "name": "法國巴黎人壽",
+    "aliases": [],
+    "industry": "壽險",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024
+    ],
+    "first_parade_year": 2024,
+    "parade_detail": {
+      "2024": {
+        "raw_name": "法國巴黎人壽",
+        "section": "商業車",
+        "team": "綠色大隊 Team Green"
+      }
+    },
+    "parade_years": [
+      2024
+    ]
+  },
+  {
+    "donor_id": "D0158",
+    "name": "Fusion 聚變",
+    "aliases": [],
+    "industry": "活動",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024
+    ],
+    "first_parade_year": 2024,
+    "parade_detail": {
+      "2024": {
+        "raw_name": "Fusion 聚變",
+        "section": "商業車",
+        "team": "藍色大隊 Team Blue"
+      }
+    },
+    "parade_years": [
+      2024
+    ]
+  },
+  {
+    "donor_id": "D0159",
+    "name": "澳洲紐西蘭商會",
+    "aliases": [],
+    "industry": "商會",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0160",
+    "name": "Zenyum",
+    "aliases": [],
+    "industry": "生活",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024
+    ],
+    "first_parade_year": 2024,
+    "parade_detail": {
+      "2024": {
+        "raw_name": "Zenyum",
+        "section": "商業車",
+        "team": "紫色大隊 Team Purple"
+      }
+    },
+    "parade_years": [
+      2024
+    ]
+  },
+  {
+    "donor_id": "D0161",
+    "name": "Suntory",
+    "aliases": [],
+    "industry": "酒業",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0162",
+    "name": "佳葆視聽",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0163",
+    "name": "犀牛盾",
+    "aliases": [],
+    "industry": "生活",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024,
+      2025
+    ],
+    "first_parade_year": 2024,
+    "parade_detail": {
+      "2024": {
+        "raw_name": "犀牛盾 RHINOSHIELD",
+        "section": "商業車",
+        "team": "紫色大隊 Team Purple"
+      }
+    },
+    "parade_years": [
+      2024
+    ]
+  },
+  {
+    "donor_id": "D0164",
+    "name": "台灣不二",
+    "aliases": [],
+    "industry": "生活",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0165",
+    "name": "Sanofi",
+    "aliases": [],
+    "industry": "醫療",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024
+    ],
+    "first_parade_year": 2025,
+    "parade_detail": {
+      "2025": {
+        "raw_name": "Sanofi",
+        "section": "隊伍",
+        "team": "紫色大隊 Team Purple / North Route"
+      }
+    },
+    "parade_years": [
+      2025
+    ]
+  },
+  {
+    "donor_id": "D0166",
+    "name": "EROLABS",
+    "aliases": [],
+    "industry": "成人",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0167",
+    "name": "灣島皇后",
+    "aliases": [],
+    "industry": "文創",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0168",
+    "name": "王道銀行",
+    "aliases": [],
+    "industry": "銀行",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0169",
+    "name": "知淳 x Cholula",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0170",
+    "name": "國聯大飯店",
+    "aliases": [],
+    "industry": "A",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0171",
+    "name": "台北六福萬怡酒店",
+    "aliases": [],
+    "industry": "A",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0172",
+    "name": "六福居公寓式酒店",
+    "aliases": [],
+    "industry": "A",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0173",
+    "name": "南港老爺行旅",
+    "aliases": [],
+    "industry": "A",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0174",
+    "name": "台北大安伊普索凱悅尚選酒店",
+    "aliases": [],
+    "industry": "A",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0175",
+    "name": "福泰飯店集團",
+    "aliases": [],
+    "industry": "A",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0176",
+    "name": "金普頓大安酒店",
+    "aliases": [],
+    "industry": "A",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0177",
+    "name": "台北中山九昱希爾頓逸林酒店",
+    "aliases": [],
+    "industry": "A",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0179",
+    "name": "台北喜來登大飯店",
+    "aliases": [],
+    "industry": "A",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0180",
+    "name": "捷絲旅台北西門館",
+    "aliases": [],
+    "industry": "A",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0181",
+    "name": "慕舍酒店",
+    "aliases": [],
+    "industry": "A",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0182",
+    "name": "台北怡亨酒店",
+    "aliases": [],
+    "industry": "A",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0183",
+    "name": "台北大直英迪格酒店",
+    "aliases": [],
+    "industry": "A",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0184",
+    "name": "台北西門町意舍酒店",
+    "aliases": [],
+    "industry": "A",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0185",
+    "name": "格拉斯麗台北飯店",
+    "aliases": [],
+    "industry": "A",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0186",
+    "name": "相鐵GRAND FRESA 台北西門",
+    "aliases": [],
+    "industry": "A",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0187",
+    "name": "倉箱蜜境",
+    "aliases": [],
+    "industry": "A",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0188",
+    "name": "台北君悅酒店",
+    "aliases": [],
+    "industry": "B",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0189",
+    "name": "西門大飯店",
+    "aliases": [],
+    "industry": "B",
+    "first_donor_year": 2024,
+    "donor_years": [
+      2024,
+      2025
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0094",
+    "name": "諾億保經",
+    "aliases": [],
+    "industry": "金融",
+    "first_donor_year": 2025,
+    "donor_years": [
+      2025
+    ],
+    "first_parade_year": 2024,
+    "parade_detail": {
+      "2024": {
+        "raw_name": "諾億保險經紀人",
+        "section": "商業車",
+        "team": "黃色大隊 Team Yellow"
+      },
+      "2025": {
+        "raw_name": "諾億保經",
+        "section": "商業車",
+        "team": "藍色大隊 Team Blue / North Route"
+      }
+    },
+    "parade_years": [
+      2024,
+      2025
+    ]
+  },
+  {
+    "donor_id": "D0191",
+    "name": "JINS",
+    "aliases": [],
+    "industry": "生活",
+    "first_donor_year": 2025,
+    "donor_years": [
+      2025
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0192",
+    "name": "Johnnie Walker",
+    "aliases": [],
+    "industry": "酒商",
+    "first_donor_year": 2025,
+    "donor_years": [
+      2025
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0193",
+    "name": "TFC \n臺北婦產科診所",
+    "aliases": [],
+    "industry": "醫療",
+    "first_donor_year": 2025,
+    "donor_years": [
+      2025
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0194",
+    "name": "IM Adult",
+    "aliases": [],
+    "industry": "成人",
+    "first_donor_year": 2025,
+    "donor_years": [
+      2025
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0195",
+    "name": "TSMC",
+    "aliases": [],
+    "industry": "科技",
+    "first_donor_year": 2025,
+    "donor_years": [
+      2025
+    ],
+    "first_parade_year": 2025,
+    "parade_detail": {
+      "2025": {
+        "raw_name": "Pride@tsmc",
+        "section": "商業車",
+        "team": "紅色大隊 Team Red / South Route"
+      }
+    },
+    "parade_years": [
+      2025
+    ]
+  },
+  {
+    "donor_id": "D0196",
+    "name": "FNF",
+    "aliases": [],
+    "industry": "基金會",
+    "first_donor_year": 2025,
+    "donor_years": [
+      2025
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0197",
+    "name": "新思科技",
+    "aliases": [],
+    "industry": "科技",
+    "first_donor_year": 2025,
+    "donor_years": [
+      2025
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0198",
+    "name": "華納兄弟",
+    "aliases": [],
+    "industry": "影視",
+    "first_donor_year": 2025,
+    "donor_years": [
+      2025
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0199",
+    "name": "TENGA",
+    "aliases": [],
+    "industry": "生活",
+    "first_donor_year": 2025,
+    "donor_years": [
+      2025
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0200",
+    "name": "一口純淨",
+    "aliases": [],
+    "industry": "生活",
+    "first_donor_year": 2025,
+    "donor_years": [
+      2025
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0201",
+    "name": "Precision\nBiotics",
+    "aliases": [],
+    "industry": "生活",
+    "first_donor_year": 2025,
+    "donor_years": [
+      2025
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0202",
+    "name": "聯名商品",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2025,
+    "donor_years": [
+      2025
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0203",
+    "name": "環球影城",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2025,
+    "donor_years": [
+      2025
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0204",
+    "name": "國泰萬怡",
+    "aliases": [],
+    "industry": "A",
+    "first_donor_year": 2025,
+    "donor_years": [
+      2025
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0205",
+    "name": "和逸飯店",
+    "aliases": [],
+    "industry": "A",
+    "first_donor_year": 2025,
+    "donor_years": [
+      2025
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0206",
+    "name": "大直英迪格",
+    "aliases": [],
+    "industry": "B",
+    "first_donor_year": 2025,
+    "donor_years": [
+      2025
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0207",
+    "name": "慕軒飯店",
+    "aliases": [],
+    "industry": "B",
+    "first_donor_year": 2025,
+    "donor_years": [
+      2025
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0208",
+    "name": "北門世民",
+    "aliases": [],
+    "industry": "飯店",
+    "first_donor_year": 2023,
+    "donor_years": [
+      2023,
+      2024,
+      2025
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0209",
+    "name": "amba",
+    "aliases": [],
+    "industry": "B",
+    "first_donor_year": 2025,
+    "donor_years": [
+      2025
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0210",
+    "name": "君悅飯店",
+    "aliases": [],
+    "industry": "B",
+    "first_donor_year": 2025,
+    "donor_years": [
+      2025
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0211",
+    "name": "中山雅樂軒",
+    "aliases": [],
+    "industry": "C",
+    "first_donor_year": 2025,
+    "donor_years": [
+      2025
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0212",
+    "name": "希爾頓逸林",
+    "aliases": [],
+    "industry": "C",
+    "first_donor_year": 2025,
+    "donor_years": [
+      2025
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0213",
+    "name": "南港老爺",
+    "aliases": [],
+    "industry": "C",
+    "first_donor_year": 2025,
+    "donor_years": [
+      2025
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0214",
+    "name": "大安伊普索",
+    "aliases": [],
+    "industry": "C",
+    "first_donor_year": 2025,
+    "donor_years": [
+      2025
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0215",
+    "name": "金普頓大安",
+    "aliases": [],
+    "industry": "C",
+    "first_donor_year": 2025,
+    "donor_years": [
+      2025
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0216",
+    "name": "Hotels.com",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2021,
+    "donor_years": [
+      2021
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0217",
+    "name": "B.Y.O.",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2021,
+    "donor_years": [
+      2021
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0219",
+    "name": "Club Locker Room",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2021,
+    "donor_years": [
+      2021
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0220",
+    "name": "志祺七七 X 圖文不符",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2021,
+    "donor_years": [
+      2021
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0221",
+    "name": "Hotel Indigo Taipei",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2021,
+    "donor_years": [
+      2021
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0222",
+    "name": "NUZONE",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2021,
+    "donor_years": [
+      2021
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0223",
+    "name": "英勝國際",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2021,
+    "donor_years": [
+      2021
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0224",
+    "name": "WSI",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2021,
+    "donor_years": [
+      2021
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0225",
+    "name": "INF",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2021,
+    "donor_years": [
+      2021
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0226",
+    "name": "Satisfyer Taiwan",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2021,
+    "donor_years": [
+      2021
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0227",
+    "name": "KKBOX",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2021,
+    "donor_years": [
+      2021
+    ],
+    "first_parade_year": 2020,
+    "parade_detail": {
+      "2020": {
+        "raw_name": "KKBOX",
+        "section": "隊伍",
+        "team": "橙色大隊 Team Orange"
+      }
+    },
+    "parade_years": [
+      2020
+    ]
+  },
+  {
+    "donor_id": "D0228",
+    "name": "台灣資生堂專業美髮事業部",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": 2021,
+    "donor_years": [
+      2021
+    ],
+    "first_parade_year": null,
+    "parade_detail": {},
+    "parade_years": []
+  },
+  {
+    "donor_id": "D0094",
+    "name": "諾億保經",
+    "aliases": [
+      "諾億特許事業部"
+    ],
+    "industry": "",
+    "first_donor_year": 2021,
+    "donor_years": [
+      2021
+    ],
+    "first_parade_year": 2019,
+    "parade_detail": {
+      "2019": {
+        "raw_name": "磊山保經諾億特許事業部",
+        "section": "隊伍",
+        "team": "黃色大隊 Team Yellow"
+      }
+    },
+    "parade_years": [
+      2019
+    ]
+  },
+  {
+    "donor_id": null,
+    "name": "Formosa Pride",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": null,
+    "donor_years": [],
+    "first_parade_year": 2019,
+    "parade_detail": {
+      "2019": {
+        "raw_name": "Formosa Pride",
+        "section": "商業車",
+        "team": "紅色大隊 Team Red"
+      }
+    },
+    "parade_years": [
+      2019
+    ]
+  },
+  {
+    "donor_id": null,
+    "name": "台灣酷蓋 / Lez's Meeting 女人國 / mojumojo",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": null,
+    "donor_years": [],
+    "first_parade_year": 2019,
+    "parade_detail": {
+      "2019": {
+        "raw_name": "台灣酷蓋 / Lez's Meeting 女人國 / mojumojo",
+        "section": "商業車",
+        "team": "橙色大隊 Team Orange"
+      }
+    },
+    "parade_years": [
+      2019
+    ]
+  },
+  {
+    "donor_id": null,
+    "name": "Mx.Me 覓我 交友軟體 / DOUBLE 束胸",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": null,
+    "donor_years": [],
+    "first_parade_year": 2019,
+    "parade_detail": {
+      "2019": {
+        "raw_name": "Mx.Me 覓我 交友軟體 / DOUBLE 束胸",
+        "section": "商業車",
+        "team": "橙色大隊 Team Orange"
+      }
+    },
+    "parade_years": [
+      2019
+    ]
+  },
+  {
+    "donor_id": null,
+    "name": "We are GYEE",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": null,
+    "donor_years": [],
+    "first_parade_year": 2019,
+    "parade_detail": {
+      "2019": {
+        "raw_name": "We are GYEE",
+        "section": "商業車",
+        "team": "綠色大隊 Team Green"
+      }
+    },
+    "parade_years": [
+      2019
+    ]
+  },
+  {
+    "donor_id": null,
+    "name": "playing Gayly",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": null,
+    "donor_years": [],
+    "first_parade_year": 2019,
+    "parade_detail": {
+      "2019": {
+        "raw_name": "playing Gayly",
+        "section": "商業車",
+        "team": "綠色大隊 Team Green"
+      }
+    },
+    "parade_years": [
+      2019
+    ]
+  },
+  {
+    "donor_id": null,
+    "name": "霹靂嬌娃 Charlie's Angels",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": null,
+    "donor_years": [],
+    "first_parade_year": 2019,
+    "parade_detail": {
+      "2019": {
+        "raw_name": "霹靂嬌娃 Charlie's Angels",
+        "section": "商業車",
+        "team": "綠色大隊 Team Green"
+      }
+    },
+    "parade_years": [
+      2019
+    ]
+  },
+  {
+    "donor_id": null,
+    "name": "Monocorn 獨角獸",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": null,
+    "donor_years": [],
+    "first_parade_year": 2019,
+    "parade_detail": {
+      "2019": {
+        "raw_name": "Monocorn 獨角獸",
+        "section": "商業車",
+        "team": "紫色大隊 Team Purple"
+      }
+    },
+    "parade_years": [
+      2019
+    ]
+  },
+  {
+    "donor_id": null,
+    "name": "雙全國際股份有限公司",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": null,
+    "donor_years": [],
+    "first_parade_year": 2022,
+    "parade_detail": {
+      "2022": {
+        "raw_name": "雙全國際股份有限公司",
+        "section": "商業車",
+        "team": "紅色大隊 Team Red"
+      }
+    },
+    "parade_years": [
+      2022
+    ]
+  },
+  {
+    "donor_id": null,
+    "name": "TPO",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": null,
+    "donor_years": [],
+    "first_parade_year": 2022,
+    "parade_detail": {
+      "2022": {
+        "raw_name": "TPO",
+        "section": "商業車",
+        "team": "橙色大隊 Team Orange"
+      }
+    },
+    "parade_years": [
+      2022
+    ]
+  },
+  {
+    "donor_id": null,
+    "name": "亞曼瑞國際舞蹈學校",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": null,
+    "donor_years": [],
+    "first_parade_year": 2022,
+    "parade_detail": {
+      "2022": {
+        "raw_name": "亞曼瑞國際舞蹈學校",
+        "section": "商業車",
+        "team": "紫色大隊 Team Purple"
+      }
+    },
+    "parade_years": [
+      2022
+    ]
+  },
+  {
+    "donor_id": null,
+    "name": "荷瑞紐澳 驕傲同行（Proud Together AU NL NZ SE）",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": null,
+    "donor_years": [],
+    "first_parade_year": 2024,
+    "parade_detail": {
+      "2024": {
+        "raw_name": "荷瑞紐澳 驕傲同行（Proud Together AU NL NZ SE）",
+        "section": "商業車",
+        "team": "黃色大隊 Team Yellow"
+      }
+    },
+    "parade_years": [
+      2024
+    ]
+  },
+  {
+    "donor_id": null,
+    "name": "歐肯單一麥芽蘇格蘭威士忌",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": null,
+    "donor_years": [],
+    "first_parade_year": 2024,
+    "parade_detail": {
+      "2024": {
+        "raw_name": "歐肯單一麥芽蘇格蘭威士忌",
+        "section": "商業車",
+        "team": "綠色大隊 Team Green"
+      }
+    },
+    "parade_years": [
+      2024
+    ]
+  },
+  {
+    "donor_id": null,
+    "name": "金賓美國波本威士忌",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": null,
+    "donor_years": [],
+    "first_parade_year": 2024,
+    "parade_detail": {
+      "2024": {
+        "raw_name": "金賓美國波本威士忌",
+        "section": "商業車",
+        "team": "綠色大隊 Team Green"
+      }
+    },
+    "parade_years": [
+      2024
+    ]
+  },
+  {
+    "donor_id": null,
+    "name": "愛無界 Love Beyond Boundaries",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": null,
+    "donor_years": [],
+    "first_parade_year": 2024,
+    "parade_detail": {
+      "2024": {
+        "raw_name": "愛無界 Love Beyond Boundaries",
+        "section": "商業車",
+        "team": "藍色大隊 Team Blue"
+      }
+    },
+    "parade_years": [
+      2024
+    ]
+  },
+  {
+    "donor_id": null,
+    "name": "弗里德里希諾曼自由基金會",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": null,
+    "donor_years": [],
+    "first_parade_year": 2025,
+    "parade_detail": {
+      "2025": {
+        "raw_name": "弗里德里希諾曼自由基金會",
+        "section": "商業車",
+        "team": "黃色大隊 Team Yellow / South Route"
+      }
+    },
+    "parade_years": [
+      2025
+    ]
+  },
+  {
+    "donor_id": null,
+    "name": "Prism 三稜鏡學生聯盟",
+    "aliases": [],
+    "industry": "",
+    "first_donor_year": null,
+    "donor_years": [],
+    "first_parade_year": 2025,
+    "parade_detail": {
+      "2025": {
+        "raw_name": "Prism 三稜鏡學生聯盟",
+        "section": "商業車",
+        "team": "紫色大隊 Team Purple / North Route"
+      }
+    },
+    "parade_years": [
+      2025
+    ]
+  }
+]
