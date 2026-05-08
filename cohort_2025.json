@@ -1,0 +1,394 @@
+{
+  "new_2025": [
+    {
+      "name": "JINS",
+      "cat": "TIER",
+      "label": "T3 鈦金",
+      "amount": 500000
+    },
+    {
+      "name": "Johnnie Walker",
+      "cat": "TIER",
+      "label": "T4 銀",
+      "amount": 220000
+    },
+    {
+      "name": "聯名商品",
+      "cat": "OTHER",
+      "label": "其他",
+      "amount": 160000
+    },
+    {
+      "name": "TFC \n臺北婦產科診所",
+      "cat": "TIER",
+      "label": "T5 銅",
+      "amount": 120000
+    },
+    {
+      "name": "IM Adult",
+      "cat": "SINGLE",
+      "label": "花車",
+      "amount": 120000
+    },
+    {
+      "name": "TSMC",
+      "cat": "SINGLE",
+      "label": "花車",
+      "amount": 120000
+    },
+    {
+      "name": "FNF",
+      "cat": "SINGLE",
+      "label": "花車",
+      "amount": 120000
+    },
+    {
+      "name": "華納兄弟",
+      "cat": "SINGLE",
+      "label": "單買",
+      "amount": 36000
+    },
+    {
+      "name": "環球影城",
+      "cat": "OTHER",
+      "label": "其他",
+      "amount": 36000
+    },
+    {
+      "name": "新思科技",
+      "cat": "SINGLE",
+      "label": "單買",
+      "amount": 10000
+    },
+    {
+      "name": "TENGA",
+      "cat": "MARKET",
+      "label": "市集",
+      "amount": 0
+    },
+    {
+      "name": "一口純淨",
+      "cat": "OTHER",
+      "label": "其他",
+      "amount": 0
+    },
+    {
+      "name": "Precision\nBiotics",
+      "cat": "OTHER",
+      "label": "其他",
+      "amount": 0
+    }
+  ],
+  "returning_2025": [
+    {
+      "name": "美光",
+      "prev_yr": 2024,
+      "prev_cat": "TIER",
+      "prev_label": "T3 鈦金",
+      "curr_cat": "TIER",
+      "curr_label": "T3 鈦金",
+      "curr_amount": 405000,
+      "change_type": "same"
+    },
+    {
+      "name": "諾億保經",
+      "prev_yr": 2024,
+      "prev_cat": "TIER",
+      "prev_label": "T4 銀",
+      "curr_cat": "TIER",
+      "curr_label": "T3 鈦金",
+      "curr_amount": 405000,
+      "change_type": "same"
+    },
+    {
+      "name": "波士頓",
+      "prev_yr": 2024,
+      "prev_cat": "TIER",
+      "prev_label": "T3 鈦金",
+      "curr_cat": "TIER",
+      "curr_label": "T3 鈦金",
+      "curr_amount": 405000,
+      "change_type": "same"
+    },
+    {
+      "name": "VERVE",
+      "prev_yr": 2024,
+      "prev_cat": "TIER",
+      "prev_label": "T4 銀",
+      "curr_cat": "SINGLE",
+      "curr_label": "花車",
+      "curr_amount": 350000,
+      "change_type": "downgrade"
+    },
+    {
+      "name": "可口可樂",
+      "prev_yr": 2024,
+      "prev_cat": "SINGLE",
+      "prev_label": "單買",
+      "curr_cat": "SINGLE",
+      "curr_label": "單買",
+      "curr_amount": 250000,
+      "change_type": "same"
+    },
+    {
+      "name": "GILEAD",
+      "prev_yr": 2024,
+      "prev_cat": "TIER",
+      "prev_label": "T3 鈦金",
+      "curr_cat": "TIER",
+      "curr_label": "T4 銀",
+      "curr_amount": 230000,
+      "change_type": "same"
+    },
+    {
+      "name": "必勝客",
+      "prev_yr": 2023,
+      "prev_cat": "SINGLE",
+      "prev_label": "花車",
+      "curr_cat": "TIER",
+      "curr_label": "T4 銀",
+      "curr_amount": 220000,
+      "change_type": "upgrade"
+    },
+    {
+      "name": "Tapestry",
+      "prev_yr": 2024,
+      "prev_cat": "TIER",
+      "prev_label": "T4 銀",
+      "curr_cat": "TIER",
+      "curr_label": "T4 銀",
+      "curr_amount": 220000,
+      "change_type": "same"
+    },
+    {
+      "name": "LifeWonders",
+      "prev_yr": 2024,
+      "prev_cat": "TIER",
+      "prev_label": "T5 銅",
+      "curr_cat": "TIER",
+      "curr_label": "T4 銀",
+      "curr_amount": 216000,
+      "change_type": "same"
+    },
+    {
+      "name": "G-Star",
+      "prev_yr": 2024,
+      "prev_cat": "TIER",
+      "prev_label": "T4 銀",
+      "curr_cat": "TIER",
+      "curr_label": "T4 銀",
+      "curr_amount": 198000,
+      "change_type": "same"
+    },
+    {
+      "name": "Google",
+      "prev_yr": 2024,
+      "prev_cat": "TIER",
+      "prev_label": "T4 銀",
+      "curr_cat": "TIER",
+      "curr_label": "T4 銀",
+      "curr_amount": 198000,
+      "change_type": "same"
+    },
+    {
+      "name": "拉拉公園",
+      "prev_yr": 2024,
+      "prev_cat": "TIER",
+      "prev_label": "T4 銀",
+      "curr_cat": "TIER",
+      "curr_label": "T4 銀",
+      "curr_amount": 198000,
+      "change_type": "same"
+    },
+    {
+      "name": "GSK",
+      "prev_yr": 2024,
+      "prev_cat": "TIER",
+      "prev_label": "T4 銀",
+      "curr_cat": "TIER",
+      "curr_label": "T4 銀",
+      "curr_amount": 198000,
+      "change_type": "same"
+    },
+    {
+      "name": "Unilever",
+      "prev_yr": 2024,
+      "prev_cat": "TIER",
+      "prev_label": "T5 銅",
+      "curr_cat": "TIER",
+      "curr_label": "T4 銀",
+      "curr_amount": 198000,
+      "change_type": "same"
+    },
+    {
+      "name": "台虎",
+      "prev_yr": 2024,
+      "prev_cat": "TIER",
+      "prev_label": "T4 銀",
+      "curr_cat": "TIER",
+      "curr_label": "T4 銀",
+      "curr_amount": 198000,
+      "change_type": "same"
+    },
+    {
+      "name": "AZ",
+      "prev_yr": 2024,
+      "prev_cat": "TIER",
+      "prev_label": "T4 銀",
+      "curr_cat": "TIER",
+      "curr_label": "T4 銀",
+      "curr_amount": 198000,
+      "change_type": "same"
+    },
+    {
+      "name": "犀牛盾",
+      "prev_yr": 2024,
+      "prev_cat": "SINGLE",
+      "prev_label": "單買",
+      "curr_cat": "TIER",
+      "curr_label": "T5 銅",
+      "curr_amount": 150000,
+      "change_type": "upgrade"
+    },
+    {
+      "name": "GAP",
+      "prev_yr": 2024,
+      "prev_cat": "SINGLE",
+      "prev_label": "花車",
+      "curr_cat": "SINGLE",
+      "curr_label": "花車",
+      "curr_amount": 120000,
+      "change_type": "same"
+    },
+    {
+      "name": "彩虹酷兒健康文化中心",
+      "prev_yr": 2024,
+      "prev_cat": "SINGLE",
+      "prev_label": "花車",
+      "curr_cat": "SINGLE",
+      "curr_label": "花車",
+      "curr_amount": 120000,
+      "change_type": "same"
+    },
+    {
+      "name": "UBer",
+      "prev_yr": 2024,
+      "prev_cat": "SINGLE",
+      "prev_label": "花車",
+      "curr_cat": "SINGLE",
+      "curr_label": "花車",
+      "curr_amount": 120000,
+      "change_type": "same"
+    },
+    {
+      "name": "NIKE",
+      "prev_yr": 2024,
+      "prev_cat": "SINGLE",
+      "prev_label": "花車",
+      "curr_cat": "SINGLE",
+      "curr_label": "花車",
+      "curr_amount": 120000,
+      "change_type": "same"
+    },
+    {
+      "name": "渣打銀行",
+      "prev_yr": 2024,
+      "prev_cat": "SINGLE",
+      "prev_label": "花車",
+      "curr_cat": "SINGLE",
+      "curr_label": "花車",
+      "curr_amount": 120000,
+      "change_type": "same"
+    },
+    {
+      "name": "疾管署",
+      "prev_yr": 2024,
+      "prev_cat": "TIER",
+      "prev_label": "T5 銅",
+      "curr_cat": "TIER",
+      "curr_label": "T5 銅",
+      "curr_amount": 114000,
+      "change_type": "same"
+    },
+    {
+      "name": "hyve solutions",
+      "prev_yr": 2023,
+      "prev_cat": "SINGLE",
+      "prev_label": "單買",
+      "curr_cat": "TIER",
+      "curr_label": "T5 銅",
+      "curr_amount": 108000,
+      "change_type": "upgrade"
+    },
+    {
+      "name": "Tstudio",
+      "prev_yr": 2024,
+      "prev_cat": "TIER",
+      "prev_label": "T4 銀",
+      "curr_cat": "TIER",
+      "curr_label": "T5 銅",
+      "curr_amount": 108000,
+      "change_type": "same"
+    },
+    {
+      "name": "默沙東",
+      "prev_yr": 2024,
+      "prev_cat": "TIER",
+      "prev_label": "T5 銅",
+      "curr_cat": "TIER",
+      "curr_label": "T5 銅",
+      "curr_amount": 108000,
+      "change_type": "same"
+    },
+    {
+      "name": "愛群婦產科",
+      "prev_yr": 2024,
+      "prev_cat": "TIER",
+      "prev_label": "T5 銅",
+      "curr_cat": "SINGLE",
+      "curr_label": "單買",
+      "curr_amount": 105000,
+      "change_type": "downgrade"
+    },
+    {
+      "name": "Sagami",
+      "prev_yr": 2024,
+      "prev_cat": "SINGLE",
+      "prev_label": "單買",
+      "curr_cat": "SINGLE",
+      "curr_label": "單買",
+      "curr_amount": 63000,
+      "change_type": "same"
+    },
+    {
+      "name": "M.A.C",
+      "prev_yr": 2024,
+      "prev_cat": "TIER",
+      "prev_label": "T4 銀",
+      "curr_cat": "OTHER",
+      "curr_label": "其他",
+      "curr_amount": 44000,
+      "change_type": "other"
+    },
+    {
+      "name": "辻利茶舖",
+      "prev_yr": 2024,
+      "prev_cat": "SINGLE",
+      "prev_label": "單買",
+      "curr_cat": "SINGLE",
+      "curr_label": "單買",
+      "curr_amount": 25000,
+      "change_type": "same"
+    },
+    {
+      "name": "台灣百健",
+      "prev_yr": 2024,
+      "prev_cat": "SINGLE",
+      "prev_label": "單買",
+      "curr_cat": "SINGLE",
+      "curr_label": "單買",
+      "curr_amount": 20000,
+      "change_type": "same"
+    }
+  ]
+}

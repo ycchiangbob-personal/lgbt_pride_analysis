@@ -234,13 +234,14 @@
     {
       "col": 28,
       "name_orig": "磊山保經",
-      "name_canonical": "磊山保經",
+      "name_canonical": "諾億保經",
       "tier_orig": "銀級",
       "industry": "",
       "lead": "",
       "contact": "Ray",
       "amount": 150000.0,
-      "amount_source": "實際金額"
+      "amount_source": "實際金額",
+      "donor_id": "D0094"
     },
     {
       "col": 29,
@@ -643,13 +644,14 @@
     {
       "col": 18,
       "name_orig": "諾億財富管理顧問",
-      "name_canonical": "諾億財富管理顧問",
+      "name_canonical": "諾億保經",
       "tier_orig": "銀級",
       "industry": "投資理財",
       "lead": "深紅",
       "contact": "深紅",
       "amount": 180000.0,
-      "amount_source": "贊助金額"
+      "amount_source": "贊助金額",
+      "donor_id": "D0094"
     },
     {
       "col": 19,
@@ -1228,13 +1230,14 @@
     {
       "col": 14,
       "name_orig": "諾億",
-      "name_canonical": "諾億",
+      "name_canonical": "諾億保經",
       "tier_orig": "銀級",
       "industry": "金融",
       "lead": "深紅",
       "contact": "CJ",
       "amount": 198000.0,
-      "amount_source": "合約金額"
+      "amount_source": "合約金額",
+      "donor_id": "D0094"
     },
     {
       "col": 15,
@@ -2061,7 +2064,8 @@
       "lead": "",
       "contact": "群",
       "amount": 405000.0,
-      "amount_source": "合約金額"
+      "amount_source": "合約金額",
+      "donor_id": "D0094"
     },
     {
       "col": 12,
