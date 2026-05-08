@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { BASE } from '@/lib/basePath'
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell,
 } from 'recharts'
@@ -109,7 +110,7 @@ export function NewBrandPanel() {
   const [cohort, setCohort] = useState<Cohort | null>(null)
 
   useEffect(() => {
-    fetch('/data/cohort_2025.json')
+    fetch(`${BASE}/data/cohort_2025.json`)
       .then((r) => r.json())
       .then(setCohort)
   }, [])

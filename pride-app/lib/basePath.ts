@@ -1,0 +1,3 @@
+// On localhost (dev), NEXT_PUBLIC_BASE_PATH is '' so fetches go to /data/...
+// On GitHub Pages (prod build), it is '/lgbt_pride_analysis' to match the repo sub-path.
+export const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? ''

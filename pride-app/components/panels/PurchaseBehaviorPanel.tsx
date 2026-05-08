@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useMemo, useState } from 'react'
+import { BASE } from '@/lib/basePath'
 
 type YearEntry = { cat: string; label: string; amount: number }
 type DonorRecord = { donor_id: string; name: string; years: Record<string, YearEntry> }
@@ -25,8 +26,8 @@ export function PurchaseBehaviorPanel() {
 
   useEffect(() => {
     Promise.all([
-      fetch('/data/purchase_behavior.json').then((r) => r.json()),
-      fetch('/data/product_history.json').then((r) => r.json()),
+      fetch(`${BASE}/data/purchase_behavior.json`).then((r) => r.json()),
+      fetch(`${BASE}/data/product_history.json`).then((r) => r.json()),
     ]).then(([pb, ph]) => { setPbData(pb); setPhData(ph) })
   }, [])
 

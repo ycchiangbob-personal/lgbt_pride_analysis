@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useMemo, useState } from 'react'
+import { BASE } from '@/lib/basePath'
 
 type Sponsor = {
   col: number; name_orig: string; name_canonical: string
@@ -46,7 +47,7 @@ export function SponsorDirectoryPanel() {
   const [industryFilter, setIndustryFilter] = useState('all')
 
   useEffect(() => {
-    fetch('/data/all_extracted_v2.json')
+    fetch(`${BASE}/data/all_extracted_v2.json`)
       .then((r) => r.json())
       .then(setData)
   }, [])

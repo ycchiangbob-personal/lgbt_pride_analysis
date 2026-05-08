@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useMemo, useState } from 'react'
+import { BASE } from '@/lib/basePath'
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, LabelList, ResponsiveContainer,
   LineChart, Line, ReferenceLine,
@@ -75,7 +76,7 @@ export function OverviewPanel() {
   const [barMode, setBarMode] = useState<'amount' | 'ratio' | 'count'>('amount')
 
   useEffect(() => {
-    fetch('/data/cross_year_summary.json')
+    fetch(`${BASE}/data/cross_year_summary.json`)
       .then((r) => r.json())
       .then(setSummary)
   }, [])

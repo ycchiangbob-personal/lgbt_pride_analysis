@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useMemo, useState } from 'react'
+import { BASE } from '@/lib/basePath'
 
 type ProductItem = { bg?: string; price?: number; unit?: string }
 type RetentionItem = { item: string; adopters: number; retention_pct: number; consec: number; total: number; price: number }
@@ -60,7 +61,7 @@ export function OpportunityPanel() {
   const [analysis, setAnalysis] = useState<ProductAnalysis | null>(null)
 
   useEffect(() => {
-    fetch('/data/product_analysis.json')
+    fetch(`${BASE}/data/product_analysis.json`)
       .then((r) => r.json())
       .then(setAnalysis)
   }, [])

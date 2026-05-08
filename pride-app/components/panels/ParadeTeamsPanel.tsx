@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useMemo, useState } from 'react'
+import { BASE } from '@/lib/basePath'
 
 type GroupData = Record<string, { 社團車?: string[]; 商業車?: string[]; 隊伍?: string[] }>
 type AllGroups = Record<string, GroupData>
@@ -22,7 +23,7 @@ export function ParadeTeamsPanel() {
   const [search, setSearch] = useState('')
 
   useEffect(() => {
-    fetch('/data/parade_groups.json')
+    fetch(`${BASE}/data/parade_groups.json`)
       .then((r) => r.json())
       .then(setData)
   }, [])

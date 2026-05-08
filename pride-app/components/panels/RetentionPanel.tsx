@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useMemo, useState } from 'react'
+import { BASE } from '@/lib/basePath'
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
   LineChart, Line, Legend, Cell, LabelList,
@@ -80,7 +81,7 @@ export function RetentionPanel() {
   const [data, setData] = useState<AllData | null>(null)
 
   useEffect(() => {
-    fetch('/data/all_extracted_v2.json')
+    fetch(`${BASE}/data/all_extracted_v2.json`)
       .then((r) => r.json())
       .then(setData)
   }, [])
