@@ -64,6 +64,7 @@ export function OpportunityPanel() {
     fetch(`${BASE}/data/product_analysis.json`)
       .then((r) => r.json())
       .then(setAnalysis)
+      .catch(() => {})
   }, [])
 
   const topRetention = useMemo(() => {

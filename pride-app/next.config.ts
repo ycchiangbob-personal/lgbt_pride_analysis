@@ -5,6 +5,7 @@ const basePath = isProd ? '/lgbt_pride_analysis' : ''
 
 const nextConfig: NextConfig = {
   output: 'export',
+  trailingSlash: true,
   basePath,
   images: { unoptimized: true },
   env: {
