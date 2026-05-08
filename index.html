@@ -1020,48 +1020,137 @@
 
   <!-- Section: Analysis A -->
   <div class="section-title">年度留存率趨勢</div>
+  <p class="plain-desc" style="margin-bottom:12px">分析範圍：級別贊助廠商（白金／鈦金／黃金／銀／銅級）＋單購金額 &gt; NTD 50,000；已排除彩虹市集與友善飯店。</p>
   <div class="chart-card">
-    <h3>每年有多少去年的廠商今年繼續贊助？（2019–2025）</h3>
-    <p class="plain-desc">
-      留存率 = 去年有贊助的廠商中，今年繼續合作的比例。
-      灰色柱子（2019–2021）因原始資料不完整，數字僅供參考。
-      <strong>2024→2025 的留存率為 39.7%，是近四年最低點。</strong>
-    </p>
-    <div style="position:relative;width:100%;height:220px;">
-      <canvas id="retentionChart"></canvas>
-    </div>
-
-    <h3 style="margin-top:24px">流失廠商 vs 留存廠商——上一年合計贊助金額（2022–2025）</h3>
+    <h3>流失廠商 vs 留存廠商——上一年合計贊助金額（2022–2025）</h3>
     <p class="plain-desc">
       紅柱 = 流失廠商在前一年的合計金額（該收入不再進來）；藍柱 = 留存廠商在前一年的合計金額（成功保住的收入）。
-      2024→2025 的流失均額雖低（每家 84k），但因流失了 47 家，<strong>合計仍達 NTD 3.97M</strong>——
-      低均額是 2024 年大量引入低單價飯店廠商的組合效果，並非情況好轉。
+      2024→2025 共流失 21 家（篩選後），<strong>合計 NTD 3.39M</strong>；平均每家流失金額約 162k，
+      遠高於留存廠商均額——我們失去的是相對高價值的客戶。
     </p>
     <div style="position:relative;width:100%;height:200px;">
       <canvas id="churnAmtChart"></canvas>
     </div>
 
-    <div style="overflow-x:auto;margin-top:16px;">
-      <table class="data-table">
-        <thead><tr>
-          <th>年度</th><th class="right">前年廠商數</th>
-          <th class="right">續簽</th><th class="right">流失</th>
-          <th class="right">留存率</th>
-          <th class="right" style="color:#c62828">流失廠商均額</th>
-          <th class="right" style="color:#2e7d32">留存廠商均額</th>
-        </tr></thead>
-        <tbody><tr class="unreliable"><td>2019→2020 <span style="font-size:11px;color:var(--text-muted);font-style:italic">（參考）</span></td><td class="right">7</td><td class="right">4</td><td class="right">3</td><td class="right"><strong>57.1%</strong></td><td class="right" colspan="2" style="color:var(--text-muted);font-size:11px">資料不完整</td></tr><tr class="unreliable"><td>2020→2021 <span style="font-size:11px;color:var(--text-muted);font-style:italic">（參考）</span></td><td class="right">35</td><td class="right">8</td><td class="right">27</td><td class="right"><strong>22.9%</strong></td><td class="right" colspan="2" style="color:var(--text-muted);font-size:11px">資料不完整</td></tr><tr class="unreliable"><td>2021→2022 <span style="font-size:11px;color:var(--text-muted);font-style:italic">（參考）</span></td><td class="right">12</td><td class="right">8</td><td class="right">4</td><td class="right"><strong>66.7%</strong></td><td class="right" colspan="2" style="color:var(--text-muted);font-size:11px">資料不完整</td></tr><tr><td>2022→2023</td><td class="right">37</td><td class="right">18</td><td class="right">19</td><td class="right"><strong>48.6%</strong></td><td class="right" style="color:#c62828">NTD 257k</td><td class="right" style="color:#2e7d32">NTD 210k</td></tr><tr><td>2023→2024</td><td class="right">45</td><td class="right">25</td><td class="right">20</td><td class="right"><strong>55.6%</strong></td><td class="right" style="color:#c62828">NTD 138k</td><td class="right" style="color:#2e7d32">NTD 218k</td></tr><tr><td>2024→2025</td><td class="right">78</td><td class="right">31</td><td class="right">47</td><td class="right"><strong>39.7%</strong></td><td class="right" style="color:#c62828">NTD 84k</td><td class="right" style="color:#2e7d32">NTD 192k</td></tr></tbody>
-      </table>
-    </div>
     <div class="action-box">
       <span class="act-icon">📉</span>
       <div><strong>行動建議：</strong>
-      2024→2025 流失廠商均額雖最低（84k），但因流失數量達 47 家，合計損失 NTD 3.97M，為近三期次高。
-      低均額是組合效果（2024 大量引入低單價飯店廠商），並非情況改善。
-      行動重點：①批次跟進 2025 年友善飯店族群（9 家，詳見新品牌續約率頁）；
-      ②同步挽回高單價流失廠商（諾和諾德 220k、羅氏 220k 等，見挽回清單）；
-      ③所有現有廠商在合約到期前 3 個月主動啟動溝通。</div>
+      2024→2025 篩選後流失 21 家，合計損失 NTD 3.39M，平均每家 162k——
+      流失的是高單價客戶，不是邊際贊助商。
+      行動重點：①優先挽回高單價流失廠商（諾和諾德 220k、羅氏 220k 等，見挽回清單）；
+      ②首次贊助廠商流失率高達 56%（見下方出席年資表），第一年結束前應主動啟動 renewal 溝通；
+      ③所有現有廠商在合約到期前 3 個月主動聯繫。</div>
     </div>
+  </div>
+
+  <div class="chart-card">
+    <h3>出席年資 vs 流失率（2022–2025 三個轉換期合計）</h3>
+    <p class="plain-desc">
+      依廠商在轉換年之前的出席年數分組，觀察留存傾向。資料範圍限 2022–2025，故「4 年以上」樣本不足，不納入。
+    </p>
+    <div style="overflow-x:auto;margin-top:12px;">
+      <table class="data-table">
+        <thead><tr>
+          <th>出席年資</th>
+          <th class="right">流失</th>
+          <th class="right">留存</th>
+          <th class="right">合計</th>
+          <th class="right">流失率</th>
+        </tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>首次贊助</strong></td>
+            <td class="right" style="color:#e8445a;font-weight:700">42</td>
+            <td class="right">33</td>
+            <td class="right">75</td>
+            <td class="right" style="color:#e8445a;font-weight:700">56.0%</td>
+          </tr>
+          <tr>
+            <td>第 2 年</td>
+            <td class="right" style="color:#e8445a">7</td>
+            <td class="right">21</td>
+            <td class="right">28</td>
+            <td class="right" style="color:#e8445a">25.0%</td>
+          </tr>
+          <tr>
+            <td>第 3 年</td>
+            <td class="right" style="color:#e8445a">2</td>
+            <td class="right">13</td>
+            <td class="right">15</td>
+            <td class="right" style="color:#e8445a">13.3%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="plain-desc" style="margin-top:8px;font-size:0.85em;color:#888">
+      關鍵洞察：首次贊助廠商超過一半不會回來；撐過第 2 年的廠商，第 3 年流失率降至 13%。
+      第一年的 renewal 跟進是最重要的留存節點。
+    </p>
+  </div>
+
+  <div class="chart-card">
+    <h3>級別 vs 流失率（2022–2025 三個轉換期合計，僅級別贊助廠商）</h3>
+    <p class="plain-desc">
+      白金、鈦金為零流失；黃金樣本少（3 次）；銀級為主要流失來源（40%）。
+    </p>
+    <div style="overflow-x:auto;margin-top:12px;">
+      <table class="data-table">
+        <thead><tr>
+          <th>贊助級別</th>
+          <th class="right">流失</th>
+          <th class="right">留存</th>
+          <th class="right">流失率</th>
+        </tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>T1 白金</strong></td>
+            <td class="right">0</td>
+            <td class="right">2</td>
+            <td class="right" style="color:#1B7A3E;font-weight:700">0%</td>
+          </tr>
+          <tr>
+            <td><strong>T2 鈦金</strong></td>
+            <td class="right">0</td>
+            <td class="right">3</td>
+            <td class="right" style="color:#1B7A3E;font-weight:700">0%</td>
+          </tr>
+          <tr>
+            <td>T3 黃金 <span style="font-size:0.8em;color:#888">（n=3，參考用）</span></td>
+            <td class="right" style="color:#e8445a">2</td>
+            <td class="right">1</td>
+            <td class="right" style="color:#e8445a">66.7%</td>
+          </tr>
+          <tr>
+            <td>T4 白銀</td>
+            <td class="right" style="color:#e8445a">3</td>
+            <td class="right">5</td>
+            <td class="right" style="color:#e8445a">37.5%</td>
+          </tr>
+          <tr>
+            <td>T4 銀</td>
+            <td class="right" style="color:#e8445a">24</td>
+            <td class="right">36</td>
+            <td class="right" style="color:#e8445a">40.0%</td>
+          </tr>
+          <tr>
+            <td>T5 銅</td>
+            <td class="right" style="color:#e8445a">6</td>
+            <td class="right">5</td>
+            <td class="right" style="color:#e8445a">54.5%</td>
+          </tr>
+          <tr>
+            <td>單購／花車 (&gt;50k)</td>
+            <td class="right" style="color:#e8445a">16</td>
+            <td class="right">15</td>
+            <td class="right" style="color:#e8445a">51.6%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="plain-desc" style="margin-top:8px;font-size:0.85em;color:#888">
+      白金與鈦金廠商從未流失（近四年）；T5 銅級與單購廠商流失率最高，是主要磨損來源。
+      引導廠商升級至白銀以上，是提升留存最直接的策略。
+    </p>
   </div>
 
   <details class="why-panel">
@@ -1074,9 +1163,10 @@
       </p>
       <div class="why-ans-label">資料怎麼說</div>
       <p class="why-ans">
-        2024→2025 留存率 39.7%，是近四年最低點。更關鍵的是：
-        流失廠商的平均貢獻金額明顯高於留存廠商——我們失去的是相對高價值的客戶，
-        而非邊際贊助商。這解釋了為何留存家數和前幾年相近，收入卻仍顯著下滑。
+        篩選後（排除市集／飯店），2024→2025 流失 21 家，流失率 44.7%，近三期最高。
+        平均流失廠商貢獻金額（162k）遠高於留存均額——確認是高價值廠商流失的問題。
+        出席年資是最強預測因子：首次廠商流失率 56%，第 3 年以上降至 13%。
+        白金與鈦金廠商四年來從未流失，引導升級是最直接的留存策略。
       </p>
     </div>
   </details>
@@ -2368,22 +2458,6 @@ buildLineChart();
   })();
 
   (function() {
-    Chart.getChart(document.getElementById('retentionChart'))?.destroy();
-    new Chart(document.getElementById('retentionChart'), {
-      type: 'bar',
-      data: { labels: ["2019→2020", "2020→2021", "2021→2022", "2022→2023", "2023→2024", "2024→2025"], datasets: [{ label: '留存率（%）', data: [57.1, 22.9, 66.7, 48.6, 55.6, 39.7], backgroundColor: ["#cccccc", "#cccccc", "#cccccc", "#4472C4", "#4472C4", "#4472C4"], borderRadius: 4 }] },
-      options: {
-        responsive: true, maintainAspectRatio: false,
-        plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ' 留存率：' + ctx.raw + '%' } } },
-        scales: {
-          y: { max: 100, ticks: { callback: v => v + '%' }, grid: { color: 'rgba(0,0,0,0.05)' } },
-          x: { grid: { display: false } }
-        }
-      }
-    });
-  })();
-
-  (function() {
     Chart.getChart(document.getElementById('survivalChart'))?.destroy();
     new Chart(document.getElementById('survivalChart'), {
       type: 'bar',
@@ -2523,38 +2597,6 @@ buildLineChart();
   })();
 
   (function() {
-    const retPctPlugin = {
-      id:'retPctLabel',
-      afterDatasetsDraw(chart) {
-        const {ctx} = chart;
-        chart.data.datasets.forEach((ds,di) => {
-          const meta = chart.getDatasetMeta(di);
-          meta.data.forEach((bar,i) => {
-            const v = ds.data[i];
-            if (!v) return;
-            ctx.save(); ctx.textAlign='center'; ctx.font='bold 10px sans-serif';
-            ctx.fillStyle='#333'; ctx.fillText(v+'%', bar.x, bar.y-4); ctx.restore();
-          });
-        });
-      }
-    };
-
-    Chart.getChart(document.getElementById('retentionChart'))?.destroy();
-    new Chart(document.getElementById('retentionChart'), {
-      type:'bar',
-      data:{ labels:["2019→2020", "2020→2021", "2021→2022", "2022→2023", "2023→2024", "2024→2025"], datasets:[{ label:'留存率（%）', data:[57.1, 22.9, 66.7, 48.6, 55.6, 39.7], backgroundColor:["#cccccc", "#cccccc", "#cccccc", "#4472C4", "#4472C4", "#4472C4"], borderRadius:4 }] },
-      plugins:[retPctPlugin],
-      options:{
-        responsive:true, maintainAspectRatio:false,
-        layout:{ padding:{ top:20 } },
-        plugins:{ legend:{display:false}, tooltip:{callbacks:{label: ctx=>' 留存率：'+ctx.raw+'%'}} },
-        scales:{
-          y:{ max:100, ticks:{callback: v=>v+'%'}, grid:{color:'rgba(0,0,0,0.05)'} },
-          x:{ grid:{display:false} }
-        }
-      }
-    });
-
     const amtLabelPlugin = {
       id:'amtLabel',
       afterDatasetsDraw(chart) {
@@ -2578,8 +2620,8 @@ buildLineChart();
       data:{
         labels:["2022→2023", "2023→2024", "2024→2025"],
         datasets:[
-          { label:'流失廠商（上一年合計）', data:[4883000, 2758000, 3965437], backgroundColor:'#e8445a', borderRadius:4 },
-          { label:'留存廠商（上一年合計）', data:[3787992, 5450000, 5948063], backgroundColor:'#4472C4', borderRadius:4 },
+          { label:'流失廠商（上一年合計）', data:[3571000, 2523000, 3393970], backgroundColor:'#e8445a', borderRadius:4 },
+          { label:'留存廠商（上一年合計）', data:[4600000, 5520000, 5862249], backgroundColor:'#4472C4', borderRadius:4 },
         ]
       },
       plugins:[amtLabelPlugin],
