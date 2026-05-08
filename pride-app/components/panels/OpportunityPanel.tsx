@@ -51,18 +51,6 @@ function ActionBox({ children }: { children: React.ReactNode }) {
   )
 }
 
-const NEW_PROSPECTS = [
-  { name: 'Fubon Financial', category: '金融', appeared: '隊伍 (2019–2024)', priority: 'A' },
-  { name: '台灣銀行', category: '金融', appeared: '隊伍', priority: 'A' },
-  { name: 'HSBC', category: '金融', appeared: '隊伍 (2020–2025)', priority: 'A' },
-  { name: 'BNP Paribas', category: '金融', appeared: '隊伍 (2020–2024)', priority: 'A' },
-  { name: 'EY', category: '顧問', appeared: '隊伍 (2019–2022)', priority: 'B' },
-  { name: 'Marriott', category: '飯店', appeared: '隊伍 (2022–2024)', priority: 'B' },
-  { name: 'P&G', category: '消費品', appeared: '隊伍 (2019–2025)', priority: 'A' },
-  { name: 'BMS', category: '醫藥', appeared: '隊伍 (2020–2024)', priority: 'A' },
-  { name: 'Mastercard', category: '金融科技', appeared: '全球 Pride', priority: 'B' },
-  { name: 'Starbucks', category: '餐飲', appeared: '全球 Pride', priority: 'B' },
-]
 
 export function OpportunityPanel() {
   const [analysis, setAnalysis] = useState<ProductAnalysis | null>(null)
@@ -333,6 +321,7 @@ export function OpportunityPanel() {
                 { name: 'KPMG 安侯建業', ind: '顧問/審計', parade: '無紀錄', paradeNote: '', evidence: 'KPMG 全球 OUT Network 員工群組；贊助 WorldPride Sydney 2023、澳洲 Mardi Gras', tip: '四大中唯一尚未現身台灣遊行者，可對比 EY/Deloitte 已多次出現作說服素材；以 ESG 顧問定位切入', pri: '高', priColor: '#F6B93B' },
                 { name: "Levi's 台灣", ind: '服飾', parade: '無紀錄', paradeNote: '', evidence: "Levi's 為舊金山 Pride 多年官方合作夥伴；全球彩虹限定系列；品牌歷史上長期支持 LGBTQ+ 平權", tip: '服飾品牌在遊行現場極具品牌能見度；提案聯名限定款 + 商業花車，切入年輕消費族群', pri: '中', priColor: '#888' },
                 { name: 'Booking.com 台灣', ind: '旅遊科技', parade: '無紀錄', paradeNote: '', evidence: 'Booking.com 設有同志友善住宿認可標章；贊助阿姆斯特丹 Pride；全球 LGBTQ+ 旅遊市場布局', tip: '以「台灣是亞洲 LGBTQ+ 友善旅遊首選目的地」主題合作切入；提案遊行周邊住宿推薦廣宣聯名', pri: '中', priColor: '#888' },
+                { name: 'Starbucks 星巴克', ind: '餐飲', parade: '無紀錄', paradeNote: '', evidence: '星巴克每年全球驕傲月推出彩虹系列商品；官方 LGBTQ+ 友善職場政策；美國多城市 Pride 長期參與', tip: '以遊行現場品牌體驗（彩虹主題限定飲品站）切入，結合全球驕傲月聯名商品，門檻低、曝光高', pri: '高', priColor: '#F6B93B' },
               ].map((r, i) => (
                 <tr key={r.name} className={`border-b border-border/50 ${i % 2 === 1 ? 'bg-bg2/30' : ''}`}>
                   <td className="px-4 py-2 font-medium text-foreground whitespace-nowrap">{r.name}</td>
@@ -390,6 +379,9 @@ export function OpportunityPanel() {
                 { name: 'VF Taiwan 台灣威富', ind: '服飾戶外', parade: '2 次', note: '2024、2025 隊伍', bg: 'The North Face 全球 Pride 聯名系列；Timberland Pride 企業承諾；VF Corp DEI 年報公開', tip: '以戶外品牌愛護台灣 LGBTQ+ 社群、永續環境雙主軸切入；可提案 TNF 或 Timberland 旗下品牌聯名', pri: '中', pc: '#888' },
                 { name: 'Amazon 台灣', ind: '科技/電商', parade: '2 次', note: '2023、2024 隊伍', bg: 'Amazon 設有 Glamazon LGBTQ+ ERG；贊助西雅圖 Pride；AWS 及 Prime Video 均有 Pride 月活動', tip: '以 AWS 台灣業務、雇主品牌切入；可從 AWS 企業客戶活動切入附帶品牌曝光，強調台灣雲端市場布局', pri: '高', pc: '#F6B93B' },
                 { name: '保樂力加 Pernod Ricard', ind: '酒類飲料', parade: '2 次', note: '2023、2025 隊伍', bg: '旗下 Absolut Vodka 為全球最長期 Pride 贊助商之一（40+ 年）；Chivas、Ballantine\'s 全球 Pride 活動', tip: 'Absolut Pride 品牌基因極強，台灣酒類廣宣限制下以遊行現場品牌曝光（非廣播）切入；花車提案最適合', pri: '高', pc: '#F6B93B' },
+                { name: '富邦金融 Fubon Financial', ind: '金融', parade: '多次', note: '2019–2024 隊伍', bg: '富邦集團積極參與員工 DEI 倡議；台灣規模最大民營金融集團之一，對外宣示具指標意義', tip: '對標同業（高盛、摩根士丹利）已多年出現卻未贊助；以金融業 ESG 社會面評分加分切入，提案企業贊助強化品牌形象', pri: '最高', pc: '#D93025' },
+                { name: '台灣銀行', ind: '金融/公股', parade: '多次', note: '隊伍（多年）', bg: '公股銀行首家以隊伍形式參與遊行，具強烈政策宣示意義；政府永續發展目標（SDGs）框架明確支持', tip: '公股銀行參與贊助象徵意義極強；以政府 DEI 政策方向、ESG 資訊揭露規範切入，強調社會責任指標加分效益', pri: '最高', pc: '#D93025' },
+                { name: 'Marriott 萬豪酒店', ind: '飯店', parade: '3 次', note: '2022–2024 隊伍', bg: 'Marriott International 設有 LGBTQ+ 員工資源群組；旗下品牌酒店參與全球多地 Pride 活動；設有同志友善住宿評等認可', tip: '以遊行官方指定住宿夥伴或友善住宿認可合作切入；可對標 Booking.com 旅遊科技角度，強調台灣 LGBTQ+ 旅遊市場', pri: '高', pc: '#F6B93B' },
               ].map((r, i) => (
                 <tr key={r.name} className={`border-b border-border/50 ${i % 2 === 1 ? 'bg-bg2/30' : ''}`}>
                   <td className="px-4 py-2 font-medium text-foreground whitespace-nowrap">{r.name}</td>
@@ -453,47 +445,6 @@ export function OpportunityPanel() {
         🎯 <strong>行動建議：</strong>優先確保 21 家忠實廠商全數續約（保住 3.2M 基礎），再集中火力聯繫前 5 名流失廠商（預計回收 335k）；同步向有升級空間的廠商提出鈦金／銀級方案。若全部達成，加上引入 2 家新廠商，可達到 <strong>NTD 5.64M</strong>。
       </ActionBox>
 
-      {/* E. 新潛力廠商 */}
-      <SectionCard>
-        <div className="px-5 pt-4 pb-2">
-          <h2 className="text-base font-semibold text-foreground mb-1">E．新潛力廠商（遊行隊伍轉化）</h2>
-          <p className="text-sm text-text-muted mb-3">
-            以下廠商曾以「隊伍」或「全球 Pride」形式參與，尚無商業贊助紀錄，為 2026 年 BD 開發優先目標。
-          </p>
-        </div>
-        <div className="overflow-x-auto border-t border-border">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="bg-bg2 border-b border-border">
-                <th className="text-left px-4 py-3 text-text-muted font-medium">廠商</th>
-                <th className="text-left px-4 py-3 text-text-muted font-medium">產業</th>
-                <th className="text-left px-4 py-3 text-text-muted font-medium">曾出現方式</th>
-                <th className="text-center px-4 py-3 text-text-muted font-medium">優先</th>
-              </tr>
-            </thead>
-            <tbody>
-              {NEW_PROSPECTS.map((p, i) => (
-                <tr key={p.name} className={`border-b border-border/50 ${i % 2 === 1 ? 'bg-bg2/30' : ''}`}>
-                  <td className="px-4 py-3 font-medium text-foreground">{p.name}</td>
-                  <td className="px-4 py-3 text-text-secondary text-xs">{p.category}</td>
-                  <td className="px-4 py-3 text-text-muted text-xs">{p.appeared}</td>
-                  <td className="px-4 py-3 text-center">
-                    <span
-                      className="inline-flex w-6 h-6 rounded-full text-xs font-bold items-center justify-center"
-                      style={p.priority === 'A'
-                        ? { background: '#fff0f6', color: '#e8005a' }
-                        : { background: '#f1f5f9', color: '#64748b' }}
-                    >
-                      {p.priority}
-                    </span>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </SectionCard>
-
       {/* F. 品項留存率 */}
       {!analysis ? (
         <div className="flex items-center justify-center h-24 text-text-muted text-sm">載入中…</div>
@@ -501,7 +452,7 @@ export function OpportunityPanel() {
         <>
           <SectionCard>
             <div className="px-5 pt-4 pb-2">
-              <h2 className="text-base font-semibold text-foreground mb-1">F．品項留存率分析</h2>
+              <h2 className="text-base font-semibold text-foreground mb-1">E．品項留存率分析</h2>
               <p className="text-sm text-text-muted mb-2">品項採用數 ≥ 3 家，依留存率排序（共 {topRetention.length} 個品項）</p>
             </div>
             <div className="overflow-x-auto border-t border-border">
@@ -537,7 +488,7 @@ export function OpportunityPanel() {
           {/* G. 價值落差 */}
           <SectionCard>
             <div className="px-5 pt-4 pb-2">
-              <h2 className="text-base font-semibold text-foreground mb-1">G．贊助金額 vs 品項定價落差</h2>
+              <h2 className="text-base font-semibold text-foreground mb-1">F．贊助金額 vs 品項定價落差</h2>
               <p className="text-sm text-text-muted mb-2">廠商實際付款 vs 品項清單總價差（正數 = 付超過品項定價合計）</p>
             </div>
             <div className="overflow-x-auto border-t border-border">
@@ -573,7 +524,7 @@ export function OpportunityPanel() {
           {/* H. 廠商忠誠度 */}
           <SectionCard>
             <div className="px-5 pt-4 pb-3 border-b border-border">
-              <h2 className="text-base font-semibold text-foreground mb-1">H．廠商忠誠度分析</h2>
+              <h2 className="text-base font-semibold text-foreground mb-1">G．廠商忠誠度分析</h2>
               <p className="text-sm text-text-muted">依忠誠度分數排序的前 20 家廠商，列出他們長期穩定採用的核心品項。</p>
             </div>
             <div className="p-5">
