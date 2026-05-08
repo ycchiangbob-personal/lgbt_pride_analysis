@@ -76,7 +76,7 @@ export function OpportunityPanel() {
 
   const topRetention = useMemo(() => {
     if (!analysis) return []
-    return [...analysis.retention]
+    return [...(analysis.retention ?? [])]
       .filter((r) => r.adopters >= 3)
       .sort((a, b) => b.retention_pct - a.retention_pct)
       .slice(0, 20)
@@ -84,7 +84,7 @@ export function OpportunityPanel() {
 
   const topGaps = useMemo(() => {
     if (!analysis) return []
-    return [...analysis.value_gaps]
+    return [...(analysis.value_gaps ?? [])]
       .sort((a, b) => b.gap - a.gap)
       .slice(0, 20)
   }, [analysis])
@@ -578,7 +578,7 @@ export function OpportunityPanel() {
             </div>
             <div className="p-5">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {analysis.loyalty.slice(0, 20).map((item) => (
+                {(analysis.loyalty ?? []).slice(0, 20).map((item) => (
                   <div key={item.sponsor} className="rounded-lg border border-border p-3" style={{ background: '#fafafa' }}>
                     <div className="flex justify-between items-start mb-2">
                       <div>
