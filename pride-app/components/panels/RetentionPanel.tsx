@@ -136,24 +136,6 @@ export function RetentionPanel() {
     })),
   ], [retention])
 
-  const matrix = useMemo(() => {
-    if (!data) return []
-    const clean = YEARS.reduce<AllData>((acc, yr) => {
-      acc[yr] = (data[yr] ?? []).filter((s) => !isHotel(s))
-      return acc
-    }, {})
-    const allNames = new Set<string>()
-    YEARS.forEach((yr) => clean[yr]?.forEach((s) => allNames.add(s.name_canonical)))
-    return [...allNames].sort().map((name) => ({
-      name,
-      years: YEARS.map((yr) => ({
-        yr,
-        present: !!clean[yr]?.find((s) => s.name_canonical === name),
-        tier: clean[yr]?.find((s) => s.name_canonical === name)?.tier_orig ?? '',
-      })),
-    }))
-  }, [data])
-
   const colorForRate = (r: number) =>
     r >= 50 ? '#059669' : r >= 40 ? '#d97706' : '#e8005a'
 
@@ -162,91 +144,6 @@ export function RetentionPanel() {
       <div>
         <h1 className="text-2xl font-bold text-foreground">留存率分析</h1>
         <p className="text-xs text-text-muted mt-1">分析範圍：級別廠商（白金／鈦金／黃金／銀／銅）＋單購 &gt; NTD 50,000；排除市集與友善飯店。</p>
-      </div>
-
-      {/* Tenure churn — Year 1 / 2 / 3 */}
-      <div className="rounded-xl border border-border bg-surface p-5" style={{ boxShadow: 'var(--shadow-sm)' }}>
-        <h2 className="text-base font-semibold text-foreground mb-1">出席年資 vs 流失率（2022–2025，篩選後）</h2>
-        <p className="text-sm text-text-muted mb-4">三個轉換期合計（n=118 廠商次）。撐過第 1 年是最關鍵的留存節點；進入第 3 年後流失率降至 13%。</p>
-        <ResponsiveContainer width="100%" height={130}>
-          <BarChart layout="vertical" data={TENURE_DATA} margin={{ top: 4, right: 48, left: 8, bottom: 4 }}>
-            <XAxis type="number" domain={[0, 70]} tickFormatter={(v) => `${v}%`} tick={{ fontSize: 11, fill: '#94a3b8' }} />
-            <YAxis type="category" dataKey="label" width={58} tick={{ fontSize: 12, fill: '#475569' }} />
-            <Tooltip formatter={(val) => [`${val}%`, '流失率']} contentStyle={{ borderRadius: 8, border: '1px solid #e2e8f0', fontSize: 12 }} />
-            <Bar dataKey="rate" radius={4}>
-              {TENURE_DATA.map((d) => <Cell key={d.label} fill={d.color} />)}
-              <LabelList dataKey="rate" position="right" style={{ fontSize: 12, fontWeight: 700 }} formatter={(v: unknown) => `${v}%`} />
-            </Bar>
-          </BarChart>
-        </ResponsiveContainer>
-        <div className="overflow-x-auto mt-3">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="bg-bg2 border-b border-border">
-                <th className="text-left px-3 py-2 text-text-muted font-medium">出席年資</th>
-                <th className="text-right px-3 py-2 text-text-muted font-medium">流失</th>
-                <th className="text-right px-3 py-2 text-text-muted font-medium">留存</th>
-                <th className="text-right px-3 py-2 text-text-muted font-medium">合計</th>
-                <th className="text-right px-3 py-2 text-text-muted font-medium">流失率</th>
-              </tr>
-            </thead>
-            <tbody>
-              {TENURE_DATA.map((d, i) => (
-                <tr key={d.label} className={i % 2 === 1 ? 'bg-bg2/40' : ''}>
-                  <td className="px-3 py-2 font-medium">{d.label}</td>
-                  <td className="px-3 py-2 text-right" style={{ color: '#c62828' }}>{d.nChurn}</td>
-                  <td className="px-3 py-2 text-right" style={{ color: '#2e7d32' }}>{d.nRetain}</td>
-                  <td className="px-3 py-2 text-right text-text-secondary">{d.nChurn + d.nRetain}</td>
-                  <td className="px-3 py-2 text-right font-bold" style={{ color: d.color }}>{d.rate}%</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      {/* Donor-type proof — 2×2 comparison */}
-      <div className="rounded-xl border border-border bg-surface p-5" style={{ boxShadow: 'var(--shadow-sm)' }}>
-        <h2 className="text-base font-semibold text-foreground mb-1">流失與廠商動機無關：兩類各一正一反</h2>
-        <p className="text-sm text-text-muted mb-4">
-          無論廠商是出於 DEI 價值認同還是商業品牌曝光，決定他們留下或離開的是<strong>第幾年贊助</strong>與<strong>選擇哪個級別</strong>，不是贊助動機。
-        </p>
-        <div className="grid grid-cols-2 gap-4">
-          {DONOR_TYPES.map((col) => (
-            <div key={col.category}>
-              <div className="text-sm font-bold pb-2 mb-3" style={{ color: col.color, borderBottom: `2px solid ${col.borderColor}` }}>
-                {col.category}
-              </div>
-              {[{ role: '留存', data: col.loyalist, bg: col.bgHeader, isChurner: false },
-                { role: '流失', data: col.churner,  bg: '#fff8f8',    isChurner: true  }].map(({ role, data, bg, isChurner }) => (
-                <div key={role} className="rounded-lg p-3 mb-2 text-sm" style={{ background: bg }}>
-                  <div className="font-bold text-foreground">{data.name}</div>
-                  <div className="text-xs mt-0.5 mb-2" style={{ color: '#666' }}>{data.detail}</div>
-                  <div className="flex gap-1 flex-wrap">
-                    {YEARS.map((yr, idx) => {
-                      const v = data.years[idx]
-                      return (
-                        <span key={yr} className="text-xs font-mono px-1.5 py-0.5 rounded" style={{
-                          background: v === true ? '#dcfce7' : v === false ? '#fee2e2' : '#f1f5f9',
-                          color:      v === true ? '#166534' : v === false ? '#991b1b' : '#94a3b8',
-                          fontWeight: v !== null ? 700 : 400,
-                        }}>
-                          {yr} {v === true ? '✓' : v === false ? '✗' : '—'}
-                        </span>
-                      )
-                    })}
-                  </div>
-                  <div className="text-xs mt-1.5" style={{ color: isChurner ? '#e8445a' : '#2e7d32' }}>
-                    → {isChurner ? '首年即流失' : '4 年連續留存'}
-                  </div>
-                </div>
-              ))}
-            </div>
-          ))}
-        </div>
-        <p className="text-sm mt-4 pt-3 border-t border-border" style={{ color: '#555' }}>
-          <strong>結論：</strong>GILEAD 和 G-Star 動機截然不同，卻都連續贊助 4 年；GaGaoLaLa 和 lululemon 動機截然不同，卻都在首年離開。流失的預測因子是<strong>年資</strong>（第 1 年 56% 流失）與<strong>級別</strong>（銅／花車 &gt;50%），不是廠商為何而來。
-        </p>
       </div>
 
       {/* Bar chart 1 — retention rate history */}
@@ -378,47 +275,90 @@ export function RetentionPanel() {
         </div>
       )}
 
-      {/* Sponsor presence matrix (hotel-excluded) */}
-      {data && (
-        <div className="rounded-xl border border-border bg-surface overflow-hidden" style={{ boxShadow: 'var(--shadow-sm)' }}>
-          <h2 className="text-base font-semibold text-foreground px-5 pt-4 pb-3 border-b border-border">
-            廠商出席年度一覽（2022–2025）
-          </h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="bg-bg2">
-                  <th className="text-left px-4 py-2 text-text-muted font-medium">廠商</th>
-                  {YEARS.map((yr) => (
-                    <th key={yr} className="text-center px-3 py-2 text-text-muted font-medium">{yr}</th>
-                  ))}
+      {/* Tenure churn — Year 1 / 2 / 3 */}
+      <div className="rounded-xl border border-border bg-surface p-5" style={{ boxShadow: 'var(--shadow-sm)' }}>
+        <h2 className="text-base font-semibold text-foreground mb-1">出席年資 vs 流失率（2022–2025，篩選後）</h2>
+        <p className="text-sm text-text-muted mb-4">三個轉換期合計（n=118 廠商次）。撐過第 1 年是最關鍵的留存節點；進入第 3 年後流失率降至 13%。</p>
+        <ResponsiveContainer width="100%" height={130}>
+          <BarChart layout="vertical" data={TENURE_DATA} margin={{ top: 4, right: 48, left: 8, bottom: 4 }}>
+            <XAxis type="number" domain={[0, 70]} tickFormatter={(v) => `${v}%`} tick={{ fontSize: 11, fill: '#94a3b8' }} />
+            <YAxis type="category" dataKey="label" width={58} tick={{ fontSize: 12, fill: '#475569' }} />
+            <Tooltip formatter={(val) => [`${val}%`, '流失率']} contentStyle={{ borderRadius: 8, border: '1px solid #e2e8f0', fontSize: 12 }} />
+            <Bar dataKey="rate" radius={4}>
+              {TENURE_DATA.map((d) => <Cell key={d.label} fill={d.color} />)}
+              <LabelList dataKey="rate" position="right" style={{ fontSize: 12, fontWeight: 700 }} formatter={(v: unknown) => `${v}%`} />
+            </Bar>
+          </BarChart>
+        </ResponsiveContainer>
+        <div className="overflow-x-auto mt-3">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="bg-bg2 border-b border-border">
+                <th className="text-left px-3 py-2 text-text-muted font-medium">出席年資</th>
+                <th className="text-right px-3 py-2 text-text-muted font-medium">流失</th>
+                <th className="text-right px-3 py-2 text-text-muted font-medium">留存</th>
+                <th className="text-right px-3 py-2 text-text-muted font-medium">合計</th>
+                <th className="text-right px-3 py-2 text-text-muted font-medium">流失率</th>
+              </tr>
+            </thead>
+            <tbody>
+              {TENURE_DATA.map((d, i) => (
+                <tr key={d.label} className={i % 2 === 1 ? 'bg-bg2/40' : ''}>
+                  <td className="px-3 py-2 font-medium">{d.label}</td>
+                  <td className="px-3 py-2 text-right" style={{ color: '#c62828' }}>{d.nChurn}</td>
+                  <td className="px-3 py-2 text-right" style={{ color: '#2e7d32' }}>{d.nRetain}</td>
+                  <td className="px-3 py-2 text-right text-text-secondary">{d.nChurn + d.nRetain}</td>
+                  <td className="px-3 py-2 text-right font-bold" style={{ color: d.color }}>{d.rate}%</td>
                 </tr>
-              </thead>
-              <tbody>
-                {matrix.map((row, i) => (
-                  <tr key={row.name} className={i % 2 === 0 ? '' : 'bg-bg2/40'}>
-                    <td className="px-4 py-2 text-foreground font-medium">{row.name}</td>
-                    {row.years.map(({ yr, present, tier }) => (
-                      <td key={yr} className="px-3 py-2 text-center">
-                        {present ? (
-                          <span
-                            className="inline-block px-2 py-0.5 rounded text-xs font-medium"
-                            style={{ background: '#f3e8ff', color: '#7c3aed' }}
-                          >
-                            {tier ? tier.replace('級', '') : '✓'}
-                          </span>
-                        ) : (
-                          <span className="text-border">—</span>
-                        )}
-                      </td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+              ))}
+            </tbody>
+          </table>
         </div>
-      )}
+      </div>
+
+      {/* Donor-type proof — 2×2 comparison */}
+      <div className="rounded-xl border border-border bg-surface p-5" style={{ boxShadow: 'var(--shadow-sm)' }}>
+        <h2 className="text-base font-semibold text-foreground mb-1">流失與廠商動機無關：兩類各一正一反</h2>
+        <p className="text-sm text-text-muted mb-4">
+          無論廠商是出於 DEI 價值認同還是商業品牌曝光，決定他們留下或離開的是<strong>第幾年贊助</strong>與<strong>選擇哪個級別</strong>，不是贊助動機。
+        </p>
+        <div className="grid grid-cols-2 gap-4">
+          {DONOR_TYPES.map((col) => (
+            <div key={col.category}>
+              <div className="text-sm font-bold pb-2 mb-3" style={{ color: col.color, borderBottom: `2px solid ${col.borderColor}` }}>
+                {col.category}
+              </div>
+              {[{ role: '留存', data: col.loyalist, bg: col.bgHeader, isChurner: false },
+                { role: '流失', data: col.churner,  bg: '#fff8f8',    isChurner: true  }].map(({ role, data, bg, isChurner }) => (
+                <div key={role} className="rounded-lg p-3 mb-2 text-sm" style={{ background: bg }}>
+                  <div className="font-bold text-foreground">{data.name}</div>
+                  <div className="text-xs mt-0.5 mb-2" style={{ color: '#666' }}>{data.detail}</div>
+                  <div className="flex gap-1 flex-wrap">
+                    {YEARS.map((yr, idx) => {
+                      const v = data.years[idx]
+                      return (
+                        <span key={yr} className="text-xs font-mono px-1.5 py-0.5 rounded" style={{
+                          background: v === true ? '#dcfce7' : v === false ? '#fee2e2' : '#f1f5f9',
+                          color:      v === true ? '#166534' : v === false ? '#991b1b' : '#94a3b8',
+                          fontWeight: v !== null ? 700 : 400,
+                        }}>
+                          {yr} {v === true ? '✓' : v === false ? '✗' : '—'}
+                        </span>
+                      )
+                    })}
+                  </div>
+                  <div className="text-xs mt-1.5" style={{ color: isChurner ? '#e8445a' : '#2e7d32' }}>
+                    → {isChurner ? '首年即流失' : '4 年連續留存'}
+                  </div>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+        <p className="text-sm mt-4 pt-3 border-t border-border" style={{ color: '#555' }}>
+          <strong>結論：</strong>GILEAD 和 G-Star 動機截然不同，卻都連續贊助 4 年；GaGaoLaLa 和 lululemon 動機截然不同，卻都在首年離開。流失的預測因子是<strong>年資</strong>（第 1 年 56% 流失）與<strong>級別</strong>（銅／花車 &gt;50%），不是廠商為何而來。
+        </p>
+      </div>
     </div>
   )
 }
