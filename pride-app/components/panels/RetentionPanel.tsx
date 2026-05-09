@@ -17,23 +17,26 @@ type AllData = Record<string, Sponsor[]>
 
 const YEARS = ['2022', '2023', '2024', '2025']
 
-// Tenure churn data — filtered analysis (TIER + SINGLE>50k, excl. 市集/飯店), churn_v2.py output
+// Tenure retention data — filtered analysis (TIER + SINGLE>50k, excl. 市集/飯店), churn_v2.py output
 const TENURE_DATA = [
-  { label: '首次贊助', rate: 56.0, nChurn: 42, nRetain: 33, color: '#e8445a' },
-  { label: '第 2 年',  rate: 25.0, nChurn: 7,  nRetain: 21, color: '#f4a93a' },
-  { label: '第 3 年',  rate: 13.3, nChurn: 2,  nRetain: 13, color: '#4caf50' },
+  { label: '首次贊助', rate: 44.0, nChurn: 42, nRetain: 33, color: '#e8445a' },
+  { label: '第 2 年',  rate: 75.0, nChurn: 7,  nRetain: 21, color: '#f4a93a' },
+  { label: '第 3 年',  rate: 86.7, nChurn: 2,  nRetain: 13, color: '#4caf50' },
 ]
 
 // Donor-type proof examples — verified from investigate_q123.py
+// retentionRate: pooled 2022-2025 留存率（手動分類後）
 const DONOR_TYPES = [
   {
     category: '價值導向（DEI／社群連結）',
+    retentionRate: 71.9,
     color: '#2e7d32', borderColor: '#4caf50', bgHeader: '#f0fdf4',
     loyalist: { name: 'GILEAD（吉立亞醫藥）', detail: '醫藥・鈦金級・NTD 550k/年', years: [true, true, true, true] },
     churner:  { name: 'GaGaoLaLa', detail: 'LGBTQ+ 影音平台・白銀級・NTD 400k', years: [null, true, false, null] },
   },
   {
     category: '商業導向（品牌曝光／市場活化）',
+    retentionRate: 49.4,
     color: '#1565c0', borderColor: '#4472C4', bgHeader: '#eff6ff',
     loyalist: { name: 'G-Star', detail: '時尚・銀級・NTD 198k/年', years: [true, true, true, true] },
     churner:  { name: 'lululemon', detail: '運動服飾・白銀級・NTD 300k', years: [true, false, null, null] },
@@ -293,15 +296,15 @@ export function RetentionPanel() {
         </div>
       )}
 
-      {/* Tenure churn — Year 1 / 2 / 3 */}
+      {/* Tenure retention — Year 1 / 2 / 3 */}
       <div className="rounded-xl border border-border bg-surface p-5" style={{ boxShadow: 'var(--shadow-sm)' }}>
-        <h2 className="text-base font-semibold text-foreground mb-1">出席年資 vs 流失率（2022–2025，篩選後）</h2>
-        <p className="text-sm text-text-muted mb-4">三個轉換期合計（n=118 廠商次）。撐過第 1 年是最關鍵的留存節點；進入第 3 年後流失率降至 13%。</p>
+        <h2 className="text-base font-semibold text-foreground mb-1">出席年資 vs 留存率（2022–2025，篩選後）</h2>
+        <p className="text-sm text-text-muted mb-4">三個轉換期合計（n=118 廠商次）。第 1 年留存率僅 44%，撐過後大幅躍升；進入第 3 年後留存率達 87%。</p>
         <ResponsiveContainer width="100%" height={130}>
           <BarChart layout="vertical" data={TENURE_DATA} margin={{ top: 4, right: 48, left: 8, bottom: 4 }}>
-            <XAxis type="number" domain={[0, 70]} tickFormatter={(v) => `${v}%`} tick={{ fontSize: 11, fill: '#94a3b8' }} />
+            <XAxis type="number" domain={[0, 100]} tickFormatter={(v) => `${v}%`} tick={{ fontSize: 11, fill: '#94a3b8' }} />
             <YAxis type="category" dataKey="label" width={58} tick={{ fontSize: 12, fill: '#475569' }} />
-            <Tooltip formatter={(val) => [`${val}%`, '流失率']} contentStyle={{ borderRadius: 8, border: '1px solid #e2e8f0', fontSize: 12 }} />
+            <Tooltip formatter={(val) => [`${val}%`, '留存率']} contentStyle={{ borderRadius: 8, border: '1px solid #e2e8f0', fontSize: 12 }} />
             <Bar dataKey="rate" radius={4}>
               {TENURE_DATA.map((d) => <Cell key={d.label} fill={d.color} />)}
               <LabelList dataKey="rate" position="right" style={{ fontSize: 12, fontWeight: 700 }} formatter={(v: unknown) => `${v}%`} />
@@ -316,7 +319,7 @@ export function RetentionPanel() {
                 <th className="text-right px-3 py-2 text-text-muted font-medium">流失</th>
                 <th className="text-right px-3 py-2 text-text-muted font-medium">留存</th>
                 <th className="text-right px-3 py-2 text-text-muted font-medium">合計</th>
-                <th className="text-right px-3 py-2 text-text-muted font-medium">流失率</th>
+                <th className="text-right px-3 py-2 text-text-muted font-medium">留存率</th>
               </tr>
             </thead>
             <tbody>
@@ -336,15 +339,18 @@ export function RetentionPanel() {
 
       {/* Donor-type proof — 2×2 comparison */}
       <div className="rounded-xl border border-border bg-surface p-5" style={{ boxShadow: 'var(--shadow-sm)' }}>
-        <h2 className="text-base font-semibold text-foreground mb-1">流失與廠商動機無關：兩類各一正一反</h2>
+        <h2 className="text-base font-semibold text-foreground mb-1">廠商動機不同，留存模式截然不同——但真正的預測因子是年資與級別</h2>
         <p className="text-sm text-text-muted mb-4">
-          無論廠商是出於 DEI 價值認同還是商業品牌曝光，決定他們留下或離開的是<strong>第幾年贊助</strong>與<strong>選擇哪個級別</strong>，不是贊助動機。
+          價值導向廠商整體留存率較高，但背後原因是它們傾向選擇較高級別、且多為早期進場的長期夥伴。兩類型內部都有留存者也有流失者——動機本身無法預測個別結果。
         </p>
         <div className="grid grid-cols-2 gap-4">
           {DONOR_TYPES.map((col) => (
             <div key={col.category}>
-              <div className="text-sm font-bold pb-2 mb-3" style={{ color: col.color, borderBottom: `2px solid ${col.borderColor}` }}>
-                {col.category}
+              <div className="pb-2 mb-3" style={{ borderBottom: `2px solid ${col.borderColor}` }}>
+                <div className="text-sm font-bold" style={{ color: col.color }}>{col.category}</div>
+                <div className="text-xs mt-0.5" style={{ color: '#888' }}>
+                  2022–2025 平均留存率：<strong style={{ color: col.color }}>{col.retentionRate}%</strong>
+                </div>
               </div>
               {[{ role: '留存', data: col.loyalist, bg: col.bgHeader, isChurner: false },
                 { role: '流失', data: col.churner,  bg: '#fff8f8',    isChurner: true  }].map(({ role, data, bg, isChurner }) => (
@@ -374,7 +380,7 @@ export function RetentionPanel() {
           ))}
         </div>
         <p className="text-sm mt-4 pt-3 border-t border-border" style={{ color: '#555' }}>
-          <strong>結論：</strong>GILEAD 和 G-Star 動機截然不同，卻都連續贊助 4 年；GaGaoLaLa 和 lululemon 動機截然不同，卻都在首年離開。流失的預測因子是<strong>年資</strong>（第 1 年 56% 流失）與<strong>級別</strong>（銅／花車 &gt;50%），不是廠商為何而來。
+          <strong>結論：</strong>價值導向廠商留存率較高（72%），但其中多數是早期進場、選擇高階級別的長期夥伴——差異來自年資與級別，不是動機本身。GILEAD 和 G-Star 動機截然不同，卻都連續贊助 4 年；GaGaoLaLa 和 lululemon 動機截然不同，卻都在首年離開。<strong>年資（第 1 年留存率僅 44%）與級別（銅／花車 &gt;50% 流失）才是可操作的預測因子。</strong>
         </p>
       </div>
     </div>
