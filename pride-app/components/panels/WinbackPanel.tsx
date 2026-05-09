@@ -59,7 +59,7 @@ const G2024: Entry[] = [
 ]
 
 const G2023: Entry[] = [
-  { rank: 1,  name: 'GaGaoLaLa',                                                 industry: '影音',     tier: 'T3',  amount: 400000, yearsDisplay: '3 年',     score: 57.6, dimmed: false },
+  { rank: 1,  name: 'GaGaoLaLa',                                                 industry: '影音',     tier: 'T4',  amount: 400000, yearsDisplay: '3 年',     score: 57.6, dimmed: false },
   { rank: 2,  name: 'PINKOI',                                                     industry: '電商',     tier: 'T4',  amount: 180000, yearsDisplay: '3 年',     score: 25.9, dimmed: false },
   { rank: 3,  name: 'Durex',                                                      industry: '生活',     tier: 'T4',  amount: 200000, yearsDisplay: '2 年',     score: 26.4, dimmed: false },
   { rank: 4,  name: '飛比',                                                       industry: '電商',     tier: 'T4',  amount: 180000, yearsDisplay: '僅1次 ↓', score: 10.8, dimmed: true },

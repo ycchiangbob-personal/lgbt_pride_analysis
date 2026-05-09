@@ -78,6 +78,11 @@ export function PurchaseBehaviorPanel() {
         ))}
       </div>
 
+      {/* Scope disclaimer */}
+      <div className="rounded-md border border-blue-200 bg-blue-50 px-4 py-3 text-sm text-blue-800">
+        分析範圍：2019–2025 年（不含 2021）曾贊助 <strong>2 年以上</strong>的品牌，共 42 家。排除市集攤位與友善飯店。單年首次廠商不納入（無跨年行為可分析）。總覽頁的 52 家為 2024 年當年所有級別 ＋ 單購贊助商，計算範圍不同。
+      </div>
+
       {/* Filter */}
       <div className="flex gap-2 flex-wrap">
         {([['all', '全部'], ['tier', '級別贊助者'], ['single', '單購者'], ['switch', '曾切換行為']] as const).map(([f, label]) => (
