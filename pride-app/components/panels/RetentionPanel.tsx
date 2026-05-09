@@ -47,8 +47,18 @@ const STATIC_HISTORY = [
   { label: '2021→2022', rate: 66.7, isRef: true },
 ]
 
-const isHotel = (s: Sponsor) =>
-  s.tier_orig?.includes('飯店') || s.industry?.includes('飯店') || s.industry?.includes('旅館')
+const SINGLE_KEYWORDS = ['單買', '花車', '單購', '商業花車']
+
+// Exclude: hotels, market booths, and single-purchase donors with amount ≤ NTD 50,000
+const shouldExclude = (s: Sponsor) => {
+  const tier = s.tier_orig ?? ''
+  const ind  = s.industry  ?? ''
+  if (tier.includes('飯店') || ind.includes('飯店') || ind.includes('旅館')) return true
+  if (tier.includes('市集') || ind.includes('市集')) return true
+  const isSingle = SINGLE_KEYWORDS.some((k) => tier.includes(k))
+  if (isSingle && (s.amount ?? 0) <= 50000) return true
+  return false
+}
 
 type RetentionRow = {
   label: string; from: string; to: string
@@ -63,8 +73,8 @@ function computeRetention(data: AllData): RetentionRow[] {
     { from: '2023', to: '2024' },
     { from: '2024', to: '2025' },
   ].map(({ from, to }) => {
-    const fromSponsors = (data[from] ?? []).filter((s) => !isHotel(s))
-    const toNames     = new Set((data[to] ?? []).filter((s) => !isHotel(s)).map((s) => s.name_canonical))
+    const fromSponsors = (data[from] ?? []).filter((s) => !shouldExclude(s))
+    const toNames     = new Set((data[to] ?? []).filter((s) => !shouldExclude(s)).map((s) => s.name_canonical))
     const fromNames   = fromSponsors.map((s) => s.name_canonical)
     const fromSet     = new Set(fromNames)
     const retained    = [...fromSet].filter((n) => toNames.has(n))
@@ -143,14 +153,22 @@ export function RetentionPanel() {
     <div className="space-y-6">
       <div>
         <h1 className="text-2xl font-bold text-foreground">留存率分析</h1>
-        <p className="text-xs text-text-muted mt-1">分析範圍：級別廠商（白金／鈦金／黃金／銀／銅）＋單購 &gt; NTD 50,000；排除市集與友善飯店。</p>
+      </div>
+
+      {/* Scope disclaimer */}
+      <div className="rounded-xl border border-blue-200 bg-blue-50 p-4 text-sm text-blue-900">
+        <strong>ℹ️ 計算範圍說明：</strong>本頁所有留存率數字僅涵蓋
+        <strong>級別贊助廠商</strong>（白金／鈦金／黃金／銀／銅）與
+        <strong>單購金額 &gt; NTD 50,000</strong> 的廠商。
+        彩虹市集攤位與友善飯店已全數排除——此兩類廠商單次金額過低，
+        且參與形式與商業贊助廠商不同，不列入商業合作留存分析。
       </div>
 
       {/* Bar chart 1 — retention rate history */}
       <div className="rounded-xl border border-border bg-surface p-5" style={{ boxShadow: 'var(--shadow-sm)' }}>
         <h2 className="text-base font-semibold text-foreground mb-2">每年有多少去年的廠商今年繼續贊助？（2019–2025）</h2>
         <p className="text-sm text-text-muted mb-4">
-          留存率 = 去年有贊助的廠商中，今年繼續合作的比例。灰色柱子（2019–2021）因原始資料不完整，數字僅供參考。<strong>2024→2025 的留存率為 39.7%，是近四年最低點。</strong>
+          留存率 = 去年有贊助的廠商中，今年繼續合作的比例。灰色柱子（2019–2021）因原始資料不完整，數字僅供參考。藍色柱子（2022–2025）依篩選後名單計算。
         </p>
         <ResponsiveContainer width="100%" height={250}>
           <BarChart data={chart1Data} margin={{ top: 28, right: 16, left: 0, bottom: 0 }}>
@@ -180,7 +198,7 @@ export function RetentionPanel() {
       <div className="rounded-xl border border-border bg-surface p-5" style={{ boxShadow: 'var(--shadow-sm)' }}>
         <h2 className="text-base font-semibold text-foreground mb-2">流失廠商 vs 留存廠商——上一年合計贊助金額（2022–2025）</h2>
         <p className="text-sm text-text-muted mb-4">
-          紅柱 = 流失廠商在前一年的合計金額（該收入不再進來）；藍柱 = 留存廠商在前一年的合計金額（成功保住的收入）。2024→2025 的流失均額雖低（每家 84k），但因流失了 47 家，<strong>合計仍達 NTD 3.97M</strong>——低均額是 2024 年大量引入低單價飯店廠商的組合效果，並非情況好轉。
+          紅柱 = 流失廠商在前一年的合計金額（該收入不再進來）；藍柱 = 留存廠商在前一年的合計金額（成功保住的收入）。數字已依篩選範圍計算，僅含級別廠商與單購 &gt; 50k。
         </p>
         <ResponsiveContainer width="100%" height={230}>
           <BarChart data={chart2Data} margin={{ top: 28, right: 16, left: 0, bottom: 0 }}>
