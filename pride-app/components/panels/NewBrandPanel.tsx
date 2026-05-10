@@ -45,36 +45,32 @@ function changeBadge(ct: string) {
 }
 
 const SURVIVAL_CHART = [
-  { year: '2016→2017', rate: 53.3, isRef: true },
-  { year: '2017→2018', rate: 41.7, isRef: true },
-  { year: '2018→2019', rate: 0.0,  isRef: true },
-  { year: '2019→2020', rate: 0,    isRef: true },
-  { year: '2020→2021', rate: 20.0, isRef: true },
+  { year: '2018→2019', rate: 14.3, isRef: true },
+  { year: '2019→2020', rate: 25.0, isRef: true },
+  { year: '2020→2021', rate: 33.3, isRef: true },
   { year: '2021→2022', rate: 50.0, isRef: true },
-  { year: '2022→2023', rate: 30.0, isRef: false },
-  { year: '2023→2024', rate: 28.6, isRef: false },
-  { year: '2024→2025', rate: 20.0, isRef: false },
+  { year: '2022→2023', rate: 33.3, isRef: false },
+  { year: '2023→2024', rate: 36.8, isRef: false },
+  { year: '2024→2025', rate: 33.3, isRef: false },
 ]
 
 const SURVIVAL_TABLE = [
-  { yr: '2016 年新廠商', isRef: true, newCnt: 15, kept: 8,  rate: '53.3%', rateColor: '#059669' },
-  { yr: '2017 年新廠商', isRef: true, newCnt: 12, kept: 5,  rate: '41.7%', rateColor: '#d97706' },
-  { yr: '2018 年新廠商', isRef: true, newCnt: 7,  kept: 0,  rate: '0.0%',  rateColor: '#D93025' },
-  { yr: '2019 年新廠商', isRef: true, newCnt: 0,  kept: 0,  rate: '0%',    rateColor: '#D93025' },
-  { yr: '2020 年新廠商', isRef: true, newCnt: 30, kept: 6,  rate: '20.0%', rateColor: '#D93025' },
-  { yr: '2021 年新廠商', isRef: true, newCnt: 4,  kept: 2,  rate: '50.0%', rateColor: '#059669' },
-  { yr: '2022 年新廠商', isRef: false, newCnt: 20, kept: 6, rate: '30.0%', rateColor: '#d97706' },
-  { yr: '2023 年新廠商', isRef: false, newCnt: 21, kept: 6, rate: '28.6%', rateColor: '#d97706' },
-  { yr: '2024 年新廠商', isRef: false, newCnt: 50, kept: 10, rate: '20.0%', rateColor: '#D93025' },
+  { yr: '2016–2017',     isRef: true,  newCnt: 0,  kept: 0, rate: 'N/A',   rateColor: '#94a3b8' },
+  { yr: '2018 年新廠商', isRef: true,  newCnt: 14, kept: 2, rate: '14.3%', rateColor: '#D93025' },
+  { yr: '2019 年新廠商', isRef: true,  newCnt: 8,  kept: 2, rate: '25.0%', rateColor: '#D93025' },
+  { yr: '2020 年新廠商', isRef: true,  newCnt: 9,  kept: 3, rate: '33.3%', rateColor: '#d97706' },
+  { yr: '2021 年新廠商', isRef: true,  newCnt: 4,  kept: 2, rate: '50.0%', rateColor: '#059669' },
+  { yr: '2022 年新廠商', isRef: false, newCnt: 18, kept: 6, rate: '33.3%', rateColor: '#d97706' },
+  { yr: '2023 年新廠商', isRef: false, newCnt: 19, kept: 7, rate: '36.8%', rateColor: '#d97706' },
+  { yr: '2024 年新廠商', isRef: false, newCnt: 21, kept: 7, rate: '33.3%', rateColor: '#d97706' },
 ]
 
 const TYPE_TABLE = [
-  { type: 'T3+ (白金/黃金)',  cnt: 2,  kept: 0,  rate: '0.0%',  rateColor: '#D93025' },
-  { type: 'T3 鈦金 (白銀)',  cnt: 4,  kept: 2,  rate: '50.0%', rateColor: '#059669' },
-  { type: 'T4 銀',           cnt: 22, kept: 7,  rate: '31.8%', rateColor: '#d97706' },
-  { type: 'T5 銅',           cnt: 8,  kept: 3,  rate: '37.5%', rateColor: '#d97706' },
-  { type: '花車/單買',        cnt: 27, kept: 6,  rate: '22.2%', rateColor: '#D93025' },
-  { type: '其他',             cnt: 28, kept: 4,  rate: '14.3%', rateColor: '#D93025' },
+  { type: 'T1/T2 白金/黃金', cnt: 2,  kept: 1, rate: '50.0%', rateColor: '#059669' },
+  { type: 'T3 鈦金/白銀',   cnt: 5,  kept: 3, rate: '60.0%', rateColor: '#059669' },
+  { type: 'T4 銀',           cnt: 24, kept: 8, rate: '33.3%', rateColor: '#d97706' },
+  { type: 'T5 銅',           cnt: 8,  kept: 3, rate: '37.5%', rateColor: '#d97706' },
+  { type: '花車/單買 (&gt;50k)', cnt: 19, kept: 5, rate: '26.3%', rateColor: '#D93025' },
 ]
 
 type PriorityEntry = {
@@ -83,27 +79,13 @@ type PriorityEntry = {
 }
 
 const FOLLOW_UP_2025: PriorityEntry[] = [
-  { name: 'JINS',           type: 'T3 鈦金', typeStyle: { bg: '#4472C420', color: '#4472C4' }, amount: 500000, priority: '★★★', priColor: '#1B7A3E' },
-  { name: 'Johnnie Walker', type: 'T4 銀',   typeStyle: { bg: '#70AD4720', color: '#70AD47' }, amount: 220000, priority: '★★★', priColor: '#1B7A3E' },
-  { name: '聯名商品',        type: '其他',    typeStyle: { bg: '#aaa2',    color: '#888'    }, amount: 160000, priority: '★★',  priColor: '#d97706' },
-  { name: 'TFC 臺北婦產科診所', type: 'T5 銅', typeStyle: { bg: '#ED7D3120', color: '#ED7D31' }, amount: 120000, priority: '★★',  priColor: '#d97706' },
-  { name: 'IM Adult',       type: '花車',    typeStyle: { bg: '#5BC0EB20', color: '#5BC0EB' }, amount: 120000, priority: '★★',  priColor: '#d97706' },
-  { name: 'TSMC',           type: '花車',    typeStyle: { bg: '#5BC0EB20', color: '#5BC0EB' }, amount: 120000, priority: '★★',  priColor: '#d97706' },
-  { name: 'FNF',            type: '花車',    typeStyle: { bg: '#5BC0EB20', color: '#5BC0EB' }, amount: 120000, priority: '★★',  priColor: '#d97706' },
-  { name: '國泰萬怡',        type: '友善飯店', typeStyle: { bg: '#aaa2',    color: '#888'    }, amount: 40000,  priority: '★',   priColor: '#D93025' },
-  { name: '和逸飯店',        type: '友善飯店', typeStyle: { bg: '#aaa2',    color: '#888'    }, amount: 40000,  priority: '★',   priColor: '#D93025' },
-  { name: '環球影城',        type: '其他',    typeStyle: { bg: '#aaa2',    color: '#888'    }, amount: 36000,  priority: '★',   priColor: '#D93025' },
-  { name: '華納兄弟',        type: '單買',    typeStyle: { bg: '#5BC0EB20', color: '#5BC0EB' }, amount: 36000,  priority: '★',   priColor: '#D93025' },
-  { name: '大直英迪格',      type: '友善飯店', typeStyle: { bg: '#aaa2',    color: '#888'    }, amount: 25000,  priority: '★',   priColor: '#D93025' },
-  { name: '慕軒飯店',        type: '友善飯店', typeStyle: { bg: '#aaa2',    color: '#888'    }, amount: 25000,  priority: '★',   priColor: '#D93025' },
-  { name: 'amba',           type: '友善飯店', typeStyle: { bg: '#aaa2',    color: '#888'    }, amount: 25000,  priority: '★',   priColor: '#D93025' },
-  { name: '君悅飯店',        type: '友善飯店', typeStyle: { bg: '#aaa2',    color: '#888'    }, amount: 25000,  priority: '★',   priColor: '#D93025' },
-  { name: '新思科技',        type: '單買',    typeStyle: { bg: '#5BC0EB20', color: '#5BC0EB' }, amount: 10000,  priority: '★',   priColor: '#D93025' },
-  { name: '中山雅樂軒',      type: '友善飯店', typeStyle: { bg: '#aaa2',    color: '#888'    }, amount: 10000,  priority: '★',   priColor: '#D93025' },
-  { name: '希爾頓逸林',      type: '友善飯店', typeStyle: { bg: '#aaa2',    color: '#888'    }, amount: 10000,  priority: '★',   priColor: '#D93025' },
-  { name: '南港老爺',        type: '友善飯店', typeStyle: { bg: '#aaa2',    color: '#888'    }, amount: 10000,  priority: '★',   priColor: '#D93025' },
-  { name: '大安伊普索',      type: '友善飯店', typeStyle: { bg: '#aaa2',    color: '#888'    }, amount: 10000,  priority: '★',   priColor: '#D93025' },
-  { name: '金普頓大安',      type: '友善飯店', typeStyle: { bg: '#aaa2',    color: '#888'    }, amount: 10000,  priority: '★',   priColor: '#D93025' },
+  { name: 'JINS',                   type: 'T3 鈦金', typeStyle: { bg: '#4472C420', color: '#4472C4' }, amount: 500000, priority: '★★★', priColor: '#1B7A3E' },
+  { name: 'Johnnie Walker',         type: 'T4 銀',   typeStyle: { bg: '#70AD4720', color: '#70AD47' }, amount: 220000, priority: '★★★', priColor: '#1B7A3E' },
+  { name: 'TFC 臺北婦產科診所',     type: 'T5 銅',   typeStyle: { bg: '#ED7D3120', color: '#ED7D31' }, amount: 120000, priority: '★★',  priColor: '#d97706' },
+  { name: 'IM Adult',               type: '花車',    typeStyle: { bg: '#5BC0EB20', color: '#5BC0EB' }, amount: 120000, priority: '★★',  priColor: '#d97706' },
+  { name: 'TSMC',                   type: '花車',    typeStyle: { bg: '#5BC0EB20', color: '#5BC0EB' }, amount: 120000, priority: '★★',  priColor: '#d97706' },
+  { name: 'FNF',                    type: '花車',    typeStyle: { bg: '#5BC0EB20', color: '#5BC0EB' }, amount: 120000, priority: '★★',  priColor: '#d97706' },
+  { name: 'hyve solutions',         type: 'T5 銅',   typeStyle: { bg: '#ED7D3120', color: '#ED7D31' }, amount: 108000, priority: '★★',  priColor: '#d97706' },
 ]
 
 export function NewBrandPanel() {
@@ -128,17 +110,17 @@ export function NewBrandPanel() {
     <div className="space-y-6">
       <div>
         <h1 className="text-2xl font-bold text-foreground">新品牌續約率</h1>
-        <p className="text-sm text-text-muted mt-1">第一次合作的廠商，隔年還會繼續嗎？（2022–2024 年新客）</p>
+        <p className="text-sm text-text-muted mt-1">首次簽訂級別或花車合約的廠商，隔年還會回來嗎？（僅計算級別贊助 ＋ 單購 &gt;50k）</p>
       </div>
 
       {/* Intro text */}
       <div className="text-sm text-foreground leading-relaxed">
-        每年首次加入的廠商，隔年繼續合作的比例正在下降。<strong>2024 年新加入的廠商，隔年只有 20.0% 留了下來</strong>——代表大多數新廠商只合作了一次就離開了。灰色柱子（2016–2021）因資料不完整，僅供參考。
+        每年首次加入（級別或單購 &gt;50k）的廠商，隔年續約率在 2022–2024 均維持在 33–37%。灰色柱子（2018–2021）因資料品質較低，僅供參考；2016–2017 無級別資料，不納入。
       </div>
 
       {/* Survival bar chart */}
       <div className="rounded-xl border border-border bg-surface p-5" style={{ boxShadow: 'var(--shadow-sm)' }}>
-        <h2 className="text-base font-semibold text-foreground mb-3">新廠商首年加入後隔年續約率（2016–2024）</h2>
+        <h2 className="text-base font-semibold text-foreground mb-3">新廠商首年加入後隔年續約率（級別 ＋ 單購 &gt;50k，2018–2024）</h2>
         <ResponsiveContainer width="100%" height={200}>
           <BarChart data={SURVIVAL_CHART} margin={{ top: 16, right: 16, left: 0, bottom: 0 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
@@ -162,9 +144,9 @@ export function NewBrandPanel() {
         <h2 className="text-sm font-semibold text-foreground mb-4">新進廠商次年留存率</h2>
         <div className="grid grid-cols-3 gap-4">
           {[
-            { label: '2022 新進 → 2023 留存', rate: 30 },
-            { label: '2023 新進 → 2024 留存', rate: 29 },
-            { label: '2024 新進 → 2025 留存', rate: 20 },
+            { label: '2022 新進 → 2023 留存', rate: 33 },
+            { label: '2023 新進 → 2024 留存', rate: 37 },
+            { label: '2024 新進 → 2025 留存', rate: 33 },
           ].map(({ label, rate }) => (
             <div key={label} className="text-center">
               <p className="text-2xl font-bold" style={{ color: rate < 20 ? '#e8005a' : rate < 30 ? '#d97706' : '#059669' }}>
@@ -175,7 +157,7 @@ export function NewBrandPanel() {
           ))}
         </div>
         <p className="text-xs text-text-muted mt-4">
-          ⚠️ 2024 新進廠商次年留存率 20%，歷史偏低 — 應加強新廠商關係維護
+          ▸ 2022–2024 新進廠商次年續約率維持 33–37%，趨勢穩定。重點應放在升級而非一次性合約。
         </p>
       </div>
 
@@ -211,7 +193,7 @@ export function NewBrandPanel() {
       {/* Type breakdown table */}
       <div className="rounded-xl border border-border bg-surface overflow-hidden" style={{ boxShadow: 'var(--shadow-sm)' }}>
         <div className="px-5 pt-4 pb-2">
-          <h2 className="text-base font-semibold text-foreground mb-1">首年購買類型 vs 隔年續約率（2022–2024 合計）</h2>
+          <h2 className="text-base font-semibold text-foreground mb-1">首年購買類型 vs 隔年續約率（2022–2024，級別 ＋ 單購 &gt;50k）</h2>
           <p className="text-sm text-text-muted mb-3">同樣是第一次合作的廠商，簽了哪種合約，決定了他們隔年回來的機率。</p>
         </div>
         <div className="overflow-x-auto border-t border-border">
@@ -237,7 +219,7 @@ export function NewBrandPanel() {
           </table>
         </div>
         <p className="text-xs text-text-muted px-5 py-3 border-t border-border">
-          ▸ 綠色 ≥ 40%　橘色 25–39%　紅色 &lt; 25%
+          ▸ 綠色 ≥ 40%　橘色 25–39%　紅色 &lt; 25%  ·  市集 / 飯店 / 其他類型不納入計算
         </p>
       </div>
 
@@ -249,9 +231,9 @@ export function NewBrandPanel() {
       {/* 2025 follow-up table */}
       <div className="rounded-xl border border-border bg-surface overflow-hidden" style={{ boxShadow: 'var(--shadow-sm)' }}>
         <div className="px-5 pt-4 pb-2">
-          <h2 className="text-base font-semibold text-foreground mb-1">2025 年首次合作廠商 — 2026 跟進清單（21 家）</h2>
+          <h2 className="text-base font-semibold text-foreground mb-1">2025 年首次合作廠商 — 2026 跟進清單（7 家，級別 ＋ 單購 &gt;50k）</h2>
           <p className="text-sm text-text-muted mb-3">
-            以下廠商為 2025 年首次加入，尚無隔年數據。依歷史首年存活率（20–30%），約有 4–6 家會自然續約；其餘需主動跟進。三步節奏：①活動後一個月發感謝函　②三個月電話回訪　③六個月前發出 2026 邀請。
+            以下廠商為 2025 年首次簽訂級別或單購 &gt;50k 合約，尚無隔年數據。依歷史首年存活率（33–37%），約有 2–3 家會自然續約；其餘需主動跟進。三步節奏：①活動後一個月發感謝函　②三個月電話回訪　③六個月前發出 2026 邀請。
           </p>
         </div>
         <div className="overflow-x-auto border-t border-border">
