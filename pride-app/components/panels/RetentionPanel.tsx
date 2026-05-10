@@ -24,21 +24,24 @@ const TENURE_DATA = [
   { label: '第 3 年',  rate: 86.7, nChurn: 2,  nRetain: 13, color: '#4caf50' },
 ]
 
-// Donor-type proof examples — reclassified per updated framework
-// Commercial = brand sells specifically TO LGBT community (their customers are at Pride)
-// Value = brand shows external DEI support; LGBT not their primary/significant market
-// retentionRate: pooled 2022-2025, 3 transitions
+// Donor-type proof examples — final classification confirmed 2026-05-10
+// Commercial = sells TO LGBT as significant/primary market
+//   G-Star, VERVE, GaGaoLaLa, 拉拉公園, LIFEWONDERS, LifeWonders, IM Adult,
+//   FiftyPercent, Model TV, MYFEEL, Tstudio, PANGU×Durex
+// Value = everyone else: DEI allies, pharma, community-member cos, mainstream brands
+//   Google, GILEAD, AZ, lululemon, NIKE, 諾億保經, TSMC, DIKE, etc.
+// retentionRate: pooled 3 transitions (2022→2023, 2023→2024, 2024→2025), n=118
 const DONOR_TYPES = [
   {
     category: '価值導向（外部支持／DEI 理念）',
-    retentionRate: 52.9,
+    retentionRate: 55.0,
     color: '#2e7d32', borderColor: '#4caf50', bgHeader: '#f0fdf4',
     loyalist: { name: 'Google', detail: '科技・銀級・NTD 170–198k/年', years: [true, true, true, true] },
     churner:  { name: 'lululemon', detail: '運動服飾・白銀級・NTD 300k', years: [true, false, null, null] },
   },
   {
     category: '商業導向（顧客就在現場）',
-    retentionRate: 75.0,
+    retentionRate: 66.7,
     color: '#1565c0', borderColor: '#4472C4', bgHeader: '#eff6ff',
     loyalist: { name: 'G-Star', detail: '時尚・銀級・NTD 150–198k/年', years: [true, true, true, true] },
     churner:  { name: 'GaGaoLaLa', detail: 'LGBTQ+ 影音平台・白銀級・NTD 400k', years: [null, true, false, null] },
@@ -343,7 +346,7 @@ export function RetentionPanel() {
       <div className="rounded-xl border border-border bg-surface p-5" style={{ boxShadow: 'var(--shadow-sm)' }}>
         <h2 className="text-base font-semibold text-foreground mb-1">商業導向廠商留存率更高——因為他們的顧客就在現場</h2>
         <p className="text-sm text-text-muted mb-4">
-          商業導向廠商（75%）留存率高於價值導向廠商（53%）：前者的目標客群就在遊行現場，ROI 不需要解釋，自然持續回來。但兩類型內部同樣各有留存者與流失者——動機只是背景，<strong>年資與級別才是 BD 能操作的預測因子</strong>。
+          商業導向廠商（67%）留存率高於價值導向廠商（55%）：前者的目標客群就在遊行現場，ROI 不需要解釋，自然持續回來。但兩類型內部同樣各有留存者與流失者——動機只是背景，<strong>年資與級別才是 BD 能操作的預測因子</strong>。
         </p>
         <div className="grid grid-cols-2 gap-4">
           {DONOR_TYPES.map((col) => (
@@ -382,7 +385,7 @@ export function RetentionPanel() {
           ))}
         </div>
         <p className="text-sm mt-4 pt-3 border-t border-border" style={{ color: '#555' }}>
-          <strong>結論：</strong>Google 與 G-Star 動機截然不同，卻都連續贊助 4 年；lululemon 與 GaGaoLaLa 動機截然不同，卻都在首年離開。商業導向廠商整體更黏（75%），是因為顧客就在現場、ROI 可見——這是優勢，不是風險。對價值導向廠商，BD 應主動協助量化 DEI 影響力，降低預算被砍的風險。<strong>無論哪類，年資（第 1 年留存率僅 44%）與級別（銅／花車 &gt;50% 流失）都是首要管理標的。</strong>
+          <strong>結論：</strong>Google 與 G-Star 動機截然不同，卻都連續贊助 4 年；lululemon 與 GaGaoLaLa 動機截然不同，卻都在首年離開。商業導向廠商整體更黏（67%），是因為顧客就在現場、ROI 可見——這是優勢，不是風險。對價值導向廠商，BD 應主動協助量化 DEI 影響力，降低預算被砍的風險。<strong>無論哪類，年資（第 1 年留存率僅 44%）與級別（銅／花車 &gt;50% 流失）都是首要管理標的。</strong>
         </p>
       </div>
     </div>
