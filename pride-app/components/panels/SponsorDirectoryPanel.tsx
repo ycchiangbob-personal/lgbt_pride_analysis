@@ -10,7 +10,7 @@ type Sponsor = {
 }
 type AllData = Record<string, Sponsor[]>
 
-const YEARS = ['2025', '2024', '2023', '2022']
+const YEARS = ['2025', '2024', '2023', '2022', '2021', '2020', '2019', '2018', '2017', '2016']
 
 // A/B/C are 友善飯店 pricing tier codes, not industry names; Ｖ is a stray data artifact
 function normalizeIndustry(ind: string): string {
@@ -47,7 +47,7 @@ export function SponsorDirectoryPanel() {
   const [industryFilter, setIndustryFilter] = useState('all')
 
   useEffect(() => {
-    fetch(`${BASE}/data/all_extracted_v2.json`)
+    fetch(`${BASE}/data/directory_all.json`)
       .then((r) => r.json())
       .then(setData)
   }, [])
@@ -91,7 +91,7 @@ export function SponsorDirectoryPanel() {
     <div className="space-y-6">
       <div>
         <h1 className="text-2xl font-bold text-foreground">贊助商名錄</h1>
-        <p className="text-sm text-text-muted mt-1">共 226 筆廠商紀錄（2016–2025）。可使用下方篩選框快速查找，或直接按 Ctrl+F 搜尋頁面文字。</p>
+        <p className="text-sm text-text-muted mt-1">共 222 家廠商（2016–2025 年）。可使用下方篩選框快速查找，或直接按 Ctrl+F 搜尋頁面文字。</p>
       </div>
 
       {/* Controls */}
