@@ -33,8 +33,14 @@ const TENURE_DATA = [
 // retentionRate: pooled 3 transitions (2022→2023, 2023→2024, 2024→2025), n=118
 const DONOR_TYPES = [
   {
-    category: '価值導向（外部支持／DEI 理念）',
+    category: '価値導向（外部支持／DEI 理念）',
     retentionRate: 55.0,
+    nTotal: 100,
+    yearlyRates: [
+      { period: '2022→2023', rate: 51.9, n: 27 },
+      { period: '2023→2024', rate: 62.5, n: 32 },
+      { period: '2024→2025', rate: 51.2, n: 41 },
+    ],
     color: '#2e7d32', borderColor: '#4caf50', bgHeader: '#f0fdf4',
     loyalist: { name: 'Google', detail: '科技・銀級・NTD 170–198k/年', years: [true, true, true, true] },
     churner:  { name: 'lululemon', detail: '運動服飾・白銀級・NTD 300k', years: [true, false, null, null] },
@@ -42,6 +48,12 @@ const DONOR_TYPES = [
   {
     category: '商業導向（顧客就在現場）',
     retentionRate: 66.7,
+    nTotal: 18,
+    yearlyRates: [
+      { period: '2022→2023', rate: 75.0, n: 4 },
+      { period: '2023→2024', rate: 50.0, n: 8 },
+      { period: '2024→2025', rate: 83.3, n: 6 },
+    ],
     color: '#1565c0', borderColor: '#4472C4', bgHeader: '#eff6ff',
     loyalist: { name: 'G-Star', detail: '時尚・銀級・NTD 150–198k/年', years: [true, true, true, true] },
     churner:  { name: 'GaGaoLaLa', detail: 'LGBTQ+ 影音平台・白銀級・NTD 400k', years: [null, true, false, null] },
@@ -353,9 +365,28 @@ export function RetentionPanel() {
             <div key={col.category}>
               <div className="pb-2 mb-3" style={{ borderBottom: `2px solid ${col.borderColor}` }}>
                 <div className="text-sm font-bold" style={{ color: col.color }}>{col.category}</div>
-                <div className="text-xs mt-0.5" style={{ color: '#888' }}>
-                  2022–2025 平均留存率：<strong style={{ color: col.color }}>{col.retentionRate}%</strong>
+                <div className="text-xs mt-1 mb-2" style={{ color: '#888' }}>
+                  三期合計留存率：<strong style={{ color: col.color }}>{col.retentionRate}%</strong>
+                  <span className="ml-1 font-normal">（n={col.nTotal} 廠商次）</span>
                 </div>
+                <table className="w-full text-xs" style={{ borderCollapse: 'collapse' }}>
+                  <thead>
+                    <tr style={{ color: '#aaa' }}>
+                      <th className="text-left pb-0.5 font-normal">轉換期</th>
+                      <th className="text-right pb-0.5 font-normal">樣本</th>
+                      <th className="text-right pb-0.5 font-normal">留存率</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {col.yearlyRates.map((yr) => (
+                      <tr key={yr.period}>
+                        <td className="py-0.5 text-text-secondary">{yr.period}</td>
+                        <td className="py-0.5 text-right text-text-secondary">n={yr.n}</td>
+                        <td className="py-0.5 text-right font-semibold" style={{ color: yr.rate >= 60 ? col.color : '#e8445a' }}>{yr.rate}%</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
               {[{ role: '留存', data: col.loyalist, bg: col.bgHeader, isChurner: false },
                 { role: '流失', data: col.churner,  bg: '#fff8f8',    isChurner: true  }].map(({ role, data, bg, isChurner }) => (
