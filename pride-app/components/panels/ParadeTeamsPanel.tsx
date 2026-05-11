@@ -58,7 +58,7 @@ export function ParadeTeamsPanel() {
   }, [data, year, type])
 
   const searchResults = useMemo(() => {
-    if (!search.trim()) return []
+    if (search.trim().length < 2) return []
     const term = search.toLowerCase()
     return participants.filter(
       (p) => p.name.toLowerCase().includes(term) ||
@@ -88,7 +88,7 @@ export function ParadeTeamsPanel() {
     return COLORS.reduce((s, c) => s + (data[year][c]?.[cat]?.length ?? 0), 0)
   }
 
-  const isSearching = search.trim().length > 0
+  const isSearching = search.trim().length >= 2
 
   return (
     <div className="space-y-6">
