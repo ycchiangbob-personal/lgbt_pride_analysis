@@ -248,6 +248,7 @@ export function OverviewPanel() {
                     return n >= 80 ? `${n}萬` : ''
                   }}
                 />
+                {/* Primary total label on the last bar (其他) — renders when 其他 > 0 */}
                 {idx === arr.length - 1 && (
                   <LabelList
                     dataKey="_total"
@@ -259,6 +260,32 @@ export function OverviewPanel() {
                       if (barMode === 'ratio') return `${n}%`
                       if (barMode === 'count') return `${n}`
                       return `${n}萬`
+                    }}
+                  />
+                )}
+                {/* Fallback total label on 市集 — activates when 其他 = 0 (e.g. 2023) */}
+                {name === '市集' && (
+                  <LabelList
+                    dataKey="_total"
+                    position="top"
+                    content={(props: any) => {
+                      const { x, y, width, value, index } = props
+                      if ((barData[index]?.['其他'] ?? 0) > 0) return null
+                      const n = Number(value)
+                      if (!n) return null
+                      const label = barMode === 'ratio' ? `${n}%` : barMode === 'count' ? `${n}` : `${n}萬`
+                      return (
+                        <text
+                          x={(x ?? 0) + (width ?? 0) / 2}
+                          y={(y ?? 0) - 4}
+                          textAnchor="middle"
+                          fontSize={10}
+                          fontWeight={700}
+                          fill="#475569"
+                        >
+                          {label}
+                        </text>
+                      )
                     }}
                   />
                 )}
