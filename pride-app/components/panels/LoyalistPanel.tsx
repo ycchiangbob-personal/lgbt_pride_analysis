@@ -67,10 +67,27 @@ const CHART_DATA = [...DATA].sort((a, b) => b.total - a.total).map((d) => ({
 
 const MAX_AMT = Math.max(...DATA.map((d) => Math.max(...d.amounts)))
 
+function calcDelta(d: Loyalist) {
+  const first = d.amounts.find((a) => a > 0) ?? 0
+  const last = [...d.amounts].reverse().find((a) => a > 0) ?? 0
+  const overall = last - first
+  const latestPct = d.amounts[2] > 0 ? ((d.amounts[3] - d.amounts[2]) / d.amounts[2]) * 100 : null
+  return { overall, latestPct }
+}
+
+const MAX_DELTA = Math.max(...DATA.map((d) => Math.abs(calcDelta(d).overall)))
+
 function fmt(n: number) {
   if (n === 0) return '—'
   if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(2)}M`
   return `${(n / 1000).toFixed(0)}k`
+}
+
+function fmtDelta(n: number) {
+  if (n === 0) return null
+  const abs = Math.abs(n)
+  const str = abs >= 1_000_000 ? `${(abs / 1_000_000).toFixed(2)}M` : `${(abs / 1000).toFixed(0)}k`
+  return (n > 0 ? '+' : '−') + str
 }
 
 export function LoyalistPanel() {
@@ -159,6 +176,8 @@ export function LoyalistPanel() {
                 <th className="text-center px-3 py-2 text-text-muted font-medium">2023</th>
                 <th className="text-center px-3 py-2 text-text-muted font-medium">2024</th>
                 <th className="text-center px-3 py-2 text-text-muted font-medium">2025</th>
+                <th className="text-center px-3 py-2 text-text-muted font-medium whitespace-nowrap">整體趨勢</th>
+                <th className="text-center px-3 py-2 text-text-muted font-medium whitespace-nowrap">24→25</th>
                 <th className="text-right px-4 py-2 text-text-muted font-medium">年均金額</th>
               </tr>
             </thead>
@@ -191,6 +210,37 @@ export function LoyalistPanel() {
                           )}
                         </td>
                       ))}
+                  {(() => {
+                    const { overall, latestPct } = calcDelta(d)
+                    const deltaLabel = fmtDelta(overall)
+                    const barWidth = MAX_DELTA > 0 ? (Math.abs(overall) / MAX_DELTA) * 48 : 0
+                    const deltaColor = overall > 0 ? '#059669' : overall < 0 ? '#e8005a' : '#94a3b8'
+                    return (
+                      <>
+                        <td className="px-3 py-2 text-center">
+                          {deltaLabel ? (
+                            <div className="flex flex-col items-center gap-0.5">
+                              <div className="h-1.5 rounded bg-slate-100 overflow-hidden" style={{ width: 48 }}>
+                                <div className="h-full rounded" style={{ width: barWidth, background: deltaColor }} />
+                              </div>
+                              <span className="text-xs font-medium" style={{ color: deltaColor }}>{deltaLabel}</span>
+                            </div>
+                          ) : (
+                            <span className="text-xs text-border">—</span>
+                          )}
+                        </td>
+                        <td className="px-3 py-2 text-center">
+                          {latestPct === null ? (
+                            <span className="text-xs text-border">—</span>
+                          ) : (
+                            <span className="text-xs font-semibold" style={{ color: latestPct > 0 ? '#059669' : latestPct < 0 ? '#e8005a' : '#94a3b8' }}>
+                              {latestPct > 0 ? '+' : ''}{latestPct.toFixed(1)}%
+                            </span>
+                          )}
+                        </td>
+                      </>
+                    )
+                  })()}
                   <td className="px-4 py-2 text-right text-xs font-medium text-foreground whitespace-nowrap">
                     NT${d.avgAmount.toLocaleString()}
                   </td>
