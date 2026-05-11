@@ -3,23 +3,8 @@
 import { useEffect, useMemo, useState } from 'react'
 import { BASE } from '@/lib/basePath'
 
-type ProductItem = { bg?: string; price?: number; unit?: string }
 type RetentionItem = { item: string; adopters: number; retention_pct: number; consec: number; total: number; price: number }
-type ValueGapItem = { sponsor: string; year: string; actual: number; items: string[]; item_list_cost: number; tier_label: string; tier_price: number; gap: number }
-type LoyaltyItem = {
-  sponsor: string
-  years_count: number
-  core_items: string[]
-  total_unique: number
-  loyalty_score: number
-  cat: string[]
-}
-type ProductAnalysis = {
-  prices: Record<string, ProductItem>
-  retention: RetentionItem[]
-  value_gaps: ValueGapItem[]
-  loyalty: LoyaltyItem[]
-}
+type ProductAnalysis = { retention: RetentionItem[] }
 
 function TierChip({ tier, noSpan }: { tier: string; noSpan?: boolean }) {
   const map: Record<string, [string, string]> = {
@@ -67,13 +52,6 @@ export function OpportunityPanel() {
     return [...(analysis.retention ?? [])]
       .filter((r) => r.adopters >= 3)
       .sort((a, b) => b.retention_pct - a.retention_pct)
-      .slice(0, 20)
-  }, [analysis])
-
-  const topGaps = useMemo(() => {
-    if (!analysis) return []
-    return [...(analysis.value_gaps ?? [])]
-      .sort((a, b) => b.gap - a.gap)
       .slice(0, 20)
   }, [analysis])
 
@@ -480,75 +458,6 @@ export function OpportunityPanel() {
                   ))}
                 </tbody>
               </table>
-            </div>
-          </SectionCard>
-
-          {/* G. 價值落差 */}
-          <SectionCard>
-            <div className="px-5 pt-4 pb-2">
-              <h2 className="text-base font-semibold text-foreground mb-1">F．贊助金額 vs 品項定價落差</h2>
-              <p className="text-sm text-text-muted mb-2">廠商實際付款 vs 品項清單總價差（正數 = 付超過品項定價合計）</p>
-            </div>
-            <div className="overflow-x-auto border-t border-border">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="bg-bg2">
-                    <th className="text-left px-4 py-2 text-text-muted font-medium">廠商</th>
-                    <th className="text-center px-3 py-2 text-text-muted font-medium">年份</th>
-                    <th className="text-left px-3 py-2 text-text-muted font-medium">級別</th>
-                    <th className="text-right px-4 py-2 text-text-muted font-medium">實付</th>
-                    <th className="text-right px-4 py-2 text-text-muted font-medium">品項合計</th>
-                    <th className="text-right px-4 py-2 text-text-muted font-medium">差額</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {topGaps.map((r, i) => (
-                    <tr key={`${r.sponsor}-${r.year}`} className={`border-b border-border/50 ${i % 2 === 1 ? 'bg-bg2/30' : ''}`}>
-                      <td className="px-4 py-2 text-foreground font-medium">{r.sponsor}</td>
-                      <td className="px-3 py-2 text-center text-text-muted text-xs">{r.year}</td>
-                      <td className="px-3 py-2 text-xs text-text-secondary">{r.tier_label}</td>
-                      <td className="px-4 py-2 text-right text-text-secondary">NT${r.actual.toLocaleString()}</td>
-                      <td className="px-4 py-2 text-right text-text-secondary">NT${r.item_list_cost.toLocaleString()}</td>
-                      <td className="px-4 py-2 text-right font-semibold" style={{ color: r.gap > 0 ? '#059669' : '#e8005a' }}>
-                        {r.gap > 0 ? '+' : ''}NT${r.gap.toLocaleString()}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </SectionCard>
-
-          {/* H. 廠商忠誠度 */}
-          <SectionCard>
-            <div className="px-5 pt-4 pb-3 border-b border-border">
-              <h2 className="text-base font-semibold text-foreground mb-1">G．廠商忠誠度分析</h2>
-              <p className="text-sm text-text-muted">依忠誠度分數排序的前 20 家廠商，列出他們長期穩定採用的核心品項。</p>
-            </div>
-            <div className="p-5">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {(analysis.loyalty ?? []).slice(0, 20).map((item) => (
-                  <div key={item.sponsor} className="rounded-lg border border-border p-3" style={{ background: '#fafafa' }}>
-                    <div className="flex justify-between items-start mb-2">
-                      <div>
-                        <p className="font-medium text-foreground text-sm">{item.sponsor}</p>
-                        <p className="text-xs text-text-muted mt-0.5">{item.years_count} 年連續 · 忠誠度 {item.loyalty_score}</p>
-                      </div>
-                      <span className="text-xs text-text-muted whitespace-nowrap">{item.core_items?.length ?? 0} 項核心品項</span>
-                    </div>
-                    <div className="flex flex-wrap gap-1">
-                      {(item.core_items ?? []).map((it) => (
-                        <span key={it} className="text-xs px-2 py-0.5 rounded-full" style={{ background: '#f3e8ff', color: '#7c3aed', border: '1px solid #e9d5ff' }}>
-                          {it}
-                        </span>
-                      ))}
-                      {(!item.core_items || item.core_items.length === 0) && (
-                        <span className="text-xs text-text-muted">尚無穩定核心品項</span>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
             </div>
           </SectionCard>
         </>
