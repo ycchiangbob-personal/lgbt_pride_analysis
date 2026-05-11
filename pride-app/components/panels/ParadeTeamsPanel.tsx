@@ -62,7 +62,8 @@ export function ParadeTeamsPanel() {
     const term = search.toLowerCase()
     return participants.filter(
       (p) => p.name.toLowerCase().includes(term) ||
-             p.aliases.some((a) => a.toLowerCase().includes(term))
+             p.aliases.some((a) => a.toLowerCase().includes(term)) ||
+             Object.values(p.parade_detail).some((d) => d.raw_name.toLowerCase().includes(term))
     )
   }, [participants, search])
 
