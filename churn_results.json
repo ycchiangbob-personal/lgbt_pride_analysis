@@ -1,0 +1,242 @@
+{
+  "periods": [
+    {
+      "label": "2022→2023",
+      "n_churned": 13,
+      "n_retained": 18,
+      "n_total": 31,
+      "churn_rate_pct": 41.9,
+      "churned_total": 3356000.0,
+      "retained_total": 4815000.0,
+      "churned_names": [
+        "DIKE",
+        "MAC",
+        "Model TV",
+        "UT麗舍",
+        "YAHOO",
+        "lululemon",
+        "台北市觀傳局",
+        "杜蕾斯",
+        "永準貿易",
+        "無心戒酒",
+        "百健",
+        "高誠公關",
+        "麥肯錫"
+      ],
+      "retained_names": [
+        "AZ",
+        "FiftyPercent",
+        "G-Star",
+        "GAP",
+        "GILEAD",
+        "GSK",
+        "Google",
+        "NIKE",
+        "PINKOI",
+        "UBer",
+        "Unilever",
+        "hyve solutions",
+        "彩虹酷兒健康文化中心",
+        "拉拉公園",
+        "樂天",
+        "美光",
+        "諾億保經",
+        "高通"
+      ]
+    },
+    {
+      "label": "2023→2024",
+      "n_churned": 16,
+      "n_retained": 24,
+      "n_total": 40,
+      "churn_rate_pct": 40.0,
+      "churned_total": 2523000.0,
+      "retained_total": 5520000.0,
+      "churned_names": [
+        "FiftyPercent",
+        "GaGaoLaLa",
+        "GroupM",
+        "LIFEWONDERS",
+        "La Crema",
+        "PANGU by Kenal X Durex",
+        "PINKOI",
+        "VIETJET",
+        "世邦魏理仕",
+        "台灣保時捷車業股份有限公司 \nPorsche Taiwan Motors Limited",
+        "台灣百健",
+        "必勝客",
+        "樂桃航空",
+        "美商百富門",
+        "雷醫國際股份有限公司",
+        "飛比"
+      ],
+      "retained_names": [
+        "AZ",
+        "G-Star",
+        "GAP",
+        "GILEAD",
+        "GSK",
+        "Google",
+        "M.A.C",
+        "NIKE",
+        "Tstudio",
+        "UBer",
+        "Unilever",
+        "VERVE",
+        "可口可樂",
+        "台虎",
+        "彩虹酷兒健康文化中心",
+        "拉拉公園",
+        "樂天",
+        "波士頓",
+        "羅氏",
+        "美光",
+        "諾億保經",
+        "諾和諾德",
+        "高通",
+        "默沙東"
+      ]
+    },
+    {
+      "label": "2024→2025",
+      "n_churned": 20,
+      "n_retained": 27,
+      "n_total": 47,
+      "churn_rate_pct": 42.6,
+      "churned_total": 3273970.0,
+      "retained_total": 5982249.0,
+      "churned_names": [
+        "Fusion 聚變",
+        "GU",
+        "Kenvue",
+        "M.A.C",
+        "MYFEEL",
+        "SleekStrip",
+        "Suntory",
+        "TaskUs",
+        "Zenyum",
+        "佳葆視聽",
+        "台灣武田",
+        "宜蘊醫療",
+        "捷豹路虎",
+        "樂天",
+        "法國巴黎人壽",
+        "澳洲紐西蘭商會",
+        "羅氏",
+        "諾和諾德",
+        "高誠公關",
+        "高通"
+      ],
+      "retained_names": [
+        "AZ",
+        "G-Star",
+        "GAP",
+        "GILEAD",
+        "GSK",
+        "Google",
+        "LifeWonders",
+        "NIKE",
+        "Sagami",
+        "Tapestry",
+        "Tstudio",
+        "UBer",
+        "Unilever",
+        "VERVE",
+        "hyve solutions",
+        "可口可樂",
+        "台虎",
+        "彩虹酷兒健康文化中心",
+        "愛群婦產科",
+        "拉拉公園",
+        "波士頓",
+        "渣打銀行",
+        "犀牛盾",
+        "疾管署",
+        "美光",
+        "諾億保經",
+        "默沙東"
+      ]
+    }
+  ],
+  "tenure": [
+    {
+      "bucket": "首次贊助 (1yr)",
+      "n_churn": 42,
+      "n_retain": 33,
+      "n_total": 75,
+      "rate_pct": 56.0
+    },
+    {
+      "bucket": "第 2 年",
+      "n_churn": 7,
+      "n_retain": 21,
+      "n_total": 28,
+      "rate_pct": 25.0
+    },
+    {
+      "bucket": "第 3 年",
+      "n_churn": 2,
+      "n_retain": 13,
+      "n_total": 15,
+      "rate_pct": 13.3
+    },
+    {
+      "bucket": "4 年以上",
+      "n_churn": 0,
+      "n_retain": 0,
+      "n_total": 0,
+      "rate_pct": 0
+    }
+  ],
+  "tier": [
+    {
+      "tier": "T1 白金",
+      "n_churn": 0,
+      "n_retain": 2,
+      "n_total": 2,
+      "rate_pct": 0.0
+    },
+    {
+      "tier": "T2 鈦金",
+      "n_churn": 0,
+      "n_retain": 3,
+      "n_total": 3,
+      "rate_pct": 0.0
+    },
+    {
+      "tier": "T3 黃金",
+      "n_churn": 2,
+      "n_retain": 1,
+      "n_total": 3,
+      "rate_pct": 66.7
+    },
+    {
+      "tier": "T4 白銀",
+      "n_churn": 3,
+      "n_retain": 5,
+      "n_total": 8,
+      "rate_pct": 37.5
+    },
+    {
+      "tier": "T4 銀",
+      "n_churn": 24,
+      "n_retain": 36,
+      "n_total": 60,
+      "rate_pct": 40.0
+    },
+    {
+      "tier": "T5 銅",
+      "n_churn": 6,
+      "n_retain": 5,
+      "n_total": 11,
+      "rate_pct": 54.5
+    },
+    {
+      "tier": "單購/花車",
+      "n_churn": 16,
+      "n_retain": 15,
+      "n_total": 31,
+      "rate_pct": 51.6
+    }
+  ]
+}

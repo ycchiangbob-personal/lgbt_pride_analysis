@@ -1,0 +1,1074 @@
+{
+  "2022": {
+    "GILEAD": {
+      "excel_name": "Gilead",
+      "tier_label": "白金級",
+      "tier_cat": "TIER",
+      "industry": "個別廠商業務統計",
+      "amount": 1000000.0
+    },
+    "FiftyPercent": {
+      "excel_name": "FiftyPercent",
+      "tier_label": "白金級",
+      "tier_cat": "TIER",
+      "industry": "",
+      "amount": 1000000.0
+    },
+    "DIKE": {
+      "excel_name": "DIKE",
+      "tier_label": "黃金級",
+      "tier_cat": "TIER",
+      "industry": "",
+      "amount": 700000.0
+    },
+    "Model TV": {
+      "excel_name": "Model TV",
+      "tier_label": "黃金級",
+      "tier_cat": "TIER",
+      "industry": "",
+      "amount": 700000.0
+    },
+    "拉拉公園": {
+      "excel_name": "LesPark",
+      "tier_label": "白銀級",
+      "tier_cat": "TIER",
+      "industry": "",
+      "amount": 300000.0
+    },
+    "lululemon": {
+      "excel_name": "lululemon",
+      "tier_label": "白銀級",
+      "tier_cat": "TIER",
+      "industry": "",
+      "amount": 300000.0
+    },
+    "杜蕾斯": {
+      "excel_name": "杜蕾斯",
+      "tier_label": "白銀級",
+      "tier_cat": "TIER",
+      "industry": "",
+      "amount": 300000.0
+    },
+    "美光": {
+      "excel_name": "美光",
+      "tier_label": "白銀級",
+      "tier_cat": "TIER",
+      "industry": "",
+      "amount": 300000.0
+    },
+    "AZ": {
+      "excel_name": "AZ",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "",
+      "amount": 155000
+    },
+    "Google": {
+      "excel_name": "Google",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "Ｖ",
+      "amount": 170000
+    },
+    "GSK": {
+      "excel_name": "GSK",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "Ｖ",
+      "amount": 150000
+    },
+    "G-Star": {
+      "excel_name": "GSTAR",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "",
+      "amount": 150000
+    },
+    "PINKOI": {
+      "excel_name": "Pinkoi",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "",
+      "amount": 145000
+    },
+    "UT麗舍": {
+      "excel_name": "UT麗舍",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "",
+      "amount": 254000
+    },
+    "YAHOO": {
+      "excel_name": "Yahoo",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "",
+      "amount": 170000
+    },
+    "台北市觀傳局": {
+      "excel_name": "台北市觀傳局",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "",
+      "amount": 150000.0
+    },
+    "百健": {
+      "excel_name": "百健",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "",
+      "amount": 0
+    },
+    "高通": {
+      "excel_name": "高通",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "",
+      "amount": 150000
+    },
+    "高誠公關": {
+      "excel_name": "高誠公關",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "",
+      "amount": 150000
+    },
+    "樂天": {
+      "excel_name": "樂天",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "Ｖ",
+      "amount": 0
+    },
+    "諾億保經": {
+      "excel_name": "磊山保經",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "",
+      "amount": 150000.0
+    },
+    "Unilever": {
+      "excel_name": "聯合利華",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "Ｖ",
+      "amount": 170000
+    },
+    "GAP": {
+      "excel_name": "GAP",
+      "tier_label": "單買",
+      "tier_cat": "SINGLE",
+      "industry": "",
+      "amount": 100000
+    },
+    "MAC": {
+      "excel_name": "MAC",
+      "tier_label": "單買",
+      "tier_cat": "SINGLE",
+      "industry": "Ｖ",
+      "amount": 352000
+    },
+    "NIKE": {
+      "excel_name": "Nike",
+      "tier_label": "單買",
+      "tier_cat": "SINGLE",
+      "industry": "",
+      "amount": 250000
+    },
+    "UBer": {
+      "excel_name": "Uber",
+      "tier_label": "單買",
+      "tier_cat": "SINGLE",
+      "industry": "",
+      "amount": 310000
+    },
+    "永準貿易": {
+      "excel_name": "永準貿易",
+      "tier_label": "單買",
+      "tier_cat": "SINGLE",
+      "industry": "",
+      "amount": 80000
+    },
+    "彩虹酷兒健康文化中心": {
+      "excel_name": "彩虹酷兒",
+      "tier_label": "單買",
+      "tier_cat": "SINGLE",
+      "industry": "",
+      "amount": 100000
+    },
+    "麥肯錫": {
+      "excel_name": "麥肯錫",
+      "tier_label": "單買",
+      "tier_cat": "SINGLE",
+      "industry": "",
+      "amount": 100000
+    },
+    "無心戒酒": {
+      "excel_name": "無心戒酒",
+      "tier_label": "單買",
+      "tier_cat": "SINGLE",
+      "industry": "",
+      "amount": 100000
+    },
+    "hyve solutions": {
+      "excel_name": "海峰電腦",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "",
+      "amount": 215000
+    }
+  },
+  "2023": {
+    "GILEAD": {
+      "excel_name": "Gilead吉立亞醫藥",
+      "tier_label": "黃金級",
+      "tier_cat": "TIER",
+      "industry": "醫藥",
+      "amount": 1000000.0
+    },
+    "波士頓": {
+      "excel_name": "波士頓科技",
+      "tier_label": "白銀級",
+      "tier_cat": "TIER",
+      "industry": "醫材",
+      "amount": 400000.0
+    },
+    "GaGaoLaLa": {
+      "excel_name": "GagaOOLala LGBTQ+ & BL線上影音平台",
+      "tier_label": "白銀級",
+      "tier_cat": "TIER",
+      "industry": "影音",
+      "amount": 400000.0
+    },
+    "美光": {
+      "excel_name": "台灣美光",
+      "tier_label": "白銀級",
+      "tier_cat": "TIER",
+      "industry": "半導體",
+      "amount": 400000.0
+    },
+    "諾和諾德": {
+      "excel_name": "諾和諾德藥品股份有限公司(Novo Nordisk)",
+      "tier_label": "白銀級",
+      "tier_cat": "TIER",
+      "industry": "醫藥",
+      "amount": 400000.0
+    },
+    "飛比": {
+      "excel_name": "飛比 Feebee",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "電商",
+      "amount": 180000.0
+    },
+    "世邦魏理仕": {
+      "excel_name": "世邦魏理仕",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "房地產",
+      "amount": 180000.0
+    },
+    "高通": {
+      "excel_name": "美商高通",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "半導體",
+      "amount": 180000.0
+    },
+    "樂天": {
+      "excel_name": "Rakuten 台灣樂天集團",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "電商",
+      "amount": 180000.0
+    },
+    "羅氏": {
+      "excel_name": "羅氏大藥廠與羅氏醫療診斷設備",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "醫藥",
+      "amount": 180000.0
+    },
+    "諾億保經": {
+      "excel_name": "諾億財富管理顧問",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "投資理財",
+      "amount": 180000.0
+    },
+    "PINKOI": {
+      "excel_name": "Pinkoi",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "電商",
+      "amount": 180000.0
+    },
+    "拉拉公園": {
+      "excel_name": "LesPark",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "交友",
+      "amount": 180000.0
+    },
+    "VERVE": {
+      "excel_name": "VERVE",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "服飾",
+      "amount": 180000.0
+    },
+    "PANGU by Kenal X Durex": {
+      "excel_name": "PANGU by Kenal X Durex",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "遊戲",
+      "amount": 200000.0
+    },
+    "LIFEWONDERS": {
+      "excel_name": "LIFEWONDERS",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "遊戲",
+      "amount": 180000.0
+    },
+    "UBer": {
+      "excel_name": "Uber",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "交通",
+      "amount": 190000.0
+    },
+    "G-Star": {
+      "excel_name": "Gstar",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "夜店",
+      "amount": 180000.0
+    },
+    "台虎": {
+      "excel_name": "臺虎精釀",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "酒商",
+      "amount": 100000.0
+    },
+    "Unilever": {
+      "excel_name": "聯合利華",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "生活用品",
+      "amount": 150000.0
+    },
+    "美商百富門": {
+      "excel_name": "美商百富門",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "酒商",
+      "amount": 180000.0
+    },
+    "Google": {
+      "excel_name": "Google",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "軟體",
+      "amount": 180000.0
+    },
+    "雷醫國際股份有限公司": {
+      "excel_name": "雷醫國際股份有限公司",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "醫美",
+      "amount": 180000.0
+    },
+    "AZ": {
+      "excel_name": "臺灣阿斯特捷利康",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "醫藥",
+      "amount": 180000.0
+    },
+    "GSK": {
+      "excel_name": "葛蘭素史克（GSK）藥廠",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "醫藥",
+      "amount": 180000.0
+    },
+    "NIKE": {
+      "excel_name": "NIKE",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "運動",
+      "amount": 230000.0
+    },
+    "Tstudio": {
+      "excel_name": "T-Studio",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "服飾",
+      "amount": 0
+    },
+    "GroupM": {
+      "excel_name": "GroupM",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "廣告",
+      "amount": 180000.0
+    },
+    "FiftyPercent": {
+      "excel_name": "50% FIFTY PERCENT",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "服飾",
+      "amount": 0
+    },
+    "M.A.C": {
+      "excel_name": "M·A·C",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "彩妝",
+      "amount": 180000.0
+    },
+    "樂桃航空": {
+      "excel_name": "樂桃航空",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "航空",
+      "amount": 68000.0
+    },
+    "默沙東": {
+      "excel_name": "美商默沙東藥廠",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "醫藥",
+      "amount": 180000.0
+    },
+    "彩虹酷兒健康文化中心": {
+      "excel_name": "彩虹酷兒健康文化中心",
+      "tier_label": "花車",
+      "tier_cat": "SINGLE",
+      "industry": "健康諮詢",
+      "amount": 120000.0
+    },
+    "台灣保時捷車業股份有限公司 \nPorsche Taiwan Motors Limited": {
+      "excel_name": "台灣保時捷車業股份有限公司 \nPorsche Taiwan Motors Limited",
+      "tier_label": "花車",
+      "tier_cat": "SINGLE",
+      "industry": "車商",
+      "amount": 120000.0
+    },
+    "GAP": {
+      "excel_name": "GAP Taiwan",
+      "tier_label": "花車",
+      "tier_cat": "SINGLE",
+      "industry": "服飾",
+      "amount": 120000.0
+    },
+    "La Crema": {
+      "excel_name": "La Crema",
+      "tier_label": "花車",
+      "tier_cat": "SINGLE",
+      "industry": "餐飲",
+      "amount": 140000.0
+    },
+    "必勝客": {
+      "excel_name": "必勝客",
+      "tier_label": "花車",
+      "tier_cat": "SINGLE",
+      "industry": "餐飲",
+      "amount": 120000.0
+    },
+    "VIETJET": {
+      "excel_name": "VIETJET",
+      "tier_label": "花車",
+      "tier_cat": "SINGLE",
+      "industry": "航空",
+      "amount": 160000.0
+    },
+    "台灣百健": {
+      "excel_name": "Biogen",
+      "tier_label": "單買",
+      "tier_cat": "SINGLE",
+      "industry": "醫藥",
+      "amount": 55000.0
+    },
+    "可口可樂": {
+      "excel_name": "可口可樂公司",
+      "tier_label": "單買",
+      "tier_cat": "SINGLE",
+      "industry": "餐飲",
+      "amount": 250000.0
+    }
+  },
+  "2024": {
+    "GILEAD": {
+      "excel_name": "Gilead",
+      "tier_label": "鈦金級",
+      "tier_cat": "TIER",
+      "industry": "醫藥",
+      "amount": 550000.0
+    },
+    "波士頓": {
+      "excel_name": "波士頓科技",
+      "tier_label": "鈦金級",
+      "tier_cat": "TIER",
+      "industry": "醫材",
+      "amount": 405000.0
+    },
+    "美光": {
+      "excel_name": "美光台灣",
+      "tier_label": "鈦金級",
+      "tier_cat": "TIER",
+      "industry": "科技",
+      "amount": 405000.0
+    },
+    "Tapestry": {
+      "excel_name": "Tapestry",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "精品",
+      "amount": 220000.0
+    },
+    "G-Star": {
+      "excel_name": "Gstar",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "夜店",
+      "amount": 198000.0
+    },
+    "諾億保經": {
+      "excel_name": "諾億",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "金融",
+      "amount": 198000.0
+    },
+    "M.A.C": {
+      "excel_name": "M.A.C",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "彩妝",
+      "amount": 198000.0
+    },
+    "諾和諾德": {
+      "excel_name": "諾和諾德",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "醫藥",
+      "amount": 220000.0
+    },
+    "樂天": {
+      "excel_name": "樂天",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "電商",
+      "amount": 197985.0
+    },
+    "GSK": {
+      "excel_name": "GSK",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "醫藥",
+      "amount": 198000.0
+    },
+    "VERVE": {
+      "excel_name": "VERVE",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "運動",
+      "amount": 240000.0
+    },
+    "GU": {
+      "excel_name": "GU",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "服飾",
+      "amount": 220000.0
+    },
+    "MYFEEL": {
+      "excel_name": "MYFEEL",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "新創",
+      "amount": 219985.0
+    },
+    "Tstudio": {
+      "excel_name": "T-Studio",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "生活",
+      "amount": 0
+    },
+    "高通": {
+      "excel_name": "Qualcomm",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "科技",
+      "amount": 198000.0
+    },
+    "羅氏": {
+      "excel_name": "羅氏",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "醫藥",
+      "amount": 220000.0
+    },
+    "AZ": {
+      "excel_name": "AZ",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "醫藥",
+      "amount": 198000.0
+    },
+    "拉拉公園": {
+      "excel_name": "LesPark",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "軟體",
+      "amount": 198000.0
+    },
+    "台虎": {
+      "excel_name": "臺虎精釀",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "酒業",
+      "amount": 198000.0
+    },
+    "Google": {
+      "excel_name": "Google",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "科技",
+      "amount": 198000.0
+    },
+    "捷豹路虎": {
+      "excel_name": "捷豹路虎",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "車業",
+      "amount": 220000.0
+    },
+    "Kenvue": {
+      "excel_name": "Kenvue",
+      "tier_label": "銅級",
+      "tier_cat": "TIER",
+      "industry": "FMCG",
+      "amount": 120000.0
+    },
+    "LifeWonders": {
+      "excel_name": "LifeWonders",
+      "tier_label": "銅級",
+      "tier_cat": "TIER",
+      "industry": "遊戲",
+      "amount": 116249.0
+    },
+    "TaskUs": {
+      "excel_name": "TaskUs",
+      "tier_label": "銅級",
+      "tier_cat": "TIER",
+      "industry": "軟體",
+      "amount": 120000.0
+    },
+    "Unilever": {
+      "excel_name": "Uniliever",
+      "tier_label": "銅級",
+      "tier_cat": "TIER",
+      "industry": "FMCG",
+      "amount": 120000.0
+    },
+    "台灣武田": {
+      "excel_name": "台灣武田",
+      "tier_label": "銅級",
+      "tier_cat": "TIER",
+      "industry": "醫藥",
+      "amount": 120000.0
+    },
+    "SleekStrip": {
+      "excel_name": "SleekStrip",
+      "tier_label": "銅級",
+      "tier_cat": "TIER",
+      "industry": "生活",
+      "amount": 120000.0
+    },
+    "愛群婦產科": {
+      "excel_name": "愛群婦產科",
+      "tier_label": "銅級",
+      "tier_cat": "TIER",
+      "industry": "醫藥",
+      "amount": 390000.0
+    },
+    "宜蘊醫療": {
+      "excel_name": "宜蘊醫療",
+      "tier_label": "銅級",
+      "tier_cat": "TIER",
+      "industry": "醫藥",
+      "amount": 120000.0
+    },
+    "疾管署": {
+      "excel_name": "疾管署",
+      "tier_label": "銅級",
+      "tier_cat": "TIER",
+      "industry": "政府單位",
+      "amount": 120000.0
+    },
+    "默沙東": {
+      "excel_name": "默沙東",
+      "tier_label": "銅級",
+      "tier_cat": "TIER",
+      "industry": "醫藥",
+      "amount": 120000.0
+    },
+    "渣打銀行": {
+      "excel_name": "渣打銀行",
+      "tier_label": "花車",
+      "tier_cat": "SINGLE",
+      "industry": "金融",
+      "amount": 120000.0
+    },
+    "高誠公關": {
+      "excel_name": "高誠公關",
+      "tier_label": "花車",
+      "tier_cat": "SINGLE",
+      "industry": "公關",
+      "amount": 120000.0
+    },
+    "GAP": {
+      "excel_name": "GAP",
+      "tier_label": "花車",
+      "tier_cat": "SINGLE",
+      "industry": "服裝",
+      "amount": 120000.0
+    },
+    "法國巴黎人壽": {
+      "excel_name": "法國巴黎人壽",
+      "tier_label": "花車",
+      "tier_cat": "SINGLE",
+      "industry": "壽險",
+      "amount": 120000.0
+    },
+    "Fusion 聚變": {
+      "excel_name": "Fusion 聚變",
+      "tier_label": "花車",
+      "tier_cat": "SINGLE",
+      "industry": "活動",
+      "amount": 120000.0
+    },
+    "澳洲紐西蘭商會": {
+      "excel_name": "澳洲紐西蘭商會",
+      "tier_label": "花車",
+      "tier_cat": "SINGLE",
+      "industry": "商會",
+      "amount": 120000.0
+    },
+    "彩虹酷兒健康文化中心": {
+      "excel_name": "彩虹酷兒",
+      "tier_label": "花車",
+      "tier_cat": "SINGLE",
+      "industry": "組織",
+      "amount": 120000.0
+    },
+    "UBer": {
+      "excel_name": "Uber",
+      "tier_label": "花車",
+      "tier_cat": "SINGLE",
+      "industry": "軟體",
+      "amount": 250000.0
+    },
+    "Zenyum": {
+      "excel_name": "Zenyum",
+      "tier_label": "花車",
+      "tier_cat": "SINGLE",
+      "industry": "生活",
+      "amount": 140000.0
+    },
+    "Suntory": {
+      "excel_name": "Suntory",
+      "tier_label": "花車",
+      "tier_cat": "SINGLE",
+      "industry": "酒業",
+      "amount": 240000.0
+    },
+    "NIKE": {
+      "excel_name": "NIKE",
+      "tier_label": "花車",
+      "tier_cat": "SINGLE",
+      "industry": "",
+      "amount": 120000.0
+    },
+    "佳葆視聽": {
+      "excel_name": "佳葆視聽",
+      "tier_label": "花車",
+      "tier_cat": "SINGLE",
+      "industry": "",
+      "amount": 120000.0
+    },
+    "犀牛盾": {
+      "excel_name": "犀牛盾",
+      "tier_label": "單買",
+      "tier_cat": "SINGLE",
+      "industry": "生活",
+      "amount": 750000.0
+    },
+    "可口可樂": {
+      "excel_name": "可口可樂",
+      "tier_label": "單買",
+      "tier_cat": "SINGLE",
+      "industry": "飲食",
+      "amount": 250000.0
+    },
+    "Sagami": {
+      "excel_name": "Sagami",
+      "tier_label": "單買",
+      "tier_cat": "SINGLE",
+      "industry": "",
+      "amount": 60000.0
+    },
+    "hyve solutions": {
+      "excel_name": "海峰電腦",
+      "tier_label": "銅級",
+      "tier_cat": "TIER",
+      "industry": "電腦",
+      "amount": 120000.0
+    }
+  },
+  "2025": {
+    "波士頓": {
+      "excel_name": "波士頓科技",
+      "tier_label": "鈦金級",
+      "tier_cat": "TIER",
+      "industry": "醫材",
+      "amount": 405000.0
+    },
+    "諾億保經": {
+      "excel_name": "諾億保經",
+      "tier_label": "鈦金級",
+      "tier_cat": "TIER",
+      "industry": "金融",
+      "amount": 405000.0
+    },
+    "美光": {
+      "excel_name": "台灣美光",
+      "tier_label": "鈦金級",
+      "tier_cat": "TIER",
+      "industry": "科技",
+      "amount": 405000.0
+    },
+    "JINS": {
+      "excel_name": "JINS",
+      "tier_label": "鈦金級",
+      "tier_cat": "TIER",
+      "industry": "生活",
+      "amount": 500000.0
+    },
+    "Google": {
+      "excel_name": "Google",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "科技",
+      "amount": 198000.0
+    },
+    "LifeWonders": {
+      "excel_name": "LifeWonders",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "遊戲",
+      "amount": 216000.0
+    },
+    "G-Star": {
+      "excel_name": "Gstar",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "夜店",
+      "amount": 198000.0
+    },
+    "Unilever": {
+      "excel_name": "聯合利華",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "FMCG",
+      "amount": 198000.0
+    },
+    "Johnnie Walker": {
+      "excel_name": "Johnnie Walker",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "酒商",
+      "amount": 220000.0
+    },
+    "Tapestry": {
+      "excel_name": "Tapestry",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "精品",
+      "amount": 220000.0
+    },
+    "台虎": {
+      "excel_name": "臺虎精釀",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "生活",
+      "amount": 198000.0
+    },
+    "拉拉公園": {
+      "excel_name": "Lespark",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "生活",
+      "amount": 198000.0
+    },
+    "GILEAD": {
+      "excel_name": "吉利亞醫藥",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "醫藥",
+      "amount": 230000.0
+    },
+    "AZ": {
+      "excel_name": "AZ",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "醫藥",
+      "amount": 198000.0
+    },
+    "GSK": {
+      "excel_name": "GSK",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "醫藥",
+      "amount": 198000.0
+    },
+    "必勝客": {
+      "excel_name": "必勝客",
+      "tier_label": "銀級",
+      "tier_cat": "TIER",
+      "industry": "速食",
+      "amount": 220000.0
+    },
+    "犀牛盾": {
+      "excel_name": "犀牛盾",
+      "tier_label": "銅級",
+      "tier_cat": "TIER",
+      "industry": "生活",
+      "amount": 150000.0
+    },
+    "默沙東": {
+      "excel_name": "默沙東",
+      "tier_label": "銅級",
+      "tier_cat": "TIER",
+      "industry": "醫藥",
+      "amount": 108000.0
+    },
+    "TFC \n臺北婦產科診所": {
+      "excel_name": "TFC \n臺北婦產科診所",
+      "tier_label": "銅級",
+      "tier_cat": "TIER",
+      "industry": "醫療",
+      "amount": 120000.0
+    },
+    "hyve solutions": {
+      "excel_name": "Hyve",
+      "tier_label": "銅級",
+      "tier_cat": "TIER",
+      "industry": "科技",
+      "amount": 108000.0
+    },
+    "疾管署": {
+      "excel_name": "疾管署",
+      "tier_label": "銅級",
+      "tier_cat": "TIER",
+      "industry": "政府",
+      "amount": 114000.0
+    },
+    "Tstudio": {
+      "excel_name": "Tstudio",
+      "tier_label": "銅級",
+      "tier_cat": "TIER",
+      "industry": "生活",
+      "amount": 108000.0
+    },
+    "彩虹酷兒健康文化中心": {
+      "excel_name": "彩虹酷兒",
+      "tier_label": "花車",
+      "tier_cat": "SINGLE",
+      "industry": "NGO",
+      "amount": 120000.0
+    },
+    "渣打銀行": {
+      "excel_name": "渣打銀行",
+      "tier_label": "花車",
+      "tier_cat": "SINGLE",
+      "industry": "金融",
+      "amount": 120000.0
+    },
+    "VERVE": {
+      "excel_name": "VERVE",
+      "tier_label": "花車",
+      "tier_cat": "SINGLE",
+      "industry": "服飾",
+      "amount": 350000.0
+    },
+    "IM Adult": {
+      "excel_name": "IM Adult",
+      "tier_label": "花車",
+      "tier_cat": "SINGLE",
+      "industry": "成人",
+      "amount": 120000.0
+    },
+    "GAP": {
+      "excel_name": "GAP",
+      "tier_label": "花車",
+      "tier_cat": "SINGLE",
+      "industry": "服飾",
+      "amount": 120000.0
+    },
+    "UBer": {
+      "excel_name": "Uber\nEats",
+      "tier_label": "花車",
+      "tier_cat": "SINGLE",
+      "industry": "生活",
+      "amount": 120000.0
+    },
+    "NIKE": {
+      "excel_name": "NIKE",
+      "tier_label": "花車",
+      "tier_cat": "SINGLE",
+      "industry": "運動",
+      "amount": 120000.0
+    },
+    "TSMC": {
+      "excel_name": "TSMC",
+      "tier_label": "花車",
+      "tier_cat": "SINGLE",
+      "industry": "科技",
+      "amount": 120000.0
+    },
+    "FNF": {
+      "excel_name": "FNF",
+      "tier_label": "花車",
+      "tier_cat": "SINGLE",
+      "industry": "基金會",
+      "amount": 120000.0
+    },
+    "可口可樂": {
+      "excel_name": "可口可樂",
+      "tier_label": "單買",
+      "tier_cat": "SINGLE",
+      "industry": "生活",
+      "amount": 250000.0
+    },
+    "愛群婦產科": {
+      "excel_name": "愛群婦產科",
+      "tier_label": "單買",
+      "tier_cat": "SINGLE",
+      "industry": "醫療",
+      "amount": 105000.0
+    },
+    "Sagami": {
+      "excel_name": "Sagami",
+      "tier_label": "單買",
+      "tier_cat": "SINGLE",
+      "industry": "生活",
+      "amount": 63000.0
+    }
+  }
+}

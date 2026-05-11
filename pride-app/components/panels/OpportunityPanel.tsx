@@ -180,7 +180,7 @@ export function OpportunityPanel() {
                 { name: '羅氏', ind: '醫藥', tier: 'T4', amt: 'NTD 220,000', yrs: '2 年' },
                 { name: '高通', ind: '半導體', tier: 'T4', amt: 'NTD 198,000', yrs: '3 年' },
                 { name: '樂天', ind: '電商', tier: 'T4', amt: 'NTD 197,985', yrs: '2 年' },
-                { name: '海峰電腦', ind: '電腦', tier: 'T5', amt: 'NTD 120,000', yrs: '2 年' },
+                { name: 'TaskUs', ind: '軟體', tier: 'T5', amt: 'NTD 120,000', yrs: '2 年' },
               ].map((r, i) => (
                 <tr key={r.name} className={`border-b border-border/50 ${i % 2 === 1 ? 'bg-bg2/30' : ''}`}>
                   <td className="px-4 py-2 font-medium text-foreground">{r.name}</td>
@@ -203,7 +203,7 @@ export function OpportunityPanel() {
         <div className="px-5 pt-4 pb-2">
           <h2 className="text-base font-semibold text-foreground mb-2">C．現有廠商升級潛力</h2>
           <p className="text-sm text-text-muted mb-3">
-            2026 手冊升級價格：白金 100萬 ／ 黃金 70萬 ／ 鈦金 45萬 ／ 銀 22萬 ／ 銅 12萬。以下為忠實或回頭廠商中，升一個級別後潛在增加金額最大的名單。假設 40% 升級成功率，預計可增加 <strong>NTD 639k</strong>。
+            2026 手冊升級價格：白金 100萬 ／ 黃金 70萬 ／ 鈦金 45萬 ／ 銀 22萬 ／ 銅 12萬。以下為忠實或回頭廠商中，升一個級別後潛在增加金額最大的名單。假設 40% 升級成功率，預計可增加 <strong>NTD 731k</strong>。
           </p>
         </div>
         <div className="overflow-x-auto">
@@ -225,6 +225,7 @@ export function OpportunityPanel() {
                 { name: 'G-Star', from: 'T4', to: 'T3', cur: 'NTD 198,000', next: 'NTD 450,000', add: '+NTD 252,000' },
                 { name: 'Unilever', from: 'T4', to: 'T3', cur: 'NTD 198,000', next: 'NTD 450,000', add: '+NTD 252,000' },
                 { name: '台虎', from: 'T4', to: 'T3', cur: 'NTD 198,000', next: 'NTD 450,000', add: '+NTD 252,000' },
+                { name: '必勝客', from: 'T4', to: 'T3', cur: 'NTD 220,000', next: 'NTD 450,000', add: '+NTD 230,000' },
               ].map((r, i) => (
                 <tr key={r.name} className={`border-b border-border/50 ${i % 2 === 1 ? 'bg-bg2/30' : ''}`}>
                   <td className="px-4 py-2 font-medium text-foreground">{r.name}</td>
@@ -268,11 +269,9 @@ export function OpportunityPanel() {
               {[
                 { name: '諾和諾德', last: '2024', parade: '3 次', paradeNote: '2022 隊伍 → 2023–2024 花車', group: 'Novo Nordisk（丹麥）', evidence: '贊助哥本哈根、紐約、倫敦同志遊行；年報揭露 LGBT+ 員工資源群組', tip: '引用全球集團政策，以永續報告框架切入' },
                 { name: '羅氏', last: '2024', parade: '4 次', paradeNote: '2022 隊伍 → 2023 花車+隊伍 → 2024 花車', group: 'Roche（瑞士）', evidence: '贊助舊金山、蘇黎世同志遊行；設有彩虹員工網絡', tip: '聯繫台灣人資或多元共融負責人，以員工活動角度提案' },
-                { name: 'GU', last: '2022', parade: '1 次', paradeNote: '2024 花車', group: '迅銷集團（日本）', evidence: 'UT 系列聯名國際 LGBT+ 聯盟；多年贊助東京同志遊行', tip: '強調台灣遊行是東亞規模最大，對標東京同志遊行' },
+                { name: 'GU', last: '2024', parade: '1 次', paradeNote: '2024 花車', group: '迅銷集團（日本）', evidence: 'UT 系列聯名國際 LGBT+ 聯盟；多年贊助東京同志遊行', tip: '強調台灣遊行是東亞規模最大，對標東京同志遊行' },
                 { name: 'Diageo 台灣', last: '2023', parade: '無紀錄', paradeNote: '', group: 'Diageo（英國）', evidence: 'Johnnie Walker 彩虹版；贊助全球 30+ Pride 城市', tip: 'Johnnie Walker 已在台參與，可提案擴大集團層級' },
                 { name: '雅詩蘭黛', last: '2023', parade: '1 次', paradeNote: '旗下 M.A.C 台灣 2019 隊伍', group: 'Estée Lauder（美國）', evidence: 'MAC Viva Glam 公益捐款；多年 LGBT+ 平權專案', tip: '強調台灣是亞洲同志遊行最受國際關注的場域' },
-                { name: '渣打銀行', last: '2022', parade: '1 次', paradeNote: '2024 花車', group: 'Standard Chartered（英國）', evidence: '贊助新加坡粉點（Pink Dot）；全球驕傲月品牌活動', tip: '以金融業永續評分框架切入，強調社會面揭露' },
-                { name: '必勝客', last: '2025 銀', parade: '3 次', paradeNote: '2023 花車 → 2025 花車+隊伍', group: 'Yum! Brands（美國）', evidence: 'Taco Bell 多年 Pride 合作；Yum! 全球 DEI 承諾', tip: '2025 已是銀級，洽談升鈦金' },
               ].map((r, i) => (
                 <tr key={r.name} className={`border-b border-border/50 ${i % 2 === 1 ? 'bg-bg2/30' : ''}`}>
                   <td className="px-4 py-2 font-medium text-foreground whitespace-nowrap">{r.name}</td>
@@ -312,7 +311,6 @@ export function OpportunityPanel() {
                 { name: '蘋果台灣', ind: '科技', parade: '無紀錄', paradeNote: '', evidence: '舊金山 Pride 遊行領頭企業；全球員工 Pride 活動', tip: '台灣是蘋果亞太重點市場', pri: '最高', priColor: '#D93025' },
                 { name: 'IKEA 台灣', ind: '零售', parade: '無紀錄', paradeNote: '', evidence: 'IKEA 全球每年推出彩虹聯名商品；贊助歐洲 Pride', tip: '聯名商品授權合作切入', pri: '最高', priColor: '#D93025' },
                 { name: '萬事達卡', ind: '金融', parade: '無紀錄', paradeNote: '', evidence: '全球 Pride 主要贊助商；彩虹卡設計', tip: '以品牌曝光與 ESG 評分雙角度提案', pri: '高', priColor: '#F6B93B' },
-                { name: 'Gap 台灣', ind: '服飾', parade: '5 次', paradeNote: '2019–2025 花車；2019、2025 兼參隊伍', evidence: 'Gap Inc. 全球 Pride 系列；舊金山 Pride 長期贊助商', tip: '曾多次購買花車，可提案升級至銀級', pri: '高', priColor: '#F6B93B' },
                 { name: '漢堡王台灣', ind: '餐飲', parade: '無紀錄', paradeNote: '', evidence: '漢堡王彩虹堡活動；百勝餐飲全球多元共融承諾', tip: '餐飲品牌現場行銷角度切入', pri: '中', priColor: '#888' },
                 { name: 'H&M 台灣', ind: '服飾', parade: '無紀錄', paradeNote: '', evidence: 'H&M 全球彩虹系列；贊助斯德哥爾摩 Pride', tip: '聯名商品 + 現場品牌曝光', pri: '中', priColor: '#888' },
                 { name: '摩根大通 JPMorgan', ind: '金融', parade: '1 次', paradeNote: '2019 隊伍', evidence: '紐約 Pride 主贊助商多年；全球 PRIDE Network 員工群組；年度 LGBT+ 平等指數滿分', tip: '以美系金融機構台灣市場旗艦地位切入；2019 參與後未再出現，可提案重返並升級為正式贊助商', pri: '高', priColor: '#F6B93B' },
@@ -418,7 +416,7 @@ export function OpportunityPanel() {
               {[
                 { src: 'A. 續約基準', amt: 'NTD 4.23M', note: '歷史留存率估算', bold: false },
                 { src: 'B. 流失廠商挽回（前 5 名 × 35%）', amt: '+NTD 335k', note: '主動外展，可調整挽回家數', bold: false },
-                { src: 'C. 現有廠商升級（前 6 名 × 40%）', amt: '+NTD 639k', note: '提案升一個級別', bold: false },
+                { src: 'C. 現有廠商升級（前 7 名 × 40%）', amt: '+NTD 731k', note: '提案升一個級別', bold: false },
                 { src: 'D. 新廠商引入（2 家 銀級估算）', amt: '+NTD 440k', note: '全新合作廠商', bold: false },
               ].map((r, i) => (
                 <tr key={r.src} className={`border-b border-border/50 ${i % 2 === 1 ? 'bg-bg2/30' : ''}`}>
@@ -429,20 +427,20 @@ export function OpportunityPanel() {
               ))}
               <tr className="border-t-2 border-border font-bold">
                 <td className="px-4 py-2 text-foreground">合計預測</td>
-                <td className="px-3 py-2 text-right font-extrabold" style={{ color: '#D93025' }}>NTD 5.64M</td>
-                <td className="px-3 py-2 text-text-muted text-xs">距目標 3.86M</td>
+                <td className="px-3 py-2 text-right font-extrabold" style={{ color: '#D93025' }}>NTD 5.74M</td>
+                <td className="px-3 py-2 text-text-muted text-xs">距目標 3.76M</td>
               </tr>
             </tbody>
           </table>
         </div>
         <p className="text-xs text-text-muted px-5 py-3 border-t border-border">
-          距目標仍差 NTD 3.86M，須透過更多新廠商或更積極的挽回補足。
+          距目標仍差 NTD 3.76M，須透過更多新廠商或更積極的挽回補足。
         </p>
       </SectionCard>
 
       {/* Action box */}
       <ActionBox>
-        🎯 <strong>行動建議：</strong>優先確保 21 家忠實廠商全數續約（保住 3.2M 基礎），再集中火力聯繫前 5 名流失廠商（預計回收 335k）；同步向有升級空間的廠商提出鈦金／銀級方案。若全部達成，加上引入 2 家新廠商，可達到 <strong>NTD 5.64M</strong>。
+        🎯 <strong>行動建議：</strong>優先確保 21 家忠實廠商全數續約（保住 3.2M 基礎），再集中火力聯繫前 5 名流失廠商（預計回收 335k）；同步向有升級空間的廠商提出鈦金／銀級方案。若全部達成，加上引入 2 家新廠商，可達到 <strong>NTD 5.74M</strong>。
       </ActionBox>
 
       {/* F. 品項留存率 */}

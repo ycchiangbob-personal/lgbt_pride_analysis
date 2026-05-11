@@ -686,10 +686,20 @@
         "label": "其他",
         "amount": 60000
       },
+      "2022": {
+        "cat": "TIER",
+        "label": "T4 銀",
+        "amount": 215000
+      },
       "2023": {
         "cat": "SINGLE",
         "label": "單買",
         "amount": 50000
+      },
+      "2024": {
+        "cat": "TIER",
+        "label": "T5 銅",
+        "amount": 120000
       },
       "2025": {
         "cat": "TIER",
@@ -870,22 +880,6 @@
         "cat": "SINGLE",
         "label": "單買",
         "amount": 105000
-      }
-    }
-  },
-  "海峰電腦": {
-    "donor_id": "D0090",
-    "name": "海峰電腦",
-    "years": {
-      "2022": {
-        "cat": "TIER",
-        "label": "T4 銀",
-        "amount": 215000
-      },
-      "2024": {
-        "cat": "TIER",
-        "label": "T5 銅",
-        "amount": 120000
       }
     }
   },
