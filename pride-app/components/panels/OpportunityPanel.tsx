@@ -131,6 +131,38 @@ export function OpportunityPanel() {
           機率來源：忠實廠商參考歷史忠誠度估算（85%）；回頭廠商依 2023→2024 留存率（53%）；新廠商依首年存活率歷史平均（20%）。<br />
           ▸ 預期續約基準 NTD 4.23M，離 9.5M 目標還差 <strong>NTD 5.27M</strong>，需要 B／C／D 三個方向補足。
         </p>
+        <div className="border-t border-border px-5 py-4 space-y-4">
+          <div>
+            <p className="text-sm font-semibold text-foreground mb-2">▸ 實際收入低於預測的可能原因</p>
+            <ul className="space-y-2 text-sm text-text-muted">
+              <li>
+                <span className="font-medium text-foreground">① 高價值廠商集中流失</span>
+                ：2024→2025 流失 7 家級別 ／ 單購廠商，合計 NTD 1.27M（羅氏 220k、諾和諾德 220k、M.A.C 198k、高通 198k 等）。一旦 T3–T4 同時流失，同數量的 T5 無法補足缺口。
+              </li>
+              <li>
+                <span className="font-medium text-foreground">② 降格比流失更難察覺</span>
+                ：犀牛盾 2024 年以 NTD 750k 單購合作，2025 年降格為 NTD 150k 級別——帳面上仍是「忠實廠商」，但實際貢獻少了 600k。預測模型不分級別高低，這類靜悄悄的降格會使預測樂觀偏高。
+              </li>
+              <li>
+                <span className="font-medium text-foreground">③ 新廠商招募停滯</span>
+                ：2025 年首次加入級別 ／ 單購的廠商為 0 家（歷年最低）。歷史上每年有 6–17 家新品牌首次進入，提供 NTD 500k–1M 的額外收入，2025 年完全缺席。
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p className="text-sm font-semibold text-foreground mb-2">▸ 2026 重點監控指標</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div className="rounded-lg border border-border bg-bg2/60 p-3">
+                <p className="text-xs font-semibold text-foreground mb-1">新進級別 ／ 單購廠商簽約數</p>
+                <p className="text-xs text-text-muted">活動前 6 個月統計。2025 年為 0 家，對應成長動能歸零。<strong>2026 年目標：≥ 5 家</strong>，方可支撐目標收入。</p>
+              </div>
+              <div className="rounded-lg border border-border bg-bg2/60 p-3">
+                <p className="text-xs font-semibold text-foreground mb-1">T3+ 廠商確認續約數</p>
+                <p className="text-xs text-text-muted">每流失 1 家 T3（約 NTD 220k）需 4–5 家 T5 補足。提早鎖定高階廠商是保住預測基本盤的關鍵，建議活動前 9 個月開始追蹤。</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </SectionCard>
 
       {/* Section B */}

@@ -161,6 +161,46 @@ export function NewBrandPanel() {
         </p>
       </div>
 
+      {/* Secondary view: tier/single-only vs blended survival */}
+      <div className="rounded-xl border border-border bg-surface overflow-hidden" style={{ boxShadow: 'var(--shadow-sm)' }}>
+        <div className="px-5 pt-4 pb-2">
+          <h2 className="text-sm font-semibold text-foreground mb-1">留存率拆解：市集 ／ 飯店稀釋了整體數字</h2>
+          <p className="text-sm text-text-muted mb-3">
+            現行 33–37% 為「所有首次贊助廠商（含市集、飯店、其他）」的整體數字。若單獨計算<strong>首次簽訂級別或單購合約</strong>的廠商，留存率明顯更高。
+          </p>
+        </div>
+        <div className="overflow-x-auto border-t border-border">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="bg-bg2 border-b border-border">
+                <th className="text-left px-4 py-2 text-text-muted font-medium">計算範圍</th>
+                <th className="text-right px-3 py-2 text-text-muted font-medium">2022新→2023</th>
+                <th className="text-right px-3 py-2 text-text-muted font-medium">2023新→2024</th>
+                <th className="text-right px-3 py-2 text-text-muted font-medium">2024新→2025</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border/50">
+                <td className="px-4 py-2 text-text-secondary">全類型新廠商（含市集 ／ 飯店）</td>
+                <td className="px-3 py-2 text-right font-bold" style={{ color: '#d97706' }}>33%</td>
+                <td className="px-3 py-2 text-right font-bold" style={{ color: '#d97706' }}>37%</td>
+                <td className="px-3 py-2 text-right font-bold" style={{ color: '#d97706' }}>33%</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-2 text-text-secondary">首次簽訂級別 ／ 單購廠商</td>
+                <td className="px-3 py-2 text-right font-bold" style={{ color: '#059669' }}>76%</td>
+                <td className="px-3 py-2 text-right font-bold" style={{ color: '#059669' }}>86%</td>
+                <td className="px-3 py-2 text-right font-bold" style={{ color: '#059669' }}>100%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="text-xs text-text-muted px-5 py-3 border-t border-border">
+          ▸ 2024 年首次簽訂級別 ／ 單購的 6 家廠商（LifeWonders、Tapestry、犀牛盾、渣打銀行、愛群婦產科、疾管署）<strong>全數留存至 2025</strong>。<br />
+          ▸ 2025 年首次簽訂級別 ／ 單購的廠商為 <strong>0 家</strong>，是 2016 年有紀錄以來首次，代表 2026 的成長動能完全依賴挽回與升級，缺乏新血。
+        </p>
+      </div>
+
       {/* Survival table */}
       <div className="rounded-xl border border-border bg-surface overflow-hidden" style={{ boxShadow: 'var(--shadow-sm)' }}>
         <div className="overflow-x-auto">
