@@ -82,7 +82,9 @@
   {
     "donor_id": "D0006",
     "name": "拉拉公園",
-    "aliases": [],
+    "aliases": [
+      "LesPark"
+    ],
     "industry": "交友",
     "first_donor_year": 2016,
     "donor_years": [
@@ -350,7 +352,9 @@
   {
     "donor_id": "D0020",
     "name": "GAP",
-    "aliases": [],
+    "aliases": [
+      "台灣蓋璞"
+    ],
     "industry": "服飾",
     "first_donor_year": 2017,
     "donor_years": [
@@ -562,7 +566,10 @@
   {
     "donor_id": "D0028",
     "name": "GILEAD",
-    "aliases": [],
+    "aliases": [
+      "吉立亞醫藥",
+      "Gilead Sciences"
+    ],
     "industry": "個別廠商業務統計",
     "first_donor_year": 2020,
     "donor_years": [
@@ -618,10 +625,13 @@
   {
     "donor_id": "D0032",
     "name": "G-Star",
-    "aliases": [],
+    "aliases": [
+      "GSTAR"
+    ],
     "industry": "夜店",
     "first_donor_year": 2021,
     "donor_years": [
+      2020,
       2021,
       2022,
       2023,
@@ -1024,12 +1034,16 @@
   {
     "donor_id": "D0056",
     "name": "台灣百健",
-    "aliases": [],
+    "aliases": [
+      "百健",
+      "Biogen"
+    ],
     "industry": "醫藥",
     "first_donor_year": 2020,
     "donor_years": [
       2020,
       2021,
+      2022,
       2023,
       2024,
       2025
@@ -1088,7 +1102,9 @@
   {
     "donor_id": "D0058",
     "name": "Unilever",
-    "aliases": [],
+    "aliases": [
+      "聯合利華"
+    ],
     "industry": "Ｖ",
     "first_donor_year": 2020,
     "donor_years": [
@@ -1282,27 +1298,6 @@
     ]
   },
   {
-    "donor_id": "D0066",
-    "name": "GOLIN",
-    "aliases": [],
-    "industry": "",
-    "first_donor_year": 2020,
-    "donor_years": [
-      2020
-    ],
-    "first_parade_year": 2020,
-    "parade_detail": {
-      "2020": {
-        "raw_name": "GOLIN",
-        "section": "商業車",
-        "team": "紅色大隊 Team Red"
-      }
-    },
-    "parade_years": [
-      2020
-    ]
-  },
-  {
     "donor_id": "D0067",
     "name": "hyve solutions",
     "aliases": [],
@@ -1436,13 +1431,18 @@
     "donor_id": "D0076",
     "name": "Lifewonders",
     "aliases": [
-      "lifewonders"
+      "lifewonders",
+      "LIFEWONDERS",
+      "LifeWonders"
     ],
     "industry": "",
     "first_donor_year": 2018,
     "donor_years": [
       2018,
-      2021
+      2021,
+      2023,
+      2024,
+      2025
     ],
     "first_parade_year": null,
     "parade_detail": {},
@@ -1592,7 +1592,10 @@
   {
     "donor_id": "D0085",
     "name": "AZ",
-    "aliases": [],
+    "aliases": [
+      "臺灣阿斯特捷利康",
+      "AstraZeneca"
+    ],
     "industry": "醫藥",
     "first_donor_year": 2021,
     "donor_years": [
@@ -1633,19 +1636,6 @@
     ]
   },
   {
-    "donor_id": "D0086",
-    "name": "GSTAR",
-    "aliases": [],
-    "industry": "",
-    "first_donor_year": 2020,
-    "donor_years": [
-      2020
-    ],
-    "first_parade_year": null,
-    "parade_detail": {},
-    "parade_years": []
-  },
-  {
     "donor_id": "D0087",
     "name": "UT麗舍",
     "aliases": [],
@@ -1680,19 +1670,6 @@
     ]
   },
   {
-    "donor_id": "D0089",
-    "name": "百健",
-    "aliases": [],
-    "industry": "",
-    "first_donor_year": 2022,
-    "donor_years": [
-      2022
-    ],
-    "first_parade_year": null,
-    "parade_detail": {},
-    "parade_years": []
-  },
-  {
     "donor_id": "D0091",
     "name": "高通",
     "aliases": [],
@@ -1718,10 +1695,13 @@
   {
     "donor_id": "D0092",
     "name": "高誠公關",
-    "aliases": [],
+    "aliases": [
+      "GOLIN"
+    ],
     "industry": "公關",
     "first_donor_year": 2022,
     "donor_years": [
+      2020,
       2022,
       2024
     ],
@@ -1736,9 +1716,15 @@
         "raw_name": "高誠公關",
         "section": "商業車",
         "team": "綠色大隊 Team Green"
+      },
+      "2020": {
+        "raw_name": "GOLIN",
+        "section": "商業車",
+        "team": "紅色大隊 Team Red"
       }
     },
     "parade_years": [
+      2020,
       2022,
       2024
     ]
@@ -1771,19 +1757,6 @@
     "name": "Lab Series",
     "aliases": [],
     "industry": "",
-    "first_donor_year": 2022,
-    "donor_years": [
-      2022
-    ],
-    "first_parade_year": null,
-    "parade_detail": {},
-    "parade_years": []
-  },
-  {
-    "donor_id": "D0096",
-    "name": "MAC",
-    "aliases": [],
-    "industry": "Ｖ",
     "first_donor_year": 2022,
     "donor_years": [
       2022
@@ -2249,19 +2222,6 @@
     ]
   },
   {
-    "donor_id": "D0119",
-    "name": "LIFEWONDERS",
-    "aliases": [],
-    "industry": "遊戲",
-    "first_donor_year": 2023,
-    "donor_years": [
-      2023
-    ],
-    "first_parade_year": null,
-    "parade_detail": {},
-    "parade_years": []
-  },
-  {
     "donor_id": "D0120",
     "name": "美商百富門",
     "aliases": [],
@@ -2327,11 +2287,14 @@
   {
     "donor_id": "D0123",
     "name": "M.A.C",
-    "aliases": [],
+    "aliases": [
+      "MAC"
+    ],
     "industry": "彩妝",
     "first_donor_year": 2021,
     "donor_years": [
       2021,
+      2022,
       2023,
       2024,
       2025
@@ -2413,7 +2376,9 @@
   {
     "donor_id": "D0128",
     "name": "必勝客",
-    "aliases": [],
+    "aliases": [
+      "Pizza Hut"
+    ],
     "industry": "餐飲",
     "first_donor_year": 2023,
     "donor_years": [
@@ -2713,7 +2678,10 @@
   {
     "donor_id": "D0148",
     "name": "捷豹路虎",
-    "aliases": [],
+    "aliases": [
+      "JLR",
+      "Jaguar Land Rover"
+    ],
     "industry": "車業",
     "first_donor_year": 2024,
     "donor_years": [
@@ -2739,20 +2707,6 @@
     "first_donor_year": 2024,
     "donor_years": [
       2024
-    ],
-    "first_parade_year": null,
-    "parade_detail": {},
-    "parade_years": []
-  },
-  {
-    "donor_id": "D0150",
-    "name": "LifeWonders",
-    "aliases": [],
-    "industry": "遊戲",
-    "first_donor_year": 2024,
-    "donor_years": [
-      2024,
-      2025
     ],
     "first_parade_year": null,
     "parade_detail": {},
@@ -3843,7 +3797,7 @@
     ]
   },
   {
-    "donor_id": null,
+    "donor_id": "D0035",
     "name": "台灣酷蓋 / Lez's Meeting 女人國 / mojumojo",
     "aliases": [],
     "industry": "",

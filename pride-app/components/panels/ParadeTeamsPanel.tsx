@@ -32,6 +32,12 @@ export function ParadeTeamsPanel() {
   const [year, setYear] = useState('2023')
   const [type, setType] = useState<'all' | '商業車' | '社團車' | '隊伍'>('all')
   const [search, setSearch] = useState('')
+  const [debouncedSearch, setDebouncedSearch] = useState('')
+
+  useEffect(() => {
+    const t = setTimeout(() => setDebouncedSearch(search), 300)
+    return () => clearTimeout(t)
+  }, [search])
 
   useEffect(() => {
     fetch(`${BASE}/data/parade_groups.json`)
@@ -58,14 +64,14 @@ export function ParadeTeamsPanel() {
   }, [data, year, type])
 
   const searchResults = useMemo(() => {
-    if (search.trim().length < 2) return []
-    const term = search.toLowerCase()
+    if (debouncedSearch.trim().length < 2) return []
+    const term = debouncedSearch.toLowerCase()
     return participants.filter(
       (p) => p.name.toLowerCase().includes(term) ||
              p.aliases.some((a) => a.toLowerCase().includes(term)) ||
              Object.values(p.parade_detail).some((d) => d.raw_name.toLowerCase().includes(term))
     )
-  }, [participants, search])
+  }, [participants, debouncedSearch])
 
   const typeChip = (t: string) => {
     const s = t === '商業車'
@@ -89,7 +95,7 @@ export function ParadeTeamsPanel() {
     return COLORS.reduce((s, c) => s + (data[year][c]?.[cat]?.length ?? 0), 0)
   }
 
-  const isSearching = search.trim().length >= 2
+  const isSearching = debouncedSearch.trim().length >= 2
 
   return (
     <div className="space-y-6">
@@ -142,6 +148,9 @@ export function ParadeTeamsPanel() {
           onChange={(e) => setSearch(e.target.value)}
           className="border border-border rounded-lg px-3 py-2 text-sm bg-surface focus:outline-none focus:ring-2 focus:ring-accent/30 w-64"
         />
+        {isSearching && (
+          <span className="text-xs text-text-muted">共 {searchResults.length} 筆</span>
+        )}
         {(['all', '商業車', '社團車', '隊伍'] as const).map((t) => (
           <button
             key={t}
@@ -162,7 +171,7 @@ export function ParadeTeamsPanel() {
       {isSearching ? (
         <div className="space-y-4">
           {searchResults.length === 0 ? (
-            <div className="text-center py-16 text-text-muted">找不到符合「{search}」的紀錄</div>
+            <div className="text-center py-16 text-text-muted">找不到符合「{debouncedSearch}」的紀錄</div>
           ) : (
             searchResults.map((p) => {
               const filteredYears = p.parade_years

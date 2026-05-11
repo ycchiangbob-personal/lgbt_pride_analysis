@@ -54,7 +54,7 @@ export function SponsorDirectoryPanel() {
 
   const allSponsors = useMemo(() => {
     if (!data) return []
-    const map = new Map<string, { name: string; industry: string; years: Record<string, Sponsor> }>()
+    const map = new Map<string, { name: string; industry: string; years: Record<string, Sponsor>; aliases?: string[]; donor_id?: string }>()
     YEARS.forEach((yr) => {
       data[yr]?.forEach((s) => {
         if (!map.has(s.name_canonical)) {
@@ -76,7 +76,9 @@ export function SponsorDirectoryPanel() {
   const filtered = useMemo(() => {
     const q = search.toLowerCase()
     return allSponsors.filter((sp) => {
-      if (q && !sp.name.toLowerCase().includes(q)) return false
+      if (q && !sp.name.toLowerCase().includes(q) &&
+          !sp.aliases?.some((a: string) => a.toLowerCase().includes(q)) &&
+          !sp.donor_id?.toLowerCase().includes(q)) return false
       if (yearFilter !== 'all' && !sp.years[yearFilter]) return false
       if (industryFilter !== 'all' && sp.industry !== industryFilter) return false
       return true
