@@ -911,16 +911,61 @@
   {
     "donor_id": "D0094",
     "name": "諾億保經",
-    "aliases": [],
-    "industry": "",
+    "aliases": [
+      "磊山保經",
+      "諾億特許事業部"
+    ],
+    "industry": "金融",
     "first_donor_year": 2020,
     "donor_years": [
       2020,
-      2021
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
     ],
-    "first_parade_year": null,
-    "parade_detail": {},
-    "parade_years": []
+    "first_parade_year": 2019,
+    "parade_detail": {
+      "2019": {
+        "raw_name": "磊山保經諾億特許事業部",
+        "section": "隊伍",
+        "team": "黃色大隊 Team Yellow"
+      },
+      "2020": {
+        "raw_name": "磊山保經諾億團隊",
+        "section": "商業車",
+        "team": "紫色大隊 Team Purple"
+      },
+      "2022": {
+        "raw_name": "磊山保經 諾億團隊",
+        "section": "商業車",
+        "team": "紅色大隊 Team Red"
+      },
+      "2023": {
+        "raw_name": "諾億財富管理顧問",
+        "section": "商業車",
+        "team": "橙色大隊 Team Orange"
+      },
+      "2024": {
+        "raw_name": "諾億保險經紀人",
+        "section": "商業車",
+        "team": "黃色大隊 Team Yellow"
+      },
+      "2025": {
+        "raw_name": "諾億保經",
+        "section": "商業車",
+        "team": "藍色大隊 Team Blue / North Route"
+      }
+    },
+    "parade_years": [
+      2019,
+      2020,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
   },
   {
     "donor_id": "D0054",
@@ -1722,33 +1767,6 @@
     ]
   },
   {
-    "donor_id": "D0094",
-    "name": "磊山保經",
-    "aliases": [],
-    "industry": "",
-    "first_donor_year": 2022,
-    "donor_years": [
-      2022
-    ],
-    "first_parade_year": 2020,
-    "parade_detail": {
-      "2020": {
-        "raw_name": "磊山保經諾億團隊",
-        "section": "商業車",
-        "team": "紫色大隊 Team Purple"
-      },
-      "2022": {
-        "raw_name": "磊山保經 諾億團隊",
-        "section": "商業車",
-        "team": "紅色大隊 Team Red"
-      }
-    },
-    "parade_years": [
-      2020,
-      2022
-    ]
-  },
-  {
     "donor_id": "D0095",
     "name": "Lab Series",
     "aliases": [],
@@ -2172,27 +2190,6 @@
     "parade_years": [
       2023,
       2024
-    ]
-  },
-  {
-    "donor_id": "D0094",
-    "name": "諾億保經",
-    "aliases": [],
-    "industry": "投資理財",
-    "first_donor_year": 2023,
-    "donor_years": [
-      2023
-    ],
-    "first_parade_year": 2023,
-    "parade_detail": {
-      "2023": {
-        "raw_name": "諾億財富管理顧問",
-        "section": "商業車",
-        "team": "橙色大隊 Team Orange"
-      }
-    },
-    "parade_years": [
-      2023
     ]
   },
   {
@@ -2678,19 +2675,6 @@
       2024,
       2025
     ]
-  },
-  {
-    "donor_id": "D0094",
-    "name": "諾億保經",
-    "aliases": [],
-    "industry": "金融",
-    "first_donor_year": 2024,
-    "donor_years": [
-      2024
-    ],
-    "first_parade_year": null,
-    "parade_detail": {},
-    "parade_years": []
   },
   {
     "donor_id": "D0146",
@@ -3341,33 +3325,6 @@
     "parade_years": []
   },
   {
-    "donor_id": "D0094",
-    "name": "諾億保經",
-    "aliases": [],
-    "industry": "金融",
-    "first_donor_year": 2025,
-    "donor_years": [
-      2025
-    ],
-    "first_parade_year": 2024,
-    "parade_detail": {
-      "2024": {
-        "raw_name": "諾億保險經紀人",
-        "section": "商業車",
-        "team": "黃色大隊 Team Yellow"
-      },
-      "2025": {
-        "raw_name": "諾億保經",
-        "section": "商業車",
-        "team": "藍色大隊 Team Blue / North Route"
-      }
-    },
-    "parade_years": [
-      2024,
-      2025
-    ]
-  },
-  {
     "donor_id": "D0191",
     "name": "JINS",
     "aliases": [],
@@ -3865,29 +3822,6 @@
     "first_parade_year": null,
     "parade_detail": {},
     "parade_years": []
-  },
-  {
-    "donor_id": "D0094",
-    "name": "諾億保經",
-    "aliases": [
-      "諾億特許事業部"
-    ],
-    "industry": "",
-    "first_donor_year": 2021,
-    "donor_years": [
-      2021
-    ],
-    "first_parade_year": 2019,
-    "parade_detail": {
-      "2019": {
-        "raw_name": "磊山保經諾億特許事業部",
-        "section": "隊伍",
-        "team": "黃色大隊 Team Yellow"
-      }
-    },
-    "parade_years": [
-      2019
-    ]
   },
   {
     "donor_id": null,
